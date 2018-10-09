@@ -6,8 +6,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import ToggleOption from '../ToggleOption';
 import styled from 'styled-components';
 
 const Ul = styled.ul`

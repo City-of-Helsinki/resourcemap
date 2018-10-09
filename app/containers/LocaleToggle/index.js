@@ -25,7 +25,7 @@ export class LocaleToggle extends React.PureComponent {
           value={this.props.locale}
           values={appLocales}
           messages={messages}
-          onToggle={this.props.onLocaleToggle}
+          onLangClick={this.props.onLocaleClick}
         />
       </Wrapper>
     );
@@ -43,8 +43,8 @@ const mapStateToProps = createSelector(makeSelectLocale(), locale => ({
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onLocaleToggle: evt => dispatch(changeLocale(evt.target.value)),
     dispatch,
+    onLocaleClick: evt => dispatch(changeLocale(evt.target.lang)),
   };
 }
 
