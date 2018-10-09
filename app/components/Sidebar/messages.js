@@ -10,4 +10,8 @@ export default defineMessages({
 		id: 'Sidebar.title',
 		defaultMessage: 'Tilat',
 	},
+	text: {
+		id: 'Sidebar.text',
+		defaultMessage: 'Tekstiä',
+	},
 });
