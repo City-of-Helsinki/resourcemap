@@ -5,14 +5,14 @@ import WoffBold from './fonts/HelsinkiGrotesk-Bold.woff';
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
   @font-face {
-    font-family: "HelsinkiGroteskRegular";
+    font-family: "HelsinkiGrotesk";
     src: url(${Woff}) format("woff");
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
-    font-family: "HelsinkiGroteskRegular";
+    font-family: "HelsinkiGrotesk";
     src: url(${WoffBold}) format("woff");
     font-weight: 700;
     font-style: normal;
@@ -24,8 +24,8 @@ injectGlobal`
     width: 100%;
   }
 
-  body {
-    font-family: HelsinkiGroteskRegular, 'Helvetica Neue', Helvetica, Arial;
+  body, p {
+    font-family: HelsinkiGrotesk, 'Helvetica Neue', Helvetica, Arial;
   }
 
   #app {
@@ -36,7 +36,6 @@ injectGlobal`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
 `;

@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
 	position: relative;
 	display: flex;
-	align-items: center;
-	justify-items: center;
+	flex-direction: column;
+	justify-content: center;
 	background-color: #ffe977;
-	padding: 5%;
+	padding: 5% 5%;
 	width: 25%;
 `;
 
