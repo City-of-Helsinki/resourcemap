@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BgImg from 'images/sidebar-bg.png';
+import MapContainer from 'components/MapContainer';
 
 const MapItem = styled.div`
 	background-image: url(${BgImg});
@@ -13,8 +14,7 @@ const MapItem = styled.div`
 const MapView = props => {
 	return (
 		<MapItem>
-			{' '}
-			<p>Kuva tähän</p>{' '}
+			<MapContainer />
 		</MapItem>
 	);
 };

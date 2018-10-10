@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 	background-color: #ffe977;
 	padding: 5% 5%;
 	width: 25%;
+	text-align: center;
 `;
 
 export default Wrapper;

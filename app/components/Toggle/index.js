@@ -12,6 +12,7 @@ const Ul = styled.ul`
   list-style-type: none;
   display: flex;
   justify-content: center;
+  padding-left: 0;
 `;
 
 const Li = styled.li`
@@ -21,7 +22,7 @@ const Li = styled.li`
   ${({ active }) =>
     active &&
     `
-    color: silver;
+    display: none;
   `};
 `;
 
