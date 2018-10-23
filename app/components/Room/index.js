@@ -1,32 +1,57 @@
 import React from 'react';
 
+const Polygon = props => {
+	return (
+		<polygon
+			info={props.info}
+			points={props.d}
+			pointerEvents="visible"
+			cursor="pointer"
+		/>
+	);
+};
+
+const Path = props => {
+	return (
+		<path
+			info={props.info}
+			d={props.d}
+			pointerEvents="visible"
+			cursor="pointer"
+		/>
+	);
+};
+
 class Room extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			fill: props.fill,
-			dataInfo: props.dataInfo,
-			stroke: props.stroke,
-			fill: props.fill,
-			originalFill: props.fill,
-			points: props.points,
-			active: props.active,
-			onClick: props.onRoomClick,
-		};
+		this.state = {};
 	}
 
 	render() {
-		return (
-			<polygon
-				id={this.state.key}
-				data-info={this.state.dataInfo}
-				stroke={this.state.stroke}
-				fill={this.state.fill}
-				points={this.state.points}
-				onClick={this.props.onRoomClick}
-				active={this.state.active}
-			/>
-		);
+		let { svgtype, available, onRoomClick, ...props } = this.props;
+		const Shape = svgtype;
+		console.log(Shape);
+
+		if (Shape === 'polygon') {
+			return (
+				<Polygon
+					{...props}
+					available={available}
+					onClick={() => this.props.onRoomClick(info)}
+				/>
+			);
+		} else if (Shape === 'path') {
+			return (
+				<Path
+					{...props}
+					available={available}
+					onClick={() => this.props.onRoomClick(info)}
+				/>
+			);
+		} else {
+			return <h1>NO type</h1>;
+		}
 	}
 }
 
