@@ -3,10 +3,11 @@ import React from 'react';
 const Polygon = props => {
 	return (
 		<polygon
-			info={props.info}
 			points={props.d}
 			pointerEvents="visible"
 			cursor="pointer"
+			fill="#FF0000"
+			onClick={() => props.onClick(props.info)}
 		/>
 	);
 };
@@ -14,10 +15,11 @@ const Polygon = props => {
 const Path = props => {
 	return (
 		<path
-			info={props.info}
 			d={props.d}
 			pointerEvents="visible"
 			cursor="pointer"
+			fill="#FFFFFF"
+			onClick={() => props.onClick(props.info)}
 		/>
 	);
 };
@@ -31,23 +33,19 @@ class Room extends React.Component {
 	render() {
 		let { svgtype, available, onRoomClick, ...props } = this.props;
 		const Shape = svgtype;
-		console.log(Shape);
+		console.log(onRoomClick);
 
 		if (Shape === 'polygon') {
 			return (
 				<Polygon
 					{...props}
 					available={available}
-					onClick={() => this.props.onRoomClick(info)}
+					onClick={onRoomClick}
 				/>
 			);
 		} else if (Shape === 'path') {
 			return (
-				<Path
-					{...props}
-					available={available}
-					onClick={() => this.props.onRoomClick(info)}
-				/>
+				<Path {...props} available={available} onClick={onRoomClick} />
 			);
 		} else {
 			return <h1>NO type</h1>;

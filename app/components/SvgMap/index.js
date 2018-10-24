@@ -1,7 +1,5 @@
 import React from 'react';
-import FloorPlan from 'images/oodi-structures-plan.svg';
 import Room from 'components/Room';
-import Img from 'components/Img';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -18,8 +16,6 @@ const Div = styled.div`
 `;
 
 const SvgMap = props => {
-	const Alt = 'Floor plan';
-	console.log('SvgMap says: room.props ', props.rooms);
 	return (
 		<Div>
 			<svg
@@ -29,23 +25,70 @@ const SvgMap = props => {
 				version="1.1"
 			>
 				<g
-					id="Oodi_Pohjakartta_2krs"
-					fill="#FFFFFF"
-					fillRule="nonzero"
-					stroke="#000000"
-					strokeWidth="3"
+					id="Page-1"
+					stroke="none"
+					strokeWidth="1"
+					fill="none"
+					fillRule="evenodd"
 				>
-					{props.rooms.map(item => (
-						<Room
-							key={item.id}
-							svgtype={item.svgtype}
-							info={item.info}
-							available={item.available}
-							id={item.id}
-							d={item.d}
-							onRoomClick={props.onRoomClick}
-						/>
-					))}
+					<g id="Oodi_Pohjakartta_2krs" fillRule="nonzero">
+						<g
+							id="structures"
+							fill="#FFFFFF"
+							fillRule="nonzero"
+							stroke="#000000"
+							strokeWidth="3"
+						>
+							{props.structures.map(item => (
+								<Room
+									key={item.id}
+									svgtype={item.svgtype}
+									info={item.info}
+									available={item.available}
+									id={item.id}
+									d={item.d}
+									onRoomClick={props.onRoomClick}
+								/>
+							))}
+						</g>
+						<g
+							id="spaces"
+							fill="#FFFFFF"
+							fillRule="nonzero"
+							stroke="#000000"
+							strokeWidth="3"
+							transform="translate(96.000000, 6.000000)"
+						>
+							{props.rooms.map(item => (
+								<Room
+									key={item.id}
+									svgtype={item.svgtype}
+									info={item.info}
+									available={item.available}
+									id={item.id}
+									d={item.d}
+									onRoomClick={props.onRoomClick}
+								/>
+							))}
+						</g>
+
+						<g
+							id="ikonit"
+							transform="translate(119.000000, 18.000000)"
+						>
+							{props.icons.map(item => (
+								<Room
+									key={item.id}
+									svgtype={item.svgtype}
+									info={item.info}
+									available={item.available}
+									id={item.id}
+									d={item.d}
+									onRoomClick={props.onRoomClick}
+								/>
+							))}
+						</g>
+					</g>
 				</g>
 			</svg>
 		</Div>
