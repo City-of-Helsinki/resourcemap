@@ -42,12 +42,13 @@ const SvgMap = props => {
 							{props.structures.map(item => (
 								<Room
 									key={item.id}
+									name={item.name}
 									svgtype={item.svgtype}
 									info={item.info}
 									available={item.available}
 									id={item.id}
 									d={item.d}
-									onRoomClick={props.onRoomClick}
+									onRoomClick={() => false}
 								/>
 							))}
 						</g>
@@ -62,6 +63,7 @@ const SvgMap = props => {
 							{props.rooms.map(item => (
 								<Room
 									key={item.id}
+									name={item.name}
 									svgtype={item.svgtype}
 									info={item.info}
 									available={item.available}
@@ -79,6 +81,7 @@ const SvgMap = props => {
 							{props.icons.map(item => (
 								<Room
 									key={item.id}
+									name={item.name}
 									svgtype={item.svgtype}
 									info={item.info}
 									available={item.available}

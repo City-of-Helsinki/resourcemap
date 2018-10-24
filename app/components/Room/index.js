@@ -7,7 +7,7 @@ const Polygon = props => {
 			pointerEvents="visible"
 			cursor="pointer"
 			fill="#FF0000"
-			onClick={() => props.onClick(props.info)}
+			onClick={event => props.onRoomClick(event, { ...props })}
 		/>
 	);
 };
@@ -19,7 +19,7 @@ const Path = props => {
 			pointerEvents="visible"
 			cursor="pointer"
 			fill="#FFFFFF"
-			onClick={() => props.onClick(props.info)}
+			onClick={event => props.onRoomClick(event, { ...props })}
 		/>
 	);
 };
@@ -31,24 +31,26 @@ class Room extends React.Component {
 	}
 
 	render() {
-		let { svgtype, available, onRoomClick, ...props } = this.props;
-		const Shape = svgtype;
-		console.log(onRoomClick);
+		const { svgtype, available, onRoomClick, ...props } = this.props;
 
-		if (Shape === 'polygon') {
+		if (svgtype === 'polygon') {
 			return (
 				<Polygon
 					{...props}
 					available={available}
-					onClick={onRoomClick}
+					onRoomClick={onRoomClick}
 				/>
 			);
-		} else if (Shape === 'path') {
+		} else if (svgtype === 'path') {
 			return (
-				<Path {...props} available={available} onClick={onRoomClick} />
+				<Path
+					{...props}
+					available={available}
+					onRoomClick={onRoomClick}
+				/>
 			);
 		} else {
-			return <h1>NO type</h1>;
+			return false;
 		}
 	}
 }

@@ -18,7 +18,11 @@ const MapItemBACKUP = styled.div`
 const MapView = props => {
 	return (
 		<MapItem>
-			<MapContainer />
+			<MapContainer
+				spaces={props.spaces}
+				structures={props.structures}
+				icons={props.icons}
+			/>
 		</MapItem>
 	);
 };
