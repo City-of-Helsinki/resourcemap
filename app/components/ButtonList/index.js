@@ -2,29 +2,47 @@ import React from 'react';
 import BasicButton from 'components/BasicButton';
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
-import BookingButton from './BookingButton';
+import BookingButton from 'components/BookingButton';
 
 class ButtonList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      spaces: [
-        { id: 1, name: 'Studio 1', type: 'studio' },
-        { id: 2, name: 'Editointipaja', type: 'studio' },
-        { id: 3, name: 'Kokoushuone 1', type: 'meetingroom' },
-      ],
+      activeIndex: null,
+      condition: false,
     };
+    this.onSlotClick = this.onSlotClick.bind(this);
   }
 
-  onSlotClick(slot) {
+  onSlotClick(event, slot, index) {
     this.props.onButtonClick(slot);
+    console.log('slot', slot, event.target);
+
+    this.setState(function(prevState, props) {
+      return {
+        activeIndex: index,
+        condition: !this.state.condition,
+      };
+    });
   }
 
   render() {
+    const { spaces } = this.props;
+    const uniqueCats = [...new Set(spaces.map(({ category }) => category))];
+    let className = '';
+
     return (
       <Wrapper className="c-buttonlist">
-        {this.state.spaces.map(btn => (
-          <BookingButton key={btn.id}>{btn.name}</BookingButton>
+        {uniqueCats.map((btn, index) => (
+          <BookingButton
+            key={btn}
+            id={btn}
+            text={btn}
+            className={this.state.activeIndex === index ? 'btn--active' : 'btn'}
+            onClick={event => this.onSlotClick(event, btn, index)}
+          >
+            {btn}
+          </BookingButton>
         ))}
       </Wrapper>
     );

@@ -3,13 +3,9 @@ import Room from 'components/Room';
 import styled from 'styled-components';
 
 const Div = styled.div`
+	position: relative;
 	display: block;
-
-	img {
-		border: 2px solid;
-		max-width: 100%;
-		position: absolute;
-	}
+	border: 1px solid red;
 	svg {
 		max-width: 100%;
 	}
@@ -69,7 +65,9 @@ const SvgMap = props => {
 									available={item.available}
 									id={item.id}
 									d={item.d}
+									category={item.category}
 									onRoomClick={props.onRoomClick}
+									highlighted={props.highlighted}
 								/>
 							))}
 						</g>

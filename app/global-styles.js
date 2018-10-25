@@ -38,4 +38,8 @@ injectGlobal`
   label {
     line-height: 1.5em;
   }
+
+  path.active {
+    fill: #E7F6EA !important; 
+  }
 `;

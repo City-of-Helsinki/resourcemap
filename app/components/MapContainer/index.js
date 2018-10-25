@@ -9,13 +9,11 @@ const Wrapper = styled.div`
 	height: 100%;
 	padding: 5% 10% 5% 5%;
 	align-items: center;
-
-	img {
-		max-width: 100%;
-	}
+	position: relative;
 `;
 
 const Content = styled.div`
+	position: relative;
 	img {
 		max-width: 100%;
 	}
@@ -45,8 +43,14 @@ class MapContainer extends React.Component {
 		let spaceItem = space;
 		let spaceTitle = spaceItem.name;
 		let showTooltip = false;
-		let mouseX = event.nativeEvent.offsetX;
-		let mouseY = event.nativeEvent.offsetY;
+
+		const rect = event.target.getBoundingClientRect();
+		const x = Math.round(rect.left);
+		const y = Math.round(rect.top);
+		const width = rect.width;
+		const xPos = Math.round(x + rect.width / 2);
+
+		console.log(rect.height);
 
 		if (this.state.currentRoom.title === spaceTitle) {
 			showTooltip = false;
@@ -64,16 +68,16 @@ class MapContainer extends React.Component {
 					title: spaceTitle,
 					available: spaceItem.available,
 				},
-				x: mouseX,
-				y: mouseY,
+				x: xPos,
+				y: y,
 			};
 		});
 	}
 
 	render() {
 		const { currentRoom, tooltipState, x, y } = this.state;
+		const { spaces, structures, icons, highlighted } = this.props;
 
-		const { spaces, structures, icons } = this.props;
 		return (
 			<Wrapper>
 				<Content>
@@ -82,6 +86,7 @@ class MapContainer extends React.Component {
 						structures={structures}
 						icons={icons}
 						onRoomClick={this.handleRoomClick}
+						highlighted={highlighted}
 					/>
 					{tooltipState.visible && (
 						<Tooltip content={currentRoom} x={x} y={y} />

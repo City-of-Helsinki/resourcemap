@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const DivWrapper = styled.div`
+const TooltipWrapper = styled.div`
 	position: relative;
 	background-color: white;
 	border: 3px solid black;
@@ -52,24 +52,21 @@ const DivWrapper = styled.div`
 	}
 `;
 
+const TooltipContainer = styled.div`
+	display: block;
+	position: fixed;
+	width: 240px;
+	height: 240px;
+	left: ${props => props.x}px;
+	top: ${props => props.y}px;
+	transform: translate(-50%, -100%);
+`;
+
 const Tooltip = props => {
-	console.log(props.content.title);
-	const DivContainer = styled.div`
-		display: block;
-		position: absolute;
-		width: 300px;
-		left: ${props.x}px;
-		top: ${props.y}px;
-
-		transform: translate(-100px, -50px);
-
-		&:after {
-		}
-	`;
-
+	console.log('Tooltips X and Y: ', props.x, props.y);
 	return (
-		<DivContainer>
-			<DivWrapper>
+		<TooltipContainer x={props.x} y={props.y}>
+			<TooltipWrapper>
 				<h3>{props.content.title}</h3>
 				<p>
 					<span className={props.content.available} />
@@ -77,8 +74,8 @@ const Tooltip = props => {
 				<p className="small">
 					Voit varata tämän tilan oven luona olevalta näytöltä.
 				</p>
-			</DivWrapper>
-		</DivContainer>
+			</TooltipWrapper>
+		</TooltipContainer>
 	);
 };
 

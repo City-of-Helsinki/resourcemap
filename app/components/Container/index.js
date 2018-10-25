@@ -21,6 +21,7 @@ class Container extends React.Component {
 		this.state = {
 			spaces: [
 				{
+					category: 'Studiotilat',
 					id: 'bottom-right-1',
 					svgtype: 'path',
 					name: 'Studiotila Kolmonen',
@@ -31,6 +32,7 @@ class Container extends React.Component {
 						'M463.75,258.575382 L463.75,371.75 L384.36,371.75 L384.36,262.431082 L463.75,258.575382 Z',
 				},
 				{
+					category: 'Kokoustilat',
 					id: 'top-left-1',
 					svgtype: 'path',
 					name: 'Kokoushuone Etelä',
@@ -39,6 +41,17 @@ class Container extends React.Component {
 						'Voit varata tämän tilan oven luona olevalta näytöltä.',
 					d:
 						'M69.83,150.2 L69.83,199.5 L20.43,199.5 L20.43,150.2 L69.83,150.2 Z',
+				},
+				{
+					category: 'Kokoustilat',
+					id: 'top-left-2',
+					svgtype: 'path',
+					name: 'Kokoushuone 2',
+					available: 'soon',
+					info:
+						'Voit varata tämän tilan oven luona olevalta näytöltä.',
+					d:
+						'M69.83,205.21 L69.83,254.5 L20.43,254.5 L20.43,205.21 L69.83,205.21 Z',
 				},
 			],
 			structures: [
@@ -101,6 +114,8 @@ class Container extends React.Component {
 				available: 'Tietoa tilasta',
 			},
 
+			highlighted: '',
+
 			tooltipState: {
 				current: null,
 				visible: false,
@@ -108,19 +123,37 @@ class Container extends React.Component {
 			x: 0,
 			y: 0,
 		};
+
+		this.highlightRoomType = this.highlightRoomType.bind(this);
+	}
+
+	highlightRoomType(highlight) {
+		let hl = highlight;
+		if (this.state.highlighted === hl) {
+			hl = '';
+		}
+
+		this.setState(function(prevState, props) {
+			return {
+				highlighted: hl,
+			};
+		});
 	}
 
 	render() {
-		const { spaces, structures, icons } = this.state;
-		console.log(spaces);
+		const { spaces, structures, icons, highlighted } = this.state;
 		return (
 			<Wrapper>
 				<MapView
 					spaces={spaces}
 					structures={structures}
 					icons={icons}
+					highlighted={highlighted}
 				/>
-				<Sidebar />
+				<Sidebar
+					spaces={spaces}
+					onButtonClick={this.highlightRoomType}
+				/>
 			</Wrapper>
 		);
 	}

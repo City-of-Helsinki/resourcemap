@@ -15,6 +15,11 @@ const H2 = styled.h2`
 class Sidebar extends React.Component {
 	constructor(props) {
 		super(props);
+		this.onSlotClick = this.onSlotClick.bind(this);
+	}
+
+	onSlotClick(slot) {
+		this.props.onButtonClick(slot);
 	}
 
 	render() {
@@ -23,7 +28,10 @@ class Sidebar extends React.Component {
 				<H2>
 					<FormattedMessage {...messages.title} />
 				</H2>
-				<ButtonList />
+				<ButtonList
+					spaces={this.props.spaces}
+					onButtonClick={this.onSlotClick}
+				/>
 				<LocaleToggle />
 			</Wrapper>
 		);

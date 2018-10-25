@@ -16,12 +16,14 @@ const MapItemBACKUP = styled.div`
 `;
 
 const MapView = props => {
+	const { spaces, structures, icons, highlighted } = props;
 	return (
 		<MapItem>
 			<MapContainer
-				spaces={props.spaces}
-				structures={props.structures}
-				icons={props.icons}
+				spaces={spaces}
+				structures={structures}
+				icons={icons}
+				highlighted={highlighted}
 			/>
 		</MapItem>
 	);
