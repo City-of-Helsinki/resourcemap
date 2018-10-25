@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const Div = styled.div`
 	position: relative;
 	display: block;
-	border: 1px solid red;
 	svg {
 		max-width: 100%;
 	}

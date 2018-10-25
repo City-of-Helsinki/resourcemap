@@ -16,11 +16,12 @@ class ButtonList extends React.Component {
 
   onSlotClick(event, slot, index) {
     this.props.onButtonClick(slot);
+    let btnindex = index === this.state.activeIndex ? null : index;
     console.log('slot', slot, event.target);
 
     this.setState(function(prevState, props) {
       return {
-        activeIndex: index,
+        activeIndex: btnindex,
         condition: !this.state.condition,
       };
     });
@@ -28,6 +29,7 @@ class ButtonList extends React.Component {
 
   render() {
     const { spaces } = this.props;
+    const { activeIndex } = this.state;
     const uniqueCats = [...new Set(spaces.map(({ category }) => category))];
     let className = '';
 
@@ -38,7 +40,7 @@ class ButtonList extends React.Component {
             key={btn}
             id={btn}
             text={btn}
-            className={this.state.activeIndex === index ? 'btn--active' : 'btn'}
+            className={activeIndex === index ? 'btn--active' : 'btn'}
             onClick={event => this.onSlotClick(event, btn, index)}
           >
             {btn}

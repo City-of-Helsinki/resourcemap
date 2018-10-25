@@ -7,7 +7,7 @@ import Tooltip from 'components/Tooltip';
 const Wrapper = styled.div`
 	display: flex;
 	height: 100%;
-	padding: 5% 10% 5% 5%;
+	padding: 5%;
 	align-items: center;
 	position: relative;
 `;
