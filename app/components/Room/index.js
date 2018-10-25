@@ -11,22 +11,35 @@ const Polygon = props => {
 	);
 };
 
-const Path = props => {
-	return (
-		<path
-			d={props.d}
-			pointerEvents="visible"
-			cursor="pointer"
-			className={props.className}
-			onClick={event => props.onRoomClick(event, { ...props })}
-		/>
-	);
+const Path = ({ forwardedRef, ...props }) => (
+	<path
+		ref={forwardedRef}
+		id={props.id}
+		d={props.d}
+		pointerEvents="visible"
+		cursor="pointer"
+		className={props.className}
+		onClick={event => props.onRoomClick(event, { ...props })}
+	/>
+);
+
+const withAdvanced = Component => {
+	const forwardRef = function(props, ref) {
+		return <Component forwardedRef={ref} {...props} />;
+	};
+	return React.forwardRef(forwardRef);
 };
+
+const RoomAdvanced = withAdvanced(Path);
 
 class Room extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
+	}
+
+	componentDidMount() {
+		// console.log(this.getBoundingClientRect());
 	}
 
 	render() {
@@ -36,11 +49,11 @@ class Room extends React.Component {
 			category,
 			onRoomClick,
 			highlighted,
+			roomRef,
 			...props
 		} = this.props;
 
 		let className = category === highlighted ? 'active' : 'in-active';
-		// console.log('className', className);
 
 		if (svgtype === 'polygon') {
 			return (
@@ -53,8 +66,9 @@ class Room extends React.Component {
 			);
 		} else if (svgtype === 'path') {
 			return (
-				<Path
+				<RoomAdvanced
 					{...props}
+					ref={roomRef}
 					className={className}
 					available={available}
 					onRoomClick={onRoomClick}

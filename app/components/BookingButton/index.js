@@ -43,7 +43,7 @@ const BookingButton = props => {
 	return (
 		<React.Fragment>
 			<MainButton onClick={onClick} className={className}>
-				{props.text}
+				{text}
 			</MainButton>
 			{items.map(item => {
 				if (
@@ -53,7 +53,7 @@ const BookingButton = props => {
 					return (
 						<SubButton
 							key={item.id}
-							onClick={() => props.onSpaceNameClick(item.id)}
+							onClick={() => props.onSpaceNameClick(item)}
 						>
 							{item.name}
 						</SubButton>

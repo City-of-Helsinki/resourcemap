@@ -18,6 +18,7 @@ const SvgMap = props => {
 				height="456px"
 				viewBox="0 0 2000 456"
 				version="1.1"
+				ref={props.roomRef}
 			>
 				<g
 					id="Page-1"

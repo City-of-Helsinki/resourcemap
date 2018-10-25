@@ -5,6 +5,7 @@ import SvgMap from 'components/SvgMap';
 import Tooltip from 'components/Tooltip';
 
 const Wrapper = styled.div`
+	width: 70%;
 	display: flex;
 	height: 100%;
 	padding: 5%;
@@ -22,60 +23,37 @@ const Content = styled.div`
 class MapContainer extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			currentRoom: {
-				title: 'Tilan nimi',
-				available: 'Tietoa tilasta',
-			},
-
-			tooltipState: {
-				current: null,
-				visible: false,
-			},
-			x: 0,
-			y: 0,
-		};
-
-		this.handleRoomClick = this.handleRoomClick.bind(this);
 	}
 
-	handleRoomClick(event, space) {
-		const spaceItem = space;
-		let spaceTitle = spaceItem.name;
-		let showTooltip = false;
-		const rect = event.target.getBoundingClientRect();
-		const x = Math.round(rect.left);
-		const y = Math.round(rect.top);
-		const width = rect.width;
-		const xPos = Math.round(x + rect.width / 2);
+	componentDidMount() {}
 
-		console.log('MapContainer/handleRoomClick: ', space);
+	// handleRoomClick2(item, x, y) {
+	// 	console.log('roomie!', x, y);
+	// 	const spaceItem = item;
+	// 	let spaceTitle = spaceItem.name;
+	// 	let showTooltip = false;
 
-		if (this.state.currentRoom.title === spaceTitle) {
-			showTooltip = false;
-			spaceTitle = '';
-		} else {
-			showTooltip = true;
-		}
-
-		this.setState(function(prevState, props) {
-			return {
-				tooltipState: {
-					visible: showTooltip,
-				},
-				currentRoom: {
-					title: spaceTitle,
-					available: spaceItem.available,
-				},
-				x: xPos,
-				y: y,
-			};
-		});
-	}
+	// 	if (this.state.currentRoom.title === spaceTitle) {
+	// 		showTooltip = false;
+	// 		spaceTitle = '';
+	// 	} else {
+	// 		showTooltip = true;
+	// 	}
+	// }
 
 	render() {
-		const { currentRoom, tooltipState, x, y } = this.state;
-		const { spaces, structures, icons, highlighted } = this.props;
+		// const { currentRoom, tooltipState, x, y } = this.state;
+		const {
+			spaces,
+			structures,
+			icons,
+			highlighted,
+			currentRoom,
+			tooltipState,
+			x,
+			y,
+			roomRef,
+		} = this.props;
 
 		return (
 			<Wrapper>
@@ -84,8 +62,9 @@ class MapContainer extends React.Component {
 						rooms={spaces}
 						structures={structures}
 						icons={icons}
-						onRoomClick={this.handleRoomClick}
+						onRoomClick={this.props.handleRoomClick}
 						highlighted={highlighted}
+						roomRef={roomRef}
 					/>
 					{tooltipState.visible && (
 						<Tooltip content={currentRoom} x={x} y={y} />

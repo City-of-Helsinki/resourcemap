@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import Sidebar from 'components/Sidebar';
-import MapView from 'components/MapView';
+import MapContainer from 'components/MapContainer';
 
 import messages from './messages';
 
@@ -111,12 +111,61 @@ class Container extends React.Component {
 
 			highlighted: '',
 
+			currentRoom: {
+				title: 'Tilan nimi',
+				available: 'Tietoa tilasta',
+			},
+
+			tooltipState: {
+				current: null,
+				visible: false,
+			},
 			x: 0,
 			y: 0,
 		};
 
+		this.roomRef = React.createRef();
 		this.highlightRoomType = this.highlightRoomType.bind(this);
 		this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
+		this.handleRoomClick = this.handleRoomClick.bind(this);
+		this.roomTooltip = this.roomTooltip.bind(this);
+	}
+
+	handleRoomClick(event, space) {
+		this.roomTooltip(event.target, space);
+	}
+
+	roomTooltip(spaceElement, space) {
+		const spaceItem = space;
+		const rect = spaceElement.getBoundingClientRect();
+		const x = Math.round(rect.left);
+		const y = Math.round(rect.top);
+		const width = rect.width;
+		const xPos = Math.round(x + rect.width / 2);
+
+		let spaceTitle = spaceItem.name;
+		let showTooltip = false;
+
+		if (this.state.currentRoom.title === spaceTitle) {
+			showTooltip = false;
+			spaceTitle = '';
+		} else {
+			showTooltip = true;
+		}
+
+		this.setState(function(prevState, props) {
+			return {
+				tooltipState: {
+					visible: showTooltip,
+				},
+				currentRoom: {
+					title: spaceTitle,
+					available: spaceItem.available,
+				},
+				x: xPos,
+				y: y,
+			};
+		});
 	}
 
 	highlightRoomType(highlight) {
@@ -132,20 +181,40 @@ class Container extends React.Component {
 		});
 	}
 
-	onSpaceNameClick(spaceID) {
-		console.log('Container/onSpaceNameClick', spaceID);
+	onSpaceNameClick(space) {
+		const spaceElementId = `#${space.id}`;
+		const spaceElement = this.roomRef.current.querySelector(spaceElementId);
+
+		this.roomTooltip(spaceElement, space);
 	}
 
 	render() {
-		const { spaces, structures, icons, highlighted } = this.state;
+		const {
+			spaces,
+			structures,
+			icons,
+			highlighted,
+			currentRoom,
+			tooltipState,
+			x,
+			y,
+		} = this.state;
+
 		return (
 			<Wrapper>
-				<MapView
+				<MapContainer
 					spaces={spaces}
 					structures={structures}
 					icons={icons}
 					highlighted={highlighted}
+					currentRoom={currentRoom}
+					tooltipState={tooltipState}
+					handleRoomClick={this.handleRoomClick}
+					x={x}
+					y={y}
+					roomRef={this.roomRef}
 				/>
+
 				<Sidebar
 					spaces={spaces}
 					onSpaceCategoryClick={this.highlightRoomType}
