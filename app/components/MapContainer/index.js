@@ -40,17 +40,16 @@ class MapContainer extends React.Component {
 	}
 
 	handleRoomClick(event, space) {
-		let spaceItem = space;
+		const spaceItem = space;
 		let spaceTitle = spaceItem.name;
 		let showTooltip = false;
-
 		const rect = event.target.getBoundingClientRect();
 		const x = Math.round(rect.left);
 		const y = Math.round(rect.top);
 		const width = rect.width;
 		const xPos = Math.round(x + rect.width / 2);
 
-		console.log(rect.height);
+		console.log('MapContainer/handleRoomClick: ', space);
 
 		if (this.state.currentRoom.title === spaceTitle) {
 			showTooltip = false;

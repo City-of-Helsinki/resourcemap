@@ -109,22 +109,14 @@ class Container extends React.Component {
 				},
 			],
 
-			currentRoom: {
-				title: 'Tilan nimi',
-				available: 'Tietoa tilasta',
-			},
-
 			highlighted: '',
 
-			tooltipState: {
-				current: null,
-				visible: false,
-			},
 			x: 0,
 			y: 0,
 		};
 
 		this.highlightRoomType = this.highlightRoomType.bind(this);
+		this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
 	}
 
 	highlightRoomType(highlight) {
@@ -140,6 +132,10 @@ class Container extends React.Component {
 		});
 	}
 
+	onSpaceNameClick(spaceID) {
+		console.log('Container/onSpaceNameClick', spaceID);
+	}
+
 	render() {
 		const { spaces, structures, icons, highlighted } = this.state;
 		return (
@@ -152,7 +148,8 @@ class Container extends React.Component {
 				/>
 				<Sidebar
 					spaces={spaces}
-					onButtonClick={this.highlightRoomType}
+					onSpaceCategoryClick={this.highlightRoomType}
+					onSpaceNameClick={this.onSpaceNameClick}
 				/>
 			</Wrapper>
 		);

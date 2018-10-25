@@ -63,7 +63,6 @@ const TooltipContainer = styled.div`
 `;
 
 const Tooltip = props => {
-	console.log('Tooltips X and Y: ', props.x, props.y);
 	return (
 		<TooltipContainer x={props.x} y={props.y}>
 			<TooltipWrapper>

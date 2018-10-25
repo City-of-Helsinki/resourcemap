@@ -11,13 +11,13 @@ class ButtonList extends React.Component {
       activeIndex: null,
       condition: false,
     };
-    this.onSlotClick = this.onSlotClick.bind(this);
+    this.onSpaceCategoryClick = this.onSpaceCategoryClick.bind(this);
+    this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
   }
 
-  onSlotClick(event, slot, index) {
-    this.props.onButtonClick(slot);
-    let btnindex = index === this.state.activeIndex ? null : index;
-    console.log('slot', slot, event.target);
+  onSpaceCategoryClick(event, slot, index) {
+    this.props.onSpaceCategoryClick(slot);
+    const btnindex = index === this.state.activeIndex ? null : index;
 
     this.setState(function(prevState, props) {
       return {
@@ -27,12 +27,16 @@ class ButtonList extends React.Component {
     });
   }
 
+  onSpaceNameClick(id) {
+    this.props.onSpaceNameClick(id);
+  }
+
   render() {
     const { spaces } = this.props;
     const { activeIndex } = this.state;
     const uniqueCats = [...new Set(spaces.map(({ category }) => category))];
     let className = '';
-
+    // console.log('spaces: ', spaces);
     return (
       <Wrapper className="c-buttonlist">
         {uniqueCats.map((btn, index) => (
@@ -40,8 +44,10 @@ class ButtonList extends React.Component {
             key={btn}
             id={btn}
             text={btn}
+            items={spaces}
             className={activeIndex === index ? 'btn--active' : 'btn'}
-            onClick={event => this.onSlotClick(event, btn, index)}
+            onSpaceNameClick={this.onSpaceNameClick}
+            onClick={event => this.onSpaceCategoryClick(event, btn, index)}
           >
             {btn}
           </BookingButton>

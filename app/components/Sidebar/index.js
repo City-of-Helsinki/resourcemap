@@ -15,11 +15,16 @@ const H2 = styled.h2`
 class Sidebar extends React.Component {
 	constructor(props) {
 		super(props);
-		this.onSlotClick = this.onSlotClick.bind(this);
+		this.onSpaceCategoryClick = this.onSpaceCategoryClick.bind(this);
+		this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
 	}
 
-	onSlotClick(slot) {
-		this.props.onButtonClick(slot);
+	onSpaceCategoryClick(slot) {
+		this.props.onSpaceCategoryClick(slot);
+	}
+
+	onSpaceNameClick(id) {
+		this.props.onSpaceNameClick(id);
 	}
 
 	render() {
@@ -30,7 +35,8 @@ class Sidebar extends React.Component {
 				</H2>
 				<ButtonList
 					spaces={this.props.spaces}
-					onButtonClick={this.onSlotClick}
+					onSpaceCategoryClick={this.onSpaceCategoryClick}
+					onSpaceNameClick={this.onSpaceNameClick}
 				/>
 				<LocaleToggle />
 			</Wrapper>
