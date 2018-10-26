@@ -38,7 +38,6 @@ const SubButton = styled(MainButton)`
 const BookingButton = props => {
 	const { text, className, onClick, items, onSpaceNameClick } = props;
 	const buttonCategory = text;
-	// console.log(text, items);
 
 	return (
 		<React.Fragment>

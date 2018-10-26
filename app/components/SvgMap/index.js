@@ -44,7 +44,7 @@ const SvgMap = props => {
 									available={item.available}
 									id={item.id}
 									d={item.d}
-									onRoomClick={() => false}
+									onSpaceClick={() => false}
 								/>
 							))}
 						</g>
@@ -66,7 +66,7 @@ const SvgMap = props => {
 									id={item.id}
 									d={item.d}
 									category={item.category}
-									onRoomClick={props.onRoomClick}
+									onSpaceClick={props.onSpaceClick}
 									highlighted={props.highlighted}
 								/>
 							))}
@@ -85,7 +85,7 @@ const SvgMap = props => {
 									available={item.available}
 									id={item.id}
 									d={item.d}
-									onRoomClick={props.onRoomClick}
+									onSpaceClick={props.onSpaceClick}
 								/>
 							))}
 						</g>

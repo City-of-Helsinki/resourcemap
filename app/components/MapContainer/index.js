@@ -20,59 +20,36 @@ const Content = styled.div`
 	}
 `;
 
-class MapContainer extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+const MapContainer = props => {
+	const {
+		spaces,
+		structures,
+		icons,
+		highlighted,
+		currentSpace,
+		tooltipState,
+		x,
+		y,
+		roomRef,
+	} = props;
 
-	componentDidMount() {}
-
-	// handleRoomClick2(item, x, y) {
-	// 	console.log('roomie!', x, y);
-	// 	const spaceItem = item;
-	// 	let spaceTitle = spaceItem.name;
-	// 	let showTooltip = false;
-
-	// 	if (this.state.currentRoom.title === spaceTitle) {
-	// 		showTooltip = false;
-	// 		spaceTitle = '';
-	// 	} else {
-	// 		showTooltip = true;
-	// 	}
-	// }
-
-	render() {
-		// const { currentRoom, tooltipState, x, y } = this.state;
-		const {
-			spaces,
-			structures,
-			icons,
-			highlighted,
-			currentRoom,
-			tooltipState,
-			x,
-			y,
-			roomRef,
-		} = this.props;
-
-		return (
-			<Wrapper>
-				<Content>
-					<SvgMap
-						rooms={spaces}
-						structures={structures}
-						icons={icons}
-						onRoomClick={this.props.handleRoomClick}
-						highlighted={highlighted}
-						roomRef={roomRef}
-					/>
-					{tooltipState.visible && (
-						<Tooltip content={currentRoom} x={x} y={y} />
-					)}
-				</Content>
-			</Wrapper>
-		);
-	}
-}
+	return (
+		<Wrapper>
+			<Content>
+				<SvgMap
+					rooms={spaces}
+					structures={structures}
+					icons={icons}
+					onSpaceClick={props.handleSpaceClick}
+					highlighted={highlighted}
+					roomRef={roomRef}
+				/>
+				{tooltipState.visible && (
+					<Tooltip content={currentSpace} x={x} y={y} />
+				)}
+			</Content>
+		</Wrapper>
+	);
+};
 
 export default MapContainer;

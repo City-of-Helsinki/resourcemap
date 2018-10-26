@@ -36,7 +36,7 @@ class ButtonList extends React.Component {
     const { activeIndex } = this.state;
     const uniqueCats = [...new Set(spaces.map(({ category }) => category))];
     let className = '';
-    // console.log('spaces: ', spaces);
+
     return (
       <Wrapper className="c-buttonlist">
         {uniqueCats.map((btn, index) => (

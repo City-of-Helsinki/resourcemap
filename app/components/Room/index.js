@@ -19,7 +19,7 @@ const Path = ({ forwardedRef, ...props }) => (
 		pointerEvents="visible"
 		cursor="pointer"
 		className={props.className}
-		onClick={event => props.onRoomClick(event, { ...props })}
+		onClick={event => props.onSpaceClick(event, { ...props })}
 	/>
 );
 

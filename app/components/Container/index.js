@@ -111,7 +111,7 @@ class Container extends React.Component {
 
 			highlighted: '',
 
-			currentRoom: {
+			currentSpace: {
 				title: 'Tilan nimi',
 				available: 'Tietoa tilasta',
 			},
@@ -125,17 +125,17 @@ class Container extends React.Component {
 		};
 
 		this.roomRef = React.createRef();
-		this.highlightRoomType = this.highlightRoomType.bind(this);
+		this.highlightSpaceType = this.highlightSpaceType.bind(this);
 		this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
-		this.handleRoomClick = this.handleRoomClick.bind(this);
-		this.roomTooltip = this.roomTooltip.bind(this);
+		this.handleSpaceClick = this.handleSpaceClick.bind(this);
+		this.spaceTooltip = this.spaceTooltip.bind(this);
 	}
 
-	handleRoomClick(event, space) {
-		this.roomTooltip(event.target, space);
+	handleSpaceClick(event, space) {
+		this.spaceTooltip(event.target, space);
 	}
 
-	roomTooltip(spaceElement, space) {
+	spaceTooltip(spaceElement, space) {
 		const spaceItem = space;
 		const rect = spaceElement.getBoundingClientRect();
 		const x = Math.round(rect.left);
@@ -146,7 +146,7 @@ class Container extends React.Component {
 		let spaceTitle = spaceItem.name;
 		let showTooltip = false;
 
-		if (this.state.currentRoom.title === spaceTitle) {
+		if (this.state.currentSpace.title === spaceTitle) {
 			showTooltip = false;
 			spaceTitle = '';
 		} else {
@@ -158,7 +158,7 @@ class Container extends React.Component {
 				tooltipState: {
 					visible: showTooltip,
 				},
-				currentRoom: {
+				currentSpace: {
 					title: spaceTitle,
 					available: spaceItem.available,
 				},
@@ -168,7 +168,7 @@ class Container extends React.Component {
 		});
 	}
 
-	highlightRoomType(highlight) {
+	highlightSpaceType(highlight) {
 		let hl = highlight;
 		if (this.state.highlighted === hl) {
 			hl = '';
@@ -185,7 +185,7 @@ class Container extends React.Component {
 		const spaceElementId = `#${space.id}`;
 		const spaceElement = this.roomRef.current.querySelector(spaceElementId);
 
-		this.roomTooltip(spaceElement, space);
+		this.spaceTooltip(spaceElement, space);
 	}
 
 	render() {
@@ -194,7 +194,7 @@ class Container extends React.Component {
 			structures,
 			icons,
 			highlighted,
-			currentRoom,
+			currentSpace,
 			tooltipState,
 			x,
 			y,
@@ -207,9 +207,9 @@ class Container extends React.Component {
 					structures={structures}
 					icons={icons}
 					highlighted={highlighted}
-					currentRoom={currentRoom}
+					currentSpace={currentSpace}
 					tooltipState={tooltipState}
-					handleRoomClick={this.handleRoomClick}
+					handleSpaceClick={this.handleSpaceClick}
 					x={x}
 					y={y}
 					roomRef={this.roomRef}
@@ -217,7 +217,7 @@ class Container extends React.Component {
 
 				<Sidebar
 					spaces={spaces}
-					onSpaceCategoryClick={this.highlightRoomType}
+					onSpaceCategoryClick={this.highlightSpaceType}
 					onSpaceNameClick={this.onSpaceNameClick}
 				/>
 			</Wrapper>
