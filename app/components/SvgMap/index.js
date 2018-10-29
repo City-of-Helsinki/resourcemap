@@ -37,12 +37,9 @@ const SvgMap = props => {
 						>
 							{props.structures.map(item => (
 								<Room
+									{...props}
 									key={item.id}
-									name={item.name}
 									svgtype={item.svgtype}
-									info={item.info}
-									available={item.available}
-									id={item.id}
 									d={item.d}
 									onSpaceClick={() => false}
 								/>
@@ -68,6 +65,7 @@ const SvgMap = props => {
 									category={item.category}
 									onSpaceClick={props.onSpaceClick}
 									highlighted={props.highlighted}
+									currentSpace={props.currentSpace}
 								/>
 							))}
 						</g>
@@ -78,6 +76,7 @@ const SvgMap = props => {
 						>
 							{props.icons.map(item => (
 								<Room
+									{...props}
 									key={item.id}
 									name={item.name}
 									svgtype={item.svgtype}

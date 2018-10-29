@@ -35,32 +35,65 @@ const SubButton = styled(MainButton)`
 	}
 `;
 
-const BookingButton = props => {
-	const { text, className, onClick, items, onSpaceNameClick } = props;
-	const buttonCategory = text;
+class BookingButton extends React.Component {
+	constructor(props) {
+		super(props);
 
-	return (
-		<React.Fragment>
-			<MainButton onClick={onClick} className={className}>
-				{text}
-			</MainButton>
-			{items.map(item => {
-				if (
-					buttonCategory === item.category &&
-					className === 'btn--active'
-				) {
-					return (
-						<SubButton
-							key={item.id}
-							onClick={() => props.onSpaceNameClick(item)}
-						>
-							{item.name}
-						</SubButton>
-					);
-				}
-			})}
-		</React.Fragment>
-	);
-};
+		this.state = {
+			subActiveIndex: null,
+		};
+
+		this.onButtonClick = this.onButtonClick.bind(this);
+	}
+
+	onButtonClick(item) {
+		this.props.onSpaceNameClick(item);
+		const btnindex = index === this.state.subActiveIndex ? null : index;
+
+		this.setState(function(prevState, props) {
+			return {
+				subActiveIndex: btnindex,
+			};
+		});
+	}
+
+	render() {
+		const {
+			text,
+			className,
+			onClick,
+			items,
+			onSpaceNameClick,
+		} = this.props;
+
+		const clickedCategoryName = text;
+		const { subActiveIndex } = this.state;
+
+		return (
+			<React.Fragment>
+				<MainButton onClick={onClick} className={className}>
+					{text}
+				</MainButton>
+				{items.map((item, index) => {
+					if (text === item.category && className === 'btn--active') {
+						return (
+							<SubButton
+								key={item.id}
+								onClick={() => this.onButtonClick(item)}
+								className={
+									subActiveIndex === index
+										? 'btn--active'
+										: 'btn'
+								}
+							>
+								{item.name}
+							</SubButton>
+						);
+					}
+				})}
+			</React.Fragment>
+		);
+	}
+}
 
 export default BookingButton;

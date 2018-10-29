@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import Sidebar from 'components/Sidebar';
 import MapContainer from 'components/MapContainer';
-
 import messages from './messages';
 
 const Wrapper = styled.section`
@@ -112,6 +110,7 @@ class Container extends React.Component {
 			highlighted: '',
 
 			currentSpace: {
+				id: 'Tilan id',
 				title: 'Tilan nimi',
 				available: 'Tietoa tilasta',
 			},
@@ -122,6 +121,7 @@ class Container extends React.Component {
 			},
 			x: 0,
 			y: 0,
+			isClicked: false,
 		};
 
 		this.roomRef = React.createRef();
@@ -145,6 +145,7 @@ class Container extends React.Component {
 
 		let spaceTitle = spaceItem.name;
 		let showTooltip = false;
+		let isClicked = false;
 
 		if (this.state.currentSpace.title === spaceTitle) {
 			showTooltip = false;
@@ -159,6 +160,7 @@ class Container extends React.Component {
 					visible: showTooltip,
 				},
 				currentSpace: {
+					id: spaceElement.id,
 					title: spaceTitle,
 					available: spaceItem.available,
 				},
@@ -184,7 +186,6 @@ class Container extends React.Component {
 	onSpaceNameClick(space) {
 		const spaceElementId = `#${space.id}`;
 		const spaceElement = this.roomRef.current.querySelector(spaceElementId);
-
 		this.spaceTooltip(spaceElement, space);
 	}
 

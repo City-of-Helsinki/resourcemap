@@ -39,7 +39,10 @@ injectGlobal`
     line-height: 1.5em;
   }
 
-  path.active {
-    fill: #E7F6EA !important; 
+  path.is-highlighted, path.active {
+    fill: #E7F6EA;
+  }
+  path.clicked {
+     fill: #28A745; 
   }
 `;

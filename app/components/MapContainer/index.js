@@ -43,6 +43,7 @@ const MapContainer = props => {
 					onSpaceClick={props.handleSpaceClick}
 					highlighted={highlighted}
 					roomRef={roomRef}
+					currentSpace={currentSpace}
 				/>
 				{tooltipState.visible && (
 					<Tooltip content={currentSpace} x={x} y={y} />
