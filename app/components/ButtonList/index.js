@@ -9,18 +9,20 @@ class ButtonList extends React.Component {
     super(props);
     this.state = {
       activeIndex: null,
+      activeChild: null,
     };
     this.onSpaceCategoryClick = this.onSpaceCategoryClick.bind(this);
     this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
   }
 
-  onSpaceCategoryClick(event, slot, index) {
-    this.props.onSpaceCategoryClick(slot);
+  onSpaceCategoryClick(event, category, index) {
+    this.props.onSpaceCategoryClick(category);
     const btnindex = index === this.state.activeIndex ? null : index;
 
     this.setState(function(prevState, props) {
       return {
         activeIndex: btnindex,
+        activeChild: category,
       };
     });
   }
@@ -30,8 +32,8 @@ class ButtonList extends React.Component {
   }
 
   render() {
-    const { spaces } = this.props;
-    const { activeIndex } = this.state;
+    const { spaces, currentSpace } = this.props;
+    const { activeIndex, activeChild } = this.state;
     const uniqueCats = [...new Set(spaces.map(({ category }) => category))];
 
     return (
@@ -42,6 +44,7 @@ class ButtonList extends React.Component {
             id={btn}
             text={btn}
             items={spaces}
+            currentSpace={currentSpace}
             className={activeIndex === index ? 'btn--active' : 'btn'}
             onSpaceNameClick={this.onSpaceNameClick}
             onClick={event => this.onSpaceCategoryClick(event, btn, index)}

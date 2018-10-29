@@ -15,7 +15,7 @@ const MainButton = styled(BasicButton)`
 
 	&.btn {
 		&--active {
-			background-color: black;
+			background-color: #33aa33;
 			color: white;
 		}
 	}
@@ -27,7 +27,8 @@ const SubButton = styled(MainButton)`
 	border-radius: 0;
 	margin-bottom: 7px;
 	background-color: #d8d8d8;
-	&.btn {
+
+	&.sub-btn {
 		&--active {
 			background-color: black;
 			color: white;
@@ -46,9 +47,27 @@ class BookingButton extends React.Component {
 		this.onButtonClick = this.onButtonClick.bind(this);
 	}
 
+	componentDidMount() {
+		// console.log('BookingButton mounted', this.props.text);
+	}
+
+	componentDidUpdate(prevProps, props) {
+		if (this.props.className === prevProps.className) {
+			// this.setState(function(prevState, props) {
+			// 	return {
+			// 		subActiveIndex: null,
+			// 	};
+			// });
+			console.log('BookingButton updated!', this.props.className);
+		}
+		// console.log('BookingButton updated!', this.props.className);
+	}
+
 	onButtonClick(item) {
 		this.props.onSpaceNameClick(item);
-		const btnindex = index === this.state.subActiveIndex ? null : index;
+		let btnindex = item.id === this.state.subActiveIndex ? null : item.id;
+
+		// console.log(item);
 
 		this.setState(function(prevState, props) {
 			return {
@@ -63,27 +82,34 @@ class BookingButton extends React.Component {
 			className,
 			onClick,
 			items,
+			id,
 			onSpaceNameClick,
+			currentSpace,
 		} = this.props;
 
 		const clickedCategoryName = text;
 		const { subActiveIndex } = this.state;
+
+		console.log(currentSpace);
 
 		return (
 			<React.Fragment>
 				<MainButton onClick={onClick} className={className}>
 					{text}
 				</MainButton>
-				{items.map((item, index) => {
-					if (text === item.category && className === 'btn--active') {
+				{items.map(item => {
+					if (
+						item.category === clickedCategoryName &&
+						className === 'btn--active'
+					) {
 						return (
 							<SubButton
 								key={item.id}
 								onClick={() => this.onButtonClick(item)}
 								className={
-									subActiveIndex === index
-										? 'btn--active'
-										: 'btn'
+									subActiveIndex === item.id
+										? 'sub-btn--active'
+										: 'sub-btn'
 								}
 							>
 								{item.name}

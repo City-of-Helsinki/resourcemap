@@ -28,13 +28,15 @@ class Sidebar extends React.Component {
 	}
 
 	render() {
+		const { spaces, currentSpace } = this.props;
 		return (
 			<Wrapper>
 				<H2>
 					<FormattedMessage {...messages.title} />
 				</H2>
 				<ButtonList
-					spaces={this.props.spaces}
+					currentSpace={currentSpace}
+					spaces={spaces}
 					onSpaceCategoryClick={this.onSpaceCategoryClick}
 					onSpaceNameClick={this.onSpaceNameClick}
 				/>

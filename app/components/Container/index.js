@@ -145,11 +145,15 @@ class Container extends React.Component {
 
 		let spaceTitle = spaceItem.name;
 		let showTooltip = false;
-		let isClicked = false;
+
+		let currentSpaceId = spaceElement.id;
+
+		// console.log(spaceElement.getAttribute('class'));
 
 		if (this.state.currentSpace.title === spaceTitle) {
 			showTooltip = false;
 			spaceTitle = '';
+			currentSpaceId = '';
 		} else {
 			showTooltip = true;
 		}
@@ -160,7 +164,7 @@ class Container extends React.Component {
 					visible: showTooltip,
 				},
 				currentSpace: {
-					id: spaceElement.id,
+					id: currentSpaceId,
 					title: spaceTitle,
 					available: spaceItem.available,
 				},
@@ -179,6 +183,12 @@ class Container extends React.Component {
 		this.setState(function(prevState, props) {
 			return {
 				highlighted: hl,
+				currentSpace: {
+					title: undefined,
+				},
+				tooltipState: {
+					visible: false,
+				},
 			};
 		});
 	}
@@ -218,6 +228,7 @@ class Container extends React.Component {
 
 				<Sidebar
 					spaces={spaces}
+					currentSpace={currentSpace}
 					onSpaceCategoryClick={this.highlightSpaceType}
 					onSpaceNameClick={this.onSpaceNameClick}
 				/>

@@ -24,6 +24,10 @@ const Path = props => (
 class Room extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			isActive: false,
+		};
 	}
 
 	render() {
@@ -38,7 +42,17 @@ class Room extends React.Component {
 			...props
 		} = this.props;
 
-		let className = category === highlighted ? 'is-highlighted' : '';
+		console.log(this.props);
+
+		let classNameHighlighted =
+			category === highlighted ? 'is-highlighted' : '';
+		let className = '';
+
+		if (currentSpace.id === id) {
+			className = classNameHighlighted + ' clicked';
+		} else {
+			className = classNameHighlighted;
+		}
 
 		if (svgtype === 'polygon') {
 			return (
