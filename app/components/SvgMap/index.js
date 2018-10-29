@@ -1,6 +1,7 @@
 import React from 'react';
 import Room from 'components/Room';
 import styled from 'styled-components';
+import Icons from './icons';
 
 const Div = styled.div`
 	position: relative;
@@ -72,21 +73,13 @@ const SvgMap = props => {
 
 						<g
 							id="ikonit"
-							transform="translate(119.000000, 18.000000)"
+							fill="#000000"
+							fillRule="nonzero"
+							stroke="#000000"
+							strokeWidth="0"
+							transform="translate(24.000000, 18.000000)"
 						>
-							{props.icons.map(item => (
-								<Room
-									{...props}
-									key={item.id}
-									name={item.name}
-									svgtype={item.svgtype}
-									info={item.info}
-									available={item.available}
-									id={item.id}
-									d={item.d}
-									onSpaceClick={props.onSpaceClick}
-								/>
-							))}
+							<Icons />
 						</g>
 					</g>
 				</g>

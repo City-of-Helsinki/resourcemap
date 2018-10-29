@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Img from 'components/Img';
 import SvgMap from 'components/SvgMap';
 import Tooltip from 'components/Tooltip';
+import Icons from 'images/oodi-icons-descriptions.svg';
 
 const Wrapper = styled.div`
 	width: 70%;
@@ -16,7 +17,7 @@ const Wrapper = styled.div`
 const Content = styled.div`
 	position: relative;
 	img {
-		max-width: 100%;
+		max-width: 60%;
 	}
 `;
 
@@ -48,6 +49,7 @@ const MapContainer = props => {
 				{tooltipState.visible && (
 					<Tooltip content={currentSpace} x={x} y={y} />
 				)}
+				<Img src={Icons} />
 			</Content>
 		</Wrapper>
 	);
