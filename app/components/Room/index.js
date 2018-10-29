@@ -6,6 +6,7 @@ const Polygon = props => (
 		points={props.d}
 		pointerEvents="visible"
 		cursor="pointer"
+		className={props.className}
 		onClick={event => props.onRoomClick(event, { ...props })}
 	/>
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BasicButton from 'components/BasicButton';
+import Chevron from 'components/Chevron';
 
 const MainButton = styled(BasicButton)`
 	margin: 0 auto 1rem;
@@ -11,13 +12,6 @@ const MainButton = styled(BasicButton)`
 	white-space: nowrap;
 	&:last-of-type {
 		margin-bottom: 3rem;
-	}
-
-	&.btn {
-		&--active {
-			background-color: #33aa33;
-			color: white;
-		}
 	}
 `;
 
@@ -39,41 +33,11 @@ const SubButton = styled(MainButton)`
 class BookingButton extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			subActiveIndex: null,
-		};
-
 		this.onButtonClick = this.onButtonClick.bind(this);
-	}
-
-	componentDidMount() {
-		// console.log('BookingButton mounted', this.props.text);
-	}
-
-	componentDidUpdate(prevProps, props) {
-		if (this.props.className === prevProps.className) {
-			// this.setState(function(prevState, props) {
-			// 	return {
-			// 		subActiveIndex: null,
-			// 	};
-			// });
-			console.log('BookingButton updated!', this.props.className);
-		}
-		// console.log('BookingButton updated!', this.props.className);
 	}
 
 	onButtonClick(item) {
 		this.props.onSpaceNameClick(item);
-		let btnindex = item.id === this.state.subActiveIndex ? null : item.id;
-
-		// console.log(item);
-
-		this.setState(function(prevState, props) {
-			return {
-				subActiveIndex: btnindex,
-			};
-		});
 	}
 
 	render() {
@@ -88,14 +52,14 @@ class BookingButton extends React.Component {
 		} = this.props;
 
 		const clickedCategoryName = text;
-		const { subActiveIndex } = this.state;
-
-		console.log(currentSpace);
 
 		return (
 			<React.Fragment>
 				<MainButton onClick={onClick} className={className}>
 					{text}
+					<Chevron
+						className={className === 'btn--active' ? 'up' : 'down'}
+					/>
 				</MainButton>
 				{items.map(item => {
 					if (
@@ -107,7 +71,7 @@ class BookingButton extends React.Component {
 								key={item.id}
 								onClick={() => this.onButtonClick(item)}
 								className={
-									subActiveIndex === item.id
+									currentSpace.id == item.id
 										? 'sub-btn--active'
 										: 'sub-btn'
 								}
