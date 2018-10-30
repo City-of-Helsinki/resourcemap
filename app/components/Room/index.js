@@ -1,31 +1,20 @@
 import React from 'react';
+import Path from 'components/Path';
 
-const Polygon = props => (
-	<polygon
-		id={props.id}
-		points={props.d}
-		pointerEvents="visible"
-		cursor="pointer"
-		className={props.className}
-		onClick={event => props.onRoomClick(event, { ...props })}
-	/>
-);
-
-const Path = props => (
-	<path
-		id={props.id}
-		d={props.d}
-		pointerEvents="visible"
-		cursor="pointer"
-		className={props.className}
-		onClick={event => props.onSpaceClick(event, { ...props })}
-	/>
-);
+// const Path = props => (
+// 	<path
+// 		id={props.id}
+// 		d={props.d}
+// 		pointerEvents="visible"
+// 		cursor="pointer"
+// 		className={props.className}
+// 		onClick={event => props.onSpaceClick(event, { ...props })}
+// 	/>
+// );
 
 class Room extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			isActive: false,
 		};
@@ -45,6 +34,7 @@ class Room extends React.Component {
 
 		let classNameHighlighted =
 			category === highlighted ? 'is-highlighted' : '';
+
 		let className = '';
 
 		if (currentSpace.id === id) {
@@ -53,27 +43,17 @@ class Room extends React.Component {
 			className = classNameHighlighted;
 		}
 
-		if (svgtype === 'polygon') {
-			return (
-				<Polygon
-					{...props}
-					id={id}
-					className={className}
-					onSpaceClick={onSpaceClick}
-				/>
-			);
-		} else if (svgtype === 'path') {
-			return (
-				<Path
-					{...props}
-					id={id}
-					className={className}
-					onSpaceClick={onSpaceClick}
-				/>
-			);
-		} else {
-			// return false;
-		}
+		className = className + ' ' + available;
+
+		return (
+			<Path
+				{...props}
+				available={available}
+				id={id}
+				className={className}
+				onSpaceClick={onSpaceClick}
+			/>
+		);
 	}
 }
 

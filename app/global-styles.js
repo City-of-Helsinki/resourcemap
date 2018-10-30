@@ -43,6 +43,16 @@ injectGlobal`
     fill: #E7F6EA;
   }
   path.clicked {
-     fill: #28A745; 
+    &.available {
+     fill: #28A745 !important;       
+    }
+
+    &.soon {
+      fill: #f5a623 !important;
+    }
+
+    &.taken {
+      fill: #d0021b !important;
+    }
   }
 `;

@@ -17,7 +17,7 @@ class Container extends React.Component {
 					id: 'c-1',
 					svgtype: 'path',
 					name: 'Alarivin huone 1',
-					available: 'available',
+					available: 'taken',
 					info: '',
 					d:
 						'M59.39,308.5 L59.39,385.76 L-0.93,385.76 L-0.93,308.5 L59.39,308.5 Z',
@@ -27,7 +27,7 @@ class Container extends React.Component {
 					id: 'c-2',
 					svgtype: 'path',
 					name: 'Alarivin huone 2',
-					available: 'available',
+					available: 'taken',
 					info: '',
 					d:
 						'M139.86,327.5 L139.86,385.75 L64.5,385.75 L64.5,327.5 L139.86,327.5 Z',
@@ -87,7 +87,7 @@ class Container extends React.Component {
 					id: 'c-8',
 					svgtype: 'path',
 					name: 'Alarivin huone 8',
-					available: 'available',
+					available: 'soon',
 					info: '',
 					d:
 						'M535.61,278.08 L535.61,368.75 L467.07,368.75 L467.07,278.08 L535.61,278.08 Z',
@@ -118,7 +118,7 @@ class Container extends React.Component {
 					id: 'north-2',
 					svgtype: 'path',
 					name: 'Pohjoisen huone 2',
-					available: 'available',
+					available: 'soon',
 					info: '',
 					d:
 						'M662.21,-0.83 L662.21,67.5 L626.16,67.5 L626.16,-0.83 L662.21,-0.83 Z',
@@ -128,7 +128,7 @@ class Container extends React.Component {
 					id: 'north-3',
 					svgtype: 'path',
 					name: 'Pohjoinen kolme',
-					available: 'available',
+					available: 'soon',
 					info: '',
 					d:
 						'M702.9,-0.83 L702.9,67.5 L668.15,67.5 L668.15,-0.83 L702.9,-0.83 Z',
@@ -158,7 +158,7 @@ class Container extends React.Component {
 					id: 'top-row-2',
 					svgtype: 'path',
 					name: 'Huone Kaksi',
-					available: 'available',
+					available: 'soon',
 					info: '',
 					d:
 						'M205.86,151.22 L205.86,198.2503 L110.946312,193.298371 L113.911999,151.22 L205.86,151.22 Z',
@@ -168,7 +168,7 @@ class Container extends React.Component {
 					id: 'top-row-3',
 					svgtype: 'path',
 					name: 'Kolmas Huone',
-					available: 'available',
+					available: 'soon',
 					info: '',
 					d:
 						'M289.63,151.22 L289.63,198.439832 L213.37,201.562682 L213.37,151.22 L289.63,151.22 Z',
@@ -178,7 +178,7 @@ class Container extends React.Component {
 					id: 'top-row-4',
 					svgtype: 'path',
 					name: 'Huone 4',
-					available: 'available',
+					available: 'taken',
 					info: '',
 					d:
 						'M347.223505,166.5 L344.304526,203.353476 L296.5,198.618775 L296.5,166.5 L347.223505,166.5 Z',
@@ -198,7 +198,7 @@ class Container extends React.Component {
 					id: 'middle-1',
 					svgtype: 'path',
 					name: 'Keskihuone 1',
-					available: 'available',
+					available: 'soon',
 					info: '',
 					d:
 						'M66.83,203.21 L66.83,252.5 L17.43,252.5 L17.43,203.21 L66.83,203.21 Z',
@@ -218,7 +218,7 @@ class Container extends React.Component {
 					id: 'middle-3',
 					svgtype: 'path',
 					name: 'Center row 3rd',
-					available: 'available',
+					available: 'taken',
 					info: '',
 					d:
 						'M428.7,227.531316 L381.36,229.421073 L381.36,193.26 L428.7,193.26 L428.7,227.531316 Z',
@@ -301,6 +301,7 @@ class Container extends React.Component {
 				currentSpace: {
 					title: '',
 					id: '',
+					available: '',
 				},
 				tooltipState: {
 					visible: false,
@@ -315,7 +316,7 @@ class Container extends React.Component {
 				currentSpace: {
 					id: '',
 					title: '',
-					available: null,
+					available: '',
 				},
 				tooltipState: {
 					visible: false,
