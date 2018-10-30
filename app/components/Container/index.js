@@ -246,6 +246,7 @@ class Container extends React.Component {
 		this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
 		this.handleSpaceClick = this.handleSpaceClick.bind(this);
 		this.spaceTooltip = this.spaceTooltip.bind(this);
+		this.resetActiveSpace = this.resetActiveSpace.bind(this);
 	}
 
 	handleSpaceClick(event, space) {
@@ -354,6 +355,7 @@ class Container extends React.Component {
 					x={x}
 					y={y}
 					roomRef={this.roomRef}
+					onTooltipClick={this.resetActiveSpace}
 				/>
 
 				<Sidebar

@@ -16,6 +16,8 @@ const MapContainer = props => {
 		x,
 		y,
 		roomRef,
+		onTooltipClick,
+		handleSpaceClick,
 	} = props;
 
 	let title;
@@ -27,13 +29,18 @@ const MapContainer = props => {
 				<H1>Oodi{title} </H1>
 				<SvgMap
 					rooms={spaces}
-					onSpaceClick={props.handleSpaceClick}
+					onSpaceClick={handleSpaceClick}
 					highlighted={highlighted}
 					roomRef={roomRef}
 					currentSpace={currentSpace}
 				/>
 				{tooltipState.visible && (
-					<Tooltip content={currentSpace} x={x} y={y} />
+					<Tooltip
+						content={currentSpace}
+						x={x}
+						y={y}
+						onClick={onTooltipClick}
+					/>
 				)}
 				<Img src={Icons} alt="Kartta ikonit" />
 			</Content>

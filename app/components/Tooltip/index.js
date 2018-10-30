@@ -10,7 +10,7 @@ const Tooltip = props => {
 	return (
 		<TooltipContainer x={props.x} y={props.y}>
 			<TooltipWrapper>
-				<CloseButton tooltip />
+				<CloseButton tooltip onClick={props.onClick} />
 				<H3>{props.content.title}</H3>
 				<P>
 					<VagancyIcon className={props.content.available} />
