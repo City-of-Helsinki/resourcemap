@@ -4,28 +4,11 @@ import Img from 'components/Img';
 import SvgMap from 'components/SvgMap';
 import Tooltip from 'components/Tooltip';
 import Icons from 'images/oodi-icons-descriptions.svg';
-
-const Wrapper = styled.div`
-	width: 70%;
-	display: flex;
-	height: 100%;
-	padding: 5%;
-	align-items: center;
-	position: relative;
-`;
-
-const Content = styled.div`
-	position: relative;
-	img {
-		max-width: 60%;
-	}
-`;
+import { Wrapper, Content } from './wrappers';
 
 const MapContainer = props => {
 	const {
 		spaces,
-		structures,
-		icons,
 		highlighted,
 		currentSpace,
 		tooltipState,
@@ -34,14 +17,15 @@ const MapContainer = props => {
 		roomRef,
 	} = props;
 
+	let title;
+	highlighted ? (title = `: ${highlighted}`) : (title = '');
+
 	return (
 		<Wrapper>
 			<Content>
-				<h1>{highlighted}</h1>
+				<h1>Oodi{title} </h1>
 				<SvgMap
 					rooms={spaces}
-					structures={structures}
-					icons={icons}
 					onSpaceClick={props.handleSpaceClick}
 					highlighted={highlighted}
 					roomRef={roomRef}

@@ -2,18 +2,12 @@ import React from 'react';
 import Room from 'components/Room';
 import styled from 'styled-components';
 import Icons from './icons';
-
-const Div = styled.div`
-	position: relative;
-	display: block;
-	svg {
-		max-width: 100%;
-	}
-`;
+import Structures from './structures';
+import { Wrapper, Content } from './wrappers';
 
 const SvgMap = props => {
 	return (
-		<Div>
+		<Wrapper>
 			<svg
 				width="2000px"
 				height="456px"
@@ -29,31 +23,16 @@ const SvgMap = props => {
 					fillRule="evenodd"
 				>
 					<g id="Oodi_Pohjakartta_2krs" fillRule="nonzero">
-						<g
-							id="structures"
-							fill="#FFFFFF"
-							fillRule="nonzero"
-							stroke="#000000"
-							strokeWidth="3"
-						>
-							{props.structures.map(item => (
-								<Room
-									{...props}
-									key={item.id}
-									svgtype={item.svgtype}
-									d={item.d}
-									onSpaceClick={() => false}
-								/>
-							))}
+						<g id="structures" fill="#FFFFFF" fillRule="nonzero">
+							<Structures />
 						</g>
 						<g
 							id="spaces"
 							fill="#FFFFFF"
 							fillRule="nonzero"
 							stroke="#000000"
-							strokeWidth="6"
-							strokeLinecap="round"
-							transform="translate(96.000000, 6.000000)"
+							strokeWidth="3"
+							transform="translate(99.000000, 9.000000)"
 						>
 							{props.rooms.map(item => (
 								<Room
@@ -85,7 +64,7 @@ const SvgMap = props => {
 					</g>
 				</g>
 			</svg>
-		</Div>
+		</Wrapper>
 	);
 };
 
