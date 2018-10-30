@@ -17,9 +17,7 @@ const SvgMap = props => {
 					fillRule="evenodd"
 				>
 					<g id="Oodi_Pohjakartta_2krs" fillRule="nonzero">
-						<g id="structures" fill="#FFFFFF" fillRule="nonzero">
-							<Structures />
-						</g>
+						<Structures />
 						<g
 							id="spaces"
 							fill="#FFFFFF"
@@ -45,16 +43,7 @@ const SvgMap = props => {
 							))}
 						</g>
 
-						<g
-							id="ikonit"
-							fill="#000000"
-							fillRule="nonzero"
-							stroke="#000000"
-							strokeWidth="0"
-							transform="translate(24.000000, 18.000000)"
-						>
-							<Icons />
-						</g>
+						<Icons />
 					</g>
 				</g>
 			</svg>

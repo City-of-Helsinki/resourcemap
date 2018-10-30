@@ -2,15 +2,15 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
 	available: {
-		id: 'Vagancy.text',
+		id: 'available',
 		defaultMessage: 'Vapaa',
 	},
 	soon: {
-		id: 'Vagancy.text',
+		id: 'soon',
 		defaultMessage: 'Vapautuu kohta',
 	},
 	taken: {
-		id: 'Vagancy.text',
+		id: 'taken',
 		defaultMessage: 'Varattu',
 	},
 });

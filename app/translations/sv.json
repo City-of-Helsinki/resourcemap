@@ -1,3 +1,6 @@
 {
-	"Sidebar.title": "Platsor"
+	"Sidebar.title": "Platsor",
+	"available": "Ledigt",
+	"soon": "Ledigt kohta",
+	"taken": "Upptaget"
 }

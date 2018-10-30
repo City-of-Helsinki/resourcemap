@@ -24,7 +24,9 @@ const VagancyList = props => {
 			{icons.map(item => (
 				<Container key={item.vagancy}>
 					<VagancyIcon className={item.vagancy} />
-					<P>{item.vagancy}</P>
+					<P>
+						<FormattedMessage {...messages[item.vagancy]} />
+					</P>
 				</Container>
 			))}
 		</Wrapper>

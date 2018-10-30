@@ -1,3 +1,6 @@
 {
-	"Sidebar.title": "Spaces"
+	"Sidebar.title": "Spaces",
+	"available": "Available",
+	"soon": "Available soon",
+	"taken": "Occupied"
 }

@@ -16,5 +16,8 @@
   "boilerplate.components.Confirm.cancel": "Peruuta varaus",
   "boilerplate.components.Confirm.resetLink": "Palaa alkuun",
   "boilerplate.components.Confirm.cancelledTitle": "Varaus peruttu",
-  "boilerplate.components.SceneStart.button.submit": "Varaa"
+  "boilerplate.components.SceneStart.button.submit": "Varaa",
+  "available": "Vapaa",
+  "soon": "Vapautuu kohta",
+  "taken": "Varattu"
 }
