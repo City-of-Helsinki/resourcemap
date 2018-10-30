@@ -4,13 +4,7 @@ import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import Sidebar from 'components/Sidebar';
 import MapContainer from 'components/MapContainer';
 import messages from './messages';
-
-const Wrapper = styled.section`
-	display: flex;
-	width: 100%;
-	height: 100%;
-	align-items: stretch;
-`;
+import { Wrapper } from './wrappers';
 
 class Container extends React.Component {
 	constructor(props) {
@@ -235,7 +229,7 @@ class Container extends React.Component {
 			currentSpace: {
 				id: 'Tilan id',
 				title: 'Tilan nimi',
-				available: 'Tietoa tilasta',
+				available: null,
 			},
 
 			tooltipState: {
@@ -268,10 +262,7 @@ class Container extends React.Component {
 
 		let spaceTitle = spaceItem.name;
 		let showTooltip = false;
-
 		let currentSpaceId = spaceElement.id;
-
-		// console.log(spaceElement.getAttribute('class'));
 
 		if (this.state.currentSpace.title === spaceTitle) {
 			showTooltip = false;
@@ -309,6 +300,21 @@ class Container extends React.Component {
 				currentSpace: {
 					title: '',
 					id: '',
+				},
+				tooltipState: {
+					visible: false,
+				},
+			};
+		});
+	}
+
+	resetActiveSpace() {
+		this.setState((prevState, props) => {
+			return {
+				currentSpace: {
+					id: '',
+					title: '',
+					available: null,
 				},
 				tooltipState: {
 					visible: false,

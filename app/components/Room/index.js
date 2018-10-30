@@ -43,8 +43,6 @@ class Room extends React.Component {
 			...props
 		} = this.props;
 
-		console.log(this.props);
-
 		let classNameHighlighted =
 			category === highlighted ? 'is-highlighted' : '';
 		let className = '';

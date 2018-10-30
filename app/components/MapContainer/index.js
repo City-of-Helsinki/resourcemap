@@ -5,6 +5,7 @@ import SvgMap from 'components/SvgMap';
 import Tooltip from 'components/Tooltip';
 import Icons from 'images/oodi-icons-descriptions.svg';
 import { Wrapper, Content } from './wrappers';
+import H1 from 'components/H1';
 
 const MapContainer = props => {
 	const {
@@ -23,7 +24,7 @@ const MapContainer = props => {
 	return (
 		<Wrapper>
 			<Content>
-				<h1>Oodi{title} </h1>
+				<H1>Oodi{title} </H1>
 				<SvgMap
 					rooms={spaces}
 					onSpaceClick={props.handleSpaceClick}
@@ -34,7 +35,7 @@ const MapContainer = props => {
 				{tooltipState.visible && (
 					<Tooltip content={currentSpace} x={x} y={y} />
 				)}
-				<Img src={Icons} />
+				<Img src={Icons} alt="Kartta ikonit" />
 			</Content>
 		</Wrapper>
 	);

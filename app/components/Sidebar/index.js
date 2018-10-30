@@ -3,14 +3,10 @@ import LocaleToggle from 'containers/LocaleToggle';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 
 import ButtonList from 'components/ButtonList';
-
+import H2 from 'components/H2';
 import Wrapper from './Wrapper';
 import styled from 'styled-components';
 import messages from './messages';
-
-const H2 = styled.h2`
-	font-size: 48px;
-`;
 
 class Sidebar extends React.Component {
 	constructor(props) {
