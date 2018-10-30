@@ -346,8 +346,6 @@ class Container extends React.Component {
 			<Wrapper>
 				<MapContainer
 					spaces={spaces}
-					structures={structures}
-					icons={icons}
 					highlighted={highlighted}
 					currentSpace={currentSpace}
 					tooltipState={tooltipState}

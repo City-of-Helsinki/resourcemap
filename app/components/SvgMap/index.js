@@ -8,13 +8,7 @@ import { Wrapper, Content } from './wrappers';
 const SvgMap = props => {
 	return (
 		<Wrapper>
-			<svg
-				width="2000px"
-				height="456px"
-				viewBox="0 0 2000 456"
-				version="1.1"
-				ref={props.roomRef}
-			>
+			<svg viewBox="0 0 2000 456" version="1.1" ref={props.roomRef}>
 				<g
 					id="Page-1"
 					stroke="none"

@@ -21,6 +21,7 @@ const SubButton = styled(MainButton)`
 	border-radius: 0;
 	margin-bottom: 7px;
 	background-color: #d8d8d8;
+	width: 90%;
 
 	&.sub-btn {
 		&--active {
