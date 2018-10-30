@@ -37,6 +37,7 @@ const MapContainer = props => {
 	return (
 		<Wrapper>
 			<Content>
+				<h1>{highlighted}</h1>
 				<SvgMap
 					rooms={spaces}
 					structures={structures}

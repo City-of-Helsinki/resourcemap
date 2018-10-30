@@ -51,7 +51,8 @@ const SvgMap = props => {
 							fill="#FFFFFF"
 							fillRule="nonzero"
 							stroke="#000000"
-							strokeWidth="3"
+							strokeWidth="6"
+							strokeLinecap="round"
 							transform="translate(96.000000, 6.000000)"
 						>
 							{props.rooms.map(item => (
