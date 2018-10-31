@@ -1,5 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import {
+  Transition,
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
+
 import Img from 'components/Img';
 import SvgMap from 'components/SvgMap';
 import Tooltip from 'components/Tooltip';
@@ -9,45 +15,54 @@ import H1 from 'components/H1';
 import VagancyList from 'components/VagancyList';
 
 const MapContainer = props => {
-	const {
-		spaces,
-		highlighted,
-		currentSpace,
-		tooltipState,
-		x,
-		y,
-		roomRef,
-		onTooltipClick,
-		handleSpaceClick,
-	} = props;
+  const {
+    spaces,
+    highlighted,
+    currentSpace,
+    tooltipState,
+    x,
+    y,
+    roomRef,
+    onTooltipClick,
+    handleSpaceClick,
+  } = props;
 
-	let title;
-	highlighted ? (title = `: ${highlighted}`) : (title = '');
+  let title;
+  highlighted ? (title = `: ${highlighted}`) : (title = '');
 
-	return (
-		<Wrapper>
-			<Content>
-				<H1>Oodi{title} </H1>
-				<VagancyList />
-				<SvgMap
-					rooms={spaces}
-					onSpaceClick={handleSpaceClick}
-					highlighted={highlighted}
-					roomRef={roomRef}
-					currentSpace={currentSpace}
-				/>
-				{tooltipState.visible && (
-					<Tooltip
-						content={currentSpace}
-						x={x}
-						y={y}
-						onClick={onTooltipClick}
-					/>
-				)}
-				<Img src={Icons} alt="Kartta ikonit" />
-			</Content>
-		</Wrapper>
-	);
+  return (
+    <Wrapper>
+      <Content>
+        <H1>Oodi{title} </H1>
+        <VagancyList />
+        <SvgMap
+          rooms={spaces}
+          onSpaceClick={handleSpaceClick}
+          highlighted={highlighted}
+          roomRef={roomRef}
+          currentSpace={currentSpace}
+        />
+
+        <TransitionGroup className="tooltip-animations">
+          <CSSTransition
+            key={currentSpace.id}
+            timeout={1000}
+            classNames="popup"
+          >
+            <Tooltip
+              visible={tooltipState.visible}
+              content={currentSpace}
+              x={x}
+              y={y}
+              onClick={onTooltipClick}
+            />
+          </CSSTransition>
+        </TransitionGroup>
+
+        <Img src={Icons} alt="Kartta ikonit" />
+      </Content>
+    </Wrapper>
+  );
 };
 
 export default MapContainer;

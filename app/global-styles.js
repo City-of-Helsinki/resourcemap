@@ -39,6 +39,10 @@ injectGlobal`
     line-height: 1.5em;
   }
 
+  path {
+    transition: fill 0.2s linear;
+  }
+
   path.is-highlighted, path.active {
     fill: #E7F6EA;
   }
@@ -55,4 +59,25 @@ injectGlobal`
       fill: #d0021b !important;
     }
   }
+
+  .popup-enter .animation-item {
+    opacity: 0.01;
+    transform: translate(0, 20px);
+  }
+
+  .popup-enter-active .animation-item {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 120ms ease-in;
+  }
+  .popup-exit .animation-item {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .popup-exit-active .animation-item {
+    opacity: 0;
+    transform: translate(0, 20px);
+    transition: all 120ms ease-in;
+  }
+
 `;
