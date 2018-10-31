@@ -4,7 +4,7 @@ import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 
 import ButtonList from 'components/ButtonList';
 import H2 from 'components/H2';
-import Wrapper from './Wrapper';
+import { Wrapper } from './wrappers';
 import styled from 'styled-components';
 import messages from './messages';
 
