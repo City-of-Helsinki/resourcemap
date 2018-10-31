@@ -1,5 +1,14 @@
-import React from 'react';
 import styled from 'styled-components';
+
+export const TooltipContainer = styled.div`
+  display: block;
+  position: fixed;
+  width: 240px;
+  left: ${props => props.x}px;
+  top: ${props => props.y}px;
+  transform: translate3d(-50%, calc(-100% - 20px), 0);
+  backface-visibility: hidden;
+`;
 
 export const TooltipWrapper = styled.div`
   position: relative;
@@ -21,23 +30,13 @@ export const TooltipWrapper = styled.div`
   &:after {
     border-color: rgba(255, 255, 255, 0);
     border-top-color: #fff;
-    border-width: 30px;
-    margin-left: -30px;
+    border-width: 15px;
+    margin-left: -15px;
   }
   &:before {
     border-color: rgba(0, 0, 0, 0);
     border-top-color: #000;
-    border-width: 36px;
-    margin-left: -36px;
+    border-width: 19px;
+    margin-left: -19px;
   }
-`;
-
-export const TooltipContainer = styled.div`
-  display: block;
-  position: fixed;
-  width: 240px;
-  height: 240px;
-  left: ${props => props.x}px;
-  top: ${props => props.y}px;
-  transform: translate(-50%, -100%);
 `;

@@ -1,14 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Transition,
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
-
 import Img from 'components/Img';
 import SvgMap from 'components/SvgMap';
-import Tooltip from 'components/Tooltip';
 import Icons from 'images/oodi-icons-descriptions.svg';
 import { Wrapper, Content } from './wrappers';
 import H1 from 'components/H1';
@@ -19,11 +12,7 @@ const MapContainer = props => {
     spaces,
     highlighted,
     currentSpace,
-    tooltipState,
-    x,
-    y,
     roomRef,
-    onTooltipClick,
     handleSpaceClick,
   } = props;
 
@@ -42,23 +31,6 @@ const MapContainer = props => {
           roomRef={roomRef}
           currentSpace={currentSpace}
         />
-
-        <TransitionGroup className="tooltip-animations">
-          <CSSTransition
-            key={currentSpace.id}
-            timeout={1000}
-            classNames="popup"
-          >
-            <Tooltip
-              visible={tooltipState.visible}
-              content={currentSpace}
-              x={x}
-              y={y}
-              onClick={onTooltipClick}
-            />
-          </CSSTransition>
-        </TransitionGroup>
-
         <Img src={Icons} alt="Kartta ikonit" />
       </Content>
     </Wrapper>

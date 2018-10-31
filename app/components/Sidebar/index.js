@@ -8,38 +8,29 @@ import { Wrapper } from './wrappers';
 import styled from 'styled-components';
 import messages from './messages';
 
-class Sidebar extends React.Component {
-	constructor(props) {
-		super(props);
-		this.onSpaceCategoryClick = this.onSpaceCategoryClick.bind(this);
-		this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
-	}
+const Sidebar = props => {
+  const { spaces, currentSpace } = props;
+  const onSpaceCategoryClick = slot => {
+    props.onSpaceCategoryClick(slot);
+  };
 
-	onSpaceCategoryClick(slot) {
-		this.props.onSpaceCategoryClick(slot);
-	}
-
-	onSpaceNameClick(id) {
-		this.props.onSpaceNameClick(id);
-	}
-
-	render() {
-		const { spaces, currentSpace } = this.props;
-		return (
-			<Wrapper>
-				<H2>
-					<FormattedMessage {...messages.title} />
-				</H2>
-				<ButtonList
-					currentSpace={currentSpace}
-					spaces={spaces}
-					onSpaceCategoryClick={this.onSpaceCategoryClick}
-					onSpaceNameClick={this.onSpaceNameClick}
-				/>
-				<LocaleToggle />
-			</Wrapper>
-		);
-	}
-}
+  const onSpaceNameClick = id => {
+    props.onSpaceNameClick(id);
+  };
+  return (
+    <Wrapper>
+      <H2>
+        <FormattedMessage {...messages.title} />
+      </H2>
+      <ButtonList
+        currentSpace={currentSpace}
+        spaces={spaces}
+        onSpaceCategoryClick={onSpaceCategoryClick}
+        onSpaceNameClick={onSpaceNameClick}
+      />
+      <LocaleToggle />
+    </Wrapper>
+  );
+};
 
 export default Sidebar;
