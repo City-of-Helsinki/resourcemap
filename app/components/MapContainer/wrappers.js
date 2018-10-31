@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
 	position: relative;
+	width: 100%;
 	img {
 		max-width: 60%;
 	}
