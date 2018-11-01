@@ -49,7 +49,6 @@ injectGlobal`
     opacity: 0.01;
     transform: translate(0, 20px);
   }
-
   .popup-enter-active .animation-item {
     opacity: 1;
     transform: translate(0, 0);
@@ -65,4 +64,18 @@ injectGlobal`
     transition: all 120ms ease-in;
   }
 
+  .slide-enter {
+    max-height: 0;   
+  }
+  .slide-enter-active {
+    max-height: 100px;
+    transition: opacity 220ms ease-in;
+  }
+  .slide-exit {
+    max-height: 100px;
+    transition: opacity 220ms ease-in;
+  }
+  .slide-exit-active {
+    max-height: 0;   
+  }
 `;
