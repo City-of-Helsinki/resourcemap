@@ -1,8 +1,8 @@
 import { injectGlobal } from 'styled-components';
+import Fonts from './fonts/HelsinkiGrotesk.css';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
-  @import url(./fonts/HelsinkiGrotesk.css);
   html,
   body {
     height: 100%;
