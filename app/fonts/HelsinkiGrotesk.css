@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'HelsinkiGrotesk';
+  src: url(HelsinkiGrotesk-Regular.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelsinkiGrotesk';
+  src: url(HelsinkiGrotesk-Bold.woff) format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  color: red !important;
+}
