@@ -65,17 +65,25 @@ injectGlobal`
   }
 
   .slide-enter {
-    max-height: 0;   
+    max-height: 0;
+    opacity: 0.01;
+    transform: translateY(-10px);   
   }
   .slide-enter-active {
+    opacity: 1;
     max-height: 100px;
-    transition: opacity 220ms ease-in;
+    transition: all 200ms ease-in-out;
+    transform: translateY(0);  
   }
   .slide-exit {
+    opacity: 1;
     max-height: 100px;
-    transition: opacity 220ms ease-in;
+    transition: all 200ms ease-in;
+    transform: translateY(0);  
   }
   .slide-exit-active {
-    max-height: 0;   
+    opacity: 0.01;
+    max-height: 0;
+    transform: translateY(-10px);  
   }
 `;
