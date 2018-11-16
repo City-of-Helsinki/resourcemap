@@ -7,30 +7,30 @@ import { Wrapper, Container } from './wrappers';
 import messages from './messages';
 
 const VagancyList = props => {
-	const icons = [
-		{
-			vagancy: 'available',
-		},
-		{
-			vagancy: 'soon',
-		},
-		{
-			vagancy: 'taken',
-		},
-	];
+  const icons = [
+    {
+      vagancy: 'available',
+    },
+    //		{
+    //			vagancy: 'soon',
+    //		},
+    {
+      vagancy: 'taken',
+    },
+  ];
 
-	return (
-		<Wrapper>
-			{icons.map(item => (
-				<Container key={item.vagancy}>
-					<VagancyIcon className={item.vagancy} />
-					<P>
-						<FormattedMessage {...messages[item.vagancy]} />
-					</P>
-				</Container>
-			))}
-		</Wrapper>
-	);
+  return (
+    <Wrapper>
+      {icons.map(item => (
+        <Container key={item.vagancy}>
+          <VagancyIcon className={item.vagancy} />
+          <P>
+            <FormattedMessage {...messages[item.vagancy]} />
+          </P>
+        </Container>
+      ))}
+    </Wrapper>
+  );
 };
 
 export default VagancyList;
