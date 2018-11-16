@@ -22,13 +22,13 @@ class BookingButton extends React.Component {
     const clickedCategoryName = text;
     const buttonitems = items.map(item => {
       if (
-        item.category === clickedCategoryName &&
+        item.get('category') === clickedCategoryName &&
         className === 'btn--active'
       ) {
         return (
           <CSSTransition key={item.id} timeout={200} classNames="slide">
             <SubButton
-              key={item.id}
+              key={item.get('id')}
               onClick={() => this.onButtonClick(item)}
               className={
                 currentSpace.id == item.id
@@ -36,7 +36,7 @@ class BookingButton extends React.Component {
                   : 'sub-btn animation-item'
               }
             >
-              {item.name}
+              {item.get('name')}
             </SubButton>
           </CSSTransition>
         );
