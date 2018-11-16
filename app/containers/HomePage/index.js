@@ -16,11 +16,7 @@ import styled from 'styled-components';
 
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
-import {
-  makeSelectRepos,
-  makeSelectLoading,
-  makeSelectError,
-} from 'containers/App/selectors';
+import { makeSelectLoading, makeSelectError } from 'containers/App/selectors';
 
 import Container from 'components/Container';
 import H2 from 'components/H2';
@@ -30,7 +26,6 @@ import Form from './Form';
 import Input from './Input';
 import Section from './Section';
 import messages from './messages';
-import { loadRepos } from '../App/actions';
 import reducer from './reducer';
 import saga from './saga';
 
