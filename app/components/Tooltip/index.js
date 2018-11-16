@@ -14,15 +14,14 @@ const Tooltip = props => {
       <TooltipContainer x={props.x} y={props.y}>
         <TooltipWrapper className="animation-item">
           <CloseButton tooltip onClick={props.onClick} />
-          <H3>
-            {props.content.title} {props.content.id}
-          </H3>
+          <H3>{props.content.title}</H3>
           <P>
             <VagancyIcon className={props.content.available} />
           </P>
+          {/*
           <P className="small">
             Voit varata tämän tilan oven luona olevalta näytöltä.
-          </P>
+          </P>*/}
         </TooltipWrapper>
       </TooltipContainer>
     );

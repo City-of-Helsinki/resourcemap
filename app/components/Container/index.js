@@ -68,7 +68,7 @@ class Container extends React.Component {
     // const y = 100;
     // const xPos = 100;
 
-    let spaceTitle = spaceItem.name;
+    let spaceTitle = spaceItem.name || spaceItem.get('name');
     let showTooltip = false;
     let currentSpaceId = spaceElement.id;
 
@@ -133,7 +133,7 @@ class Container extends React.Component {
   }
 
   onSpaceNameClick(space) {
-    const spaceElementId = `#${space.id}`;
+    const spaceElementId = `#${space.get('id')}`;
     const spaceElement = this.roomRef.current.querySelector(spaceElementId);
     this.spaceTooltip(spaceElement, space);
   }
