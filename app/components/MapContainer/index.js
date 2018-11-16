@@ -5,7 +5,7 @@ import SvgMap from 'components/SvgMap';
 import Icons from 'images/oodi-icons-descriptions.svg';
 import { Wrapper, Content } from './wrappers';
 import H1 from 'components/H1';
-import VagancyList from 'components/VagancyList';
+import VacancyList from 'components/VacancyList';
 
 const MapContainer = props => {
   const {
@@ -23,7 +23,7 @@ const MapContainer = props => {
     <Wrapper>
       <Content>
         <H1>Oodi{title} </H1>
-        <VagancyList />
+        <VacancyList />
         <SvgMap
           rooms={spaces}
           onSpaceClick={handleSpaceClick}

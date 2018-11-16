@@ -10,6 +10,7 @@ export const TooltipContainer = styled.div`
   backface-visibility: hidden;
   & h3 {
     margin-top: 0;
+    margin-bottom: 0;
   }
 `;
 
