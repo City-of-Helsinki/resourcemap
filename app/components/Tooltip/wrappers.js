@@ -8,6 +8,9 @@ export const TooltipContainer = styled.div`
   top: ${props => props.y}px;
   transform: translate3d(-50%, calc(-100% - 20px), 0);
   backface-visibility: hidden;
+  & h3 {
+    margin-top: 0;
+  }
 `;
 
 export const TooltipWrapper = styled.div`
