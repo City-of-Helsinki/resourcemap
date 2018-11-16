@@ -16,10 +16,6 @@ const Tooltip = props => {
           <CloseButton tooltip onClick={props.onClick} />
           <H3>{props.content.title}</H3>
           <VacancyLabel vacancy={props.content.available} />
-          {/*
-          <P className="small">
-            Voit varata tämän tilan oven luona olevalta näytöltä.
-          </P>*/}
         </TooltipWrapper>
       </TooltipContainer>
     );

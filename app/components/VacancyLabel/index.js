@@ -18,7 +18,7 @@ const VacancyLabel = ({ vacancy }) => {
     <Wrapper>
       <VacancyIcon className={vacancy} />
       <P>
-        <FormattedMessage {...messages[vacancy]} />
+        <FormattedMessage {...messages[vacancy || 'available']} />
       </P>
     </Wrapper>
   );
