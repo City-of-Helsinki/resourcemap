@@ -24,7 +24,6 @@ import {
 
 import Container from 'components/Container';
 import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
 import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
 import Form from './Form';
