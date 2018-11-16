@@ -6,7 +6,6 @@ import Structures from './structures';
 import { Wrapper, Content } from './wrappers';
 
 const SvgMap = props => {
-  console.log(props.rooms);
   return (
     <Wrapper>
       <svg viewBox="0 0 2000 456" version="1.1" ref={props.roomRef}>

@@ -65,9 +65,6 @@ class Container extends React.Component {
     const width = Math.round(rect.width);
     const xPos = Math.round(x + rect.width / 2);
 
-    // const y = 100;
-    // const xPos = 100;
-
     let spaceTitle = spaceItem.name || spaceItem.get('name');
     let showTooltip = false;
     let currentSpaceId = spaceElement.id;
