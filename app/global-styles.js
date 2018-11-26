@@ -15,8 +15,9 @@ injectGlobal`
 
   #app {
     background-color: #fafafa;
-    min-height: 100%;
-    min-width: 100%;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
   }
 
   p,
@@ -29,20 +30,7 @@ injectGlobal`
   }
 
   path.is-highlighted, path.active {
-    fill: #E7F6EA;
-  }
-  path.clicked {
-    &.available {
-     fill: #28A745 !important;       
-    }
-
-    &.soon {
-      fill: #f5a623 !important;
-    }
-
-    &.taken {
-      fill: #d0021b !important;
-    }
+    fill: #28a745;  
   }
 
   .popup-enter .animation-item {
