@@ -5,6 +5,10 @@ This app displays Oodi 2nd floor map and interactively loads map status from Res
 App uses Respa API:  
 https://dev.hel.fi/apis/respa/
 
+## Deployment
+
+When pushed to master branch on BitBucket the project is automatically build by Pipelines. Manual trigger is required to deploy the project to S3.
+
 ## Installation
 
 Run `npm install`
