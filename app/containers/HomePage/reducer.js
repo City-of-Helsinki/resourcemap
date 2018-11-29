@@ -55,10 +55,12 @@ function homeReducer(state = initialState, action) {
         .findIndex(space => space.get('id') == resource.id);
 
       if (resourceIndex !== -1) {
+        //const overrideDate = '2018-09-17T08:00:00+03:00';
+        const overrideDate = false;
         return state
           .setIn(
             ['spaces', resourceIndex, 'available'],
-            isResourceBusy(new Date(), resource),
+            isResourceBusy(new Date(overrideDate), resource),
           )
           .setIn(['spaces', resourceIndex, 'name'], resource.name.fi);
       } else {

@@ -25,6 +25,7 @@ export function* loadResource() {
 
     if (id) {
       const requestURL = `http://api.hel.fi/respa-test/v1/resource/${id}/?start=${startTimeStr}&end=${endTimeStr}`;
+      //const requestURL = `http://94.237.32.197:3000/api/resource.json`;
 
       try {
         const resource = yield call(request, requestURL);
