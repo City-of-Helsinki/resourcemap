@@ -32,7 +32,7 @@ class ButtonList extends React.Component {
   render() {
     const { spaces, currentSpace } = this.props;
     const { activeIndex } = this.state;
-    const uniqueCats = [...new Set(spaces.map(({ category }) => category))];
+    const uniqueCats = [...new Set(spaces.map(space => space.get('category')))];
 
     return (
       <Wrapper className="c-buttonlist">

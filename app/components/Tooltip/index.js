@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { TooltipWrapper, TooltipContainer } from './wrappers';
 import P from 'components/P';
 import H3 from 'components/H3';
-import VagancyIcon from 'components/VagancyIcon';
+import VacancyLabel from 'components/VacancyLabel';
 import CloseButton from 'components/CloseButton';
 
 const Tooltip = props => {
@@ -15,12 +15,7 @@ const Tooltip = props => {
         <TooltipWrapper className="animation-item">
           <CloseButton tooltip onClick={props.onClick} />
           <H3>{props.content.title}</H3>
-          <P>
-            <VagancyIcon className={props.content.available} />
-          </P>
-          <P className="small">
-            Voit varata tämän tilan oven luona olevalta näytöltä.
-          </P>
+          <VacancyLabel vacancy={props.content.available} />
         </TooltipWrapper>
       </TooltipContainer>
     );
