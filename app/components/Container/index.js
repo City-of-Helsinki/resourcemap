@@ -36,6 +36,7 @@ class Container extends React.Component {
         id: 'Tilan id',
         title: 'Tilan nimi',
         available: null,
+        useRespa: false,
       },
       tooltipState: {
         current: null,
@@ -66,6 +67,11 @@ class Container extends React.Component {
     const xPos = Math.round(x + rect.width / 2);
 
     let spaceTitle = spaceItem.name || spaceItem.get('name');
+    let spaceAvailable = spaceItem.available || spaceItem.get('available');
+    let spaceUseRespa =
+      typeof spaceItem.useRespa != 'undefined'
+        ? spaceItem.useRespa
+        : spaceItem.get('useRespa');
     let showTooltip = false;
     let currentSpaceId = spaceElement.id;
 
@@ -85,7 +91,8 @@ class Container extends React.Component {
         currentSpace: {
           id: currentSpaceId,
           title: spaceTitle,
-          available: spaceItem.available,
+          available: spaceAvailable,
+          useRespa: spaceUseRespa,
         },
         x: xPos,
         y: y,
@@ -106,6 +113,7 @@ class Container extends React.Component {
           title: '',
           id: '',
           available: '',
+          useRespa: '',
         },
         tooltipState: {
           visible: false,
@@ -121,6 +129,7 @@ class Container extends React.Component {
           id: '',
           title: '',
           available: '',
+          useRespa: '',
         },
         tooltipState: {
           visible: false,

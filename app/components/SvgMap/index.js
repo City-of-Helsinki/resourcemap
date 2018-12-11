@@ -33,6 +33,7 @@ const SvgMap = props => {
                   svgtype={item.get('svgtype')}
                   info={item.get('info')}
                   available={item.get('available')}
+                  useRespa={item.get('useRespa')}
                   id={item.get('id')}
                   d={item.get('d')}
                   category={item.get('category')}

@@ -18,6 +18,7 @@ class Room extends React.Component {
       highlighted,
       currentSpace,
       id,
+      useRespa,
       ...props
     } = this.props;
 
@@ -38,6 +39,7 @@ class Room extends React.Component {
         {...props}
         available={available}
         id={id}
+        useRespa={useRespa}
         className={className}
         onSpaceClick={onSpaceClick}
       />

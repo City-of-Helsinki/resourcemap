@@ -22,8 +22,9 @@ export function* loadResource() {
   for (let i = 0; i < spaces.size; i++) {
     const space = spaces.get(i);
     const id = space.get('id');
+    const useRespa = space.get('useRespa');
 
-    if (id) {
+    if (id && useRespa) {
       const requestURL = `http://api.hel.fi/respa-test/v1/resource/${id}/?start=${startTimeStr}&end=${endTimeStr}`;
       //const requestURL = `http://94.237.32.197:3000/api/resource.json`;
 

@@ -15,7 +15,9 @@ const Tooltip = props => {
         <TooltipWrapper className="animation-item">
           <CloseButton tooltip onClick={props.onClick} />
           <H3>{props.content.title}</H3>
-          <VacancyLabel vacancy={props.content.available} />
+          {props.content.useRespa && (
+            <VacancyLabel vacancy={props.content.available} />
+          )}
         </TooltipWrapper>
       </TooltipContainer>
     );
