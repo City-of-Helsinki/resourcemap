@@ -22,16 +22,20 @@ class Room extends React.Component {
       ...props
     } = this.props;
 
-    let classNameHighlighted = category === highlighted ? 'is-highlighted' : '';
-
+    // Generate classname.
     let className = '';
 
+    // First check if this item is highlighted, but not necessarily opened.
+    let classNameHighlighted = category === highlighted ? 'is-highlighted' : '';
+
+    // Check also if this space is actually clicked and opened.
     if (currentSpace.id === id) {
       className = classNameHighlighted + ' clicked';
     } else {
       className = classNameHighlighted;
     }
 
+    // Concat to final classname.
     className = className + ' ' + available;
 
     return (
