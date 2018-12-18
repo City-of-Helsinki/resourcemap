@@ -121,15 +121,6 @@ export default [
   },
 
   {
-    category: 'Kopiointi',
-    id: 'k',
-    name: 'Kopiointi',
-    useRespa: false,
-    available: 'nodata',
-    d: 'M702.9,-0.83 L702.9,67.5 L668.15,67.5 L668.15,-0.83 L702.9,-0.83 Z',
-  },
-
-  {
     category: 'Studiot',
     id: 's1',
     name: 'Studio 1',
@@ -184,16 +175,6 @@ export default [
       'M240.513924,255 L214.14,255 L214.14,209.06104 L273.69,206.586371 L273.69,256.900696 L259.956315,270.345016 L258.920555,269.527341 L240.927094,255.322474 L240.513924,255 Z',
   },
 
-  {
-    category: 'Kuutio',
-    id: 'kuutio',
-    name: 'Kuutio',
-    useRespa: false,
-    available: 'nodata',
-    d:
-      'M1659.2,127.5 L1659.2,245.91 L1523.2,245.91 L1523.2,127.5 L1659.2,127.5 ',
-  },
-
   /*
   {
     category: 'Musiikki ja video',
@@ -231,6 +212,25 @@ export default [
     d:
       'M535.61,193.26 L535.61,223.5316 L488.05,225.420765 L488.05,193.26 L535.61,193.26 Z',
   },
+
+  {
+    category: 'Muut tilat',
+    id: 'kuutio',
+    name: 'Kuutio',
+    useRespa: false,
+    available: 'nodata',
+    d:
+      'M1659.2,127.5 L1659.2,245.91 L1523.2,245.91 L1523.2,127.5 L1659.2,127.5 ',
+  },
+  {
+    category: 'Muut tilat',
+    id: 'k',
+    name: 'Kopiointi',
+    useRespa: false,
+    available: 'nodata',
+    d: 'M702.9,-0.83 L702.9,67.5 L668.15,67.5 L668.15,-0.83 L702.9,-0.83 Z',
+  },
+
   /*
   {
     category: 'Musiikki ja video',
