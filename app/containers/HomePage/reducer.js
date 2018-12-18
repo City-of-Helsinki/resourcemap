@@ -35,13 +35,14 @@ function isResourceBusy(currentTime, resource) {
   }
 
   // Overlapping reservations => occupied
-  const currentReservations = reservations.filter(
-    reservation =>
-      new Date(reservation.get('begin')).getTime() < currentTime.getTime() &&
-      new Date(reservation.get('end')).getTime() > currentTime.getTime(),
-  );
+  const currentReservations = reservations.filter(reservation => {
+    return (
+      new Date(reservation.begin).getTime() < currentTime.getTime() &&
+      new Date(reservation.end).getTime() > currentTime.getTime()
+    );
+  });
 
-  return currentReservations ? 'taken' : 'available';
+  return currentReservations.length > 0 ? 'taken' : 'available';
 }
 
 function homeReducer(state = initialState, action) {
