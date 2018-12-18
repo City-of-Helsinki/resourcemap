@@ -24,10 +24,19 @@ import Section from './Section';
 import messages from './messages';
 import reducer from './reducer';
 import saga from './saga';
+import { loadResource } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
-  componentDidMount() {}
+  componentDidMount() {
+    // Load resources.
+    this.props.loadResource();
+
+    // Update resource in every ten minutes.
+    setInterval(() => {
+      this.props.loadResource();
+    }, 10 * 60 * 1000);
+  }
 
   render() {
     const Article = styled.article`
@@ -63,7 +72,16 @@ const mapStateToProps = createStructuredSelector({
   error: makeSelectError(),
 });
 
-const withConnect = connect(mapStateToProps);
+export function mapDispatchToProps(dispatch) {
+  return {
+    loadResource: () => dispatch(loadResource()),
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
 
 const withReducer = injectReducer({ key: 'home', reducer });
 const withSaga = injectSaga({ key: 'home', saga });

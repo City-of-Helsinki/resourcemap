@@ -1,4 +1,4 @@
-import { call, put, select, takeLatest } from 'redux-saga/effects';
+import { all, call, put, select, takeLatest } from 'redux-saga/effects';
 import dateFormat from 'dateformat';
 import { LOAD_RESOURCE } from './constants.js';
 import { loadResourceCompleted, loadResourceError } from './actions.js';
@@ -42,5 +42,9 @@ export function* loadResource() {
  * Root saga manages watcher lifecycle
  */
 export default function* homeSaga() {
-  yield loadResource(LOAD_RESOURCE, loadResource);
+  try {
+    yield all([takeLatest(LOAD_RESOURCE, loadResource)]);
+  } catch (e) {
+    console.log(e);
+  }
 }
