@@ -5,12 +5,18 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-const selectHome = state => state.get('home', initialState);
+const selectHome = state => state.home || initialState;
 
 const makeSelectUsername = () =>
-  createSelector(selectHome, homeState => homeState.get('username'));
+  createSelector(
+    selectHome,
+    homeState => homeState.username,
+  );
 
 const makeSelectSpaces = () =>
-  createSelector(selectHome, homeState => homeState.get('spaces'));
+  createSelector(
+    selectHome,
+    homeState => homeState.spaces,
+  );
 
 export { selectHome, makeSelectUsername, makeSelectSpaces };

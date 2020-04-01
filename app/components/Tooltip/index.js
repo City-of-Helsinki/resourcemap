@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import { TooltipWrapper, TooltipContainer } from './wrappers';
-import P from 'components/P';
 import H3 from 'components/H3';
 import VacancyLabel from 'components/VacancyLabel';
 import CloseButton from 'components/CloseButton';
+import { TooltipWrapper, TooltipContainer } from './wrappers';
 
 const Tooltip = props => {
   const showTooltip = props.visible;

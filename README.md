@@ -34,7 +34,7 @@ If you don't want to install node you can run it inside Docker:
 
 ## Technology stack
 
-This app is built on top of React Boilerplate 3.6.0. Key tools & libraries:
+This app is built on top of React Boilerplate. Key tools & libraries:
 
 Core
 
@@ -43,13 +43,13 @@ Core
 - Redux
 - Redux Saga
 - Reselect
-- ImmutableJS
+- Immer
 - Styled Components
 
 Unit Testing
 
 - Jest
-- Enzyme
+- react-testing-library
 
 Linting
 

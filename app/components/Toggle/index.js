@@ -6,46 +6,25 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const Ul = styled.ul`
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-`;
-
-const Li = styled.li`
-  margin-left: 1rem;
-  color: black;
-  text-align: center;
-  ${({ active }) =>
-    active &&
-    `
-    display: none;
-  `};
-`;
+import Select from './Select';
+import ToggleOption from '../ToggleOption';
 
 function Toggle(props) {
-  let content = <Li>--</Li>;
+  let content = <option>--</option>;
 
   // If we have items, render them
   if (props.values) {
     content = props.values.map(value => (
-      <Li
-        key={value}
-        lang={value}
-        value={value}
-        message={props.messages[value].defaultMessage}
-        onClick={props.onLangClick}
-        active={props.value === value}
-      >
-        {props.messages[value].defaultMessage}
-      </Li>
+      <ToggleOption key={value} value={value} message={props.messages[value]} />
     ));
   }
 
-  return <Ul>{content}</Ul>;
+  return (
+    <Select value={props.value} onChange={props.onToggle}>
+      {content}
+    </Select>
+  );
 }
 
 Toggle.propTypes = {

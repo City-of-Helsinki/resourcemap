@@ -8,7 +8,6 @@
  *   You CANNOT use import/export in this file.
  */
 const addLocaleData = require('react-intl').addLocaleData; //eslint-disable-line
-
 const enLocaleData = require('react-intl/locale-data/en');
 const fiLocaleData = require('react-intl/locale-data/fi');
 const svLocaleData = require('react-intl/locale-data/sv');

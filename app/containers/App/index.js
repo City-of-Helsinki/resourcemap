@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage';
+import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
   display: flex;
@@ -22,15 +23,13 @@ const AppWrapper = styled.div`
 export default function App() {
   return (
     <AppWrapper>
-      <Helmet
-        titleTemplate="%s - Oodi kirjasto"
-        defaultTitle="Oodi kirjasto"
-      >
+      <Helmet titleTemplate="%s - Oodi kirjasto" defaultTitle="Oodi kirjasto">
         <meta name="description" content="Oodi kirjasto" />
       </Helmet>
       <Switch>
         <Route exact path="/" component={HomePage} />
       </Switch>
+      <GlobalStyle />
     </AppWrapper>
   );
 }

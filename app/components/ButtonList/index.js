@@ -1,8 +1,7 @@
 import React from 'react';
-import BasicButton from 'components/BasicButton';
-import styled from 'styled-components';
-import Wrapper from './Wrapper';
+import PropTypes from 'prop-types';
 import BookingButton from 'components/BookingButton';
+import Wrapper from './Wrapper';
 
 class ButtonList extends React.Component {
   constructor(props) {
@@ -18,6 +17,7 @@ class ButtonList extends React.Component {
     this.props.onSpaceCategoryClick(category);
     const btnindex = index === this.state.activeIndex ? null : index;
 
+    // eslint-disable-next-line func-names, no-unused-vars
     this.setState(function(prevState, props) {
       return {
         activeIndex: btnindex,
@@ -32,7 +32,7 @@ class ButtonList extends React.Component {
   render() {
     const { spaces, currentSpace } = this.props;
     const { activeIndex } = this.state;
-    const uniqueCats = [...new Set(spaces.map(space => space.get('category')))];
+    const uniqueCats = [...new Set(spaces.map(space => space.category))];
 
     return (
       <Wrapper className="c-buttonlist">
@@ -54,5 +54,12 @@ class ButtonList extends React.Component {
     );
   }
 }
+
+ButtonList.propTypes = {
+  onSpaceCategoryClick: PropTypes.any,
+  onSpaceNameClick: PropTypes.any,
+  currentSpace: PropTypes.any,
+  spaces: PropTypes.any,
+};
 
 export default ButtonList;

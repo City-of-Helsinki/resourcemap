@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LocaleToggle from 'containers/LocaleToggle';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import ButtonList from 'components/ButtonList';
 import H2 from 'components/H2';
 import { Wrapper } from './wrappers';
-import styled from 'styled-components';
 import messages from './messages';
 
 const Sidebar = props => {
@@ -31,6 +31,13 @@ const Sidebar = props => {
       <LocaleToggle />
     </Wrapper>
   );
+};
+
+Sidebar.propTypes = {
+  spaces: PropTypes.any,
+  currentSpace: PropTypes.any,
+  onSpaceCategoryClick: PropTypes.any,
+  onSpaceNameClick: PropTypes.any,
 };
 
 export default Sidebar;

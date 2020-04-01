@@ -1,24 +1,22 @@
+/* eslint-disable no-param-reassign */
 /*
  * HomeReducer
  *
- * The reducer takes care of our data. Using actions, we can change our
- * application state.
- * To add a new action, add it to the switch statement in the reducer function
+ * The reducer takes care of our data. Using actions, we can
+ * update our application state. To add a new action,
+ * add it to the switch statement in the reducer function
  *
- * Example:
- * case YOUR_ACTION_CONSTANT:
- *   return state.set('yourStateVariable', true);
  */
-import { fromJS } from 'immutable';
+import produce from 'immer';
 
 import spacesInitialState from './spacesInitialState';
 import { LOAD_RESOURCE_COMPLETED } from './constants';
 
 // The initial state of the App
-export const initialState = fromJS({
+export const initialState = {
   username: '',
   spaces: spacesInitialState,
-});
+};
 
 /**
  * Go through resource reservations and check if they are:
@@ -35,41 +33,39 @@ function isResourceBusy(currentTime, resource) {
   }
 
   // Overlapping reservations => occupied
-  const currentReservations = reservations.filter(reservation => {
-    return (
+  const currentReservations = reservations.filter(
+    reservation =>
       new Date(reservation.begin).getTime() < currentTime.getTime() &&
-      new Date(reservation.end).getTime() > currentTime.getTime()
-    );
-  });
+      new Date(reservation.end).getTime() > currentTime.getTime(),
+  );
 
   return currentReservations.length > 0 ? 'taken' : 'available';
 }
 
-function homeReducer(state = initialState, action) {
-  switch (action.type) {
-    case LOAD_RESOURCE_COMPLETED:
-      const { resource } = action;
+const homeReducer = (state = initialState, action) =>
+  produce(state, draft => {
+    // eslint-disable-next-line default-case
+    switch (action.type) {
+      case LOAD_RESOURCE_COMPLETED: {
+        const { resource } = action;
 
-      // Get resource index from spaces list.
-      const resourceIndex = state.get('spaces').findIndex(space => {
-        return space.get('id') == resource.id;
-      });
+        // Get resource index from spaces list.
+        const resourceIndex = state.spaces.findIndex(
+          space => space.id === resource.id,
+        );
 
-      if (resourceIndex !== -1) {
-        //const currentTime = new Date('2018-09-17T08:30:00+03:00');
-        const currentTime = new Date();
-        return state
-          .setIn(
-            ['spaces', resourceIndex, 'available'],
-            isResourceBusy(currentTime, resource),
-          )
-          .setIn(['spaces', resourceIndex, 'name'], resource.name.fi);
-      } else {
-        return state;
+        if (resourceIndex !== -1) {
+          // const currentTime = new Date('2018-09-17T08:30:00+03:00');
+          const currentTime = new Date();
+
+          draft.spaces[resourceIndex].available = isResourceBusy(
+            currentTime,
+            resource,
+          );
+          draft.spaces[resourceIndex].name = resource.name.fi;
+        }
       }
-    default:
-      return state;
-  }
-}
+    }
+  });
 
 export default homeReducer;
