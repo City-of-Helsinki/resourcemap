@@ -17,5 +17,5 @@ jobs:
           - NODE_ENV=production
       script: npm run build
 
-after_success:
-  - 'npm run coveralls'
+# after_success:
+#  - 'npm run coveralls'
