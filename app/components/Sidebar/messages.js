@@ -6,12 +6,12 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-	title: {
-		id: 'Sidebar.title',
-		defaultMessage: 'Tilat',
-	},
-	text: {
-		id: 'Sidebar.text',
-		defaultMessage: 'Tekstiä',
-	},
+  title: {
+    id: 'Sidebar.title',
+    defaultMessage: 'Tilat',
+  },
+  text: {
+    id: 'Sidebar.text',
+    defaultMessage: 'Tekstiä',
+  },
 });

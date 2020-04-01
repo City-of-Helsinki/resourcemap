@@ -1,11 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import {
-  Transition,
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
@@ -14,17 +9,11 @@ import { compose } from 'redux';
 
 import Sidebar from 'components/Sidebar';
 import MapContainer from 'components/MapContainer';
-import messages from './messages';
-import { Wrapper } from './wrappers';
 import Tooltip from 'components/Tooltip';
 import { makeSelectSpaces } from 'containers/HomePage/selectors';
-import {
-  makeSelectRepos,
-  makeSelectLoading,
-  makeSelectError,
-} from 'containers/App/selectors';
 import reducer from 'containers/HomePage/reducer';
 import saga from 'containers/HomePage/saga';
+import { Wrapper } from './wrappers';
 
 class Container extends React.Component {
   constructor(props) {
@@ -63,13 +52,14 @@ class Container extends React.Component {
     const rect = spaceElement.getBoundingClientRect();
     const x = Math.round(rect.left);
     const y = Math.round(rect.top);
+    // eslint-disable-next-line no-unused-vars
     const width = Math.round(rect.width);
     const xPos = Math.round(x + rect.width / 2);
 
     let spaceTitle = spaceItem.name || spaceItem.get('name');
-    let spaceAvailable = spaceItem.available || spaceItem.get('available');
-    let spaceUseRespa =
-      typeof spaceItem.useRespa != 'undefined'
+    const spaceAvailable = spaceItem.available || spaceItem.get('available');
+    const spaceUseRespa =
+      typeof spaceItem.useRespa !== 'undefined'
         ? spaceItem.useRespa
         : spaceItem.get('useRespa');
     let showTooltip = false;
@@ -83,6 +73,7 @@ class Container extends React.Component {
       showTooltip = true;
     }
 
+    // eslint-disable-next-line no-unused-vars, func-names
     this.setState(function(prevState, props) {
       return {
         tooltipState: {
@@ -95,7 +86,7 @@ class Container extends React.Component {
           useRespa: spaceUseRespa,
         },
         x: xPos,
-        y: y,
+        y,
       };
     });
   }
@@ -106,6 +97,7 @@ class Container extends React.Component {
       hl = '';
     }
 
+    // eslint-disable-next-line no-unused-vars, func-names
     this.setState(function(prevState, props) {
       return {
         highlighted: hl,
@@ -123,19 +115,18 @@ class Container extends React.Component {
   }
 
   resetActiveSpace() {
-    this.setState((prevState, props) => {
-      return {
-        currentSpace: {
-          id: '',
-          title: '',
-          available: '',
-          useRespa: '',
-        },
-        tooltipState: {
-          visible: false,
-        },
-      };
-    });
+    // eslint-disable-next-line no-unused-vars
+    this.setState((prevState, props) => ({
+      currentSpace: {
+        id: '',
+        title: '',
+        available: '',
+        useRespa: '',
+      },
+      tooltipState: {
+        visible: false,
+      },
+    }));
   }
 
   onSpaceNameClick(space) {
@@ -146,7 +137,7 @@ class Container extends React.Component {
 
   render() {
     const { highlighted, currentSpace, tooltipState, x, y } = this.state;
-    let { spaces } = this.props;
+    const { spaces } = this.props;
 
     return (
       <React.Fragment>
@@ -186,6 +177,11 @@ class Container extends React.Component {
     );
   }
 }
+
+Container.propTypes = {
+  spaces: PropTypes.any,
+};
+
 const mapStateToProps = createStructuredSelector({
   spaces: makeSelectSpaces(),
 });

@@ -1,5 +1,6 @@
 import React from 'react';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import VacancyIcon from 'components/VacancyIcon';
 import P from 'components/P';
@@ -13,15 +14,17 @@ export const Wrapper = styled.div`
   }
 `;
 
-const VacancyLabel = ({ vacancy }) => {
-  return (
-    <Wrapper>
-      <VacancyIcon className={vacancy} />
-      <P>
-        <FormattedMessage {...messages[vacancy || 'available']} />
-      </P>
-    </Wrapper>
-  );
+const VacancyLabel = ({ vacancy }) => (
+  <Wrapper>
+    <VacancyIcon className={vacancy} />
+    <P>
+      <FormattedMessage {...messages[vacancy || 'available']} />
+    </P>
+  </Wrapper>
+);
+
+VacancyLabel.propTypes = {
+  vacancy: PropTypes.any,
 };
 
 export default VacancyLabel;

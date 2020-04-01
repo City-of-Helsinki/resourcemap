@@ -1,18 +1,15 @@
 import React from 'react';
-import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import styled from 'styled-components';
 import VacancyLabel from 'components/VacancyLabel';
-import P from 'components/P';
 import { Wrapper, Container } from './wrappers';
 
-const VacancyList = props => {
+const VacancyList = () => {
   const icons = [
     {
       vacancy: 'available',
     },
     /*    {
       vacancy: 'soon',
-    },*/
+    }, */
     {
       vacancy: 'taken',
     },

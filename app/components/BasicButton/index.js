@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
 
 const BasicButton = styled.button`
   display: inline-block;
@@ -18,10 +17,8 @@ const BasicButton = styled.button`
   border: 2px solid black;
   border-radius: 25%;
   color: black;
-
   line-height: 4rem;
   border-radius: 2rem;
-
   background: white;
   &:active,
   &.active {

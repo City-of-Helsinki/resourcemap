@@ -1,6 +1,24 @@
 {
-	"Sidebar.title": "Platsor",
-	"available": "Ledigt",
-	"soon": "Ledigt kohta",
-	"taken": "Upptaget"
+  "Sidebar.text": "",
+  "Sidebar.title": "Platsor",
+  "available": "Ledigt",
+  "boilerplate.components.AreaBooking.button.submit": "",
+  "boilerplate.components.AreaBooking.link.reset": "",
+  "boilerplate.components.Confirm.cancel": "",
+  "boilerplate.components.Confirm.finishedLink": "",
+  "boilerplate.components.Footer.author.message": "",
+  "boilerplate.components.Footer.license.message": "",
+  "boilerplate.components.Header.features": "",
+  "boilerplate.components.Header.home": "",
+  "boilerplate.containers.HomePage.start_project.header": "",
+  "boilerplate.containers.HomePage.start_project.message": "",
+  "boilerplate.containers.HomePage.tryme.atPrefix": "",
+  "boilerplate.containers.HomePage.tryme.header": "",
+  "boilerplate.containers.HomePage.tryme.message": "",
+  "boilerplate.containers.LocaleToggle.de": "",
+  "boilerplate.containers.LocaleToggle.en": "",
+  "boilerplate.containers.LocaleToggle.fi": "",
+  "boilerplate.containers.LocaleToggle.sv": "",
+  "soon": "Ledigt kohta",
+  "taken": "Upptaget"
 }
