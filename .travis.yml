@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - '12'
+
+jobs:
+  include:
+    - stage: 'Test'
+      name: 'Run code linting and test'
+      script: 
+        - node ./internals/scripts/generate-templates-for-linting
+        - npm run lint && npm run test -- --maxWorkers=4
+    - stage: 'Build'
+      name: 'Run (test) build'
+      if: branch IN (master, develop)
+      env:
+        global:
+          - NODE_ENV=production
+      script: npm run build
+
+after_success:
+  - 'npm run coveralls'
