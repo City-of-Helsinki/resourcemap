@@ -56,12 +56,12 @@ class Container extends React.Component {
     const width = Math.round(rect.width);
     const xPos = Math.round(x + rect.width / 2);
 
-    let spaceTitle = spaceItem.name || spaceItem.get('name');
-    const spaceAvailable = spaceItem.available || spaceItem.get('available');
+    let spaceTitle = spaceItem.name || spaceItem.name;
+    const spaceAvailable = spaceItem.available || spaceItem.available;
     const spaceUseRespa =
       typeof spaceItem.useRespa !== 'undefined'
         ? spaceItem.useRespa
-        : spaceItem.get('useRespa');
+        : spaceItem.useRespa;
     let showTooltip = false;
     let currentSpaceId = spaceElement.id;
 
@@ -130,7 +130,7 @@ class Container extends React.Component {
   }
 
   onSpaceNameClick(space) {
-    const spaceElementId = `#${space.get('id')}`;
+    const spaceElementId = `#${space.id}`;
     const spaceElement = this.roomRef.current.querySelector(spaceElementId);
     this.spaceTooltip(spaceElement, space);
   }
