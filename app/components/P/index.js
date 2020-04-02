@@ -5,7 +5,7 @@ const P = styled.p`
   margin-bottom: 20px;
 
   &.small {
-    font-size: 14px;
+    font-size: 10px;
   }
 `;
 

@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 const VacancyLabel = ({ vacancy }) => (
   <Wrapper>
     <VacancyIcon className={vacancy} />
-    <P>
+    <P className="small">
       <FormattedMessage {...messages[vacancy || 'available']} />
     </P>
   </Wrapper>

@@ -1,5 +1,4 @@
 {
-  "available": "Vapaa",
   "boilerplate.components.Footer.author.message": "Made with love by {author}.",
   "boilerplate.components.Footer.license.message": "This project is licensed under the MIT license.",
   "boilerplate.components.Header.features": "Features",
@@ -10,9 +9,10 @@
   "boilerplate.containers.HomePage.tryme.header": "Try me!",
   "boilerplate.containers.HomePage.tryme.message": "Show Github repositories by",
   "components.Container.mapTitle": "Helsingin keskuskirjasto | 2.kerros",
+  "components.VacancyLabel.available": "Vapaa",
+  "components.VacancyLabel.nonReservable": "Ei varattavissa",
+  "components.VacancyLabel.taken": "Varattu",
   "containers.LocaleToggle.en": "In English",
   "containers.LocaleToggle.fi": "Suomeksi",
-  "containers.LocaleToggle.sv": "På svenska",
-  "soon": "Vapautuu kohta",
-  "taken": "Varattu"
+  "containers.LocaleToggle.sv": "På svenska"
 }

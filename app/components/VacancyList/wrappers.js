@@ -8,7 +8,11 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 20px;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
   p {
     line-height: 1;
     margin-top: 0;

@@ -28,6 +28,7 @@ export const ControlsWrapper = styled.div`
   flex: 0 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 19px;
 `;
 

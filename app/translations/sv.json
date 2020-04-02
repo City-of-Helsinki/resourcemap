@@ -1,5 +1,4 @@
 {
-  "available": "Ledigt",
   "boilerplate.components.Footer.author.message": "",
   "boilerplate.components.Footer.license.message": "",
   "boilerplate.components.Header.features": "",
@@ -10,9 +9,10 @@
   "boilerplate.containers.HomePage.tryme.header": "",
   "boilerplate.containers.HomePage.tryme.message": "",
   "components.Container.mapTitle": "Helsingfors centrumbibliotek | 2:a våningen",
+  "components.VacancyLabel.available": "",
+  "components.VacancyLabel.nonReservable": "",
+  "components.VacancyLabel.taken": "",
   "containers.LocaleToggle.en": "In English",
   "containers.LocaleToggle.fi": "Suomeksi",
-  "containers.LocaleToggle.sv": "På svenska",
-  "soon": "Ledigt kohta",
-  "taken": "Upptaget"
+  "containers.LocaleToggle.sv": "På svenska"
 }
