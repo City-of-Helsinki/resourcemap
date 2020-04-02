@@ -14,7 +14,7 @@ const Tooltip = props => {
           <CloseButton tooltip onClick={props.onClick} />
           <H3>{props.content.title}</H3>
           {props.content.useRespa && (
-            <VacancyLabel vacancy={props.content.available} />
+            <VacancyLabel variant="light" vacancy={props.content.available} />
           )}
         </TooltipWrapper>
       </TooltipContainer>
