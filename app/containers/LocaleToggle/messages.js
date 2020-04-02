@@ -5,16 +5,12 @@
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.containers.LocaleToggle';
+export const scope = 'containers.LocaleToggle';
 
 export default defineMessages({
   en: {
     id: `${scope}.en`,
     defaultMessage: 'In English',
-  },
-  de: {
-    id: `${scope}.de`,
-    defaultMessage: 'de',
   },
   fi: {
     id: `${scope}.fi`,

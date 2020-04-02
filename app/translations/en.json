@@ -9,11 +9,10 @@
   "boilerplate.containers.HomePage.tryme.atPrefix": "",
   "boilerplate.containers.HomePage.tryme.header": "",
   "boilerplate.containers.HomePage.tryme.message": "",
-  "boilerplate.containers.LocaleToggle.de": "",
-  "boilerplate.containers.LocaleToggle.en": "",
-  "boilerplate.containers.LocaleToggle.fi": "",
-  "boilerplate.containers.LocaleToggle.sv": "",
   "components.Container.mapTitle": "Helsinki Central Library | 2nd floor",
+  "containers.LocaleToggle.en": "In English",
+  "containers.LocaleToggle.fi": "Suomeksi",
+  "containers.LocaleToggle.sv": "Pä svenska",
   "soon": "Available soon",
   "taken": "Occupied"
 }

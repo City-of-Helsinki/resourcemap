@@ -9,11 +9,10 @@
   "boilerplate.containers.HomePage.tryme.atPrefix": "",
   "boilerplate.containers.HomePage.tryme.header": "",
   "boilerplate.containers.HomePage.tryme.message": "",
-  "boilerplate.containers.LocaleToggle.de": "",
-  "boilerplate.containers.LocaleToggle.en": "",
-  "boilerplate.containers.LocaleToggle.fi": "",
-  "boilerplate.containers.LocaleToggle.sv": "",
   "components.Container.mapTitle": "Helsingfors centrumbibliotek | 2:a våningen",
+  "containers.LocaleToggle.en": "In English",
+  "containers.LocaleToggle.fi": "Suomeksi",
+  "containers.LocaleToggle.sv": "På svenska",
   "soon": "Ledigt kohta",
   "taken": "Upptaget"
 }

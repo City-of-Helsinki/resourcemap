@@ -2,26 +2,35 @@
 
 exports[`<LocaleToggle /> should match the snapshot 1`] = `
 <div
-  class="Wrapper-xnjoq9-0 dNmQIR"
+  class="components__Wrapper-sc-8efs89-0 iFEOpV"
 >
-  <select
-    class="Select-sc-1sm01tk-0 dQrYOI"
+  <ul
+    class="components__LanguageList-sc-8efs89-1 kOkdRt"
   >
-    <option
-      value="fi"
+    <li
+      class="components__LanguageItem-sc-8efs89-2 iZcJuQ"
     >
-      Suomeksi
-    </option>
-    <option
-      value="en"
+      <button
+        class="components__LanguageButton-sc-8efs89-3 jjJqum"
+        type="button"
+      >
+        <span>
+          In English
+        </span>
+      </button>
+    </li>
+    <li
+      class="components__LanguageItem-sc-8efs89-2 iZcJuQ"
     >
-      en
-    </option>
-    <option
-      value="sv"
-    >
-      På svenska
-    </option>
-  </select>
+      <button
+        class="components__LanguageButton-sc-8efs89-3 jjJqum"
+        type="button"
+      >
+        <span>
+          På svenska
+        </span>
+      </button>
+    </li>
+  </ul>
 </div>
 `;

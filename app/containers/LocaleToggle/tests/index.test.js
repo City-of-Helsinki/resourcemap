@@ -28,15 +28,16 @@ describe('<LocaleToggle />', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should present the default `en` english language option', () => {
-    const { container } = render(
+  it('should not present the default `fi` Finnish language option', () => {
+    const { queryByText } = render(
       <Provider store={store}>
         <LanguageProvider messages={translationMessages}>
           <LocaleToggle />
         </LanguageProvider>
       </Provider>,
     );
-    expect(container.querySelector('option[value="en"]')).not.toBeNull();
+
+    expect(queryByText('Suomeksi')).toBeNull();
   });
 
   describe('mapDispatchToProps', () => {
@@ -51,8 +52,7 @@ describe('<LocaleToggle />', () => {
         const dispatch = jest.fn();
         const result = mapDispatchToProps(dispatch);
         const locale = 'sv';
-        const evt = { target: { value: locale } };
-        result.onLocaleToggle(evt);
+        result.onLocaleToggle(locale);
         expect(dispatch).toHaveBeenCalledWith(changeLocale(locale));
       });
     });
