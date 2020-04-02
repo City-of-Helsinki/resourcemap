@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Chevron from 'components/Chevron';
 import { CSSTransition } from 'react-transition-group';
 import {
   Wrapper,
@@ -50,7 +49,6 @@ class BookingButton extends React.Component {
       <Wrapper>
         <MainButton onClick={onClick} className={className}>
           {text}
-          <Chevron className={className === 'btn--active' ? 'up' : 'down'} />
         </MainButton>
         <SubButtonWrapperWithTransition className="button-animations">
           {className === 'btn--active' && buttonitems}

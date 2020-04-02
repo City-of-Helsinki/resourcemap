@@ -5,34 +5,31 @@ import BasicButton from 'components/BasicButton';
 export const Wrapper = styled.div``;
 
 export const MainButton = styled(BasicButton)`
-  margin: 0 auto 1rem;
   display: block;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  padding: 10px 32px;
 `;
 
 export const SubButton = styled(MainButton)`
-  font-size: 18px;
-  line-height: 2rem;
-  border-radius: 0;
   margin: 0;
-  background-color: #d8d8d8;
-  width: 220px;
-  height: 50px;
+  width: 160px;
+
+  font-size: 10px;
+  font-weight: normal;
+
+  border: none;
+  background-color: #606060;
 
   transition: all 200ms linear;
 
   &.sub-btn {
     &--active {
-      background-color: black;
-      color: white;
+      background-color: #9fc9eb;
+      color: #191919;
     }
-  }
-
-  &:last-child {
-    margin-bottom: 1rem;
   }
 `;
 
@@ -42,4 +39,5 @@ export const SubButtonWrapperWithTransition = styled(TransitionGroup)`
   grid-auto-flow: column;
   grid-gap: 13px 13px;
   justify-content: center;
+  margin-top: 18px;
 `;
