@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.path`
+  fill: #f6f6f8;
+
   &.is-highlighted {
     &.available {
       fill: rgba(40, 167, 69, 0.36);

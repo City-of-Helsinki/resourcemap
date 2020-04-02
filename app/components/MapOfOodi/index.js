@@ -1,47 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Room from 'components/Room';
-import Icons from './icons';
-import Structures from './structures';
 
-const SvgMap = props => (
-  <svg width="100%" viewBox="0 0 2000 456" version="1.1" ref={props.roomRef}>
-    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <g id="Oodi_Pohjakartta_2krs" fillRule="nonzero">
-        <Structures />
-        <g
-          id="spaces"
-          fill="#191919"
-          fillRule="nonzero"
-          stroke="#dedfe1"
-          strokeWidth="3"
-          transform="translate(99.000000, 9.000000)"
-        >
-          {props.rooms.map(item => (
+import MapIconsLayer from './svg/MapIcons';
+import MapStructures from './svg/MapStructures';
+import MapYouAreHere from './svg/MapYouAreHere';
+import roomPaths from './roomPaths';
+
+const MapOfOodi = props => (
+  <svg width="100%" viewBox="0 0 1400 320" version="1.1" ref={props.roomRef}>
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <MapStructures />
+      <MapIconsLayer />
+      <g>
+        {props.rooms.map(item => {
+          const paths = roomPaths[item.id];
+
+          return paths.map(path => (
             <Room
-              key={item.id}
+              key={path}
               name={item.name}
               svgtype={item.svgtype}
               info={item.info}
               available={item.available}
               useRespa={item.useRespa}
               id={item.id}
-              d={item.d}
+              path={path}
               category={item.category}
               onSpaceClick={props.onSpaceClick}
               highlighted={props.highlighted}
               currentSpace={props.currentSpace}
             />
-          ))}
-        </g>
-
-        <Icons />
+          ));
+        })}
       </g>
+      <MapYouAreHere />
     </g>
   </svg>
 );
 
-SvgMap.propTypes = {
+MapOfOodi.propTypes = {
   roomRef: PropTypes.any,
   rooms: PropTypes.arrayOf(PropTypes.any),
   onSpaceClick: PropTypes.any,
@@ -49,4 +47,4 @@ SvgMap.propTypes = {
   currentSpace: PropTypes.any,
 };
 
-export default SvgMap;
+export default MapOfOodi;
