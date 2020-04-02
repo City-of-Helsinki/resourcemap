@@ -11,9 +11,9 @@ const SvgMap = props => (
         <Structures />
         <g
           id="spaces"
-          fill="#FFFFFF"
+          fill="#191919"
           fillRule="nonzero"
-          stroke="#000000"
+          stroke="#dedfe1"
           strokeWidth="3"
           transform="translate(99.000000, 9.000000)"
         >
