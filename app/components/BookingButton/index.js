@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Chevron from 'components/Chevron';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { MainButton, SubButton, SubButtonWrapper } from './wrappers';
+import { CSSTransition } from 'react-transition-group';
+import {
+  Wrapper,
+  MainButton,
+  SubButton,
+  SubButtonWrapperWithTransition,
+} from './wrappers';
 
 class BookingButton extends React.Component {
   constructor(props) {
@@ -42,17 +47,15 @@ class BookingButton extends React.Component {
     });
 
     return (
-      <React.Fragment>
+      <Wrapper>
         <MainButton onClick={onClick} className={className}>
           {text}
           <Chevron className={className === 'btn--active' ? 'up' : 'down'} />
         </MainButton>
-        <SubButtonWrapper>
-          <TransitionGroup className="button-animations">
-            {className === 'btn--active' && buttonitems}
-          </TransitionGroup>
-        </SubButtonWrapper>
-      </React.Fragment>
+        <SubButtonWrapperWithTransition className="button-animations">
+          {className === 'btn--active' && buttonitems}
+        </SubButtonWrapperWithTransition>
+      </Wrapper>
     );
   }
 }
