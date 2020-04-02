@@ -155,25 +155,30 @@ class Container extends React.Component {
     const { highlighted, currentSpace, tooltipState, x, y } = this.state;
     const { spaces } = this.props;
 
+    const QRCodeHref = currentSpace.useRespa
+      ? `https://varaamo.hel.fi/resources/${currentSpace.id}`
+      : 'https://varaamo.hel.fi/search?&unit=tprek%3A51342';
+    const QRCodeLinkValue = currentSpace.useRespa
+      ? `varaamo.hel.fi/${currentSpace.id}`
+      : 'varaamo.hel.fi';
+
     return (
       <React.Fragment>
         <Wrapper>
-          {currentSpace.useRespa && (
-            <QRCodeWrapper>
-              <QRCode
-                link={`https://varaamo.hel.fi/resources/${currentSpace.id}`}
-                description={
-                  <>
-                    <FormattedMessage {...messages.makeReservationInVaraamo}>
-                      {text => <QRCodeDescription>{text}</QRCodeDescription>}
-                    </FormattedMessage>
-                    <br />
-                    <QRCodeLink>varaamo.hel.fi/{currentSpace.id}</QRCodeLink>
-                  </>
-                }
-              />
-            </QRCodeWrapper>
-          )}
+          <QRCodeWrapper>
+            <QRCode
+              link={QRCodeHref}
+              description={
+                <>
+                  <FormattedMessage {...messages.makeReservationInVaraamo}>
+                    {text => <QRCodeDescription>{text}</QRCodeDescription>}
+                  </FormattedMessage>
+                  <br />
+                  <QRCodeLink>{QRCodeLinkValue}</QRCodeLink>
+                </>
+              }
+            />
+          </QRCodeWrapper>
           <H1>
             Oodi{' '}
             <FormattedMessage {...messages.mapTitle}>
