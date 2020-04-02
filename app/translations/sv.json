@@ -1,13 +1,4 @@
 {
-  "boilerplate.components.Footer.author.message": "",
-  "boilerplate.components.Footer.license.message": "",
-  "boilerplate.components.Header.features": "",
-  "boilerplate.components.Header.home": "",
-  "boilerplate.containers.HomePage.start_project.header": "",
-  "boilerplate.containers.HomePage.start_project.message": "",
-  "boilerplate.containers.HomePage.tryme.atPrefix": "",
-  "boilerplate.containers.HomePage.tryme.header": "",
-  "boilerplate.containers.HomePage.tryme.message": "",
   "components.Container.mapTitle": "Helsingfors centrumbibliotek | 2:a våningen",
   "components.Container.makeReservationInVaraamo": "Bok på Varaamo",
   "components.VacancyLabel.available": "",

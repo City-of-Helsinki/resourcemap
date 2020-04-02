@@ -1,13 +1,4 @@
 {
-  "boilerplate.components.Footer.author.message": "",
-  "boilerplate.components.Footer.license.message": "",
-  "boilerplate.components.Header.features": "",
-  "boilerplate.components.Header.home": "",
-  "boilerplate.containers.HomePage.start_project.header": "",
-  "boilerplate.containers.HomePage.start_project.message": "",
-  "boilerplate.containers.HomePage.tryme.atPrefix": "",
-  "boilerplate.containers.HomePage.tryme.header": "",
-  "boilerplate.containers.HomePage.tryme.message": "",
   "components.Container.mapTitle": "Helsinki Central Library | 2nd floor",
   "components.Container.makeReservationInVaraamo": "Book on Varaamo",
   "components.VacancyLabel.available": "Free",
