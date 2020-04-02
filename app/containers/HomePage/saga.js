@@ -19,10 +19,9 @@ export function* loadResource() {
 
   // Load status of each space.
   // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < spaces.size; i++) {
-    const space = spaces.get(i);
-    const id = space.get('id');
-    const useRespa = space.get('useRespa');
+  for (let i = 0; i < spaces.length; i++) {
+    const space = spaces[i];
+    const { id, useRespa } = space;
 
     if (id && useRespa) {
       const requestURL = `https://api.hel.fi/respa/v1/resource/${id}/?start=${startTimeStr}&end=${endTimeStr}`;
