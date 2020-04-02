@@ -9,6 +9,7 @@
   "boilerplate.containers.HomePage.tryme.header": "",
   "boilerplate.containers.HomePage.tryme.message": "",
   "components.Container.mapTitle": "Helsingfors centrumbibliotek | 2:a våningen",
+  "components.Container.makeReservationInVaraamo": "Bok på Varaamo",
   "components.VacancyLabel.available": "",
   "components.VacancyLabel.nonReservable": "",
   "components.VacancyLabel.taken": "",

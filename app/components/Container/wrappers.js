@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
+  position: relative;
   display: flex;
   width: 100%;
   height: 100vh;
@@ -38,4 +39,19 @@ export const ButtonsWrapper = styled.div`
 
 export const FloorLabel = styled.span`
   font-weight: normal;
+`;
+
+export const QRCodeWrapper = styled.div`
+  position: absolute;
+  top: 69px;
+  right: 100px;
+`;
+
+export const QRCodeDescription = styled.span`
+  font-size: 12px;
+  font-weight: bold;
+`;
+
+export const QRCodeLink = styled.span`
+  font-size: 10px;
 `;

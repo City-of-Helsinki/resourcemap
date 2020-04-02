@@ -9,6 +9,7 @@
   "boilerplate.containers.HomePage.tryme.header": "",
   "boilerplate.containers.HomePage.tryme.message": "",
   "components.Container.mapTitle": "Helsinki Central Library | 2nd floor",
+  "components.Container.makeReservationInVaraamo": "Book on Varaamo",
   "components.VacancyLabel.available": "Free",
   "components.VacancyLabel.nonReservable": "Not Reservable",
   "components.VacancyLabel.taken": "Occupied",

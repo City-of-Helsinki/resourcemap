@@ -17,6 +17,7 @@ import Tooltip from 'components/Tooltip';
 import ButtonList from 'components/ButtonList';
 import VacancyList from 'components/VacancyList';
 import H1 from 'components/H1';
+import QRCode from 'components/QRCode';
 import {
   Wrapper,
   MapWrapper,
@@ -24,6 +25,9 @@ import {
   ControlsWrapper,
   ButtonsWrapper,
   FloorLabel,
+  QRCodeWrapper,
+  QRCodeDescription,
+  QRCodeLink,
 } from './wrappers';
 import messages from './messages';
 
@@ -154,6 +158,22 @@ class Container extends React.Component {
     return (
       <React.Fragment>
         <Wrapper>
+          {currentSpace.useRespa && (
+            <QRCodeWrapper>
+              <QRCode
+                link={`https://varaamo.hel.fi/resources/${currentSpace.id}`}
+                description={
+                  <>
+                    <FormattedMessage {...messages.makeReservationInVaraamo}>
+                      {text => <QRCodeDescription>{text}</QRCodeDescription>}
+                    </FormattedMessage>
+                    <br />
+                    <QRCodeLink>varaamo.hel.fi/{currentSpace.id}</QRCodeLink>
+                  </>
+                }
+              />
+            </QRCodeWrapper>
+          )}
           <H1>
             Oodi{' '}
             <FormattedMessage {...messages.mapTitle}>
