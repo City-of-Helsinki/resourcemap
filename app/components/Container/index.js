@@ -7,13 +7,22 @@ import injectSaga from 'utils/injectSaga';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import Sidebar from 'components/Sidebar';
-import MapContainer from 'components/MapContainer';
-import Tooltip from 'components/Tooltip';
 import { makeSelectSpaces } from 'containers/HomePage/selectors';
 import reducer from 'containers/HomePage/reducer';
 import saga from 'containers/HomePage/saga';
-import { Wrapper } from './wrappers';
+import LocaleToggle from 'containers/LocaleToggle';
+import MapContainer from 'components/MapContainer';
+import Tooltip from 'components/Tooltip';
+import ButtonList from 'components/ButtonList';
+import VacancyList from 'components/VacancyList';
+import H1 from 'components/H1';
+import {
+  Wrapper,
+  MapWrapper,
+  HorizontalLine,
+  ControlsWrapper,
+  ButtonsWrapper,
+} from './wrappers';
 
 class Container extends React.Component {
   constructor(props) {
@@ -139,24 +148,37 @@ class Container extends React.Component {
     const { highlighted, currentSpace, tooltipState, x, y } = this.state;
     const { spaces } = this.props;
 
+    let title;
+    // eslint-disable-next-line no-unused-expressions
+    highlighted ? (title = `: ${highlighted}`) : (title = '');
+
     return (
       <React.Fragment>
         <Wrapper>
-          <MapContainer
-            spaces={spaces}
-            highlighted={highlighted}
-            currentSpace={currentSpace}
-            tooltipState={tooltipState}
-            handleSpaceClick={this.handleSpaceClick}
-            roomRef={this.roomRef}
-          />
-
-          <Sidebar
-            spaces={spaces}
-            currentSpace={currentSpace}
-            onSpaceCategoryClick={this.highlightSpaceType}
-            onSpaceNameClick={this.onSpaceNameClick}
-          />
+          <H1>Oodi{title} </H1>
+          <MapWrapper>
+            <MapContainer
+              spaces={spaces}
+              highlighted={highlighted}
+              currentSpace={currentSpace}
+              tooltipState={tooltipState}
+              handleSpaceClick={this.handleSpaceClick}
+              roomRef={this.roomRef}
+            />
+          </MapWrapper>
+          <ControlsWrapper>
+            <LocaleToggle />
+            <VacancyList />
+          </ControlsWrapper>
+          <HorizontalLine />
+          <ButtonsWrapper>
+            <ButtonList
+              currentSpace={currentSpace}
+              onSpaceCategoryClick={this.highlightSpaceType}
+              onSpaceNameClick={this.onSpaceNameClick}
+              spaces={spaces}
+            />
+          </ButtonsWrapper>
         </Wrapper>
         <TransitionGroup className="tooltip-animations">
           <CSSTransition

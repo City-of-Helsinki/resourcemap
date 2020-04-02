@@ -8,9 +8,10 @@ const GlobalStyle = createGlobalStyle`
   }
   body, p {
     font-family: 'HelsinkiGrotesk', 'Helvetica Neue', Helvetica, Arial;
+    color: #ffffff;
   }
   #app {
-    background-color: #fafafa;
+    background-color: #191919;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
