@@ -34,3 +34,7 @@ export const ControlsWrapper = styled.div`
 export const ButtonsWrapper = styled.div`
   flex: 1 0;
 `;
+
+export const FloorLabel = styled.span`
+  font-weight: normal;
+`;

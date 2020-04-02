@@ -1,11 +1,5 @@
 {
-  "Sidebar.text": "",
-  "Sidebar.title": "Spaces",
   "available": "Available",
-  "boilerplate.components.AreaBooking.button.submit": "",
-  "boilerplate.components.AreaBooking.link.reset": "",
-  "boilerplate.components.Confirm.cancel": "",
-  "boilerplate.components.Confirm.finishedLink": "",
   "boilerplate.components.Footer.author.message": "",
   "boilerplate.components.Footer.license.message": "",
   "boilerplate.components.Header.features": "",
@@ -19,6 +13,7 @@
   "boilerplate.containers.LocaleToggle.en": "",
   "boilerplate.containers.LocaleToggle.fi": "",
   "boilerplate.containers.LocaleToggle.sv": "",
+  "components.Container.mapTitle": "Helsinki Central Library | 2nd floor",
   "soon": "Available soon",
   "taken": "Occupied"
 }

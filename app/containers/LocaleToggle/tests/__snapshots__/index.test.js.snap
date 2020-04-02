@@ -5,7 +5,7 @@ exports[`<LocaleToggle /> should match the snapshot 1`] = `
   class="Wrapper-xnjoq9-0 dNmQIR"
 >
   <select
-    class="Select-sc-1sm01tk-0 wIjFa"
+    class="Select-sc-1sm01tk-0 dQrYOI"
   >
     <option
       value="fi"

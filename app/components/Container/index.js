@@ -6,6 +6,7 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { FormattedMessage } from 'react-intl';
 
 import { makeSelectSpaces } from 'containers/HomePage/selectors';
 import reducer from 'containers/HomePage/reducer';
@@ -22,7 +23,9 @@ import {
   HorizontalLine,
   ControlsWrapper,
   ButtonsWrapper,
+  FloorLabel,
 } from './wrappers';
+import messages from './messages';
 
 class Container extends React.Component {
   constructor(props) {
@@ -148,14 +151,15 @@ class Container extends React.Component {
     const { highlighted, currentSpace, tooltipState, x, y } = this.state;
     const { spaces } = this.props;
 
-    let title;
-    // eslint-disable-next-line no-unused-expressions
-    highlighted ? (title = `: ${highlighted}`) : (title = '');
-
     return (
       <React.Fragment>
         <Wrapper>
-          <H1>Oodi{title} </H1>
+          <H1>
+            Oodi{' '}
+            <FormattedMessage {...messages.mapTitle}>
+              {text => <FloorLabel>{text}</FloorLabel>}
+            </FormattedMessage>
+          </H1>
           <MapWrapper>
             <MapContainer
               spaces={spaces}

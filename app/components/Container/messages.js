@@ -5,21 +5,11 @@
  */
 import { defineMessages } from 'react-intl';
 
+const scope = 'components.Container';
+
 export default defineMessages({
-  submitButton: {
-    id: 'boilerplate.components.AreaBooking.button.submit',
-    defaultMessage: 'Varaa',
-  },
-  cancel: {
-    id: 'boilerplate.components.Confirm.cancel',
-    defaultMessage: 'Peruuta varaus',
-  },
-  reset: {
-    id: 'boilerplate.components.AreaBooking.link.reset',
-    defaultMessage: 'Palaa alkuun',
-  },
-  finishedLink: {
-    id: 'boilerplate.components.Confirm.finishedLink',
-    defaultMessage: 'Valmis!',
+  mapTitle: {
+    id: `${scope}.mapTitle`,
+    defaultMessage: 'Helsingin keskuskirjasto | 2.kerros',
   },
 });
