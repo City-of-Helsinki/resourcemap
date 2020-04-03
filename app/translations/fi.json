@@ -1,11 +1,4 @@
 {
-  "Sidebar.text": "Tekstiä",
-  "Sidebar.title": "Tilat",
-  "available": "Vapaa",
-  "boilerplate.components.AreaBooking.button.submit": "Varaa",
-  "boilerplate.components.AreaBooking.link.reset": "Palaa alkuun",
-  "boilerplate.components.Confirm.cancel": "Peruuta varaus",
-  "boilerplate.components.Confirm.finishedLink": "Valmis!",
   "boilerplate.components.Footer.author.message": "Made with love by {author}.",
   "boilerplate.components.Footer.license.message": "This project is licensed under the MIT license.",
   "boilerplate.components.Header.features": "Features",
@@ -15,10 +8,11 @@
   "boilerplate.containers.HomePage.tryme.atPrefix": "@",
   "boilerplate.containers.HomePage.tryme.header": "Try me!",
   "boilerplate.containers.HomePage.tryme.message": "Show Github repositories by",
-  "boilerplate.containers.LocaleToggle.de": "de",
-  "boilerplate.containers.LocaleToggle.en": "en",
-  "boilerplate.containers.LocaleToggle.fi": "Suomeksi",
-  "boilerplate.containers.LocaleToggle.sv": "På svenska",
-  "soon": "Vapautuu kohta",
-  "taken": "Varattu"
+  "components.Container.mapTitle": "Helsingin keskuskirjasto | 2.kerros",
+  "components.VacancyLabel.available": "Vapaa",
+  "components.VacancyLabel.nonReservable": "Ei varattavissa",
+  "components.VacancyLabel.taken": "Varattu",
+  "containers.LocaleToggle.en": "In English",
+  "containers.LocaleToggle.fi": "Suomeksi",
+  "containers.LocaleToggle.sv": "På svenska"
 }

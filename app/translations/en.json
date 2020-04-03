@@ -1,11 +1,4 @@
 {
-  "Sidebar.text": "",
-  "Sidebar.title": "Spaces",
-  "available": "Available",
-  "boilerplate.components.AreaBooking.button.submit": "",
-  "boilerplate.components.AreaBooking.link.reset": "",
-  "boilerplate.components.Confirm.cancel": "",
-  "boilerplate.components.Confirm.finishedLink": "",
   "boilerplate.components.Footer.author.message": "",
   "boilerplate.components.Footer.license.message": "",
   "boilerplate.components.Header.features": "",
@@ -15,10 +8,11 @@
   "boilerplate.containers.HomePage.tryme.atPrefix": "",
   "boilerplate.containers.HomePage.tryme.header": "",
   "boilerplate.containers.HomePage.tryme.message": "",
-  "boilerplate.containers.LocaleToggle.de": "",
-  "boilerplate.containers.LocaleToggle.en": "",
-  "boilerplate.containers.LocaleToggle.fi": "",
-  "boilerplate.containers.LocaleToggle.sv": "",
-  "soon": "Available soon",
-  "taken": "Occupied"
+  "components.Container.mapTitle": "Helsinki Central Library | 2nd floor",
+  "components.VacancyLabel.available": "Free",
+  "components.VacancyLabel.nonReservable": "Not Reservable",
+  "components.VacancyLabel.taken": "Occupied",
+  "containers.LocaleToggle.en": "In English",
+  "containers.LocaleToggle.fi": "Suomeksi",
+  "containers.LocaleToggle.sv": "Pä svenska"
 }

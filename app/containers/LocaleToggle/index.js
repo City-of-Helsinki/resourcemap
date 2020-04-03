@@ -8,42 +8,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { FormattedMessage } from 'react-intl';
 
-import Toggle from 'components/Toggle';
-import Wrapper from './Wrapper';
+import { Wrapper, LanguageList, LanguageOption } from './components';
 import messages from './messages';
 import { appLocales } from '../../i18n';
 import { changeLocale } from '../LanguageProvider/actions';
 import { makeSelectLocale } from '../LanguageProvider/selectors';
 
-export function LocaleToggle(props) {
+export function LocaleToggle({ currentLocale, onLocaleToggle }) {
   return (
     <Wrapper>
-      <Toggle
-        value={props.locale}
-        values={appLocales}
-        messages={messages}
-        onToggle={props.onLocaleToggle}
-      />
+      <LanguageList>
+        {appLocales
+          .filter(locale => locale !== currentLocale)
+          .map(locale => (
+            <LanguageOption key={locale} onClick={() => onLocaleToggle(locale)}>
+              <FormattedMessage {...messages[locale]} />
+            </LanguageOption>
+          ))}
+      </LanguageList>
     </Wrapper>
   );
 }
 
 LocaleToggle.propTypes = {
   onLocaleToggle: PropTypes.func,
-  locale: PropTypes.string,
+  currentLocale: PropTypes.string,
 };
 
 const mapStateToProps = createSelector(
   makeSelectLocale(),
   locale => ({
-    locale,
+    currentLocale: locale,
   }),
 );
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onLocaleToggle: evt => dispatch(changeLocale(evt.target.value)),
+    onLocaleToggle: locale => dispatch(changeLocale(locale)),
     dispatch,
   };
 }

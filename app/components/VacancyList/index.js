@@ -7,11 +7,11 @@ const VacancyList = () => {
     {
       vacancy: 'available',
     },
-    /*    {
-      vacancy: 'soon',
-    }, */
     {
       vacancy: 'taken',
+    },
+    {
+      vacancy: 'nonReservable',
     },
   ];
 

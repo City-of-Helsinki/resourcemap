@@ -1,16 +1,18 @@
 import { defineMessages } from 'react-intl';
 
+const scope = 'components.VacancyLabel';
+
 export default defineMessages({
   available: {
-    id: 'available',
+    id: `${scope}.available`,
     defaultMessage: 'Vapaa',
   },
-  soon: {
-    id: 'soon',
-    defaultMessage: 'Vapautuu kohta',
-  },
   taken: {
-    id: 'taken',
+    id: `${scope}.taken`,
     defaultMessage: 'Varattu',
+  },
+  nonReservable: {
+    id: `${scope}.nonReservable`,
+    defaultMessage: 'Ei varattavissa',
   },
 });
