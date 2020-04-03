@@ -5,8 +5,36 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
   class="HomePage__Article-i81cdn-0 gPNneQ"
 >
   <section
-    class="wrappers__Wrapper-cufm9l-0 bicaCq"
+    class="wrappers__Wrapper-cufm9l-0 kJSNJb"
   >
+    <div
+      class="wrappers__QRCodeWrapper-cufm9l-6 cadmJP"
+    >
+      <div
+        class="QRCode__Wrapper-sc-1gk0zly-0 bzFWht"
+      >
+        <canvas
+          height="70"
+          style="height: 70px; width: 70px;"
+          width="70"
+        />
+        <div
+          class="QRCode__DescriptionWrapper-sc-1gk0zly-1 kwnJEC"
+        >
+          <span
+            class="wrappers__QRCodeDescription-cufm9l-7 bYHOxb"
+          >
+            Tee varaus Varaamossa
+          </span>
+          <br />
+          <span
+            class="wrappers__QRCodeLink-cufm9l-8 fcJaYH"
+          >
+            varaamo.hel.fi
+          </span>
+        </div>
+      </div>
+    </div>
     <h1
       class="H1-tncdg6-0 jYzbFZ"
     >
@@ -898,7 +926,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="available VacancyIcon-p2hriq-0 bXUtYi"
             />
             <p
-              class="small P-sc-76wrpw-0 jRHrwm"
+              class="small dark P-sc-76wrpw-0 bRSwxR"
             >
               <span>
                 Vapaa
@@ -916,7 +944,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="taken VacancyIcon-p2hriq-0 bXUtYi"
             />
             <p
-              class="small P-sc-76wrpw-0 jRHrwm"
+              class="small dark P-sc-76wrpw-0 bRSwxR"
             >
               <span>
                 Varattu
@@ -934,7 +962,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="nonReservable VacancyIcon-p2hriq-0 bXUtYi"
             />
             <p
-              class="small P-sc-76wrpw-0 jRHrwm"
+              class="small dark P-sc-76wrpw-0 bRSwxR"
             >
               <span>
                 Ei varattavissa

@@ -6,6 +6,9 @@ export const TooltipContainer = styled.div`
   width: 240px;
   left: ${props => props.x}px;
   top: ${props => props.y}px;
+
+  color: #191919;
+
   transform: translate3d(-50%, calc(-100% - 20px), 0);
   backface-visibility: hidden;
   & h3 {

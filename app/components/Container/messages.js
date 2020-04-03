@@ -12,4 +12,8 @@ export default defineMessages({
     id: `${scope}.mapTitle`,
     defaultMessage: 'Helsingin keskuskirjasto | 2.kerros',
   },
+  makeReservationInVaraamo: {
+    id: `${scope}.makeReservationInVaraamo`,
+    defaultMessage: 'Tee varaus Varaamossa',
+  },
 });
