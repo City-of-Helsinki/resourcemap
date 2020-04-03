@@ -50,9 +50,9 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       class="wrappers__MapWrapper-cufm9l-1 dUBLQq"
     >
       <svg
+        height="100%"
         version="1.1"
         viewBox="0 0 1400 320"
-        width="100%"
       >
         <g
           fill="none"
@@ -354,6 +354,66 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               x="81.829"
               y="109.303"
             />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="24.871"
+              id="wsp1"
+              pointer-events="visible"
+              width="20.224"
+              x="1017.98"
+              y="51.41"
+            />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="24.871"
+              id="wsp2"
+              pointer-events="visible"
+              width="20.224"
+              x="1042.16"
+              y="51.41"
+            />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="24.871"
+              id="wsp3"
+              pointer-events="visible"
+              width="20.224"
+              x="1066.34"
+              y="51.41"
+            />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="24.871"
+              id="wsp4"
+              pointer-events="visible"
+              width="20.224"
+              x="1090.52"
+              y="51.41"
+            />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="41.774"
+              id="wsp5"
+              pointer-events="visible"
+              width="19.302"
+              x="1188.99"
+              y="181.898"
+            />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="41.774"
+              id="wsp6"
+              pointer-events="visible"
+              width="19.302"
+              x="1212.48"
+              y="181.898"
+            />
             <path
               class="roomPath  nodata"
               cursor="pointer"
@@ -460,109 +520,6 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             <rect
               class="roomPath  nodata"
               cursor="pointer"
-              height="47.796"
-              id="k"
-              pointer-events="visible"
-              width="25.248"
-              x="536.838"
-              y="5.445"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
-              height="83.11"
-              id="kuutio"
-              pointer-events="visible"
-              width="95.435"
-              x="1136.34"
-              y="94.827"
-            />
-            <path
-              class="roomPath  nodata"
-              cursor="pointer"
-              d="M1114.94,76.165L1114.94,5.56L1199.15,5.56L1246.07,76.165L1114.94,76.165Z"
-              id="lukusali"
-              pointer-events="visible"
-            />
-            <path
-              class="roomPath  nodata"
-              cursor="pointer"
-              d="M1237.02,93.677L1258.73,93.677L1297.93,153.855L1237.02,192.15L1237.02,93.677Z"
-              id="workingArea"
-              pointer-events="visible"
-              style="stroke: transparent;"
-            />
-            <path
-              class="roomPath  nodata"
-              cursor="pointer"
-              d="M1258.73,93.677L1253.16,93.677L1253.16,95.667L1258.73,95.667L1258.73,93.677ZM1247.59,93.677L1242.03,93.677L1242.03,95.667L1247.59,95.667L1247.59,93.677ZM1239,94.234L1237.02,94.234L1237.02,99.806L1239,99.806L1239,94.234ZM1239,105.378L1237.02,105.378L1237.02,110.95L1239,110.95L1239,105.378ZM1239,116.522L1237.02,116.522L1237.02,122.094L1239,122.094L1239,116.522ZM1239,127.666L1237.02,127.666L1237.02,133.238L1239,133.238L1239,127.666ZM1239,138.81L1237.02,138.81L1237.02,144.382L1239,144.382L1239,138.81ZM1239,149.954L1237.02,149.954L1237.02,155.526L1239,155.526L1239,149.954ZM1239,161.098L1237.02,161.098L1237.02,166.67L1239,166.67L1239,161.098ZM1239,172.242L1237.02,172.242L1237.02,177.814L1239,177.814L1239,172.242ZM1239,183.386L1237.02,183.386L1237.02,188.958L1238.36,188.958L1237.96,189.197L1239.02,190.885L1243.73,187.92L1242.67,186.236L1238.99,188.549L1238.99,183.375L1239,183.386ZM1252.13,180.306L1247.41,183.271L1248.47,184.955L1253.19,181.993L1252.13,180.306ZM1261.56,174.38L1256.82,177.341L1257.88,179.028L1259.07,178.276L1262.58,176.071L1261.52,174.388L1261.56,174.38ZM1270.99,168.45L1266.28,171.415L1267.33,173.098L1272.05,170.137L1270.99,168.45ZM1280.42,162.523L1275.71,165.488L1276.76,167.172L1281.48,164.207L1280.42,162.523ZM1289.85,156.593L1285.14,159.558L1286.19,161.242L1290.91,158.281L1289.85,156.593ZM1296.4,151.487L1294.74,152.573L1295.17,153.246L1294.57,153.644L1295.62,155.327L1296.26,154.929L1297.95,153.871L1296.4,151.483L1296.4,151.487ZM1290.32,142.15L1288.64,143.24L1291.68,147.905L1293.35,146.818L1291.42,143.865L1291.42,143.841L1291.39,143.801L1290.36,142.209L1290.32,142.15ZM1284.24,132.817L1282.58,133.903L1285.61,138.572L1287.28,137.485L1284.24,132.817ZM1278.16,123.48L1276.49,124.566L1279.53,129.235L1281.2,128.148L1279.02,124.805L1279.02,124.781L1279,124.753L1278.21,123.519L1278.16,123.48ZM1272.08,114.146L1270.41,115.233L1273.45,119.898L1275.12,118.811L1272.08,114.146ZM1265.97,104.809L1264.31,105.896L1267.35,110.564L1269.01,109.478L1266.57,105.729L1266,104.853L1265.97,104.809ZM1259.89,95.472L1258.22,96.559L1261.26,101.227L1262.93,100.141L1260.18,95.922L1260.18,95.898L1260.16,95.866L1259.93,95.516L1259.89,95.472Z"
-              id="workingArea"
-              pointer-events="visible"
-              style="stroke: transparent; fill: #f6f6f8;"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
-              height="24.871"
-              id="wsp1"
-              pointer-events="visible"
-              width="20.224"
-              x="1017.98"
-              y="51.41"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
-              height="24.871"
-              id="wsp2"
-              pointer-events="visible"
-              width="20.224"
-              x="1042.16"
-              y="51.41"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
-              height="24.871"
-              id="wsp3"
-              pointer-events="visible"
-              width="20.224"
-              x="1066.34"
-              y="51.41"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
-              height="24.871"
-              id="wsp4"
-              pointer-events="visible"
-              width="20.224"
-              x="1090.52"
-              y="51.41"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
-              height="41.774"
-              id="wsp5"
-              pointer-events="visible"
-              width="19.302"
-              x="1188.99"
-              y="181.898"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
-              height="41.774"
-              id="wsp6"
-              pointer-events="visible"
-              width="19.302"
-              x="1212.48"
-              y="181.898"
-            />
-            <rect
-              class="roomPath  nodata"
-              cursor="pointer"
               height="43.354"
               id="wst1"
               pointer-events="visible"
@@ -597,13 +554,6 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               id="wst2"
               pointer-events="visible"
               style="stroke: transparent; fill: #f6f6f8;"
-            />
-            <path
-              class="roomPath  nodata"
-              cursor="pointer"
-              d="M755.219,52.663L755.219,29.376L812.161,29.376L812.161,5.098L889.297,5.098L889.297,52.663L755.219,52.663Z"
-              id="mr1"
-              pointer-events="visible"
             />
             <rect
               class="roomPath  nodata"
@@ -659,6 +609,56 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               cursor="pointer"
               d="M680.847,130.843L675.279,130.843L675.279,132.833L680.847,132.833L680.847,130.843ZM669.711,130.843L664.143,130.843L664.143,132.833L669.711,132.833L669.711,130.843ZM658.575,130.843L653.006,130.843L653.006,132.833L658.575,132.833L658.575,130.843ZM647.438,130.843L641.87,130.843L641.87,132.833L647.438,132.833L647.438,130.843ZM636.302,130.843L630.734,130.843L630.734,132.833L636.302,132.833L636.302,130.843ZM625.165,130.843L619.597,130.843L619.597,132.833L625.165,132.833L625.165,130.843ZM614.029,130.843L608.461,130.843L608.461,132.833L614.029,132.833L614.029,130.843ZM602.893,130.843L597.324,130.843L597.324,132.833L602.893,132.833L602.893,130.843ZM591.756,130.843L586.188,130.843L586.188,132.833L591.756,132.833L591.756,130.843ZM580.62,130.843L575.052,130.843L575.052,132.833L580.62,132.833L580.62,130.843ZM569.483,130.843L563.915,130.843L563.915,132.833L569.483,132.833L569.483,130.843ZM558.347,130.843L552.779,130.843L552.779,132.833L558.347,132.833L558.347,130.843ZM553.427,135.073L551.438,135.073L551.438,140.645L553.427,140.645L553.427,135.073ZM553.427,146.217L551.438,146.217L551.438,151.638L553.427,151.638L553.427,146.217ZM562.714,149.66L557.146,149.66L557.146,151.65L562.714,151.65L562.714,149.66ZM573.85,149.66L568.282,149.66L568.282,151.65L573.85,151.65L573.85,149.66ZM584.987,149.66L579.419,149.66L579.419,151.65L584.987,151.65L584.987,149.66ZM596.123,149.66L590.555,149.66L590.555,151.65L596.123,151.65L596.123,149.66ZM607.26,149.66L601.691,149.66L601.691,151.65L607.26,151.65L607.26,149.66ZM618.396,149.66L612.828,149.66L612.828,151.65L618.396,151.65L618.396,149.66ZM629.532,149.66L623.964,149.66L623.964,151.65L629.532,151.65L629.532,149.66ZM640.669,149.66L635.101,149.66L635.101,151.65L640.669,151.65L640.669,149.66ZM651.805,149.66L646.237,149.66L646.237,151.65L651.805,151.65L651.805,149.66ZM662.942,149.66L657.373,149.66L657.373,151.65L662.942,151.65L662.942,149.66ZM674.078,149.66L668.51,149.66L668.51,151.65L674.078,151.65L674.078,149.66ZM680.839,147.272L678.851,147.272L678.851,151.65L680.839,151.65L680.839,147.272ZM680.839,136.128L678.851,136.128L678.851,141.7L680.839,141.7L680.839,136.128Z"
               id="uw3"
+              pointer-events="visible"
+              style="stroke: transparent; fill: #f6f6f8;"
+            />
+            <path
+              class="roomPath  nodata"
+              cursor="pointer"
+              d="M755.219,52.663L755.219,29.376L812.161,29.376L812.161,5.098L889.297,5.098L889.297,52.663L755.219,52.663Z"
+              id="mr1"
+              pointer-events="visible"
+            />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="47.796"
+              id="k"
+              pointer-events="visible"
+              width="25.248"
+              x="536.838"
+              y="5.445"
+            />
+            <rect
+              class="roomPath  nodata"
+              cursor="pointer"
+              height="83.11"
+              id="kuutio"
+              pointer-events="visible"
+              width="95.435"
+              x="1136.34"
+              y="94.827"
+            />
+            <path
+              class="roomPath  nodata"
+              cursor="pointer"
+              d="M1114.94,76.165L1114.94,5.56L1199.15,5.56L1246.07,76.165L1114.94,76.165Z"
+              id="lukusali"
+              pointer-events="visible"
+            />
+            <path
+              class="roomPath  nodata"
+              cursor="pointer"
+              d="M1237.02,93.677L1258.73,93.677L1297.93,153.855L1237.02,192.15L1237.02,93.677Z"
+              id="workingArea"
+              pointer-events="visible"
+              style="stroke: transparent;"
+            />
+            <path
+              class="roomPath  nodata"
+              cursor="pointer"
+              d="M1258.73,93.677L1253.16,93.677L1253.16,95.667L1258.73,95.667L1258.73,93.677ZM1247.59,93.677L1242.03,93.677L1242.03,95.667L1247.59,95.667L1247.59,93.677ZM1239,94.234L1237.02,94.234L1237.02,99.806L1239,99.806L1239,94.234ZM1239,105.378L1237.02,105.378L1237.02,110.95L1239,110.95L1239,105.378ZM1239,116.522L1237.02,116.522L1237.02,122.094L1239,122.094L1239,116.522ZM1239,127.666L1237.02,127.666L1237.02,133.238L1239,133.238L1239,127.666ZM1239,138.81L1237.02,138.81L1237.02,144.382L1239,144.382L1239,138.81ZM1239,149.954L1237.02,149.954L1237.02,155.526L1239,155.526L1239,149.954ZM1239,161.098L1237.02,161.098L1237.02,166.67L1239,166.67L1239,161.098ZM1239,172.242L1237.02,172.242L1237.02,177.814L1239,177.814L1239,172.242ZM1239,183.386L1237.02,183.386L1237.02,188.958L1238.36,188.958L1237.96,189.197L1239.02,190.885L1243.73,187.92L1242.67,186.236L1238.99,188.549L1238.99,183.375L1239,183.386ZM1252.13,180.306L1247.41,183.271L1248.47,184.955L1253.19,181.993L1252.13,180.306ZM1261.56,174.38L1256.82,177.341L1257.88,179.028L1259.07,178.276L1262.58,176.071L1261.52,174.388L1261.56,174.38ZM1270.99,168.45L1266.28,171.415L1267.33,173.098L1272.05,170.137L1270.99,168.45ZM1280.42,162.523L1275.71,165.488L1276.76,167.172L1281.48,164.207L1280.42,162.523ZM1289.85,156.593L1285.14,159.558L1286.19,161.242L1290.91,158.281L1289.85,156.593ZM1296.4,151.487L1294.74,152.573L1295.17,153.246L1294.57,153.644L1295.62,155.327L1296.26,154.929L1297.95,153.871L1296.4,151.483L1296.4,151.487ZM1290.32,142.15L1288.64,143.24L1291.68,147.905L1293.35,146.818L1291.42,143.865L1291.42,143.841L1291.39,143.801L1290.36,142.209L1290.32,142.15ZM1284.24,132.817L1282.58,133.903L1285.61,138.572L1287.28,137.485L1284.24,132.817ZM1278.16,123.48L1276.49,124.566L1279.53,129.235L1281.2,128.148L1279.02,124.805L1279.02,124.781L1279,124.753L1278.21,123.519L1278.16,123.48ZM1272.08,114.146L1270.41,115.233L1273.45,119.898L1275.12,118.811L1272.08,114.146ZM1265.97,104.809L1264.31,105.896L1267.35,110.564L1269.01,109.478L1266.57,105.729L1266,104.853L1265.97,104.809ZM1259.89,95.472L1258.22,96.559L1261.26,101.227L1262.93,100.141L1260.18,95.922L1260.18,95.898L1260.16,95.866L1259.93,95.516L1259.89,95.472Z"
+              id="workingArea"
               pointer-events="visible"
               style="stroke: transparent; fill: #f6f6f8;"
             />
@@ -822,6 +822,20 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
             <span>
+              Työtilat
+            </span>
+          </button>
+          <div
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+          />
+        </div>
+        <div
+          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+        >
+          <button
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+          >
+            <span>
               Studiot
             </span>
           </button>
@@ -850,35 +864,21 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
             <span>
-              Muut tilat
-            </span>
-          </button>
-          <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
-          />
-        </div>
-        <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
-        >
-          <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
-          >
-            <span>
-              Työtilat
-            </span>
-          </button>
-          <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
-          />
-        </div>
-        <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
-        >
-          <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
-          >
-            <span>
               Tietokoneet
+            </span>
+          </button>
+          <div
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+          />
+        </div>
+        <div
+          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+        >
+          <button
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+          >
+            <span>
+              Kaupunkiverstas
             </span>
           </button>
           <div
@@ -906,7 +906,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
             <span>
-              Kaupunkiverstas
+              Muut tilat
             </span>
           </button>
           <div

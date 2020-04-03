@@ -3,8 +3,21 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import BookingButton from 'components/BookingButton';
+import Categories from 'constants/Categories';
 import Wrapper from './Wrapper';
-import categories from './categories';
+import categoryMessages from './categoryMessages';
+
+const categoriesInOrder = [
+  Categories.LEARNING_SPACES,
+  Categories.GROUP_ROOMS,
+  Categories.WORKSPACES,
+  Categories.STUDIOS,
+  Categories.GAME_ROOMS,
+  Categories.WORKSTATIONS,
+  Categories.URBAN_WORKSHOP,
+  Categories.MACHINE_ROOM,
+  Categories.OTHER_SPACES,
+];
 
 class ButtonList extends React.Component {
   constructor(props) {
@@ -35,16 +48,15 @@ class ButtonList extends React.Component {
   render() {
     const { spaces, currentSpace } = this.props;
     const { activeIndex } = this.state;
-    const uniqueCategories = [...new Set(spaces.map(space => space.category))];
 
     return (
       <Wrapper className="c-buttonlist">
-        {uniqueCategories.map((category, index) => (
+        {categoriesInOrder.map((category, index) => (
           <BookingButton
             key={category}
             id={category}
             category={category}
-            text={<FormattedMessage {...categories[category]} />}
+            text={<FormattedMessage {...categoryMessages[category]} />}
             items={spaces}
             currentSpace={currentSpace}
             className={activeIndex === index ? 'btn--active' : 'btn'}
