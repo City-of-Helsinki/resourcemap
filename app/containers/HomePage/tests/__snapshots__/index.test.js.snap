@@ -851,7 +851,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       </svg>
     </div>
     <div
-      class="wrappers__ControlsWrapper-cufm9l-3 jsEljX"
+      class="wrappers__ControlsWrapper-cufm9l-3 kTyiqP"
     >
       <div
         class="components__Wrapper-sc-8efs89-0 iFEOpV"
@@ -957,75 +957,60 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 kEnEFW"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
           >
             Oppimistilat
-            <i
-              class="down Chevron__Wrapper-nmh5es-0 hXAVUf"
-            />
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 cAokjU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
           />
         </div>
         <div
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 kEnEFW"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
           >
             Ryhmätilat
-            <i
-              class="down Chevron__Wrapper-nmh5es-0 hXAVUf"
-            />
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 cAokjU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
           />
         </div>
         <div
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 kEnEFW"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
           >
             Studiot
-            <i
-              class="down Chevron__Wrapper-nmh5es-0 hXAVUf"
-            />
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 cAokjU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
           />
         </div>
         <div
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 kEnEFW"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
           >
             Pelitilat
-            <i
-              class="down Chevron__Wrapper-nmh5es-0 hXAVUf"
-            />
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 cAokjU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
           />
         </div>
         <div
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 kEnEFW"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
           >
             Muut tilat
-            <i
-              class="down Chevron__Wrapper-nmh5es-0 hXAVUf"
-            />
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 cAokjU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
           />
         </div>
       </div>
