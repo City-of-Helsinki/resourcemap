@@ -8,7 +8,7 @@ import MapYouAreHere from './svg/MapYouAreHere';
 import roomPaths from './roomPaths';
 
 const MapOfOodi = props => (
-  <svg width="100%" viewBox="0 0 1400 320" version="1.1" ref={props.roomRef}>
+  <svg height="100%" viewBox="0 0 1400 320" version="1.1" ref={props.roomRef}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <MapStructures />
       <MapIconsLayer />
