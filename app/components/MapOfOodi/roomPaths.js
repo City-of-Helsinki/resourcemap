@@ -184,37 +184,37 @@ export default {
     ),
   ],
   // Working spaces
-  wp1: [
+  wsp1: [
     props => (
       <rect {...props} x="1017.98" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wp2: [
+  wsp2: [
     props => (
       <rect {...props} x="1042.16" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wp3: [
+  wsp3: [
     props => (
       <rect {...props} x="1066.34" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wp4: [
+  wsp4: [
     props => (
       <rect {...props} x="1090.52" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wp5: [
+  wsp5: [
     props => (
       <rect {...props} x="1188.99" y="181.898" width="19.302" height="41.774" />
     ),
   ],
-  wp6: [
+  wsp6: [
     props => (
       <rect {...props} x="1212.48" y="181.898" width="19.302" height="41.774" />
     ),
   ],
-  computer1: [
+  wst1: [
     makeDashedRoom(
       props => (
         <rect
@@ -233,7 +233,7 @@ export default {
       ),
     ),
   ],
-  computer2: [
+  wst2: [
     makeDashedRoom(
       props => (
         <rect

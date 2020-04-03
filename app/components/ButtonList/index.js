@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+
 import BookingButton from 'components/BookingButton';
 import Wrapper from './Wrapper';
+import categories from './categories';
 
 class ButtonList extends React.Component {
   constructor(props) {
@@ -32,23 +35,22 @@ class ButtonList extends React.Component {
   render() {
     const { spaces, currentSpace } = this.props;
     const { activeIndex } = this.state;
-    const uniqueCats = [...new Set(spaces.map(space => space.category))];
+    const uniqueCategories = [...new Set(spaces.map(space => space.category))];
 
     return (
       <Wrapper className="c-buttonlist">
-        {uniqueCats.map((btn, index) => (
+        {uniqueCategories.map((category, index) => (
           <BookingButton
-            key={btn}
-            id={btn}
-            text={btn}
+            key={category}
+            id={category}
+            category={category}
+            text={<FormattedMessage {...categories[category]} />}
             items={spaces}
             currentSpace={currentSpace}
             className={activeIndex === index ? 'btn--active' : 'btn'}
             onSpaceNameClick={this.onSpaceNameClick}
-            onClick={event => this.onSpaceCategoryClick(event, btn, index)}
-          >
-            {btn}
-          </BookingButton>
+            onClick={event => this.onSpaceCategoryClick(event, category, index)}
+          />
         ))}
       </Wrapper>
     );

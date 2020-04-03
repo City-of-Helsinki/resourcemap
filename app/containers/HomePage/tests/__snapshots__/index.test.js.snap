@@ -504,7 +504,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="24.871"
-              id="wp1"
+              id="wsp1"
               pointer-events="visible"
               width="20.224"
               x="1017.98"
@@ -514,7 +514,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="24.871"
-              id="wp2"
+              id="wsp2"
               pointer-events="visible"
               width="20.224"
               x="1042.16"
@@ -524,7 +524,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="24.871"
-              id="wp3"
+              id="wsp3"
               pointer-events="visible"
               width="20.224"
               x="1066.34"
@@ -534,7 +534,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="24.871"
-              id="wp4"
+              id="wsp4"
               pointer-events="visible"
               width="20.224"
               x="1090.52"
@@ -544,7 +544,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="41.774"
-              id="wp5"
+              id="wsp5"
               pointer-events="visible"
               width="19.302"
               x="1188.99"
@@ -554,7 +554,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="41.774"
-              id="wp6"
+              id="wsp6"
               pointer-events="visible"
               width="19.302"
               x="1212.48"
@@ -564,7 +564,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="43.354"
-              id="computer1"
+              id="wst1"
               pointer-events="visible"
               style="stroke: transparent;"
               width="68.906"
@@ -575,7 +575,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               d="M552.142,61.722L546.574,61.722L546.574,63.712L552.142,63.712L552.142,61.722ZM541.006,61.722L535.438,61.722L535.438,63.712L541.006,63.712L541.006,61.722ZM529.87,61.722L524.301,61.722L524.301,63.712L529.87,63.712L529.87,61.722ZM518.733,61.722L513.165,61.722L513.165,63.712L518.733,63.712L518.733,61.722ZM507.597,61.722L502.029,61.722L502.029,63.712L507.597,63.712L507.597,61.722ZM496.464,61.722L494.376,61.722L494.376,65.204L496.365,65.204L496.365,63.712L496.464,63.712L496.464,61.722ZM496.361,70.776L494.372,70.776L494.372,76.348L496.361,76.348L496.361,70.776ZM496.361,81.92L494.372,81.92L494.372,87.492L496.361,87.492L496.361,81.92ZM496.361,93.064L494.372,93.064L494.372,98.636L496.361,98.636L496.361,93.064ZM499.074,103.09L494.376,103.09L494.376,105.072L499.078,105.072L499.078,103.082L499.074,103.09ZM510.21,103.09L504.642,103.09L504.642,105.08L510.21,105.08L510.21,103.09ZM521.346,103.09L515.778,103.09L515.778,105.08L521.346,105.08L521.346,103.09ZM532.483,103.09L526.915,103.09L526.915,105.08L532.483,105.08L532.483,103.09ZM543.619,103.09L538.051,103.09L538.051,105.08L543.619,105.08L543.619,103.09ZM554.756,103.09L549.187,103.09L549.187,105.08L554.756,105.08L554.756,103.09ZM563.279,102.465L561.29,102.465L561.29,103.082L560.324,103.082L560.324,105.072L563.279,105.072L563.279,102.457L563.279,102.465ZM563.279,91.321L561.29,91.321L561.29,96.893L563.279,96.893L563.279,91.321ZM563.279,80.177L561.29,80.177L561.29,85.749L563.279,85.749L563.279,80.177ZM563.279,69.033L561.29,69.033L561.29,74.605L563.279,74.605L563.279,69.033ZM563.279,61.722L557.711,61.722L557.711,63.712L563.279,63.712L563.279,61.722Z"
-              id="computer1"
+              id="wst1"
               pointer-events="visible"
               style="stroke: transparent; fill: #f6f6f8;"
             />
@@ -583,7 +583,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               height="43.354"
-              id="computer2"
+              id="wst2"
               pointer-events="visible"
               style="stroke: transparent;"
               width="111.336"
@@ -594,7 +594,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="roomPath  nodata"
               cursor="pointer"
               d="M680.867,61.216L675.299,61.216L675.299,63.206L680.867,63.206L680.867,61.216ZM669.731,61.216L664.163,61.216L664.163,63.206L669.731,63.206L669.731,61.216ZM658.594,61.216L653.026,61.216L653.026,63.206L658.594,63.206L658.594,61.216ZM647.458,61.216L641.89,61.216L641.89,63.206L647.458,63.206L647.458,61.216ZM636.322,61.216L630.753,61.216L630.753,63.206L636.322,63.206L636.322,61.216ZM625.185,61.216L619.617,61.216L619.617,63.206L625.185,63.206L625.185,61.216ZM614.049,61.216L608.481,61.216L608.481,63.206L614.049,63.206L614.049,61.216ZM602.913,61.216L597.344,61.216L597.344,63.206L602.913,63.206L602.913,61.216ZM591.776,61.216L586.208,61.216L586.208,63.206L591.776,63.206L591.776,61.216ZM580.64,61.216L575.072,61.216L575.072,63.206L580.64,63.206L580.64,61.216ZM571.52,61.24L569.531,61.24L569.531,66.812L571.52,66.812L571.52,61.24ZM571.52,72.384L569.531,72.384L569.531,77.956L571.52,77.956L571.52,72.384ZM571.52,83.528L569.531,83.528L569.531,89.1L571.52,89.1L571.52,83.528ZM571.52,94.672L569.531,94.672L569.531,100.244L571.52,100.244L571.52,94.672ZM576.344,102.581L570.776,102.581L570.776,104.571L576.344,104.571L576.344,102.581ZM587.481,102.581L581.912,102.581L581.912,104.571L587.481,104.571L587.481,102.581ZM598.617,102.581L593.049,102.581L593.049,104.571L598.617,104.571L598.617,102.581ZM609.753,102.581L604.185,102.581L604.185,104.571L609.753,104.571L609.753,102.581ZM620.89,102.581L615.322,102.581L615.322,104.571L620.89,104.571L620.89,102.581ZM632.026,102.581L626.458,102.581L626.458,104.571L632.026,104.571L632.026,102.581ZM643.163,102.581L637.594,102.581L637.594,104.571L643.163,104.571L643.163,102.581ZM654.299,102.581L648.731,102.581L648.731,104.571L654.299,104.571L654.299,102.581ZM665.435,102.581L659.867,102.581L659.867,104.571L665.435,104.571L665.435,102.581ZM676.572,102.581L671.004,102.581L671.004,104.571L676.572,104.571L676.572,102.581ZM680.867,97.725L678.879,97.725L678.879,103.297L680.867,103.297L680.867,97.725ZM680.867,86.581L678.879,86.581L678.879,92.153L680.867,92.153L680.867,86.581ZM680.867,75.437L678.879,75.437L678.879,81.009L680.867,81.009L680.867,75.437ZM680.867,64.293L678.879,64.293L678.879,69.865L680.867,69.865L680.867,64.293Z"
-              id="computer2"
+              id="wst2"
               pointer-events="visible"
               style="stroke: transparent; fill: #f6f6f8;"
             />
@@ -785,15 +785,17 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       class="wrappers__ButtonsWrapper-cufm9l-4 vOSYn"
     >
       <div
-        class="c-buttonlist Wrapper-dshfmn-0 kwBPDo"
+        class="c-buttonlist Wrapper-dshfmn-0 dPCvOF"
       >
         <div
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            Oppimistilat
+            <span>
+              Oppimistilat
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -803,9 +805,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            Ryhmätilat
+            <span>
+              Ryhmätilat
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -815,9 +819,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            Studiot
+            <span>
+              Studiot
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -827,9 +833,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            Pelitilat
+            <span>
+              Pelitilat
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -839,9 +847,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            Muut tilat
+            <span>
+              Muut tilat
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -851,9 +861,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            workingSpace
+            <span>
+              Työtilat
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -863,9 +875,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            computer
+            <span>
+              Tietokoneet
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -875,9 +889,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            machineRoom
+            <span>
+              Konehuone
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
@@ -887,9 +903,11 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 YqJUx"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
           >
-            urbanWorkshop
+            <span>
+              Kaupunkiverstas
+            </span>
           </button>
           <div
             class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
