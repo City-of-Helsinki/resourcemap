@@ -1,21 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from './wrappers';
+import classNames from 'classnames';
 
-const Path = props => (
-  <Wrapper
-    id={props.id}
-    d={props.d}
-    pointerEvents="visible"
-    cursor="pointer"
-    className={props.className}
-    onClick={event => props.onSpaceClick(event, { ...props })}
-  />
-);
+import './styles.css';
+
+const Path = ({ path, ...props }) => {
+  const isString = typeof path === 'string';
+  const config = {
+    id: props.id,
+    pointerEvents: 'visible',
+    cursor: 'pointer',
+    className: classNames('roomPath', props.className),
+    onClick: event => props.onSpaceClick(event, { ...props }),
+  };
+
+  if (isString) {
+    return <path {...config} d={path} />;
+  }
+
+  return React.createElement(path, config);
+};
 
 Path.propTypes = {
   id: PropTypes.any,
-  d: PropTypes.any,
+  path: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   className: PropTypes.any,
   onSpaceClick: PropTypes.any,
 };

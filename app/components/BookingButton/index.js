@@ -8,58 +8,52 @@ import {
   SubButtonWrapperWithTransition,
 } from './wrappers';
 
-class BookingButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onButtonClick = this.onButtonClick.bind(this);
-  }
+const BookingButton = ({
+  category,
+  className,
+  currentSpace,
+  items,
+  onClick,
+  onSpaceNameClick,
+  text,
+}) => {
+  const onButtonClick = item => {
+    onSpaceNameClick(item);
+  };
 
-  onButtonClick(item) {
-    this.props.onSpaceNameClick(item);
-  }
+  const buttonItems = items
+    .filter(item => item.category === category && className === 'btn--active')
+    .map(item => (
+      <CSSTransition key={item.id} timeout={200} classNames="slide">
+        <SubButton
+          key={item.id}
+          onClick={() => onButtonClick(item)}
+          className={
+            currentSpace.id === item.id
+              ? 'sub-btn--active animation-item'
+              : 'sub-btn animation-item'
+          }
+        >
+          {item.name}
+        </SubButton>
+      </CSSTransition>
+    ));
 
-  render() {
-    const { text, className, onClick, items, currentSpace } = this.props;
-    const clickedCategoryName = text;
-    // eslint-disable-next-line consistent-return, array-callback-return
-    const buttonitems = items.map(item => {
-      if (
-        item.category === clickedCategoryName &&
-        className === 'btn--active'
-      ) {
-        return (
-          <CSSTransition key={item.id} timeout={200} classNames="slide">
-            <SubButton
-              key={item.id}
-              onClick={() => this.onButtonClick(item)}
-              className={
-                currentSpace.id === item.id
-                  ? 'sub-btn--active animation-item'
-                  : 'sub-btn animation-item'
-              }
-            >
-              {item.name}
-            </SubButton>
-          </CSSTransition>
-        );
-      }
-    });
-
-    return (
-      <Wrapper>
-        <MainButton onClick={onClick} className={className}>
-          {text}
-        </MainButton>
-        <SubButtonWrapperWithTransition className="button-animations">
-          {className === 'btn--active' && buttonitems}
-        </SubButtonWrapperWithTransition>
-      </Wrapper>
-    );
-  }
-}
+  return (
+    <Wrapper>
+      <MainButton onClick={onClick} className={className}>
+        {text}
+      </MainButton>
+      <SubButtonWrapperWithTransition className="button-animations">
+        {className === 'btn--active' && buttonItems}
+      </SubButtonWrapperWithTransition>
+    </Wrapper>
+  );
+};
 
 BookingButton.propTypes = {
   onSpaceNameClick: PropTypes.any,
+  category: PropTypes.string.isRequired,
   text: PropTypes.any,
   className: PropTypes.any,
   onClick: PropTypes.any,

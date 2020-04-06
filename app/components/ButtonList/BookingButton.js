@@ -8,6 +8,7 @@ const BookingButton = styled(BasicButton)`
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
+
   &:last-of-type {
     margin-bottom: 3rem;
   }

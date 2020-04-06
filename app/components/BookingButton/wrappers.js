@@ -10,7 +10,7 @@ export const MainButton = styled(BasicButton)`
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  padding: 10px 32px;
+  padding: 10px 0;
 `;
 
 export const SubButton = styled(MainButton)`

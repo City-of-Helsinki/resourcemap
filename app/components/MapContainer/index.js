@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SvgMap from 'components/SvgMap';
+import SvgMap from 'components/MapOfOodi';
 
 const MapContainer = props => {
   const {

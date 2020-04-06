@@ -1,7 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+
 import BookingButton from 'components/BookingButton';
+import Categories from 'constants/Categories';
 import Wrapper from './Wrapper';
+import categoryMessages from './categoryMessages';
+
+const categoriesInOrder = [
+  Categories.LEARNING_SPACES,
+  Categories.GROUP_ROOMS,
+  Categories.WORKSPACES,
+  Categories.STUDIOS,
+  Categories.GAME_ROOMS,
+  Categories.WORKSTATIONS,
+  Categories.URBAN_WORKSHOP,
+  Categories.MACHINE_ROOM,
+  Categories.OTHER_SPACES,
+];
 
 class ButtonList extends React.Component {
   constructor(props) {
@@ -32,23 +48,21 @@ class ButtonList extends React.Component {
   render() {
     const { spaces, currentSpace } = this.props;
     const { activeIndex } = this.state;
-    const uniqueCats = [...new Set(spaces.map(space => space.category))];
 
     return (
       <Wrapper className="c-buttonlist">
-        {uniqueCats.map((btn, index) => (
+        {categoriesInOrder.map((category, index) => (
           <BookingButton
-            key={btn}
-            id={btn}
-            text={btn}
+            key={category}
+            id={category}
+            category={category}
+            text={<FormattedMessage {...categoryMessages[category]} />}
             items={spaces}
             currentSpace={currentSpace}
             className={activeIndex === index ? 'btn--active' : 'btn'}
             onSpaceNameClick={this.onSpaceNameClick}
-            onClick={event => this.onSpaceCategoryClick(event, btn, index)}
-          >
-            {btn}
-          </BookingButton>
+            onClick={event => this.onSpaceCategoryClick(event, category, index)}
+          />
         ))}
       </Wrapper>
     );
