@@ -17,9 +17,11 @@ import {
   Title,
   Row,
   RowLabel,
+  Icon,
 } from './wrappers';
 import messages from './messages';
 import spaceTypeMessages from './spaceTypeMessages';
+import UserIcon from './icons/UserIcon';
 
 function SubSpaceVacancyIcon({ availableCount, totalCount }) {
   return (
@@ -145,15 +147,26 @@ function makeBody(content, currentLocal) {
     default: {
       const space = content[0];
       const vacancyStatus = getVacancyStatus(space);
+      const maxPeopleCount = get(space, 'data.people_capacity', null);
       const description = get(space, 'description', null);
       const name = get(space, 'data.name', space.name);
 
       return (
         <>
           <Title>{translate(name)}</Title>
-          <Row>
-            {description && <RowLabel>{translate(description)}</RowLabel>}
-          </Row>
+          {maxPeopleCount && (
+            <Row>
+              <Icon>
+                <UserIcon />
+              </Icon>
+              <RowLabel>{maxPeopleCount}</RowLabel>
+            </Row>
+          )}
+          {description && (
+            <Row>
+              <RowLabel>{translate(description)}</RowLabel>
+            </Row>
+          )}
           <Row>
             <VacancyLabel variant="light" vacancy={vacancyStatus} />
           </Row>
