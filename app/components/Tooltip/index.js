@@ -1,27 +1,193 @@
 import React from 'react';
-import H3 from 'components/H3';
+import PropTypes from 'prop-types';
+import groupBy from 'lodash/groupBy';
+import { FormattedMessage, injectIntl } from 'react-intl';
+import classNames from 'classnames';
+
+import isResourceAvailable from 'utils/isResourceAvailable';
+import getLocalizedString from 'utils/getLocalizedString';
 import VacancyLabel from 'components/VacancyLabel';
+import VacancyIcon from 'components/VacancyIcon';
 import CloseButton from 'components/CloseButton';
-import { TooltipWrapper, TooltipContainer } from './wrappers';
+import categoryMessages from 'components/ButtonList/categoryMessages';
+import {
+  TooltipWrapper,
+  TooltipContainer,
+  Title,
+  Row,
+  RowLabel,
+} from './wrappers';
+import messages from './messages';
+import spaceTypeMessages from './spaceTypeMessages';
 
-const Tooltip = props => {
-  const showTooltip = props.visible;
+function SubSpaceVacancyIcon({ availableCount, totalCount }) {
+  return (
+    <VacancyIcon
+      className={classNames({
+        available: availableCount === totalCount,
+        taken: availableCount === 0,
+        nonReservable: availableCount > 0 && availableCount < totalCount,
+      })}
+    />
+  );
+}
 
-  if (showTooltip) {
-    return (
-      <TooltipContainer x={props.x} y={props.y}>
-        <TooltipWrapper className="animation-item">
-          <CloseButton tooltip onClick={props.onClick} />
-          <H3>{props.content.title}</H3>
-          {props.content.useRespa && (
-            <VacancyLabel variant="light" vacancy={props.content.available} />
-          )}
-        </TooltipWrapper>
-      </TooltipContainer>
-    );
-  }
-
-  return false;
+SubSpaceVacancyIcon.propTypes = {
+  availableCount: PropTypes.number,
+  totalCount: PropTypes.number,
 };
 
-export default Tooltip;
+function getAvailableCount(spaces) {
+  const now = new Date();
+  const available = spaces.filter(space => {
+    if (!space || !space.data) {
+      return false;
+    }
+
+    return isResourceAvailable(now, space.data);
+  });
+
+  return available.length;
+}
+
+function getVacancyStatus(space) {
+  if (!space.data) {
+    return 'nonReservable';
+  }
+
+  const isAvailable = isResourceAvailable(new Date(), space.data);
+
+  if (isAvailable) {
+    return 'available';
+  }
+
+  return 'taken';
+}
+
+function getType(content) {
+  if (content.length > 1) {
+    return 'group';
+  }
+
+  return '';
+}
+
+function makeBody(content, currentLocal) {
+  if (content.length === 0) {
+    return null;
+  }
+
+  const type = getType(content);
+  const translate = translationObject =>
+    getLocalizedString(translationObject, currentLocal);
+
+  switch (type) {
+    case 'group': {
+      const groups = Object.entries(groupBy(content, 'type'));
+      const { category } = content[0];
+
+      if (groups.length === 1) {
+        const [spaceType, spaces] = groups[0];
+        const totalCount = spaces.length;
+        const availableCount = getAvailableCount(spaces);
+
+        return (
+          <>
+            <Title>
+              <FormattedMessage {...categoryMessages[category]} />
+            </Title>
+            <Row className="small light">
+              <RowLabel>
+                <FormattedMessage {...spaceTypeMessages[spaceType]} />
+              </RowLabel>
+            </Row>
+            <Row className="small light">
+              <SubSpaceVacancyIcon
+                availableCount={availableCount}
+                totalCount={totalCount}
+              />
+              <RowLabel>
+                <FormattedMessage {...messages.reservableStatusLabel} />{' '}
+                {availableCount}/{totalCount}
+              </RowLabel>
+            </Row>
+          </>
+        );
+      }
+
+      return (
+        <>
+          <Title>
+            <FormattedMessage {...categoryMessages[category]} />
+          </Title>
+          {groups.map(([spaceType, spaces]) => {
+            const totalCount = spaces.length;
+            const availableCount = getAvailableCount(spaces);
+
+            return (
+              <Row key={spaceType}>
+                <SubSpaceVacancyIcon
+                  availableCount={availableCount}
+                  totalCount={totalCount}
+                />
+                <RowLabel>
+                  <FormattedMessage {...spaceTypeMessages[spaceType]} />{' '}
+                  {availableCount}/{totalCount}{' '}
+                  <FormattedMessage {...messages.reservableStatusLabel} />
+                </RowLabel>
+              </Row>
+            );
+          })}
+        </>
+      );
+    }
+    default: {
+      const space = content[0];
+      const vacancyStatus = getVacancyStatus(space);
+
+      return (
+        <>
+          <Title>{translate(space.name)}</Title>
+          <Row>
+            <VacancyLabel variant="light" vacancy={vacancyStatus} />
+          </Row>
+        </>
+      );
+    }
+  }
+}
+
+const Tooltip = ({ content, intl, onClick, visible, x, y }) => {
+  const { locale } = intl;
+
+  if (!visible) {
+    return null;
+  }
+
+  const body = makeBody(content, locale);
+
+  return (
+    <TooltipContainer x={x} y={y}>
+      <TooltipWrapper className="animation-item">
+        <CloseButton tooltip onClick={onClick} />
+        {body}
+      </TooltipWrapper>
+    </TooltipContainer>
+  );
+};
+
+Tooltip.propTypes = {
+  content: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.object,
+      data: PropTypes.object,
+    }),
+  ),
+  intl: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired,
+  visible: PropTypes.bool,
+  x: PropTypes.number,
+  y: PropTypes.number,
+};
+
+export default injectIntl(Tooltip);

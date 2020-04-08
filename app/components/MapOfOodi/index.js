@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import groupBy from 'lodash/groupBy';
+import get from 'lodash/get';
+
+import isResourceAvailable from 'utils/isResourceAvailable';
 import Room from 'components/Room';
 
 import MapIconsLayer from './svg/MapIcons';
@@ -7,44 +11,71 @@ import MapStructures from './svg/MapStructures';
 import MapYouAreHere from './svg/MapYouAreHere';
 import roomPaths from './roomPaths';
 
-const MapOfOodi = props => (
-  <svg height="100%" viewBox="0 0 1400 320" version="1.1" ref={props.roomRef}>
-    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <MapStructures />
-      <MapIconsLayer />
-      <g>
-        {props.rooms.map(item => {
-          const paths = roomPaths[item.id];
+function getAvailability(spaces) {
+  const totalCount = spaces.length;
+  const availableCount = spaces.filter(space =>
+    isResourceAvailable(space.data, new Date()),
+  ).length;
 
-          return paths.map(path => (
-            <Room
-              key={path}
-              name={item.name}
-              svgtype={item.svgtype}
-              info={item.info}
-              available={item.available}
-              useRespa={item.useRespa}
-              id={item.id}
-              path={path}
-              category={item.category}
-              onSpaceClick={props.onSpaceClick}
-              highlighted={props.highlighted}
-              currentSpace={props.currentSpace}
-            />
-          ));
-        })}
+  if (availableCount === totalCount) {
+    return 'available';
+  }
+
+  if (availableCount === 0) {
+    return 'taken';
+  }
+
+  return 'partlyAvailable';
+}
+
+const MapOfOodi = ({
+  currentRoom,
+  highlighted,
+  onRoomClick,
+  roomRef,
+  spaces,
+}) => {
+  const rooms = Object.entries(groupBy(spaces, 'room'));
+
+  return (
+    <svg height="100%" viewBox="0 0 1400 320" version="1.1" ref={roomRef}>
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <MapStructures />
+        <MapIconsLayer />
+        <g>
+          {rooms.map(([roomId, roomSpaces]) => {
+            const paths = roomPaths[roomId];
+            const availability = getAvailability(roomSpaces);
+            const isOpened = roomId === get(currentRoom, 'id', null);
+            const isHighlighted = roomSpaces
+              .map(space => space.category)
+              .includes(highlighted);
+
+            return paths.map(path => (
+              <Room
+                key={path}
+                availability={availability}
+                id={roomId}
+                isOpened={isOpened}
+                isHighlighted={isHighlighted}
+                onClick={onRoomClick}
+                path={path}
+              />
+            ));
+          })}
+        </g>
+        <MapYouAreHere />
       </g>
-      <MapYouAreHere />
-    </g>
-  </svg>
-);
+    </svg>
+  );
+};
 
 MapOfOodi.propTypes = {
-  roomRef: PropTypes.any,
-  rooms: PropTypes.arrayOf(PropTypes.any),
-  onSpaceClick: PropTypes.any,
+  currentRoom: PropTypes.any,
   highlighted: PropTypes.any,
-  currentSpace: PropTypes.any,
+  onRoomClick: PropTypes.any.isRequired,
+  roomRef: PropTypes.any,
+  spaces: PropTypes.arrayOf(PropTypes.any),
 };
 
 export default MapOfOodi;

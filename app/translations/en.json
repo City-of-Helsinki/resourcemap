@@ -10,10 +10,19 @@
   "categories.workstations": "Workstations",
   "components.Container.makeReservationInVaraamo": "Book on Varaamo",
   "components.Container.mapTitle": "Helsinki Central Library | 2nd floor",
+  "components.Tooltip.reservableStatusLabel": "",
   "components.VacancyLabel.available": "Free",
   "components.VacancyLabel.nonReservable": "Not Reservable",
   "components.VacancyLabel.taken": "Occupied",
   "containers.LocaleToggle.en": "In English",
   "containers.LocaleToggle.fi": "Suomeksi",
-  "containers.LocaleToggle.sv": "Pä svenska"
+  "containers.LocaleToggle.sv": "Pä svenska",
+  "subSpaces.3dPrinters": "3D printers",
+  "subSpaces.buttonPinMachine": "",
+  "subSpaces.coverstitchMachine": "",
+  "subSpaces.embroideryMachine": "",
+  "subSpaces.largeFormatPrinter": "",
+  "subSpaces.overlockMachine": "overlock machines",
+  "subSpaces.sewingMachine": "sewing machines",
+  "subSpaces.vinylCutterAndHeatpress": ""
 }

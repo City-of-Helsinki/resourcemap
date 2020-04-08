@@ -10,10 +10,19 @@
   "categories.workstations": "Datorer",
   "components.Container.makeReservationInVaraamo": "Bok på Varaamo",
   "components.Container.mapTitle": "Helsingfors centrumbibliotek | 2:a våningen",
+  "components.Tooltip.reservableStatusLabel": "",
   "components.VacancyLabel.available": "",
   "components.VacancyLabel.nonReservable": "",
   "components.VacancyLabel.taken": "",
   "containers.LocaleToggle.en": "In English",
   "containers.LocaleToggle.fi": "Suomeksi",
-  "containers.LocaleToggle.sv": "På svenska"
+  "containers.LocaleToggle.sv": "På svenska",
+  "subSpaces.3dPrinters": "3d-skrivare",
+  "subSpaces.buttonPinMachine": "",
+  "subSpaces.coverstitchMachine": "",
+  "subSpaces.embroideryMachine": "",
+  "subSpaces.largeFormatPrinter": "",
+  "subSpaces.overlockMachine": "överlocksmaskiner",
+  "subSpaces.sewingMachine": "symaskiner",
+  "subSpaces.vinylCutterAndHeatpress": ""
 }

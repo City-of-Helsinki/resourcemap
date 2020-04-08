@@ -11,17 +11,14 @@ export const TooltipContainer = styled.div`
 
   transform: translate3d(-50%, calc(-100% - 20px), 0);
   backface-visibility: hidden;
-  & h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 `;
 
 export const TooltipWrapper = styled.div`
   position: relative;
+  padding: 13px;
+
   background-color: white;
-  border: 3px solid black;
-  padding: 20px;
+
   &:after,
   &:before {
     top: 100%;
@@ -40,10 +37,43 @@ export const TooltipWrapper = styled.div`
     border-width: 15px;
     margin-left: -15px;
   }
+
   &:before {
     border-color: rgba(0, 0, 0, 0);
-    border-top-color: #000;
+    border-top-color: transparent;
     border-width: 19px;
     margin-left: -19px;
+  }
+`;
+
+export const Title = styled.h3`
+  margin: 0;
+
+  font-size: 12px;
+  font-weight: bold;
+  color: #191919;
+
+  &:not(:last-child) {
+    margin-bottom: 13px;
+  }
+`;
+
+export const Row = styled.div`
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 7px;
+  }
+`;
+
+export const RowLabel = styled.p`
+  margin: 0;
+
+  font-size: 10px;
+  color: #191919;
+
+  &:not(:first-child) {
+    margin-left: 7px;
   }
 `;

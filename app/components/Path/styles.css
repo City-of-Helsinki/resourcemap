@@ -35,3 +35,12 @@
 .roomPath.clicked.nodata {
   fill: #5c5c5c;
 }
+
+.roomPath.special-colouring.is-highlighted {
+  fill: #fff;
+}
+
+.roomPath.special-colouring.clicked {
+  fill: #9fc9eb;
+  stroke: #9fc9eb;
+}
