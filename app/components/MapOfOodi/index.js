@@ -4,6 +4,8 @@ import groupBy from 'lodash/groupBy';
 import get from 'lodash/get';
 
 import isResourceAvailable from 'utils/isResourceAvailable';
+import getSpaceAvailability from 'utils/getSpaceAvailability';
+import SpaceAvailability from 'constants/SpaceAvailability';
 import Room from 'components/Room';
 
 import MapIconsLayer from './svg/MapIcons';
@@ -12,20 +14,30 @@ import MapYouAreHere from './svg/MapYouAreHere';
 import roomPaths from './roomPaths';
 
 function getAvailability(spaces) {
-  const totalCount = spaces.length;
-  const availableCount = spaces.filter(space =>
-    isResourceAvailable(space.data, new Date()),
-  ).length;
-
-  if (availableCount === totalCount) {
-    return 'available';
+  if (spaces.length === 0) {
+    return SpaceAvailability.NO_DATA;
   }
 
-  if (availableCount === 0) {
-    return 'taken';
+  if (spaces.length === 1) {
+    return getSpaceAvailability(spaces[0]);
   }
 
-  return 'partlyAvailable';
+  if (spaces.length > 1) {
+    const totalCount = spaces.length;
+    const availableCount = spaces.filter(space =>
+      isResourceAvailable(space.data, new Date()),
+    ).length;
+
+    if (availableCount === totalCount) {
+      return SpaceAvailability.AVAILABLE;
+    }
+
+    if (availableCount === 0) {
+      return SpaceAvailability.TAKEN;
+    }
+  }
+
+  return SpaceAvailability.UNKNOWN;
 }
 
 const MapOfOodi = ({

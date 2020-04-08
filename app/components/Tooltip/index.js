@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import get from 'lodash/get';
 
 import isResourceAvailable from 'utils/isResourceAvailable';
+import getSpaceAvailability from 'utils/getSpaceAvailability';
 import getLocalizedString from 'utils/getLocalizedString';
 import VacancyLabel from 'components/VacancyLabel';
 import VacancyIcon from 'components/VacancyIcon';
@@ -29,7 +30,7 @@ function SubSpaceVacancyIcon({ availableCount, totalCount }) {
       className={classNames({
         available: availableCount === totalCount,
         taken: availableCount === 0,
-        nonReservable: availableCount > 0 && availableCount < totalCount,
+        partlyAvailable: availableCount > 0 && availableCount < totalCount,
       })}
     />
   );
@@ -51,20 +52,6 @@ function getAvailableCount(spaces) {
   });
 
   return available.length;
-}
-
-function getVacancyStatus(space) {
-  if (!space.data) {
-    return 'nonReservable';
-  }
-
-  const isAvailable = isResourceAvailable(new Date(), space.data);
-
-  if (isAvailable) {
-    return 'available';
-  }
-
-  return 'taken';
 }
 
 function getType(content) {
@@ -146,7 +133,7 @@ function makeBody(content, currentLocal) {
     }
     default: {
       const space = content[0];
-      const vacancyStatus = getVacancyStatus(space);
+      const vacancyStatus = getSpaceAvailability(space);
       const maxPeopleCount = get(space, 'data.people_capacity', null);
       const description = get(space, 'description', null);
       const name = get(space, 'data.name', space.name);

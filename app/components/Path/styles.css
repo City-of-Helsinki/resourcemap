@@ -8,7 +8,7 @@
   fill: rgba(40, 167, 69, 0.36);
 }
 
-.roomPath.is-highlighted.soon {
+.roomPath.is-highlighted.closed {
   fill: #f3cb8d;
 }
 
@@ -16,7 +16,8 @@
   fill: #dd5969;
 }
 
-.roomPath.is-highlighted.nodata {
+.roomPath.is-highlighted.noData,
+.roomPath.is-highlighted.unknown {
   fill: #959595;
 }
 
@@ -24,7 +25,7 @@
   fill: rgba(40, 167, 69, 1);
 }
 
-.roomPath.clicked.soon {
+.roomPath.clicked.closed {
   fill: #f5a623;
 }
 
@@ -32,7 +33,8 @@
   fill: #d0021b;
 }
 
-.roomPath.clicked.nodata {
+.roomPath.clicked.nodata,
+.roomPath.clicked.unknown {
   fill: #5c5c5c;
 }
 

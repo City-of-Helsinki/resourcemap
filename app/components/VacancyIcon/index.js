@@ -20,8 +20,14 @@ const VacancyIcon = styled.span`
     );
   }
 
-  &.nonReservable {
+  &.closed,
+  &.partlyAvailable {
     background-color: #c2a251;
+  }
+
+  &.noData,
+  &.unknown {
+    background-color: grey;
   }
 `;
 

@@ -22,6 +22,7 @@ export default [
       sv: 'Utrymmet är tillgängligt då det inte är i bibliotekets eget bruk',
       en: 'The space is available when not in use by the library',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.LEARNING_SPACES,
@@ -35,6 +36,7 @@ export default [
       sv: 'I utrymmet arrangeras bibliotekets egna evenemang',
       en: 'A room for library organized event',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -44,6 +46,7 @@ export default [
     name: {
       fi: 'Ryhmätila 1',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -53,6 +56,7 @@ export default [
     name: {
       fi: 'Ryhmätila 2',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -62,6 +66,7 @@ export default [
     name: {
       fi: 'Ryhmätila 3',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -71,6 +76,7 @@ export default [
     name: {
       fi: 'Ryhmätila 4',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -80,6 +86,7 @@ export default [
     name: {
       fi: 'Ryhmätila 5',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -89,6 +96,7 @@ export default [
     name: {
       fi: 'Ryhmätila 6',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -98,6 +106,7 @@ export default [
     name: {
       fi: 'Ryhmätila 7',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -107,6 +116,7 @@ export default [
     name: {
       fi: 'Ryhmätila 8',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -116,6 +126,7 @@ export default [
     name: {
       fi: 'Ryhmätila 9',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GROUP_ROOMS,
@@ -125,6 +136,7 @@ export default [
     name: {
       fi: 'Ryhmätila 10',
     },
+    canBeReserved: true,
   },
   ...makeData(
     index => ({
@@ -134,6 +146,7 @@ export default [
       name: {
         fi: `Työskentelyalue ${index}`,
       },
+      canBeReserved: true,
     }),
     6,
   ),
@@ -144,6 +157,7 @@ export default [
     name: {
       fi: 'Studio 1',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.STUDIOS,
@@ -152,6 +166,7 @@ export default [
     name: {
       fi: 'Studio 2',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.STUDIOS,
@@ -160,6 +175,7 @@ export default [
     name: {
       fi: 'Studio 3',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.STUDIOS,
@@ -168,6 +184,7 @@ export default [
     name: {
       fi: 'Studio 4',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.STUDIOS,
@@ -176,6 +193,7 @@ export default [
     name: {
       fi: 'Studio 5',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.STUDIOS,
@@ -184,6 +202,7 @@ export default [
     name: {
       fi: 'Studio 6',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.GAME_ROOMS,
@@ -192,6 +211,7 @@ export default [
     name: {
       fi: 'Pelitila 1',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GAME_ROOMS,
@@ -200,6 +220,7 @@ export default [
     name: {
       fi: 'Pelitila 2',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GAME_ROOMS,
@@ -208,6 +229,7 @@ export default [
     name: {
       fi: 'Pelitila 3',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.GAME_ROOMS,
@@ -221,6 +243,7 @@ export default [
       sv: 'I utrymmet finns 14 datorer avsedda för datorspel',
       en: 'The space has 14 computers for gaming',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.GAME_ROOMS,
@@ -229,14 +252,16 @@ export default [
     name: {
       fi: 'Pelisali',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.WORKSTATIONS,
     room: Rooms.WORKSTATION_1,
     id: '31',
     name: {
-      fi: 'Mediatietokoneet 1-18',
+      fi: 'Mediatietokoneet 1-8',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.WORKSTATIONS,
@@ -245,6 +270,7 @@ export default [
     name: {
       fi: 'Asiakastietokoneet 1-14',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -252,6 +278,7 @@ export default [
     type: SpaceTypes.PRINTER_3D,
     id: '34',
     respaId: 'av7bkiupgqxa',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -259,6 +286,7 @@ export default [
     type: SpaceTypes.PRINTER_3D,
     id: '35',
     respaId: 'av7bm6a2bkga',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -266,6 +294,7 @@ export default [
     type: SpaceTypes.PRINTER_3D,
     id: '36',
     respaId: 'av7bnnciev4a',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -273,6 +302,7 @@ export default [
     type: SpaceTypes.PRINTER_3D,
     id: '37',
     respaId: 'av7bnu5gzgla',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -280,6 +310,7 @@ export default [
     type: SpaceTypes.EMBROIDERY_MACHINE,
     id: '39',
     respaId: 'awbhzslbxnsa',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -287,6 +318,7 @@ export default [
     type: SpaceTypes.SEWING_MACHINE,
     id: '39',
     respaId: 'av7eau2gobbq',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -294,6 +326,7 @@ export default [
     type: SpaceTypes.SEWING_MACHINE,
     id: '40',
     respaId: 'av7eayzz2fga',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -301,6 +334,7 @@ export default [
     type: SpaceTypes.COVERSTITCH_MACHINE,
     id: '41',
     respaId: 'av72ocdjn2qa',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -308,6 +342,7 @@ export default [
     type: SpaceTypes.OVERLOCK_MACHINE,
     id: '42',
     respaId: 'av7ea36uxapa',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -315,6 +350,7 @@ export default [
     type: SpaceTypes.OVERLOCK_MACHINE,
     id: '43',
     respaId: 'av7ea6lwenta',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -322,6 +358,7 @@ export default [
     type: SpaceTypes.LARGE_FORMAT_PRINTER,
     id: '44',
     respaId: 'awbpfgq2bgrq',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -329,6 +366,7 @@ export default [
     type: SpaceTypes.VINYL_CUTTER_AND_HEATPRESS,
     id: '45',
     respaId: 'av7e2kfkcrga',
+    canBeReserved: true,
   },
   {
     category: Categories.URBAN_WORKSHOP,
@@ -336,6 +374,7 @@ export default [
     type: SpaceTypes.BUTTON_PIN_MACHINE,
     id: '46',
     respaId: 'av7fbsmhn57a',
+    canBeReserved: true,
   },
   {
     category: Categories.MACHINE_ROOM,
@@ -344,6 +383,7 @@ export default [
     name: {
       fi: 'Konehuone',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.OTHER_SPACES,
@@ -352,6 +392,7 @@ export default [
     name: {
       fi: 'Kopiointi',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.OTHER_SPACES,
@@ -368,6 +409,7 @@ export default [
       en:
         'A space for new media art that enables immersive experiences. It can also function as an event or meeting room',
     },
+    canBeReserved: true,
   },
   {
     category: Categories.OTHER_SPACES,
@@ -381,6 +423,7 @@ export default [
       sv: 'Tyst utrymme med 40 sittplatser',
       en: 'Quiet space with 40 seated desks',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.OTHER_SPACES,
@@ -394,6 +437,7 @@ export default [
       sv: 'Utrymmet har 16 bord att arbeta vid ',
       en: 'The space has 16 tables for working',
     },
+    canBeReserved: false,
   },
   {
     category: Categories.OTHER_SPACES,
@@ -409,5 +453,6 @@ export default [
       sv: 'I köket kan våra kunder arrangera evenemang rörande matlagning',
       en: 'In the kitchen, customers can organize culinary related events',
     },
+    canBeReserved: true,
   },
 ];
