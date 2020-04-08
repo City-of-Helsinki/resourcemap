@@ -55,7 +55,7 @@ const BookingButton = ({
 
     return spacesInCategory.map(space => ({
       id: space.id,
-      label: getLocalizedString(space.name, locale),
+      label: getLocalizedString(get(space, 'data.name', space.name), locale),
       isActive: currentSpacesIds.includes(space.id),
       onClick: () => onButtonClick(space),
     }));

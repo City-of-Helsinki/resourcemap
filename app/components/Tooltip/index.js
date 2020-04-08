@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import groupBy from 'lodash/groupBy';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
+import get from 'lodash/get';
 
 import isResourceAvailable from 'utils/isResourceAvailable';
 import getLocalizedString from 'utils/getLocalizedString';
@@ -144,10 +145,11 @@ function makeBody(content, currentLocal) {
     default: {
       const space = content[0];
       const vacancyStatus = getVacancyStatus(space);
+      const name = get(space, 'data.name', space.name);
 
       return (
         <>
-          <Title>{translate(space.name)}</Title>
+          <Title>{translate(name)}</Title>
           <Row>
             <VacancyLabel variant="light" vacancy={vacancyStatus} />
           </Row>
