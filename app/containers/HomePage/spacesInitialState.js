@@ -466,7 +466,7 @@ export default [
     category: Categories.OTHER_SPACES,
     room: Rooms.OTHER_5,
     id: '3',
-    respaId: 'av5k7ixqvzha',
+    // respaId: 'av5k7ixqvzha',
     name: {
       fi: 'Keittiö',
     },
@@ -476,6 +476,7 @@ export default [
       sv: 'I köket kan våra kunder arrangera evenemang rörande matlagning',
       en: 'In the kitchen, customers can organize culinary related events',
     },
+    peopleCapacity: 10,
     canBeReserved: true,
   },
 ];

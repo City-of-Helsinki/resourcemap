@@ -5,6 +5,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import get from 'lodash/get';
 
+import SpaceAvailability from 'constants/SpaceAvailability';
 import isResourceAvailable from 'utils/isResourceAvailable';
 import getSpaceAvailability from 'utils/getSpaceAvailability';
 import getLocalizedString from 'utils/getLocalizedString';
@@ -23,6 +24,12 @@ import {
 import messages from './messages';
 import spaceTypeMessages from './spaceTypeMessages';
 import UserIcon from './icons/UserIcon';
+
+const ALLOWED_AVAILABILITIES = [
+  SpaceAvailability.AVAILABLE,
+  SpaceAvailability.TAKEN,
+  SpaceAvailability.CLOSED,
+];
 
 function SubSpaceVacancyIcon({ availableCount, totalCount }) {
   return (
@@ -134,7 +141,12 @@ function makeBody(content, currentLocal) {
     default: {
       const space = content[0];
       const vacancyStatus = getSpaceAvailability(space);
-      const maxPeopleCount = get(space, 'data.people_capacity', null);
+      const hardCodedMaxPeopleCount = get(space, 'peopleCapacity', null);
+      const maxPeopleCount = get(
+        space,
+        'data.people_capacity',
+        hardCodedMaxPeopleCount,
+      );
       const description = get(space, 'description', null);
       const name = get(space, 'data.name', space.name);
 
@@ -154,9 +166,11 @@ function makeBody(content, currentLocal) {
               <RowLabel>{translate(description)}</RowLabel>
             </Row>
           )}
-          <Row>
-            <VacancyLabel variant="light" vacancy={vacancyStatus} />
-          </Row>
+          {ALLOWED_AVAILABILITIES.includes(vacancyStatus) && (
+            <Row>
+              <VacancyLabel variant="light" vacancy={vacancyStatus} />
+            </Row>
+          )}
         </>
       );
     }
