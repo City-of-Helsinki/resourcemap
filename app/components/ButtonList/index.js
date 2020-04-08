@@ -29,7 +29,7 @@ class ButtonList extends React.Component {
     this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
   }
 
-  onSpaceCategoryClick(event, category, index) {
+  onSpaceCategoryClick(category, index) {
     this.props.onSpaceCategoryClick(category);
     const btnindex = index === this.state.activeIndex ? null : index;
 
@@ -46,7 +46,7 @@ class ButtonList extends React.Component {
   }
 
   render() {
-    const { spaces, currentSpace } = this.props;
+    const { spaces, currentRoom } = this.props;
     const { activeIndex } = this.state;
 
     return (
@@ -58,10 +58,10 @@ class ButtonList extends React.Component {
             category={category}
             text={<FormattedMessage {...categoryMessages[category]} />}
             items={spaces}
-            currentSpace={currentSpace}
+            currentRoom={currentRoom}
             className={activeIndex === index ? 'btn--active' : 'btn'}
             onSpaceNameClick={this.onSpaceNameClick}
-            onClick={event => this.onSpaceCategoryClick(event, category, index)}
+            onClick={() => this.onSpaceCategoryClick(category, index)}
           />
         ))}
       </Wrapper>
@@ -72,7 +72,7 @@ class ButtonList extends React.Component {
 ButtonList.propTypes = {
   onSpaceCategoryClick: PropTypes.any,
   onSpaceNameClick: PropTypes.any,
-  currentSpace: PropTypes.any,
+  currentRoom: PropTypes.object,
   spaces: PropTypes.any,
 };
 

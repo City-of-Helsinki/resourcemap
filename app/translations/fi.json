@@ -10,10 +10,19 @@
   "categories.workstations": "Tietokoneet",
   "components.Container.makeReservationInVaraamo": "Tee varaus Varaamossa",
   "components.Container.mapTitle": "Helsingin keskuskirjasto | 2.kerros",
+  "components.Tooltip.reservableStatusLabel": "varattavissa",
   "components.VacancyLabel.available": "Vapaa",
   "components.VacancyLabel.nonReservable": "Ei varattavissa",
   "components.VacancyLabel.taken": "Varattu",
   "containers.LocaleToggle.en": "In English",
   "containers.LocaleToggle.fi": "Suomeksi",
-  "containers.LocaleToggle.sv": "På svenska"
+  "containers.LocaleToggle.sv": "På svenska",
+  "subSpaces.3dPrinters": "3D-tulostimet",
+  "subSpaces.buttonPinMachine": "Rintanappikone",
+  "subSpaces.coverstitchMachine": "Peitetikkikoneet",
+  "subSpaces.embroideryMachine": "Kirjovat ompelukoneet",
+  "subSpaces.largeFormatPrinter": "Suurkuvatulostin",
+  "subSpaces.overlockMachine": "Saumurit",
+  "subSpaces.sewingMachine": "Ompelukoneet",
+  "subSpaces.vinylCutterAndHeatpress": "Vinyylileikkuri ja lämpöprässi"
 }

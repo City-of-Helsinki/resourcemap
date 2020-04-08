@@ -7,6 +7,7 @@ import injectSaga from 'utils/injectSaga';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { FormattedMessage } from 'react-intl';
+import get from 'lodash/get';
 
 import { makeSelectSpaces } from 'containers/HomePage/selectors';
 import reducer from 'containers/HomePage/reducer';
@@ -37,12 +38,7 @@ class Container extends React.Component {
 
     this.state = {
       highlighted: '',
-      currentSpace: {
-        id: 'Tilan id',
-        title: 'Tilan nimi',
-        available: null,
-        useRespa: false,
-      },
+      currentRoom: null,
       tooltipState: {
         current: null,
         visible: false,
@@ -52,115 +48,90 @@ class Container extends React.Component {
     };
 
     this.roomRef = React.createRef();
-    this.highlightSpaceType = this.highlightSpaceType.bind(this);
+    this.highlightRoomType = this.highlightRoomType.bind(this);
     this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
-    this.handleSpaceClick = this.handleSpaceClick.bind(this);
-    this.spaceTooltip = this.spaceTooltip.bind(this);
-    this.resetActiveSpace = this.resetActiveSpace.bind(this);
+    this.handleRoomClick = this.handleRoomClick.bind(this);
+    this.roomTooltip = this.roomTooltip.bind(this);
+    this.resetActiveRoom = this.resetActiveRoom.bind(this);
   }
 
-  handleSpaceClick(event, space) {
-    this.spaceTooltip(event.target, space);
-  }
+  get currentRoom() {
+    const { currentRoom } = this.state;
 
-  spaceTooltip(spaceElement, space) {
-    const spaceItem = space;
-    const rect = spaceElement.getBoundingClientRect();
-    const x = Math.round(rect.left);
-    const y = Math.round(rect.top);
-    // eslint-disable-next-line no-unused-vars
-    const width = Math.round(rect.width);
-    const xPos = Math.round(x + rect.width / 2);
-
-    let spaceTitle = spaceItem.name || spaceItem.name;
-    const spaceAvailable = spaceItem.available || spaceItem.available;
-    const spaceUseRespa =
-      typeof spaceItem.useRespa !== 'undefined'
-        ? spaceItem.useRespa
-        : spaceItem.useRespa;
-    let showTooltip = false;
-    let currentSpaceId = spaceElement.id;
-
-    if (this.state.currentSpace.title === spaceTitle) {
-      showTooltip = false;
-      spaceTitle = '';
-      currentSpaceId = '';
-    } else {
-      showTooltip = true;
+    if (!currentRoom) {
+      return null;
     }
 
-    // eslint-disable-next-line no-unused-vars, func-names
-    this.setState(function(prevState, props) {
-      return {
-        tooltipState: {
-          visible: showTooltip,
-        },
-        currentSpace: {
-          id: currentSpaceId,
-          title: spaceTitle,
-          available: spaceAvailable,
-          useRespa: spaceUseRespa,
-        },
-        x: xPos,
-        y,
-      };
-    });
+    const roomSpaces = this.props.spaces.filter(
+      space => space.room === currentRoom,
+    );
+
+    return {
+      id: currentRoom,
+      spaces: roomSpaces,
+    };
   }
 
-  highlightSpaceType(highlight) {
+  handleRoomClick(event, room) {
+    this.roomTooltip(event.target, room);
+  }
+
+  roomTooltip(roomElement, room) {
+    const rect = roomElement.getBoundingClientRect();
+    const x = Math.round(rect.left);
+    const y = Math.round(rect.top);
+    const xPos = Math.round(x + rect.width / 2);
+
+    this.setState(previousState => ({
+      tooltipState: {
+        visible: !(
+          room === previousState.currentRoom &&
+          previousState.tooltipState.visible
+        ),
+      },
+      currentRoom: room,
+      x: xPos,
+      y,
+    }));
+  }
+
+  highlightRoomType(highlight) {
     let hl = highlight;
     if (this.state.highlighted === hl) {
       hl = '';
     }
 
-    // eslint-disable-next-line no-unused-vars, func-names
-    this.setState(function(prevState, props) {
-      return {
-        highlighted: hl,
-        currentSpace: {
-          title: '',
-          id: '',
-          available: '',
-          useRespa: '',
-        },
-        tooltipState: {
-          visible: false,
-        },
-      };
-    });
-  }
-
-  resetActiveSpace() {
-    // eslint-disable-next-line no-unused-vars
-    this.setState((prevState, props) => ({
-      currentSpace: {
-        id: '',
-        title: '',
-        available: '',
-        useRespa: '',
-      },
+    this.setState({
+      highlighted: hl,
+      currentRoom: null,
       tooltipState: {
         visible: false,
       },
-    }));
+    });
+  }
+
+  resetActiveRoom() {
+    this.setState({
+      currentRoom: null,
+      tooltipState: {
+        visible: false,
+      },
+    });
   }
 
   onSpaceNameClick(space) {
-    const spaceElementId = `#${space.id}`;
-    const spaceElement = this.roomRef.current.querySelector(spaceElementId);
-    this.spaceTooltip(spaceElement, space);
+    const roomElementId = `#${space.room}`;
+    const roomElement = this.roomRef.current.querySelector(roomElementId);
+
+    this.roomTooltip(roomElement, space.room);
   }
 
   render() {
-    const { highlighted, currentSpace, tooltipState, x, y } = this.state;
+    const { highlighted, tooltipState, x, y } = this.state;
     const { spaces } = this.props;
 
-    const QRCodeHref = currentSpace.useRespa
-      ? `https://varaamo.hel.fi/resources/${currentSpace.id}`
-      : 'https://varaamo.hel.fi/search?&unit=tprek%3A51342';
-    const QRCodeLinkValue = currentSpace.useRespa
-      ? `varaamo.hel.fi/${currentSpace.id}`
-      : 'varaamo.hel.fi';
+    const QRCodeHref = 'https://varaamo.hel.fi/search?&unit=tprek%3A51342';
+    const QRCodeLinkValue = 'varaamo.hel.fi';
 
     return (
       <React.Fragment>
@@ -189,9 +160,9 @@ class Container extends React.Component {
             <MapContainer
               spaces={spaces}
               highlighted={highlighted}
-              currentSpace={currentSpace}
+              currentRoom={this.currentRoom}
               tooltipState={tooltipState}
-              handleSpaceClick={this.handleSpaceClick}
+              handleRoomClick={this.handleRoomClick}
               roomRef={this.roomRef}
             />
           </MapWrapper>
@@ -202,8 +173,8 @@ class Container extends React.Component {
           <HorizontalLine />
           <ButtonsWrapper>
             <ButtonList
-              currentSpace={currentSpace}
-              onSpaceCategoryClick={this.highlightSpaceType}
+              currentRoom={this.currentRoom}
+              onSpaceCategoryClick={this.highlightRoomType}
               onSpaceNameClick={this.onSpaceNameClick}
               spaces={spaces}
             />
@@ -211,16 +182,16 @@ class Container extends React.Component {
         </Wrapper>
         <TransitionGroup className="tooltip-animations">
           <CSSTransition
-            key={currentSpace.id}
+            key={get(this.currentRoom, 'id', null)}
             timeout={1000}
             classNames="popup"
           >
             <Tooltip
               visible={tooltipState.visible}
-              content={currentSpace}
+              content={get(this.currentRoom, 'spaces', [])}
               x={x}
               y={y}
-              onClick={this.resetActiveSpace}
+              onClick={this.resetActiveRoom}
             />
           </CSSTransition>
         </TransitionGroup>

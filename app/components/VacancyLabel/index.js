@@ -13,7 +13,9 @@ const VARIANTS = ['dark', 'light'];
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
+
   & p {
+    margin: 0;
     margin-left: 10px;
   }
 `;

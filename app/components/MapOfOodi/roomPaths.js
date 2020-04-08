@@ -1,4 +1,5 @@
 import React from 'react';
+import Rooms from 'constants/Rooms';
 
 // It's not possible to declare a stroke that is inside an svg element.
 // The hack used in the source image is to have two element: one that is
@@ -27,106 +28,98 @@ const makeDashedRoom = (Room, DashedBorder) => props => {
   );
 };
 
-export default {
-  o1: [
+export default Object.freeze({
+  [Rooms.LEARNING_SPACE_1]: [
     props => (
       <rect {...props} x="396.424" y="200.536" width="48.69" height="63.425" />
     ),
   ],
-  o2: [
+  [Rooms.LEARNING_SPACE_2]: [
     'M334.752,263.966L334.752,187.295L392.12,184.6L392.12,263.966L334.752,263.966Z',
   ],
   // Group spaces
-  av5k4vxjxyha: [
+  [Rooms.GROUP_ROOM_1]: [
     props => (
-      <rect
-        {...props}
-        x="478.34"
-        y="5.445"
-        width="25.248"
-        height="47.796"
-        stroke="red"
-        strokeWidth="2px"
-      />
+      <rect {...props} x="478.34" y="5.445" width="25.248" height="47.796" />
     ),
   ],
-  av5k5ip53e2q: [
+  [Rooms.GROUP_ROOM_2]: [
     props => (
       <rect {...props} x="507.589" y="5.445" width="25.248" height="47.796" />
     ),
   ],
-  av5k5ksofidq: [
+  [Rooms.GROUP_ROOM_3]: [
     props => (
       <rect {...props} x="565.995" y="5.445" width="64.702" height="47.796" />
     ),
   ],
-  av5k5mveypsa: [
+  [Rooms.GROUP_ROOM_4]: [
     props => (
       <rect {...props} x="283.151" y="235.039" width="47.417" height="62.152" />
     ),
   ],
-  av5k57wpbdza: [
+  [Rooms.GROUP_ROOM_5]: [
     props => (
       <rect {...props} x="253.067" y="234.924" width="26.011" height="47.68" />
     ),
   ],
-  av5k6ayouzga: [
+  [Rooms.GROUP_ROOM_6]: [
     props => (
       <rect {...props} x="222.986" y="234.924" width="26.011" height="47.68" />
     ),
   ],
-  av5k6dfiu3va: [
+  [Rooms.GROUP_ROOM_7]: [
     props => (
       <rect {...props} x="171.035" y="235.039" width="47.763" height="57.523" />
     ),
   ],
-  av5k6eqxl4za: [
+  [Rooms.GROUP_ROOM_8]: [
     props => (
       <rect {...props} x="114.92" y="234.924" width="52.043" height="40.966" />
     ),
   ],
-  av5k6g75os4q: [
+  [Rooms.GROUP_ROOM_9]: [
     props => (
       <rect {...props} x="81.829" y="147.857" width="34.69" height="34.483" />
     ),
   ],
-  av5k6h56ne7q: [
+  [Rooms.GROUP_ROOM_10]: [
     props => (
       <rect {...props} x="81.829" y="109.303" width="34.69" height="34.483" />
     ),
   ],
   // Studios
-  s1: [
+  [Rooms.STUDIO_1]: [
     'M277.046,144.8L277.046,111.384L314.913,111.384L310.737,148.064L277.046,144.8Z',
   ],
-  s2: [
+  [Rooms.STUDIO_2]: [
     'M218.878,111.384L272.166,111.384L272.166,144.753L218.878,147.053L218.878,111.384Z',
   ],
-  s3: [
+  [Rooms.STUDIO_3]: [
     'M146.853,141.183L149.092,111.384L213.592,111.384L213.592,144.657L146.853,141.183Z',
   ],
-  s4: [
+  [Rooms.STUDIO_4]: [
     'M146.929,145.206L213.592,148.733L213.592,172.609L151.025,176.087L146.929,145.206Z',
   ],
-  s5: [
+  [Rooms.STUDIO_5]: [
     'M148.456,211.633L151.081,180.103L213.592,176.628L213.592,211.633L148.456,211.633Z',
   ],
-  s6: [
+  [Rooms.STUDIO_6]: [
     'M219.117,211.633L219.117,189.169L236.382,189.169L249.062,199.804L249.062,211.633L219.117,211.633Z',
     'M238.227,184.553L219.117,184.553L219.117,151.992L261.407,150.245L261.407,185.285L251.261,195.291L238.227,184.553Z',
     'M273.566,211.633L277.229,195.474L267.301,185.568L267.301,150.257L311.02,152.693L311.02,211.633L273.566,211.633Z',
   ],
   // Game rooms
-  p1: [
+  [Rooms.GAME_ROOM_1]: [
     'M334.752,140.793L368.054,140.793L368.054,165.118L334.752,166.245L334.752,140.793Z',
   ],
-  p2: [
+  [Rooms.GAME_ROOM_2]: [
     'M372.934,140.793L406.236,140.793L406.236,163.924L372.934,165.051L372.934,140.793Z',
   ],
-  p3: [
+  [Rooms.GAME_ROOM_3]: [
     'M411.116,140.793L444.418,140.793L444.418,162.332L411.116,163.459L411.116,140.793Z',
   ],
-  p4: [
+  [Rooms.GAME_ROOM_4]: [
     makeDashedRoom(
       props => (
         <rect
@@ -145,29 +138,29 @@ export default {
       ),
     ),
   ],
-  p5: [
+  [Rooms.GAME_ROOM_5]: [
     'M449.604,297.282L449.604,181.978L496.6,179.307L496.6,297.282L449.604,297.282Z',
   ],
   // Other spaces
-  k: [
+  [Rooms.OTHER_1]: [
     props => (
       <rect {...props} x="536.838" y="5.445" width="25.248" height="47.796" />
     ),
   ],
-  kuutio: [
+  [Rooms.OTHER_2]: [
     props => (
       <rect {...props} x="1136.34" y="94.827" width="95.435" height="83.11" />
     ),
   ],
-  lukusali: [
+  [Rooms.OTHER_3]: [
     'M1114.94,76.165L1114.94,5.56L1199.15,5.56L1246.07,76.165L1114.94,76.165Z',
   ],
-  av5k7ixqvzha: [
+  [Rooms.OTHER_5]: [
     props => (
       <rect {...props} x="68.521" y="221.61" width="42.442" height="54.164" />
     ),
   ],
-  workingArea: [
+  [Rooms.OTHER_4]: [
     makeDashedRoom(
       props => (
         <path
@@ -184,37 +177,37 @@ export default {
     ),
   ],
   // Working spaces
-  wsp1: [
+  [Rooms.WORKSPACE_1]: [
     props => (
       <rect {...props} x="1017.98" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wsp2: [
+  [Rooms.WORKSPACE_2]: [
     props => (
       <rect {...props} x="1042.16" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wsp3: [
+  [Rooms.WORKSPACE_3]: [
     props => (
       <rect {...props} x="1066.34" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wsp4: [
+  [Rooms.WORKSPACE_4]: [
     props => (
       <rect {...props} x="1090.52" y="51.41" width="20.224" height="24.871" />
     ),
   ],
-  wsp5: [
+  [Rooms.WORKSPACE_5]: [
     props => (
       <rect {...props} x="1188.99" y="181.898" width="19.302" height="41.774" />
     ),
   ],
-  wsp6: [
+  [Rooms.WORKSPACE_6]: [
     props => (
       <rect {...props} x="1212.48" y="181.898" width="19.302" height="41.774" />
     ),
   ],
-  wst1: [
+  [Rooms.WORKSTATION_1]: [
     makeDashedRoom(
       props => (
         <rect
@@ -233,7 +226,7 @@ export default {
       ),
     ),
   ],
-  wst2: [
+  [Rooms.WORKSTATION_2]: [
     makeDashedRoom(
       props => (
         <rect
@@ -252,10 +245,10 @@ export default {
       ),
     ),
   ],
-  mr1: [
+  [Rooms.MACHINE_ROOM_1]: [
     'M755.219,52.663L755.219,29.376L812.161,29.376L812.161,5.098L889.297,5.098L889.297,52.663L755.219,52.663Z',
   ],
-  uw1: [
+  [Rooms.URBAN_WORKSHOP_1]: [
     makeDashedRoom(
       props => (
         <rect
@@ -274,7 +267,7 @@ export default {
       ),
     ),
   ],
-  uw2: [
+  [Rooms.URBAN_WORKSHOP_2]: [
     makeDashedRoom(
       props => (
         <rect
@@ -293,7 +286,7 @@ export default {
       ),
     ),
   ],
-  uw3: [
+  [Rooms.URBAN_WORKSHOP_3]: [
     makeDashedRoom(
       props => (
         <rect
@@ -312,4 +305,4 @@ export default {
       ),
     ),
   ],
-};
+});

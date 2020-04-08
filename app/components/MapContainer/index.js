@@ -1,33 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SvgMap from 'components/MapOfOodi';
+import MapOfOodi from 'components/MapOfOodi';
 
-const MapContainer = props => {
-  const {
-    spaces,
-    highlighted,
-    currentSpace,
-    roomRef,
-    handleSpaceClick,
-  } = props;
-
-  return (
-    <SvgMap
-      rooms={spaces}
-      onSpaceClick={handleSpaceClick}
-      highlighted={highlighted}
-      roomRef={roomRef}
-      currentSpace={currentSpace}
-    />
-  );
-};
+const MapContainer = ({
+  currentRoom,
+  handleRoomClick,
+  highlighted,
+  roomRef,
+  spaces,
+}) => (
+  <MapOfOodi
+    currentRoom={currentRoom}
+    highlighted={highlighted}
+    onRoomClick={handleRoomClick}
+    roomRef={roomRef}
+    spaces={spaces}
+  />
+);
 
 MapContainer.propTypes = {
-  spaces: PropTypes.any,
+  currentRoom: PropTypes.any,
+  handleRoomClick: PropTypes.any.isRequired,
   highlighted: PropTypes.any,
-  currentSpace: PropTypes.any,
   roomRef: PropTypes.any,
-  handleSpaceClick: PropTypes.any,
+  spaces: PropTypes.any,
 };
 
 export default MapContainer;

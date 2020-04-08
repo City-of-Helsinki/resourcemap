@@ -4,14 +4,14 @@ import classNames from 'classnames';
 
 import './styles.css';
 
-const Path = ({ path, ...props }) => {
+const Path = ({ path, onClick, id, ...props }) => {
   const isString = typeof path === 'string';
   const config = {
-    id: props.id,
+    id,
     pointerEvents: 'visible',
     cursor: 'pointer',
     className: classNames('roomPath', props.className),
-    onClick: event => props.onSpaceClick(event, { ...props }),
+    onClick: event => onClick(event, id),
   };
 
   if (isString) {
@@ -25,7 +25,7 @@ Path.propTypes = {
   id: PropTypes.any,
   path: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   className: PropTypes.any,
-  onSpaceClick: PropTypes.any,
+  onClick: PropTypes.any.isRequired,
 };
 
 export default Path;
