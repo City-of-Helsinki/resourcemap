@@ -17,6 +17,11 @@ export default [
     name: {
       fi: 'Oppimistila 1',
     },
+    description: {
+      fi: 'Tila on käytettävissä, jos siellä ei ole kirjaston toimintaa',
+      sv: 'Utrymmet är tillgängligt då det inte är i bibliotekets eget bruk',
+      en: 'The space is available when not in use by the library',
+    },
   },
   {
     category: Categories.LEARNING_SPACES,
@@ -24,6 +29,11 @@ export default [
     id: '2',
     name: {
       fi: 'Oppimistila 2',
+    },
+    description: {
+      fi: 'Tilassa järjestetään kirjaston tapahtumia',
+      sv: 'I utrymmet arrangeras bibliotekets egna evenemang',
+      en: 'A room for library organized event',
     },
   },
   {
@@ -206,6 +216,11 @@ export default [
     name: {
       fi: 'Retropelinurkka',
     },
+    description: {
+      fi: 'Tilassa on 14 pelaamiseen tarkoitettua tietokonetta',
+      sv: 'I utrymmet finns 14 datorer avsedda för datorspel',
+      en: 'The space has 14 computers for gaming',
+    },
   },
   {
     category: Categories.GAME_ROOMS,
@@ -345,6 +360,14 @@ export default [
     name: {
       fi: 'Kuutio',
     },
+    description: {
+      fi:
+        'Mediataidetila, joka mahdollistaa immersiivisen kokemuksen. Sopii myös tapahtuma- ja kokouskäyttöön.',
+      sv:
+        'Mediautrymme som möjliggör en fördjupande mediakonstupplevelse. Passar också bra för evenemang och möten.',
+      en:
+        'A space for new media art that enables immersive experiences. It can also function as an event or meeting room',
+    },
   },
   {
     category: Categories.OTHER_SPACES,
@@ -352,6 +375,11 @@ export default [
     id: '50',
     name: {
       fi: 'Lukusali',
+    },
+    description: {
+      fi: 'Hiljainen tila, jossa on 40  istumapaikkaa.',
+      sv: 'Tyst utrymme med 40 sittplatser',
+      en: 'Quiet space with 40 seated desks',
     },
   },
   {
@@ -361,6 +389,11 @@ export default [
     name: {
       fi: 'Työskentelyalue',
     },
+    description: {
+      fi: 'Alueella on 16 pöytää joiden ääressä voi työskennellä.',
+      sv: 'Utrymmet har 16 bord att arbeta vid ',
+      en: 'The space has 16 tables for working',
+    },
   },
   {
     category: Categories.OTHER_SPACES,
@@ -369,6 +402,12 @@ export default [
     respaId: 'av5k7ixqvzha',
     name: {
       fi: 'Keittiö',
+    },
+    description: {
+      fi:
+        'Keittiössä asiakkaat voivat järjestää ruoanlaittoon liittyviä tilaisuuksia',
+      sv: 'I köket kan våra kunder arrangera evenemang rörande matlagning',
+      en: 'In the kitchen, customers can organize culinary related events',
     },
   },
 ];

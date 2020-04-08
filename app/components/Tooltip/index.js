@@ -145,11 +145,15 @@ function makeBody(content, currentLocal) {
     default: {
       const space = content[0];
       const vacancyStatus = getVacancyStatus(space);
+      const description = get(space, 'description', null);
       const name = get(space, 'data.name', space.name);
 
       return (
         <>
           <Title>{translate(name)}</Title>
+          <Row>
+            {description && <RowLabel>{translate(description)}</RowLabel>}
+          </Row>
           <Row>
             <VacancyLabel variant="light" vacancy={vacancyStatus} />
           </Row>
