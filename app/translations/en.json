@@ -22,9 +22,12 @@
   "subSpaces.3dPrinters": "3D printers",
   "subSpaces.buttonPinMachine": "",
   "subSpaces.coverstitchMachine": "",
+  "subSpaces.electronicWorkstation": "Electronic workstations ",
   "subSpaces.embroideryMachine": "",
   "subSpaces.largeFormatPrinter": "",
+  "subSpaces.laserCutter": "",
   "subSpaces.overlockMachine": "overlock machines",
   "subSpaces.sewingMachine": "sewing machines",
+  "subSpaces.uvPrinter": "",
   "subSpaces.vinylCutterAndHeatpress": ""
 }

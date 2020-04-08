@@ -22,9 +22,12 @@
   "subSpaces.3dPrinters": "3d-skrivare",
   "subSpaces.buttonPinMachine": "",
   "subSpaces.coverstitchMachine": "",
+  "subSpaces.electronicWorkstation": "elektroniska arbetsstationer",
   "subSpaces.embroideryMachine": "",
   "subSpaces.largeFormatPrinter": "",
+  "subSpaces.laserCutter": "",
   "subSpaces.overlockMachine": "överlocksmaskiner",
   "subSpaces.sewingMachine": "symaskiner",
+  "subSpaces.uvPrinter": "",
   "subSpaces.vinylCutterAndHeatpress": ""
 }

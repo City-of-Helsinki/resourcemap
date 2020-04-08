@@ -22,9 +22,12 @@
   "subSpaces.3dPrinters": "3D-tulostimet",
   "subSpaces.buttonPinMachine": "Rintanappikone",
   "subSpaces.coverstitchMachine": "Peitetikkikoneet",
+  "subSpaces.electronicWorkstation": "Elektroniikkatyöpisteet",
   "subSpaces.embroideryMachine": "Kirjovat ompelukoneet",
   "subSpaces.largeFormatPrinter": "Suurkuvatulostin",
+  "subSpaces.laserCutter": "Laserleikkuri",
   "subSpaces.overlockMachine": "Saumurit",
   "subSpaces.sewingMachine": "Ompelukoneet",
+  "subSpaces.uvPrinter": "Uv-tulostin",
   "subSpaces.vinylCutterAndHeatpress": "Vinyylileikkuri ja lämpöprässi"
 }

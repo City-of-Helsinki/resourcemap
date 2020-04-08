@@ -379,10 +379,33 @@ export default [
   {
     category: Categories.MACHINE_ROOM,
     room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.ELECTRONIC_WORKSTATION,
     id: '47',
-    name: {
-      fi: 'Konehuone',
-    },
+    respaId: 'awmyaqgjiiba',
+    canBeReserved: true,
+  },
+  {
+    category: Categories.MACHINE_ROOM,
+    room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.ELECTRONIC_WORKSTATION,
+    id: '52',
+    respaId: 'awmyd7u2gqjq',
+    canBeReserved: true,
+  },
+  {
+    category: Categories.MACHINE_ROOM,
+    room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.LASER_CUTTER,
+    id: '53',
+    respaId: 'av5k6h56ne7q',
+    canBeReserved: true,
+  },
+  {
+    category: Categories.MACHINE_ROOM,
+    room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.UV_PRINTER,
+    id: '54',
+    respaId: 'av5k6h56ne7q',
     canBeReserved: true,
   },
   {

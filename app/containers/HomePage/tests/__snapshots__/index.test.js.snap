@@ -601,7 +601,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               style="stroke: transparent; fill: #f6f6f8;"
             />
             <path
-              class="roomPath  noData"
+              class="roomPath  available"
               cursor="pointer"
               d="M755.219,52.663L755.219,29.376L812.161,29.376L812.161,5.098L889.297,5.098L889.297,52.663L755.219,52.663Z"
               id="mr1"

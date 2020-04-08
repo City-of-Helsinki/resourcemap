@@ -37,4 +37,16 @@ export default defineMessages({
     id: `${scope}.buttonPinMachine`,
     defaultMessage: 'Rintanappikone',
   },
+  [SpaceTypes.ELECTRONIC_WORKSTATION]: {
+    id: `${scope}.electronicWorkstation`,
+    defaultMessage: 'Elektroniikkatyöpisteet',
+  },
+  [SpaceTypes.LASER_CUTTER]: {
+    id: `${scope}.laserCutter`,
+    defaultMessage: 'Laserleikkuri',
+  },
+  [SpaceTypes.UV_PRINTER]: {
+    id: `${scope}.uvPrinter`,
+    defaultMessage: 'Uv-tulostin',
+  },
 });
