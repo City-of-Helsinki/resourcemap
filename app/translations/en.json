@@ -20,14 +20,14 @@
   "containers.LocaleToggle.fi": "Suomeksi",
   "containers.LocaleToggle.sv": "Pä svenska",
   "subSpaces.3dPrinters": "3D printers",
-  "subSpaces.buttonPinMachine": "",
-  "subSpaces.coverstitchMachine": "",
+  "subSpaces.buttonPinMachine": "Button pin machine",
+  "subSpaces.coverstitchMachine": "Coverstitch machin",
   "subSpaces.electronicWorkstation": "Electronic workstations ",
-  "subSpaces.embroideryMachine": "",
-  "subSpaces.largeFormatPrinter": "",
-  "subSpaces.laserCutter": "",
+  "subSpaces.embroideryMachine": "Embroidery machine",
+  "subSpaces.largeFormatPrinter": "Large format printer",
+  "subSpaces.laserCutter": "Laser cutter",
   "subSpaces.overlockMachine": "overlock machines",
   "subSpaces.sewingMachine": "sewing machines",
-  "subSpaces.uvPrinter": "",
-  "subSpaces.vinylCutterAndHeatpress": ""
+  "subSpaces.uvPrinter": "UV printer",
+  "subSpaces.vinylCutterAndHeatpress": "Vinyl cutter and heat press"
 }
