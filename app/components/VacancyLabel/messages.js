@@ -11,8 +11,16 @@ export default defineMessages({
     id: `${scope}.taken`,
     defaultMessage: 'Varattu',
   },
-  nonReservable: {
-    id: `${scope}.nonReservable`,
-    defaultMessage: 'Ei varattavissa',
+  closed: {
+    id: `${scope}.closed`,
+    defaultMessage: 'Suljettu',
+  },
+  noData: {
+    id: `${scope}.noData`,
+    defaultMessage: 'Tietoja saatavuudesta ei löydetty',
+  },
+  unknown: {
+    id: `${scope}.unknown`,
+    defaultMessage: 'Saatavuutta ei osattu määrittää',
   },
 });

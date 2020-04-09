@@ -17,7 +17,7 @@ function isResourceAvailable(currentTime, resource) {
       new Date(reservation.end).getTime() > currentTime.getTime(),
   );
 
-  return currentReservations.length > 0;
+  return currentReservations.length === 0;
 }
 
 export default isResourceAvailable;

@@ -4,11 +4,13 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import classNames from 'classnames';
 
+import SpaceAvailability from 'constants/SpaceAvailability';
 import VacancyIcon from 'components/VacancyIcon';
 import P from 'components/P';
 import messages from './messages';
 
 const VARIANTS = ['dark', 'light'];
+const VACANCIES = Object.values(SpaceAvailability);
 
 export const Wrapper = styled.div`
   display: flex;
@@ -30,7 +32,7 @@ const VacancyLabel = ({ vacancy, variant = VARIANTS[0] }) => (
 );
 
 VacancyLabel.propTypes = {
-  vacancy: PropTypes.any,
+  vacancy: PropTypes.oneOf(VACANCIES),
   variant: PropTypes.oneOf(VARIANTS),
 };
 

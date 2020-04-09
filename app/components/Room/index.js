@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import SpaceAvailability from 'constants/SpaceAvailability';
 import Rooms from 'constants/Rooms';
 import Path from 'components/Path';
 
@@ -42,7 +43,7 @@ const Room = ({
 };
 
 Room.propTypes = {
-  availability: PropTypes.oneOf(['taken', 'available', 'partlyAvailable']),
+  availability: PropTypes.oneOf(Object.values(SpaceAvailability)),
   id: PropTypes.string,
   isHighlighted: PropTypes.any,
   isOpened: PropTypes.any,

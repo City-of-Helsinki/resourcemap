@@ -11,7 +11,7 @@ const VacancyList = () => {
       vacancy: 'taken',
     },
     {
-      vacancy: 'nonReservable',
+      vacancy: 'closed',
     },
   ];
 

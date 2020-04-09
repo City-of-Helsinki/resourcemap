@@ -4,13 +4,13 @@ import classNames from 'classnames';
 
 import './styles.css';
 
-const Path = ({ path, onClick, id, ...props }) => {
+const Path = ({ path, onClick, id, className }) => {
   const isString = typeof path === 'string';
   const config = {
     id,
     pointerEvents: 'visible',
     cursor: 'pointer',
-    className: classNames('roomPath', props.className),
+    className: classNames('roomPath', className),
     onClick: event => onClick(event, id),
   };
 

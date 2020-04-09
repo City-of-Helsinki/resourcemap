@@ -77,3 +77,11 @@ export const RowLabel = styled.p`
     margin-left: 7px;
   }
 `;
+
+export const Icon = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+`;
