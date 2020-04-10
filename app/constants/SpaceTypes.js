@@ -7,4 +7,7 @@ export default Object.freeze({
   LARGE_FORMAT_PRINTER: 'largeFormatPrinter',
   VINYL_CUTTER_AND_HEATPRESS: 'vinylCutterAndHeatpress',
   BUTTON_PIN_MACHINE: 'buttonPinMachine',
+  ELECTRONIC_WORKSTATION: 'electronicWorkstation',
+  LASER_CUTTER: 'laserCutter',
+  UV_PRINTER: 'uvPrinter',
 });

@@ -379,10 +379,33 @@ export default [
   {
     category: Categories.MACHINE_ROOM,
     room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.ELECTRONIC_WORKSTATION,
     id: '47',
-    name: {
-      fi: 'Konehuone',
-    },
+    respaId: 'awmyaqgjiiba',
+    canBeReserved: true,
+  },
+  {
+    category: Categories.MACHINE_ROOM,
+    room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.ELECTRONIC_WORKSTATION,
+    id: '52',
+    respaId: 'awmyd7u2gqjq',
+    canBeReserved: true,
+  },
+  {
+    category: Categories.MACHINE_ROOM,
+    room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.LASER_CUTTER,
+    id: '53',
+    respaId: 'av5k6h56ne7q',
+    canBeReserved: true,
+  },
+  {
+    category: Categories.MACHINE_ROOM,
+    room: Rooms.MACHINE_ROOM_1,
+    type: SpaceTypes.UV_PRINTER,
+    id: '54',
+    respaId: 'av5k6h56ne7q',
     canBeReserved: true,
   },
   {
@@ -443,7 +466,10 @@ export default [
     category: Categories.OTHER_SPACES,
     room: Rooms.OTHER_5,
     id: '3',
-    respaId: 'av5k7ixqvzha',
+    // Disconnected from respa because the name of the sapce is counter
+    // intuitive to the categorisation used in this app, and because the
+    // reservation calendar for the application is not maanged in respa.
+    // respaId: 'av5k7ixqvzha',
     name: {
       fi: 'Keittiö',
     },
@@ -453,6 +479,7 @@ export default [
       sv: 'I köket kan våra kunder arrangera evenemang rörande matlagning',
       en: 'In the kitchen, customers can organize culinary related events',
     },
+    peopleCapacity: 10,
     canBeReserved: true,
   },
 ];
