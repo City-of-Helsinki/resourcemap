@@ -466,6 +466,9 @@ export default [
     category: Categories.OTHER_SPACES,
     room: Rooms.OTHER_5,
     id: '3',
+    // Disconnected from respa because the name of the sapce is counter
+    // intuitive to the categorisation used in this app, and because the
+    // reservation calendar for the application is not maanged in respa.
     // respaId: 'av5k7ixqvzha',
     name: {
       fi: 'Keittiö',
