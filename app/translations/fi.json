@@ -9,7 +9,7 @@
   "categories.workspaces": "Työtilat",
   "categories.workstations": "Tietokoneet",
   "components.Container.makeReservationInVaraamo": "Tee varaus Varaamossa",
-  "components.Container.mapTitle": "Helsingin keskuskirjasto | 2.kerros",
+  "components.Container.mapTitle": "Helsingin keskustakirjasto | 2.kerros",
   "components.Tooltip.reservableStatusLabel": "varattavissa",
   "components.VacancyLabel.available": "Vapaa",
   "components.VacancyLabel.closed": "Suljettu",
