@@ -485,6 +485,14 @@ export default [
   },
   {
     category: Categories.URBAN_WORKSHOP,
+    room: Rooms.URBAN_WORKSHOP_2,
+    type: SpaceTypes.BUTTON_PIN_MACHINE,
+    id: '46',
+    respaId: 'av7fbsmhn57a',
+    canBeReserved: true,
+  },
+  {
+    category: Categories.URBAN_WORKSHOP,
     room: Rooms.URBAN_WORKSHOP_3,
     type: SpaceTypes.LARGE_FORMAT_PRINTER,
     id: '44',
@@ -497,14 +505,6 @@ export default [
     type: SpaceTypes.VINYL_CUTTER_AND_HEATPRESS,
     id: '45',
     respaId: 'av7e2kfkcrga',
-    canBeReserved: true,
-  },
-  {
-    category: Categories.URBAN_WORKSHOP,
-    room: Rooms.URBAN_WORKSHOP_3,
-    type: SpaceTypes.BUTTON_PIN_MACHINE,
-    id: '46',
-    respaId: 'av7fbsmhn57a',
     canBeReserved: true,
   },
   {
