@@ -15,7 +15,7 @@ import {
   SubButtonWrapperWithTransition,
 } from './wrappers';
 
-const GROUP_BY_TYPE = [Categories.URBAN_WORKSHOP];
+const GROUP_BY_TYPE = [Categories.URBAN_WORKSHOP, Categories.MACHINE_ROOM];
 
 const BookingButton = ({
   category,

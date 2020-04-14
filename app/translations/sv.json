@@ -20,14 +20,14 @@
   "containers.LocaleToggle.fi": "Suomeksi",
   "containers.LocaleToggle.sv": "På svenska",
   "subSpaces.3dPrinters": "3d-skrivare",
-  "subSpaces.buttonPinMachine": "",
-  "subSpaces.coverstitchMachine": "",
+  "subSpaces.buttonPinMachine": "Pinsmaskin",
+  "subSpaces.coverstitchMachine": "Coverstich maskin",
   "subSpaces.electronicWorkstation": "elektroniska arbetsstationer",
-  "subSpaces.embroideryMachine": "",
-  "subSpaces.largeFormatPrinter": "",
-  "subSpaces.laserCutter": "",
+  "subSpaces.embroideryMachine": "Broderimaskin",
+  "subSpaces.largeFormatPrinter": "Storbildskrivare",
+  "subSpaces.laserCutter": "Laserskärare",
   "subSpaces.overlockMachine": "överlocksmaskiner",
   "subSpaces.sewingMachine": "symaskiner",
-  "subSpaces.uvPrinter": "",
-  "subSpaces.vinylCutterAndHeatpress": ""
+  "subSpaces.uvPrinter": "UV-skrivare",
+  "subSpaces.vinylCutterAndHeatpress": "Vinylskärare och värmepress"
 }

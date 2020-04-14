@@ -225,22 +225,22 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             points="587.79 188.81 588.23 189.19 594.38 183.92 592.9 182.34 592.6 182.61 592.2 182.19 589.46 184.66 589.46 177.76 588.76 177.76 588.76 177.61 586.29 177.61 586.29 184.81 583.55 182.34 583.31 182.6 582.85 182.19 581.37 183.77 587.53 189.04"
           />
           <g>
-            <rect
-              class="roomPath  closed"
-              cursor="pointer"
-              height="63.425"
-              id="o1"
-              pointer-events="visible"
-              width="48.69"
-              x="396.424"
-              y="200.536"
-            />
             <path
               class="roomPath  closed"
               cursor="pointer"
               d="M334.752,263.966L334.752,187.295L392.12,184.6L392.12,263.966L334.752,263.966Z"
+              id="o3"
+              pointer-events="visible"
+            />
+            <rect
+              class="roomPath  closed"
+              cursor="pointer"
+              height="63.425"
               id="o2"
               pointer-events="visible"
+              width="48.69"
+              x="396.424"
+              y="200.536"
             />
             <rect
               class="roomPath  noData"
@@ -403,31 +403,24 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               y="181.898"
             />
             <path
-              class="roomPath  closed"
+              class="roomPath  noData"
               cursor="pointer"
-              d="M277.046,144.8L277.046,111.384L314.913,111.384L310.737,148.064L277.046,144.8Z"
+              d="M219.117,211.633L219.117,189.169L236.382,189.169L249.062,199.804L249.062,211.633L219.117,211.633Z"
               id="s1"
               pointer-events="visible"
             />
             <path
-              class="roomPath  closed"
+              class="roomPath  noData"
               cursor="pointer"
-              d="M218.878,111.384L272.166,111.384L272.166,144.753L218.878,147.053L218.878,111.384Z"
-              id="s2"
+              d="M238.227,184.553L219.117,184.553L219.117,151.992L261.407,150.245L261.407,185.285L251.261,195.291L238.227,184.553Z"
+              id="s1"
               pointer-events="visible"
             />
             <path
-              class="roomPath  closed"
+              class="roomPath  noData"
               cursor="pointer"
-              d="M146.853,141.183L149.092,111.384L213.592,111.384L213.592,144.657L146.853,141.183Z"
-              id="s3"
-              pointer-events="visible"
-            />
-            <path
-              class="roomPath  closed"
-              cursor="pointer"
-              d="M146.929,145.206L213.592,148.733L213.592,172.609L151.025,176.087L146.929,145.206Z"
-              id="s4"
+              d="M273.566,211.633L277.229,195.474L267.301,185.568L267.301,150.257L311.02,152.693L311.02,211.633L273.566,211.633Z"
+              id="s1"
               pointer-events="visible"
             />
             <path
@@ -438,24 +431,31 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               pointer-events="visible"
             />
             <path
-              class="roomPath  closed"
+              class="roomPath  noData"
               cursor="pointer"
-              d="M219.117,211.633L219.117,189.169L236.382,189.169L249.062,199.804L249.062,211.633L219.117,211.633Z"
+              d="M146.929,145.206L213.592,148.733L213.592,172.609L151.025,176.087L146.929,145.206Z"
               id="s6"
               pointer-events="visible"
             />
             <path
               class="roomPath  closed"
               cursor="pointer"
-              d="M238.227,184.553L219.117,184.553L219.117,151.992L261.407,150.245L261.407,185.285L251.261,195.291L238.227,184.553Z"
-              id="s6"
+              d="M146.853,141.183L149.092,111.384L213.592,111.384L213.592,144.657L146.853,141.183Z"
+              id="s7"
               pointer-events="visible"
             />
             <path
               class="roomPath  closed"
               cursor="pointer"
-              d="M273.566,211.633L277.229,195.474L267.301,185.568L267.301,150.257L311.02,152.693L311.02,211.633L273.566,211.633Z"
-              id="s6"
+              d="M218.878,111.384L272.166,111.384L272.166,144.753L218.878,147.053L218.878,111.384Z"
+              id="s8"
+              pointer-events="visible"
+            />
+            <path
+              class="roomPath  closed"
+              cursor="pointer"
+              d="M277.046,144.8L277.046,111.384L314.913,111.384L310.737,148.064L277.046,144.8Z"
+              id="s9"
               pointer-events="visible"
             />
             <path
