@@ -7,4 +7,12 @@ export default defineMessages({
     id: `${scope}.reservableStatusLabel`,
     defaultMessage: 'varattavissa',
   },
+  notReservableStatusLabel: {
+    id: `${scope}.notReservableStatusLabel`,
+    defaultMessage: 'Ei varattavissa',
+  },
+  reservationStatusLabel: {
+    id: `${scope}.reservationStatusLabel`,
+    defaultMessage: 'Varaustilanne',
+  },
 });

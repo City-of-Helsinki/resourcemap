@@ -2,6 +2,13 @@ import Categories from 'constants/Categories';
 import SpaceTypes from 'constants/SpaceTypes';
 import Rooms from 'constants/Rooms';
 
+// Can be used to automatically create repetitive categories.
+function makeData(template, count) {
+  return Array.from({ length: count })
+    .map((val, i) => i + 1)
+    .map(item => template(item));
+}
+
 export default [
   {
     category: Categories.LEARNING_SPACES,
@@ -388,21 +395,122 @@ export default [
   {
     category: Categories.WORKSTATIONS,
     room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
     id: '31',
+    respaId: 'awccdayofd6a',
     name: {
-      fi: 'Mediatietokoneet 1-8',
+      fi: 'Mediatyöasema 1',
+      sv: 'Mediearbetsstation 1',
+      en: 'Media workstation 1',
     },
     canBeReserved: true,
   },
   {
     category: Categories.WORKSTATIONS,
-    room: Rooms.WORKSTATION_2,
-    id: '32',
+    room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
+    id: '55',
+    respaId: 'awcftv2wbcqa',
     name: {
-      fi: 'Asiakastietokoneet 1-14',
+      fi: 'Mediatyöasema 2',
+      sv: 'Mediearbetsstation 2',
+      en: 'Media workstation 2',
     },
-    canBeReserved: false,
+    canBeReserved: true,
   },
+  {
+    category: Categories.WORKSTATIONS,
+    room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
+    id: '56',
+    respaId: 'awcft7zh3gxa',
+    name: {
+      fi: 'Mediatyöasema 3',
+      sv: 'Mediearbetsstation 3',
+      en: 'Media workstation 3',
+    },
+    canBeReserved: true,
+  },
+  {
+    category: Categories.WORKSTATIONS,
+    room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
+    id: '57',
+    respaId: 'awcfuhfh2ivq',
+    name: {
+      fi: 'Mediatyöasema 4',
+      sv: 'Mediearbetsstation 4',
+      en: 'Media workstation 4',
+    },
+    canBeReserved: true,
+  },
+  {
+    category: Categories.WORKSTATIONS,
+    room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
+    id: '58',
+    respaId: 'awcfuqes52aq',
+    name: {
+      fi: 'Mediatyöasema 5',
+      sv: 'Mediearbetsstation 5',
+      en: 'Media workstation 5',
+    },
+    canBeReserved: true,
+  },
+  {
+    category: Categories.WORKSTATIONS,
+    room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
+    id: '59',
+    respaId: 'awcfuz2ucdoq',
+    name: {
+      fi: 'Mediatyöasema 6',
+      sv: 'Mediearbetsstation 6',
+      en: 'Media workstation 6',
+    },
+    canBeReserved: true,
+  },
+  {
+    category: Categories.WORKSTATIONS,
+    room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
+    id: '60',
+    respaId: 'awcfvbndxsza',
+    name: {
+      fi: 'Mediatyöasema 7',
+      sv: 'Mediearbetsstation 7',
+      en: 'Media workstation 7',
+    },
+    canBeReserved: true,
+  },
+  {
+    category: Categories.WORKSTATIONS,
+    room: Rooms.WORKSTATION_1,
+    type: SpaceTypes.MEDIA_COMPUTERS,
+    id: '61',
+    respaId: 'awcfvhbabgoq',
+    name: {
+      fi: 'Mediatyöasema 8',
+      sv: 'Mediearbetsstation 8',
+      en: 'Media workstation 8',
+    },
+    canBeReserved: true,
+  },
+  ...makeData(
+    index => ({
+      category: Categories.WORKSTATIONS,
+      room: Rooms.WORKSTATION_2,
+      type: SpaceTypes.COMPUTER,
+      id: String(61 + index),
+      name: {
+        fi: `tietokone ${index}`,
+        sv: `dator ${index}`,
+        en: `computer ${index}`,
+      },
+      canBeReserved: false,
+    }),
+    16,
+  ),
   {
     category: Categories.URBAN_WORKSHOP,
     room: Rooms.URBAN_WORKSHOP_1,
