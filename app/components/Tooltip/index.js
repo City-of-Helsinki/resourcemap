@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import groupBy from 'lodash/groupBy';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import classNames from 'classnames';
 import get from 'lodash/get';
 import dateFormat from 'dateformat';
 
@@ -16,9 +15,9 @@ import {
   getNextReservedSlot,
 } from 'utils/resourceSlots';
 import VacancyLabel from 'components/VacancyLabel';
-import VacancyIcon from 'components/VacancyIcon';
 import CloseButton from 'components/CloseButton';
 import categoryMessages from 'components/ButtonList/categoryMessages';
+import TooltipGroup from './TooltipGroup';
 import TooltipGrid from './TooltipGrid';
 import {
   TooltipWrapper,
@@ -39,21 +38,6 @@ const ALLOWED_AVAILABILITIES = [
 ];
 
 const ROOMS_WITH_GRID = [Rooms.WORKSTATION_1, Rooms.WORKSTATION_2];
-
-function SubSpaceVacancyIcon({ availableCount }) {
-  return (
-    <VacancyIcon
-      className={classNames({
-        available: availableCount > 0,
-        taken: availableCount === 0,
-      })}
-    />
-  );
-}
-
-SubSpaceVacancyIcon.propTypes = {
-  availableCount: PropTypes.number,
-};
 
 function getAvailableCount(spaces) {
   const now = new Date();
@@ -104,18 +88,16 @@ function makeBody(content, currentLocal) {
             <Title>
               <FormattedMessage {...categoryMessages[category]} />
             </Title>
-            <Row className="small light">
-              <RowLabel>
-                <FormattedMessage {...spaceTypeMessages[spaceType]} />
-              </RowLabel>
-            </Row>
-            <Row className="small light">
-              <SubSpaceVacancyIcon availableCount={availableCount} />
-              <RowLabel>
-                <FormattedMessage {...messages.reservableStatusLabel} />{' '}
-                {availableCount}/{totalCount}
-              </RowLabel>
-            </Row>
+            <TooltipGroup
+              availableCount={availableCount}
+              label={
+                <>
+                  <FormattedMessage {...spaceTypeMessages[spaceType]} />{' '}
+                  {availableCount}/{totalCount}{' '}
+                  <FormattedMessage {...messages.reservableStatusLabel} />
+                </>
+              }
+            />
           </>
         );
       }
@@ -130,14 +112,17 @@ function makeBody(content, currentLocal) {
             const availableCount = getAvailableCount(spaces);
 
             return (
-              <Row key={spaceType}>
-                <SubSpaceVacancyIcon availableCount={availableCount} />
-                <RowLabel>
-                  <FormattedMessage {...spaceTypeMessages[spaceType]} />{' '}
-                  {availableCount}/{totalCount}{' '}
-                  <FormattedMessage {...messages.reservableStatusLabel} />
-                </RowLabel>
-              </Row>
+              <TooltipGroup
+                key={spaceType}
+                availableCount={availableCount}
+                label={
+                  <>
+                    <FormattedMessage {...spaceTypeMessages[spaceType]} />{' '}
+                    {availableCount}/{totalCount}{' '}
+                    <FormattedMessage {...messages.reservableStatusLabel} />
+                  </>
+                }
+              />
             );
           })}
         </>
