@@ -1,10 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const VacancyIcon = styled.span`
-  display: block;
-  width: 15px;
-  height: 15px;
-
+export const vacancyIconColoringCss = css`
   background-color: #00b62a;
 
   &.available {
@@ -29,6 +25,14 @@ const VacancyIcon = styled.span`
   &.unknown {
     background-color: grey;
   }
+`;
+
+const VacancyIcon = styled.span`
+  display: block;
+  width: 15px;
+  height: 15px;
+
+  ${vacancyIconColoringCss};
 `;
 
 export default VacancyIcon;

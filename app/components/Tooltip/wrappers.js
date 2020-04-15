@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TooltipContainer = styled.div`
   display: block;
   position: fixed;
-  width: 240px;
+  min-width: 180px;
   left: ${props => props.x}px;
   top: ${props => props.y}px;
 
@@ -52,6 +52,7 @@ export const Title = styled.h3`
   font-size: 12px;
   font-weight: bold;
   color: #191919;
+  text-align: center;
 
   &:not(:last-child) {
     margin-bottom: 13px;
@@ -69,6 +70,7 @@ export const Row = styled.div`
 
 export const RowLabel = styled.p`
   margin: 0;
+  max-width: 200px;
 
   font-size: 10px;
   color: #191919;

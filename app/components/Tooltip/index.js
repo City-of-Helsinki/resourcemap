@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import get from 'lodash/get';
 
 import SpaceAvailability from 'constants/SpaceAvailability';
+import Rooms from 'constants/Rooms';
 import isResourceAvailable from 'utils/isResourceAvailable';
 import getSpaceAvailability from 'utils/getSpaceAvailability';
 import getLocalizedString from 'utils/getLocalizedString';
@@ -13,6 +14,7 @@ import VacancyLabel from 'components/VacancyLabel';
 import VacancyIcon from 'components/VacancyIcon';
 import CloseButton from 'components/CloseButton';
 import categoryMessages from 'components/ButtonList/categoryMessages';
+import TooltipGrid from './TooltipGrid';
 import {
   TooltipWrapper,
   TooltipContainer,
@@ -30,6 +32,8 @@ const ALLOWED_AVAILABILITIES = [
   SpaceAvailability.TAKEN,
   SpaceAvailability.CLOSED,
 ];
+
+const ROOMS_WITH_GRID = [Rooms.WORKSTATION_1, Rooms.WORKSTATION_2];
 
 function SubSpaceVacancyIcon({ availableCount, totalCount }) {
   return (
@@ -81,7 +85,11 @@ function makeBody(content, currentLocal) {
   switch (type) {
     case 'group': {
       const groups = Object.entries(groupBy(content, 'type'));
-      const { category } = content[0];
+      const { category, room } = content[0];
+
+      if (ROOMS_WITH_GRID.includes(room)) {
+        return <TooltipGrid groups={groups} />;
+      }
 
       if (groups.length === 1) {
         const [spaceType, spaces] = groups[0];

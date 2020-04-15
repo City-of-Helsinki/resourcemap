@@ -9,6 +9,8 @@ const SPECIAL_COLORS = [
   Rooms.URBAN_WORKSHOP_1,
   Rooms.URBAN_WORKSHOP_2,
   Rooms.URBAN_WORKSHOP_3,
+  Rooms.WORKSTATION_1,
+  Rooms.WORKSTATION_2,
 ];
 
 const Room = ({

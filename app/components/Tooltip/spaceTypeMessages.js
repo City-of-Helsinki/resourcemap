@@ -49,4 +49,12 @@ export default defineMessages({
     id: `${scope}.uvPrinter`,
     defaultMessage: 'Uv-tulostin',
   },
+  [SpaceTypes.MEDIA_COMPUTERS]: {
+    id: `${scope}.mediaComputers`,
+    defaultMessage: 'Mediatietokoneet',
+  },
+  [SpaceTypes.COMPUTERS]: {
+    id: `${scope}.computers`,
+    defaultMessage: 'Asiakastietokoneet',
+  },
 });

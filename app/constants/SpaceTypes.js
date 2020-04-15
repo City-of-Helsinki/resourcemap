@@ -10,4 +10,5 @@ export default Object.freeze({
   ELECTRONIC_WORKSTATION: 'electronicWorkstation',
   LASER_CUTTER: 'laserCutter',
   UV_PRINTER: 'uvPrinter',
+  MEDIA_COMPUTERS: 'mediaComputers',
 });
