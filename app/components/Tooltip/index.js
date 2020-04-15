@@ -219,15 +219,33 @@ function makeBody(content, currentLocal) {
 
 const Tooltip = ({ content, intl, onClick, visible, x, y }) => {
   const { locale } = intl;
+  const tooltip = React.useRef();
+
+  const handleDocumentClick = event => {
+    const { target } = event;
+    const current = tooltip && tooltip.current;
+
+    // Close self on outside click
+    if (!(current && target instanceof Node && current.contains(target))) {
+      onClick(event);
+    }
+  };
+
+  const body = makeBody(content, locale);
+
+  React.useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, [handleDocumentClick]);
 
   if (!visible) {
     return null;
   }
 
-  const body = makeBody(content, locale);
-
   return (
-    <TooltipContainer x={x} y={y}>
+    <TooltipContainer ref={tooltip} x={x} y={y}>
       <TooltipWrapper className="animation-item">
         <CloseButton tooltip onClick={onClick} />
         {body}
