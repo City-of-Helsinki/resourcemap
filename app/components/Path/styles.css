@@ -33,7 +33,7 @@
   fill: #d0021b;
 }
 
-.roomPath.clicked.nodata,
+.roomPath.clicked.noData,
 .roomPath.clicked.unknown {
   fill: #5c5c5c;
 }
