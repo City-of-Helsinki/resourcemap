@@ -3,7 +3,8 @@
  */
 
 import React from 'react';
-import { fireEvent, render } from 'react-testing-library';
+// eslint-disable-next-line import/named
+import { fireEvent, render } from 'tests/utils';
 
 import Button from '../index';
 

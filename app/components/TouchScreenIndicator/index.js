@@ -15,7 +15,7 @@ const Label = styled.span`
   margin-top: 17px;
 
   font-weight: bold;
-  font-size: 15px;
+  font-size: ${props => props.theme.fontSize.get(2)};
 `;
 
 const TouchScreenIndicator = () => (

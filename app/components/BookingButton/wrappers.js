@@ -17,7 +17,7 @@ export const SubButton = styled(MainButton)`
   margin: 0;
   width: 160px;
 
-  font-size: 10px;
+  font-size: ${props => props.theme.fontSize.get(0)};
   font-weight: normal;
 
   border: none;

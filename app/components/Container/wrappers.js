@@ -48,10 +48,10 @@ export const QRCodeWrapper = styled.div`
 `;
 
 export const QRCodeDescription = styled.span`
-  font-size: 12px;
+  font-size: ${props => props.theme.fontSize.get(1)};
   font-weight: bold;
 `;
 
 export const QRCodeLink = styled.span`
-  font-size: 10px;
+  font-size: ${props => props.theme.fontSize.get(0)};
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from 'tests/utils';
 import 'jest-dom/extend-expect';
 
 import ListItem from '../index';
