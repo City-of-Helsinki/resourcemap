@@ -4,12 +4,17 @@ import groupBy from 'lodash/groupBy';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import get from 'lodash/get';
+import dateFormat from 'dateformat';
 
 import SpaceAvailability from 'constants/SpaceAvailability';
 import Rooms from 'constants/Rooms';
 import isResourceAvailable from 'utils/isResourceAvailable';
 import getSpaceAvailability from 'utils/getSpaceAvailability';
 import getLocalizedString from 'utils/getLocalizedString';
+import {
+  getClosestAvailableSlot,
+  getNextReservedSlot,
+} from 'utils/resourceSlots';
 import VacancyLabel from 'components/VacancyLabel';
 import VacancyIcon from 'components/VacancyIcon';
 import CloseButton from 'components/CloseButton';
@@ -157,6 +162,9 @@ function makeBody(content, currentLocal) {
       );
       const description = get(space, 'description', null);
       const name = get(space, 'data.name', space.name);
+      const data = get(space, 'data', null);
+      const closestFreeSlot = getClosestAvailableSlot(data);
+      const nextReservedSlot = getNextReservedSlot(data);
 
       return (
         <>
@@ -177,6 +185,30 @@ function makeBody(content, currentLocal) {
           {ALLOWED_AVAILABILITIES.includes(vacancyStatus) && (
             <Row>
               <VacancyLabel variant="light" vacancy={vacancyStatus} />
+            </Row>
+          )}
+          {vacancyStatus === SpaceAvailability.AVAILABLE && nextReservedSlot && (
+            <Row>
+              <RowLabel>
+                <FormattedMessage
+                  {...messages.availableUntilTimeLabel}
+                  values={{
+                    time: dateFormat(new Date(nextReservedSlot.start), 'HH:MM'),
+                  }}
+                />
+              </RowLabel>
+            </Row>
+          )}
+          {vacancyStatus === SpaceAvailability.TAKEN && closestFreeSlot && (
+            <Row>
+              <RowLabel>
+                <FormattedMessage
+                  {...messages.nextAvailableTimeLabel}
+                  values={{
+                    time: dateFormat(new Date(closestFreeSlot.start), 'HH:MM'),
+                  }}
+                />
+              </RowLabel>
             </Row>
           )}
         </>

@@ -1,13 +1,14 @@
 import isResourceAvailable from 'utils/isResourceAvailable';
+import getIsResourceClosed from 'utils/getIsResourceClosed';
 import SpaceAvailability from 'constants/SpaceAvailability';
 
 function getSpaceAvailability(space) {
-  if (!space.canBeReserved) {
-    return SpaceAvailability.CLOSED;
-  }
-
   if (!space.data) {
     return SpaceAvailability.NO_DATA;
+  }
+
+  if (!space.canBeReserved || getIsResourceClosed(space.data)) {
+    return SpaceAvailability.CLOSED;
   }
 
   const isAvailable = isResourceAvailable(new Date(), space.data);
