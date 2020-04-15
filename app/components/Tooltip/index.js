@@ -40,13 +40,12 @@ const ALLOWED_AVAILABILITIES = [
 
 const ROOMS_WITH_GRID = [Rooms.WORKSTATION_1, Rooms.WORKSTATION_2];
 
-function SubSpaceVacancyIcon({ availableCount, totalCount }) {
+function SubSpaceVacancyIcon({ availableCount }) {
   return (
     <VacancyIcon
       className={classNames({
-        available: availableCount === totalCount,
+        available: availableCount > 0,
         taken: availableCount === 0,
-        partlyAvailable: availableCount > 0 && availableCount < totalCount,
       })}
     />
   );
@@ -54,7 +53,6 @@ function SubSpaceVacancyIcon({ availableCount, totalCount }) {
 
 SubSpaceVacancyIcon.propTypes = {
   availableCount: PropTypes.number,
-  totalCount: PropTypes.number,
 };
 
 function getAvailableCount(spaces) {
@@ -112,10 +110,7 @@ function makeBody(content, currentLocal) {
               </RowLabel>
             </Row>
             <Row className="small light">
-              <SubSpaceVacancyIcon
-                availableCount={availableCount}
-                totalCount={totalCount}
-              />
+              <SubSpaceVacancyIcon availableCount={availableCount} />
               <RowLabel>
                 <FormattedMessage {...messages.reservableStatusLabel} />{' '}
                 {availableCount}/{totalCount}
@@ -136,10 +131,7 @@ function makeBody(content, currentLocal) {
 
             return (
               <Row key={spaceType}>
-                <SubSpaceVacancyIcon
-                  availableCount={availableCount}
-                  totalCount={totalCount}
-                />
+                <SubSpaceVacancyIcon availableCount={availableCount} />
                 <RowLabel>
                   <FormattedMessage {...spaceTypeMessages[spaceType]} />{' '}
                   {availableCount}/{totalCount}{' '}
@@ -219,15 +211,33 @@ function makeBody(content, currentLocal) {
 
 const Tooltip = ({ content, intl, onClick, visible, x, y }) => {
   const { locale } = intl;
+  const tooltip = React.useRef();
+
+  const handleDocumentClick = event => {
+    const { target } = event;
+    const current = tooltip && tooltip.current;
+
+    // Close self on outside click
+    if (!(current && target instanceof Node && current.contains(target))) {
+      onClick(event);
+    }
+  };
+
+  const body = makeBody(content, locale);
+
+  React.useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, [handleDocumentClick]);
 
   if (!visible) {
     return null;
   }
 
-  const body = makeBody(content, locale);
-
   return (
-    <TooltipContainer x={x} y={y}>
+    <TooltipContainer ref={tooltip} x={x} y={y}>
       <TooltipWrapper className="animation-item">
         <CloseButton tooltip onClick={onClick} />
         {body}

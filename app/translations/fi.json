@@ -15,6 +15,7 @@
   "components.Tooltip.notReservableStatusLabel": "Ei varattavissa",
   "components.Tooltip.reservableStatusLabel": "varattavissa",
   "components.Tooltip.reservationStatusLabel": "Varaustilanne",
+  "components.TouchScreenIndicator.touchScreenLabel": "Kosketusnäyttö",
   "components.VacancyLabel.available": "Vapaa",
   "components.VacancyLabel.closed": "Suljettu",
   "components.VacancyLabel.noData": "Tietoja saatavuudesta ei löydetty",

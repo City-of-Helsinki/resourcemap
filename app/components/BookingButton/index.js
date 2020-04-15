@@ -15,7 +15,11 @@ import {
   SubButtonWrapperWithTransition,
 } from './wrappers';
 
-const GROUP_BY_TYPE = [Categories.URBAN_WORKSHOP, Categories.MACHINE_ROOM];
+const GROUP_BY_TYPE = [
+  Categories.URBAN_WORKSHOP,
+  Categories.MACHINE_ROOM,
+  Categories.WORKSTATIONS,
+];
 
 const BookingButton = ({
   category,
@@ -83,7 +87,10 @@ const BookingButton = ({
       <MainButton onClick={onClick} className={className}>
         {text}
       </MainButton>
-      <SubButtonWrapperWithTransition className="button-animations">
+      <SubButtonWrapperWithTransition
+        className="button-animations"
+        exit={false}
+      >
         {className === 'btn--active' && buttonItems}
       </SubButtonWrapperWithTransition>
     </Wrapper>

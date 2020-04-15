@@ -15,6 +15,7 @@
   "components.Tooltip.notReservableStatusLabel": "Kan inte reserveras",
   "components.Tooltip.reservableStatusLabel": "Reserverings",
   "components.Tooltip.reservationStatusLabel": "Bokningsstatus",
+  "components.TouchScreenIndicator.touchScreenLabel": "Pekskärm",
   "components.VacancyLabel.available": "Tillgängligt",
   "components.VacancyLabel.closed": "Inte tillgänglig",
   "components.VacancyLabel.noData": "Inga data",
