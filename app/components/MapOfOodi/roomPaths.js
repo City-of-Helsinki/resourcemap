@@ -4,26 +4,32 @@ import Rooms from 'constants/Rooms';
 // It's not possible to declare a stroke that is inside an svg element.
 // The hack used in the source image is to have two element: one that is
 // the shape and one that is the shape's border.
-const makeDashedRoom = (Room, DashedBorder) => props => {
+// eslint-disable-next-line react/prop-types
+const makeDashedRoom = (Room, DashedBorder) => ({ className, ...rest }) => {
   // A dashed room should never have a stroke, because the stroke we
   // want to use is declared with a separate element.
   const roomStyles = {
     stroke: 'transparent',
   };
-  // The dash border should always have the color of the room border as
-  // its fill, and it should never have a stroke, lest we duplicate the
+  // The dash border should never have a stroke, lest we duplicate the
   // stroke size.
   const dashBorderStyles = {
     stroke: 'transparent',
-    fill: '#f6f6f8',
   };
+
+  const roomClassNames = [className, 'dashedRoom'].join(' ');
+  const borderClassNames = [className, 'dashedBorder'].join(' ');
 
   // We are using the style object, because fills and strokes that are
   // defined in CSS take precedence over direct svg attributes.
   return (
     <>
-      <Room {...props} style={roomStyles} />
-      <DashedBorder {...props} style={dashBorderStyles} />
+      <Room {...rest} className={roomClassNames} style={roomStyles} />
+      <DashedBorder
+        {...rest}
+        className={borderClassNames}
+        style={dashBorderStyles}
+      />
     </>
   );
 };

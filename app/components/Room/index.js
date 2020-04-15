@@ -2,16 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SpaceAvailability from 'constants/SpaceAvailability';
-import Rooms from 'constants/Rooms';
 import Path from 'components/Path';
-
-const SPECIAL_COLORS = [
-  Rooms.URBAN_WORKSHOP_1,
-  Rooms.URBAN_WORKSHOP_2,
-  Rooms.URBAN_WORKSHOP_3,
-  Rooms.WORKSTATION_1,
-  Rooms.WORKSTATION_2,
-];
 
 const Room = ({
   availability,
@@ -32,10 +23,6 @@ const Room = ({
     className = `${classNameHighlighted} clicked`;
   } else {
     className = classNameHighlighted;
-  }
-
-  if (SPECIAL_COLORS.includes(id)) {
-    className += ' special-colouring';
   }
 
   // Concat to final classname.

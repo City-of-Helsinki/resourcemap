@@ -38,11 +38,18 @@
   fill: #5c5c5c;
 }
 
-.roomPath.special-colouring.is-highlighted {
+.roomPath.dashedBorder {
+  fill: #fff;
+
+  transition: none;
+}
+
+.roomPath.dashedBorder.is-highlighted,
+.roomPath.dashedRoom.is-highlighted {
   fill: #fff;
 }
 
-.roomPath.special-colouring.clicked {
+.roomPath.dashedBorder.clicked,
+.roomPath.dashedRoom.clicked {
   fill: #9fc9eb;
-  stroke: #9fc9eb;
 }
