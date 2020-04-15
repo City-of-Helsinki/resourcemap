@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getClosestAvailableSlot getSlotSizeInTime throws error when slotSize is not give 1`] = `"slotSize is a required parameter"`;
+
+exports[`getClosestAvailableSlot getSlots should throw error when no opening hours are found for current date 1`] = `"The resource didn't provide opening hours for the date 2017-07-07"`;
+
+exports[`getClosestAvailableSlot getSlots should throw error when openingHours field is missing from resource 1`] = `"The resource parameter should have the field \\"slot_size\\" and \\"opening_hours\\""`;
+
+exports[`getClosestAvailableSlot getSlots should throw error when resource parameter is missing 1`] = `"The parameter resource is required"`;
+
+exports[`getClosestAvailableSlot getSlots should throw error when slotSize field is missing from resource 1`] = `"The resource parameter should have the field \\"slot_size\\" and \\"opening_hours\\""`;
+
+exports[`getClosestAvailableSlot getSlots should throw error when the opening hours object is missing opens or closes fields 1`] = `"The openingHours should contain opens and closes fields"`;

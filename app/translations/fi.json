@@ -10,6 +10,8 @@
   "categories.workstations": "Tietokoneet",
   "components.Container.makeReservationInVaraamo": "Tee varaus Varaamossa",
   "components.Container.mapTitle": "Helsingin keskustakirjasto | 2.kerros",
+  "components.Tooltip.availableUntilTimeLabel": "Tila on vapaana {time} asti",
+  "components.Tooltip.nextAvailableTimeLabel": "Tila on varattu {time} asti",
   "components.Tooltip.notReservableStatusLabel": "Ei varattavissa",
   "components.Tooltip.reservableStatusLabel": "varattavissa",
   "components.Tooltip.reservationStatusLabel": "Varaustilanne",

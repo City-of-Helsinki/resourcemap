@@ -15,4 +15,12 @@ export default defineMessages({
     id: `${scope}.reservationStatusLabel`,
     defaultMessage: 'Varaustilanne',
   },
+  availableUntilTimeLabel: {
+    id: `${scope}.availableUntilTimeLabel`,
+    defaultMessage: 'Tila on vapaana {time} asti',
+  },
+  nextAvailableTimeLabel: {
+    id: `${scope}.nextAvailableTimeLabel`,
+    defaultMessage: 'Tila on varattu {time} asti',
+  },
 });

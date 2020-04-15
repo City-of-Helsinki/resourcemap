@@ -21,4 +21,5 @@ module.exports = {
   testRegex: 'tests/.*\\.test\\.js$',
   snapshotSerializers: [],
   testPathIgnorePatterns: ['<rootDir>/internals/', '<rootDir>/node_modules/'],
+  globalSetup: '<rootDir>/app/jestGlobalSetup.js',
 };
