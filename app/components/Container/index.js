@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { FormattedMessage } from 'react-intl';
 import get from 'lodash/get';
+import createActivityDetector from 'activity-detector';
 
 import { makeSelectSpaces } from 'containers/HomePage/selectors';
 import reducer from 'containers/HomePage/reducer';
@@ -19,6 +20,7 @@ import ButtonList from 'components/ButtonList';
 import VacancyList from 'components/VacancyList';
 import H1 from 'components/H1';
 import QRCode from 'components/QRCode';
+import TouchScreenIndicator from 'components/TouchScreenIndicator';
 import {
   Wrapper,
   MapWrapper,
@@ -32,27 +34,36 @@ import {
 } from './wrappers';
 import messages from './messages';
 
+const initialState = {
+  highlighted: '',
+  currentRoom: null,
+  tooltipState: {
+    current: null,
+    visible: false,
+  },
+  x: 0,
+  y: 0,
+};
+
 class Container extends React.Component {
-  constructor(props) {
-    super(props);
+  roomRef = React.createRef();
 
-    this.state = {
-      highlighted: '',
-      currentRoom: null,
-      tooltipState: {
-        current: null,
-        visible: false,
-      },
-      x: 0,
-      y: 0,
-    };
+  state = initialState;
 
-    this.roomRef = React.createRef();
-    this.highlightRoomType = this.highlightRoomType.bind(this);
-    this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
-    this.handleRoomClick = this.handleRoomClick.bind(this);
-    this.roomTooltip = this.roomTooltip.bind(this);
-    this.resetActiveRoom = this.resetActiveRoom.bind(this);
+  activityDetector = createActivityDetector({
+    // wait for 1 minute before going idle
+    timeToIdle: 60000,
+    autoInit: false,
+  });
+
+  componentDidMount() {
+    // Reset state when the application goes idle
+    this.activityDetector.on('idle', this.resetState);
+    this.activityDetector.init();
+  }
+
+  componentWillUnmount() {
+    this.activityDetector.stop();
   }
 
   get currentRoom() {
@@ -72,11 +83,17 @@ class Container extends React.Component {
     };
   }
 
-  handleRoomClick(event, room) {
-    this.roomTooltip(event.target, room);
+  get isSomethingSelected() {
+    const { currentRoom, highlighted } = this.state;
+
+    return currentRoom || highlighted;
   }
 
-  roomTooltip(roomElement, room) {
+  handleRoomClick = (event, room) => {
+    this.roomTooltip(event.target, room);
+  };
+
+  roomTooltip = (roomElement, room) => {
     const rect = roomElement.getBoundingClientRect();
     const x = Math.round(rect.left);
     const y = Math.round(rect.top);
@@ -96,9 +113,9 @@ class Container extends React.Component {
         y,
       };
     });
-  }
+  };
 
-  highlightRoomType(highlight) {
+  highlightRoomType = highlight => {
     let hl = highlight;
     if (this.state.highlighted === hl) {
       hl = '';
@@ -111,23 +128,27 @@ class Container extends React.Component {
         visible: false,
       },
     });
-  }
+  };
 
-  resetActiveRoom() {
+  resetActiveRoom = () => {
     this.setState({
       currentRoom: null,
       tooltipState: {
         visible: false,
       },
     });
-  }
+  };
 
-  onSpaceNameClick(space) {
+  resetState = () => {
+    this.setState(initialState);
+  };
+
+  onSpaceNameClick = space => {
     const roomElementId = `#${space.room}`;
     const roomElement = this.roomRef.current.querySelector(roomElementId);
 
     this.roomTooltip(roomElement, space.room);
-  }
+  };
 
   render() {
     const { highlighted, tooltipState, x, y } = this.state;
@@ -179,8 +200,10 @@ class Container extends React.Component {
               currentRoom={this.currentRoom}
               onSpaceCategoryClick={this.highlightRoomType}
               onSpaceNameClick={this.onSpaceNameClick}
+              selectedCategory={highlighted}
               spaces={spaces}
             />
+            {!this.isSomethingSelected && <TouchScreenIndicator />}
           </ButtonsWrapper>
         </Wrapper>
         <TransitionGroup className="tooltip-animations">

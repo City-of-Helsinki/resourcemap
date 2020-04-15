@@ -19,60 +19,35 @@ const categoriesInOrder = [
   Categories.OTHER_SPACES,
 ];
 
-class ButtonList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeIndex: null,
-    };
-    this.onSpaceCategoryClick = this.onSpaceCategoryClick.bind(this);
-    this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
-  }
-
-  onSpaceCategoryClick(category, index) {
-    this.props.onSpaceCategoryClick(category);
-    const btnindex = index === this.state.activeIndex ? null : index;
-
-    // eslint-disable-next-line func-names, no-unused-vars
-    this.setState(function(prevState, props) {
-      return {
-        activeIndex: btnindex,
-      };
-    });
-  }
-
-  onSpaceNameClick(id) {
-    this.props.onSpaceNameClick(id);
-  }
-
-  render() {
-    const { spaces, currentRoom } = this.props;
-    const { activeIndex } = this.state;
-
-    return (
-      <Wrapper className="c-buttonlist">
-        {categoriesInOrder.map((category, index) => (
-          <BookingButton
-            key={category}
-            id={category}
-            category={category}
-            text={<FormattedMessage {...categoryMessages[category]} />}
-            items={spaces}
-            currentRoom={currentRoom}
-            className={activeIndex === index ? 'btn--active' : 'btn'}
-            onSpaceNameClick={this.onSpaceNameClick}
-            onClick={() => this.onSpaceCategoryClick(category, index)}
-          />
-        ))}
-      </Wrapper>
-    );
-  }
-}
+const ButtonList = ({
+  currentRoom,
+  onSpaceCategoryClick,
+  onSpaceNameClick,
+  selectedCategory,
+  spaces,
+}) => (
+  <Wrapper className="c-buttonlist">
+    {categoriesInOrder.map(category => (
+      <BookingButton
+        key={category}
+        category={category}
+        className={category === selectedCategory ? 'btn--active' : 'btn'}
+        currentRoom={currentRoom}
+        id={category}
+        items={spaces}
+        onSpaceNameClick={onSpaceNameClick}
+        onClick={() => onSpaceCategoryClick(category)}
+        text={<FormattedMessage {...categoryMessages[category]} />}
+      />
+    ))}
+  </Wrapper>
+);
 
 ButtonList.propTypes = {
+  currentRoom: PropTypes.object,
   onSpaceCategoryClick: PropTypes.any,
   onSpaceNameClick: PropTypes.any,
-  currentRoom: PropTypes.object,
+  selectedCategory: PropTypes.string,
   spaces: PropTypes.any,
 };
 

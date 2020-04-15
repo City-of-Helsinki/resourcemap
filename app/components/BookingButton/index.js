@@ -87,7 +87,10 @@ const BookingButton = ({
       <MainButton onClick={onClick} className={className}>
         {text}
       </MainButton>
-      <SubButtonWrapperWithTransition className="button-animations">
+      <SubButtonWrapperWithTransition
+        className="button-animations"
+        exit={false}
+      >
         {className === 'btn--active' && buttonItems}
       </SubButtonWrapperWithTransition>
     </Wrapper>
