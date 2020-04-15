@@ -82,17 +82,20 @@ class Container extends React.Component {
     const y = Math.round(rect.top);
     const xPos = Math.round(x + rect.width / 2);
 
-    this.setState(previousState => ({
-      tooltipState: {
-        visible: !(
-          room === previousState.currentRoom &&
-          previousState.tooltipState.visible
-        ),
-      },
-      currentRoom: room,
-      x: xPos,
-      y,
-    }));
+    this.setState(previousState => {
+      const isSameRoomAsPreviousRoom = room === previousState.currentRoom;
+
+      return {
+        tooltipState: {
+          visible: !(
+            isSameRoomAsPreviousRoom && previousState.tooltipState.visible
+          ),
+        },
+        currentRoom: isSameRoomAsPreviousRoom ? null : room,
+        x: xPos,
+        y,
+      };
+    });
   }
 
   highlightRoomType(highlight) {
