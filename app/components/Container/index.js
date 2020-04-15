@@ -209,7 +209,7 @@ class Container extends React.Component {
         <TransitionGroup className="tooltip-animations">
           <CSSTransition
             key={get(this.currentRoom, 'id', null)}
-            timeout={1000}
+            timeout={120}
             classNames="popup"
           >
             <Tooltip
