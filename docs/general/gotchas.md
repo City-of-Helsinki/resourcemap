@@ -2,13 +2,13 @@
 
 These are some things to be aware of when using this boilerplate.
 
-1.  [Special images in HTML files](#special-images-in-html-files)
-2.  [Load reducers optimistically](#load-reducers-optimistically)
-3.  [Exclude modules from Babel processing](#exclude-modules-from-babel-processing)
-4.  [Running tests in watch mode](#running-tests-in-watch-mode)
-5.  [When in doubt, re-install!](#when-in-doubt-re-install)
-6.  [Cleaning up Jest cache](#cleaning-up-jest-cache)
-7.  [Using short_name in Web App manifest](#using-short_name-in-web-app-manifest)
+- [Special images in HTML files](#special-images-in-html-files)
+- [Load reducers optimistically](#load-reducers-optimistically)
+- [Exclude modules from Babel processing](#exclude-modules-from-babel-processing)
+- [Running tests in `watch` mode](#running-tests-in-watch-mode)
+- [When in doubt, re-install!](#when-in-doubt-re-install)
+- [Cleaning up Jest cache](#cleaning-up-jest-cache)
+- [Using short_name in Web App manifest](#using-short_name-in-web-app-manifest)
 
 ## Special images in HTML files
 
@@ -38,18 +38,22 @@ If you have containers that should be available throughout the app, like a `Navi
 // In app/reducers.js
 
 ...
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 ...
 
 import navigationBarReducer from 'containers/NavigationBar/reducer';
 
-export default combineReducers({
-  route: routeReducer,
-  global: globalReducer,
-  language: languageProviderReducer,
-  navigationBar: navigationBarReducer,
-  ...asyncReducers,
-});
+export default function createReducer(injectedReducers = {}) {
+  const rootReducer = combineReducers({
+    global: globalReducer,
+    language: languageProviderReducer,
+    router: connectRouter(history),
+    navigationBar: navigationBarReducer,
+    ...injectedReducers,
+  });
+
+  return rootReducer;
+}
 ```
 
 ## Exclude modules from Babel processing
@@ -86,13 +90,12 @@ Remove node_modules
 
 - `rm -rf node_modules`
 
-Using yarn (recommended)
-
-- `yarn install`
-
-Using npm
+Clear cache
 
 - `npm cache clean`
+
+Re-install dependencies
+
 - `npm install`
 
 Build project

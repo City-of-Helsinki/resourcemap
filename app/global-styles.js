@@ -1,38 +1,35 @@
-import { injectGlobal } from 'styled-components';
-import Fonts from './fonts/HelsinkiGrotesk.css';
+import { createGlobalStyle } from 'styled-components';
 
-/* eslint no-unused-expressions: 0 */
-injectGlobal`
+import { ROOT_FONT_SIZE } from 'theme';
+
+const GlobalStyle = createGlobalStyle`
   html,
   body {
     height: 100%;
     width: 100%;
+    
+    font-size: ${ROOT_FONT_SIZE}px;
   }
-
   body, p {
     font-family: 'HelsinkiGrotesk', 'Helvetica Neue', Helvetica, Arial;
+    color: #ffffff;
   }
-
   #app {
-    background-color: #fafafa;
+    background-color: #191919;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
   }
-
   p,
   label {
     line-height: 1.5em;
   }
-
   path {
     transition: fill 0.2s linear;
   }
-
   path.is-highlighted, path.active {
     fill: #28a745;  
   }
-
   .popup-enter .animation-item {
     opacity: 0.01;
     transform: translate(0, 20px);
@@ -51,7 +48,6 @@ injectGlobal`
     transform: translate(0, 20px);
     transition: all 120ms ease-in;
   }
-
   .slide-enter {
     max-height: 0;
     opacity: 0.01;
@@ -75,3 +71,5 @@ injectGlobal`
     transform: translateY(-10px);  
   }
 `;
+
+export default GlobalStyle;

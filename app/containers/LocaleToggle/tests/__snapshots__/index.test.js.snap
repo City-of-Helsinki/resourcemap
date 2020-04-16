@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LocaleToggle /> should match the snapshot 1`] = `
+<div
+  class="components__Wrapper-xttex9-0 czkhCu"
+>
+  <ul
+    class="components__LanguageList-xttex9-1 fDTvcE"
+  >
+    <li
+      class="components__LanguageItem-xttex9-2 bleCqR"
+    >
+      <button
+        class="components__LanguageButton-xttex9-3 dOxwfY"
+        type="button"
+      >
+        <span>
+          In English
+        </span>
+      </button>
+    </li>
+    <li
+      class="components__LanguageItem-xttex9-2 bleCqR"
+    >
+      <button
+        class="components__LanguageButton-xttex9-3 dOxwfY"
+        type="button"
+      >
+        <span>
+          På svenska
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>
+`;

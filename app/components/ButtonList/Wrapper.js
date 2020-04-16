@@ -1,8 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-	text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-column-gap: 29px;
+
+  text-align: center;
 `;
 
 export default Wrapper;

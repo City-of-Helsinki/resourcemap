@@ -1,41 +1,40 @@
 import { all, call, put, select, takeLatest } from 'redux-saga/effects';
 import dateFormat from 'dateformat';
-import { LOAD_RESOURCE } from './constants.js';
-import { loadResourceCompleted, loadResourceError } from './actions.js';
-import { makeSelectSpaces } from './selectors.js';
-
 import request from 'utils/request';
+import { LOAD_RESOURCE } from './constants';
+import { loadResourceCompleted, loadResourceError } from './actions';
+import { makeSelectSpaces } from './selectors';
+
+function* makeFetch(requestURL) {
+  try {
+    const resource = yield call(request, requestURL);
+    yield put(loadResourceCompleted(resource));
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error(err);
+    yield put(loadResourceError(err));
+  }
+}
 
 export function* loadResource() {
   // Get spaces.
   const spaces = yield select(makeSelectSpaces());
 
-  let start = new Date();
-  let startTimeStr = encodeURIComponent(
+  const start = new Date();
+  const startTimeStr = encodeURIComponent(
     `${dateFormat(start, 'yyyy-mm-dd')}T00:00:00Z`,
   );
-  let endTimeStr = encodeURIComponent(
+  const endTimeStr = encodeURIComponent(
     `${dateFormat(start, 'yyyy-mm-dd')}T23:59:59Z`,
   );
+  const spaceIds = spaces.map(space => space.respaId).filter(id => id);
 
-  // Load status of each space.
-  for (let i = 0; i < spaces.size; i++) {
-    const space = spaces.get(i);
-    const id = space.get('id');
-    const useRespa = space.get('useRespa');
+  const loadedUrls = spaceIds.map(
+    loadedId =>
+      `https://api.hel.fi/respa/v1/resource/${loadedId}/?start=${startTimeStr}&end=${endTimeStr}`,
+  );
 
-    if (id && useRespa) {
-      const requestURL = `https://api.hel.fi/respa/v1/resource/${id}/?start=${startTimeStr}&end=${endTimeStr}`;
-      //const requestURL = `http://94.237.32.197:3000/api/resource.json`;
-
-      try {
-        const resource = yield call(request, requestURL);
-        yield put(loadResourceCompleted(resource));
-      } catch (err) {
-        yield put(loadResourceError(err));
-      }
-    }
-  }
+  yield all(loadedUrls.map(url => call(makeFetch, url)));
 }
 
 /**
@@ -45,6 +44,7 @@ export default function* homeSaga() {
   try {
     yield all([takeLatest(LOAD_RESOURCE, loadResource)]);
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
   }
 }

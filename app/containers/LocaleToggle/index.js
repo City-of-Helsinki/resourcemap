@@ -8,43 +8,46 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { FormattedMessage } from 'react-intl';
 
-import Toggle from 'components/Toggle';
-import Wrapper from './Wrapper';
+import { Wrapper, LanguageList, LanguageOption } from './components';
 import messages from './messages';
 import { appLocales } from '../../i18n';
 import { changeLocale } from '../LanguageProvider/actions';
 import { makeSelectLocale } from '../LanguageProvider/selectors';
 
-export class LocaleToggle extends React.PureComponent {
-  // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (
-      <Wrapper>
-        <Toggle
-          value={this.props.locale}
-          values={appLocales}
-          messages={messages}
-          onLangClick={this.props.onLocaleClick}
-        />
-      </Wrapper>
-    );
-  }
+export function LocaleToggle({ currentLocale, onLocaleToggle }) {
+  return (
+    <Wrapper>
+      <LanguageList>
+        {appLocales
+          .filter(locale => locale !== currentLocale)
+          .map(locale => (
+            <LanguageOption key={locale} onClick={() => onLocaleToggle(locale)}>
+              <FormattedMessage {...messages[locale]} />
+            </LanguageOption>
+          ))}
+      </LanguageList>
+    </Wrapper>
+  );
 }
 
 LocaleToggle.propTypes = {
   onLocaleToggle: PropTypes.func,
-  locale: PropTypes.string,
+  currentLocale: PropTypes.string,
 };
 
-const mapStateToProps = createSelector(makeSelectLocale(), locale => ({
-  locale,
-}));
+const mapStateToProps = createSelector(
+  makeSelectLocale(),
+  locale => ({
+    currentLocale: locale,
+  }),
+);
 
 export function mapDispatchToProps(dispatch) {
   return {
+    onLocaleToggle: locale => dispatch(changeLocale(locale)),
     dispatch,
-    onLocaleClick: evt => dispatch(changeLocale(evt.target.lang)),
   };
 }
 

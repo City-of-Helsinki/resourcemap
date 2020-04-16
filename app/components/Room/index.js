@@ -1,54 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import SpaceAvailability from 'constants/SpaceAvailability';
 import Path from 'components/Path';
 
-class Room extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isActive: false,
-    };
+const Room = ({
+  availability,
+  id,
+  isHighlighted,
+  isOpened,
+  onClick,
+  ...props
+}) => {
+  // Generate classname.
+  let className = '';
+
+  // First check if this item is highlighted, but not necessarily opened.
+  const classNameHighlighted = isHighlighted ? 'is-highlighted' : '';
+
+  // Check also if this space is actually clicked and opened.
+  if (isOpened) {
+    className = `${classNameHighlighted} clicked`;
+  } else {
+    className = classNameHighlighted;
   }
 
-  render() {
-    const {
-      svgtype,
-      available,
-      category,
-      onSpaceClick,
-      highlighted,
-      currentSpace,
-      id,
-      useRespa,
-      ...props
-    } = this.props;
+  // Concat to final classname.
+  className = `${className} ${availability}`;
 
-    // Generate classname.
-    let className = '';
+  return <Path {...props} id={id} className={className} onClick={onClick} />;
+};
 
-    // First check if this item is highlighted, but not necessarily opened.
-    let classNameHighlighted = category === highlighted ? 'is-highlighted' : '';
-
-    // Check also if this space is actually clicked and opened.
-    if (currentSpace.id === id) {
-      className = classNameHighlighted + ' clicked';
-    } else {
-      className = classNameHighlighted;
-    }
-
-    // Concat to final classname.
-    className = className + ' ' + available;
-
-    return (
-      <Path
-        {...props}
-        available={available}
-        id={id}
-        useRespa={useRespa}
-        className={className}
-        onSpaceClick={onSpaceClick}
-      />
-    );
-  }
-}
+Room.propTypes = {
+  availability: PropTypes.oneOf(Object.values(SpaceAvailability)),
+  id: PropTypes.string,
+  isHighlighted: PropTypes.any,
+  isOpened: PropTypes.any,
+  onClick: PropTypes.any.isRequired,
+};
 
 export default Room;

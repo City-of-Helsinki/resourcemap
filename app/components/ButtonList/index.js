@@ -1,58 +1,54 @@
 import React from 'react';
-import BasicButton from 'components/BasicButton';
-import styled from 'styled-components';
-import Wrapper from './Wrapper';
+import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+
 import BookingButton from 'components/BookingButton';
+import Categories from 'constants/Categories';
+import Wrapper from './Wrapper';
+import categoryMessages from './categoryMessages';
 
-class ButtonList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeIndex: null,
-    };
-    this.onSpaceCategoryClick = this.onSpaceCategoryClick.bind(this);
-    this.onSpaceNameClick = this.onSpaceNameClick.bind(this);
-  }
+const categoriesInOrder = [
+  Categories.LEARNING_SPACES,
+  Categories.GROUP_ROOMS,
+  Categories.WORKSPACES,
+  Categories.STUDIOS,
+  Categories.GAME_ROOMS,
+  Categories.WORKSTATIONS,
+  Categories.URBAN_WORKSHOP,
+  Categories.MACHINE_ROOM,
+  Categories.OTHER_SPACES,
+];
 
-  onSpaceCategoryClick(event, category, index) {
-    this.props.onSpaceCategoryClick(category);
-    const btnindex = index === this.state.activeIndex ? null : index;
+const ButtonList = ({
+  currentRoom,
+  onSpaceCategoryClick,
+  onSpaceNameClick,
+  selectedCategory,
+  spaces,
+}) => (
+  <Wrapper className="c-buttonlist">
+    {categoriesInOrder.map(category => (
+      <BookingButton
+        key={category}
+        category={category}
+        className={category === selectedCategory ? 'btn--active' : 'btn'}
+        currentRoom={currentRoom}
+        id={category}
+        items={spaces}
+        onSpaceNameClick={onSpaceNameClick}
+        onClick={() => onSpaceCategoryClick(category)}
+        text={<FormattedMessage {...categoryMessages[category]} />}
+      />
+    ))}
+  </Wrapper>
+);
 
-    this.setState(function(prevState, props) {
-      return {
-        activeIndex: btnindex,
-      };
-    });
-  }
-
-  onSpaceNameClick(id) {
-    this.props.onSpaceNameClick(id);
-  }
-
-  render() {
-    const { spaces, currentSpace } = this.props;
-    const { activeIndex } = this.state;
-    const uniqueCats = [...new Set(spaces.map(space => space.get('category')))];
-
-    return (
-      <Wrapper className="c-buttonlist">
-        {uniqueCats.map((btn, index) => (
-          <BookingButton
-            key={btn}
-            id={btn}
-            text={btn}
-            items={spaces}
-            currentSpace={currentSpace}
-            className={activeIndex === index ? 'btn--active' : 'btn'}
-            onSpaceNameClick={this.onSpaceNameClick}
-            onClick={event => this.onSpaceCategoryClick(event, btn, index)}
-          >
-            {btn}
-          </BookingButton>
-        ))}
-      </Wrapper>
-    );
-  }
-}
+ButtonList.propTypes = {
+  currentRoom: PropTypes.object,
+  onSpaceCategoryClick: PropTypes.any,
+  onSpaceNameClick: PropTypes.any,
+  selectedCategory: PropTypes.string,
+  spaces: PropTypes.any,
+};
 
 export default ButtonList;

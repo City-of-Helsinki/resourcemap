@@ -1,29 +1,455 @@
 import React from 'react';
-import styled from 'styled-components';
-import { TooltipWrapper, TooltipContainer } from './wrappers';
-import P from 'components/P';
-import H3 from 'components/H3';
+import PropTypes from 'prop-types';
+import groupBy from 'lodash/groupBy';
+import { FormattedMessage, injectIntl } from 'react-intl';
+import get from 'lodash/get';
+import dateFormat from 'dateformat';
+
+import SpaceAvailability from 'constants/SpaceAvailability';
+import Rooms from 'constants/Rooms';
+import isResourceAvailable from 'utils/isResourceAvailable';
+import getSpaceAvailability from 'utils/getSpaceAvailability';
+import getLocalizedString from 'utils/getLocalizedString';
+import {
+  getClosestAvailableSlot,
+  getNextReservedSlot,
+} from 'utils/resourceSlots';
 import VacancyLabel from 'components/VacancyLabel';
 import CloseButton from 'components/CloseButton';
+import categoryMessages from 'components/ButtonList/categoryMessages';
+import TooltipRowItems from './TooltipRowItems';
+import TooltipGroup from './TooltipGroup';
+import TooltipGrid from './TooltipGrid';
+import {
+  TooltipWrapper,
+  TooltipContainer,
+  Title,
+  Row,
+  RowLabel,
+  Icon,
+} from './wrappers';
+import messages from './messages';
+import spaceTypeMessages from './spaceTypeMessages';
+import UserIcon from './icons/UserIcon';
 
-const Tooltip = props => {
-  const showTooltip = props.visible;
+const TooltipContentTypes = Object.freeze({
+  DESCRIPTION: 'tooltipDescription',
+  ROW: 'tooltipRow',
+  ROW_ITEMS: 'tooltipRowItems',
+  GROUP: 'tooltipGroup',
+  GRID: 'tooltipGrid',
+});
 
-  if (showTooltip) {
-    return (
-      <TooltipContainer x={props.x} y={props.y}>
-        <TooltipWrapper className="animation-item">
-          <CloseButton tooltip onClick={props.onClick} />
-          <H3>{props.content.title}</H3>
-          {props.content.useRespa && (
-            <VacancyLabel vacancy={props.content.available} />
-          )}
-        </TooltipWrapper>
-      </TooltipContainer>
-    );
+const SpaceContentTypes = Object.freeze({
+  EMPTY: 'spaceEmpty',
+  SINGLE: 'spaceSingle',
+  GROUPS: 'spaceGroup',
+  GRID: 'spaceGrid',
+  UNKNOWN: 'spaceUnknown',
+});
+
+const ALLOWED_AVAILABILITIES = [
+  SpaceAvailability.AVAILABLE,
+  SpaceAvailability.TAKEN,
+  SpaceAvailability.CLOSED,
+];
+const ROOMS_WITH_GRID = [Rooms.WORKSTATION_1, Rooms.WORKSTATION_2];
+
+function getAvailableCount(spaces) {
+  const now = new Date();
+  const available = spaces.filter(space => {
+    if (!space || !space.data) {
+      return false;
+    }
+
+    return isResourceAvailable(now, space.data);
+  });
+
+  return available.length;
+}
+
+function getSpaceContentType(content) {
+  if (content.length === 0) {
+    return SpaceContentTypes.EMPTY;
   }
 
-  return false;
+  if (content.length === 1) {
+    return SpaceContentTypes.SINGLE;
+  }
+
+  const { room } = content.find(space => space.room);
+
+  if (ROOMS_WITH_GRID.includes(room)) {
+    return SpaceContentTypes.GRID;
+  }
+
+  const spaceTypes = Object.keys(groupBy(content, 'type'));
+
+  if (spaceTypes.length > 0) {
+    return SpaceContentTypes.GROUP;
+  }
+
+  return SpaceContentTypes.UNKNOWN;
+}
+
+function findSpaceData(spaces, spaceContentType) {
+  switch (spaceContentType) {
+    case SpaceContentTypes.SINGLE: {
+      // Only a single space present so we can safely take the first
+      // one.
+      const space = spaces[0];
+      const vacancyStatus = getSpaceAvailability(space);
+      const hardCodedMaxPeopleCount = get(space, 'peopleCapacity', null);
+      const maxPeopleCount = get(
+        space,
+        'data.people_capacity',
+        hardCodedMaxPeopleCount,
+      );
+      const description = get(space, 'description', null);
+      const name = get(space, 'data.name', space.name);
+      const data = get(space, 'data', null);
+      const closestFreeSlot = getClosestAvailableSlot(data);
+      const nextReservedSlot = getNextReservedSlot(data);
+
+      return {
+        type: SpaceContentTypes.SINGLE,
+        name,
+        vacancyStatus,
+        maxPeopleCount,
+        description,
+        closestFreeSlot,
+        nextReservedSlot,
+      };
+    }
+    case SpaceContentTypes.GROUP: {
+      const { category } = spaces.find(space => space.category);
+      const spacesByType = Object.entries(groupBy(spaces, 'type'));
+      const groups = spacesByType.map(([spaceType, spacesWithType]) => {
+        const totalCount = spacesWithType.length;
+        const availableCount = getAvailableCount(spacesWithType);
+
+        return {
+          id: spaceType,
+          availableCount,
+          totalCount,
+          spaceType,
+        };
+      });
+
+      return {
+        type: SpaceContentTypes.GROUP,
+        category,
+        groups,
+      };
+    }
+    case SpaceContentTypes.GRID: {
+      const spacesByType = Object.entries(groupBy(spaces, 'type'));
+
+      if (spacesByType.length === 0 || spacesByType > 1) {
+        throw Error(
+          'The GRID SpaceContentType supports rendering of exactly one SpaceType group',
+        );
+      }
+
+      // SpacesByType should be an array with exactly one item in it.
+      // Because of this, we can:
+      // (1) safely access the first item and
+      // (2) safely ignore other items.
+      const [spaceType, spacesWithType] = spacesByType[0];
+      const maxPeopleCount = spaces.length;
+      const someSpaceCanBeReserved = spaces.some(space => space.canBeReserved);
+      const gridItems = spacesWithType.map((space, index) => ({
+        id: space.id,
+        label: index,
+        availability: getSpaceAvailability(space),
+      }));
+
+      return {
+        type: SpaceContentTypes.GRID,
+        spaceType,
+        maxPeopleCount,
+        someSpaceCanBeReserved,
+        gridItems,
+      };
+    }
+    case SpaceContentTypes.EMPTY:
+      return {
+        type: SpaceContentTypes.EMPTY,
+      };
+    case SpaceContentTypes.UNKNOWN:
+      return {
+        type: SpaceContentTypes.UNKNOWN,
+      };
+    default:
+      return {};
+  }
+}
+
+function makeTooltipViewModel(spaces, currentLocal) {
+  const translate = translationObject =>
+    getLocalizedString(translationObject, currentLocal);
+
+  const spaceContentType = getSpaceContentType(spaces);
+  const spaceData = findSpaceData(spaces, spaceContentType);
+
+  switch (spaceData.type) {
+    case SpaceContentTypes.SINGLE: {
+      const {
+        closestFreeSlot,
+        description,
+        name,
+        nextReservedSlot,
+        maxPeopleCount,
+        vacancyStatus,
+      } = spaceData;
+      const content = [];
+
+      if (maxPeopleCount) {
+        content.push({
+          type: TooltipContentTypes.ROW,
+          id: 'maxPeopleCount',
+          content: (
+            <>
+              <Icon>
+                <UserIcon />
+              </Icon>
+              <RowLabel>{maxPeopleCount}</RowLabel>
+            </>
+          ),
+        });
+      }
+
+      if (description) {
+        content.push({
+          type: TooltipContentTypes.DESCRIPTION,
+          id: 'description',
+          description: translate(spaceData.description),
+        });
+      }
+
+      if (ALLOWED_AVAILABILITIES.includes(vacancyStatus)) {
+        content.push({
+          type: TooltipContentTypes.ROW,
+          id: 'vacancyLabel',
+          content: <VacancyLabel variant="light" vacancy={vacancyStatus} />,
+        });
+      }
+
+      if (vacancyStatus === SpaceAvailability.AVAILABLE && nextReservedSlot) {
+        content.push({
+          type: TooltipContentTypes.ROW,
+          id: 'availableUntil',
+          content: (
+            <RowLabel>
+              <FormattedMessage
+                {...messages.availableUntilTimeLabel}
+                values={{
+                  time: dateFormat(new Date(nextReservedSlot.start), 'HH:MM'),
+                }}
+              />
+            </RowLabel>
+          ),
+        });
+      }
+
+      if (vacancyStatus === SpaceAvailability.TAKEN && closestFreeSlot) {
+        content.push({
+          type: TooltipContentTypes.ROW,
+          id: 'availableNext',
+          content: (
+            <RowLabel>
+              <FormattedMessage
+                {...messages.nextAvailableTimeLabel}
+                values={{
+                  time: dateFormat(new Date(closestFreeSlot.start), 'HH:MM'),
+                }}
+              />
+            </RowLabel>
+          ),
+        });
+      }
+
+      return {
+        title: translate(name),
+        content,
+      };
+    }
+    case SpaceContentTypes.GROUP: {
+      const { groups, category } = spaceData;
+      const content = groups.map(group => ({
+        type: TooltipContentTypes.GROUP,
+        id: group.id,
+        availableCount: group.availableCount,
+        totalCount: group.totalCount,
+        label: (
+          <>
+            <FormattedMessage {...spaceTypeMessages[group.spaceType]} />{' '}
+            {group.availableCount}/{group.totalCount}{' '}
+            <FormattedMessage {...messages.reservableStatusLabel} />
+          </>
+        ),
+      }));
+
+      return {
+        title: <FormattedMessage {...categoryMessages[category]} />,
+        content,
+      };
+    }
+    case SpaceContentTypes.GRID: {
+      const {
+        maxPeopleCount,
+        someSpaceCanBeReserved,
+        spaceType,
+        gridItems,
+      } = spaceData;
+      const halfwayThrough = Math.floor(gridItems.length / 2);
+      const adjustedGridItemOrder = [
+        ...gridItems.slice(halfwayThrough, gridItems.length).reverse(),
+        ...gridItems.slice(0, halfwayThrough),
+      ];
+
+      return {
+        title: <FormattedMessage {...spaceTypeMessages[spaceType]} />,
+        content: [
+          {
+            type: TooltipContentTypes.ROW_ITEMS,
+            id: 'info',
+            items: [
+              {
+                id: 'maxPeopleCount',
+                content: (
+                  <>
+                    <Icon>
+                      <UserIcon />
+                    </Icon>
+                    <RowLabel>{maxPeopleCount}</RowLabel>
+                  </>
+                ),
+              },
+              {
+                id: 'reservationStatus',
+                content: (
+                  <>
+                    <RowLabel>
+                      {someSpaceCanBeReserved && (
+                        <FormattedMessage
+                          {...messages.reservationStatusLabel}
+                        />
+                      )}
+                      {!someSpaceCanBeReserved && (
+                        <FormattedMessage
+                          {...messages.notReservableStatusLabel}
+                        />
+                      )}
+                    </RowLabel>
+                  </>
+                ),
+              },
+            ],
+          },
+          {
+            type: TooltipContentTypes.GRID,
+            id: 'grid',
+            items: adjustedGridItemOrder,
+          },
+        ],
+      };
+    }
+    case SpaceContentTypes.EMPTY:
+    case SpaceContentTypes.UNKNOWN:
+    default:
+      return null;
+  }
+}
+
+function makeBody(content, currentLocal) {
+  const tooltipData = makeTooltipViewModel(content, currentLocal);
+
+  if (!tooltipData) {
+    return null;
+  }
+
+  return (
+    <>
+      <Title>{tooltipData.title}</Title>
+      {tooltipData.content.map(contentItem => (
+        <React.Fragment key={contentItem.id}>
+          {contentItem.type === TooltipContentTypes.DESCRIPTION && (
+            <Row>
+              <RowLabel>{contentItem.description}</RowLabel>
+            </Row>
+          )}
+          {contentItem.type === TooltipContentTypes.ROW && (
+            <Row>{contentItem.content}</Row>
+          )}
+          {contentItem.type === TooltipContentTypes.ROW_ITEMS && (
+            <TooltipRowItems items={contentItem.items} />
+          )}
+          {contentItem.type === TooltipContentTypes.GROUP && (
+            <TooltipGroup
+              availableCount={contentItem.availableCount}
+              label={contentItem.label}
+              totalCount={contentItem.totalCount}
+            />
+          )}
+          {contentItem.type === TooltipContentTypes.GRID && (
+            <TooltipGrid items={contentItem.items} />
+          )}
+        </React.Fragment>
+      ))}
+    </>
+  );
+}
+
+const Tooltip = ({ content, intl, onClick, visible, x, y }) => {
+  const { locale } = intl;
+  const tooltip = React.useRef();
+
+  const handleDocumentClick = event => {
+    const { target } = event;
+    const current = tooltip && tooltip.current;
+
+    // Close self on outside click
+    if (!(current && target instanceof Node && current.contains(target))) {
+      onClick(event);
+    }
+  };
+
+  const body = makeBody(content, locale);
+
+  React.useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, [handleDocumentClick]);
+
+  if (!visible) {
+    return null;
+  }
+
+  return (
+    <TooltipContainer ref={tooltip} x={x} y={y}>
+      <TooltipWrapper className="animation-item">
+        <CloseButton tooltip onClick={onClick} />
+        {body}
+      </TooltipWrapper>
+    </TooltipContainer>
+  );
 };
 
-export default Tooltip;
+Tooltip.propTypes = {
+  content: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.object,
+      data: PropTypes.object,
+    }),
+  ),
+  intl: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired,
+  visible: PropTypes.bool,
+  x: PropTypes.number,
+  y: PropTypes.number,
+};
+
+export default injectIntl(Tooltip);

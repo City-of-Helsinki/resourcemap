@@ -1,40 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
-import Img from 'components/Img';
-import SvgMap from 'components/SvgMap';
-import Icons from 'images/oodi-icons-descriptions.svg';
-import { Wrapper, Content } from './wrappers';
-import H1 from 'components/H1';
-import VacancyList from 'components/VacancyList';
+import PropTypes from 'prop-types';
+import MapOfOodi from 'components/MapOfOodi';
 
-const MapContainer = props => {
-  const {
-    spaces,
-    highlighted,
-    currentSpace,
-    roomRef,
-    handleSpaceClick,
-  } = props;
+const MapContainer = ({
+  currentRoom,
+  handleRoomClick,
+  highlighted,
+  roomRef,
+  spaces,
+}) => (
+  <MapOfOodi
+    currentRoom={currentRoom}
+    highlighted={highlighted}
+    onRoomClick={handleRoomClick}
+    roomRef={roomRef}
+    spaces={spaces}
+  />
+);
 
-  let title;
-  highlighted ? (title = `: ${highlighted}`) : (title = '');
-
-  return (
-    <Wrapper>
-      <Content>
-        <H1>Oodi{title} </H1>
-        <VacancyList />
-        <SvgMap
-          rooms={spaces}
-          onSpaceClick={handleSpaceClick}
-          highlighted={highlighted}
-          roomRef={roomRef}
-          currentSpace={currentSpace}
-        />
-        <Img src={Icons} alt="Kartta ikonit" />
-      </Content>
-    </Wrapper>
-  );
+MapContainer.propTypes = {
+  currentRoom: PropTypes.any,
+  handleRoomClick: PropTypes.any.isRequired,
+  highlighted: PropTypes.any,
+  roomRef: PropTypes.any,
+  spaces: PropTypes.any,
 };
 
 export default MapContainer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
-import { shallow, mount } from 'enzyme';
+import { render } from 'tests/utils';
 
 import LocaleToggle, { mapDispatchToProps } from '../index';
 import { changeLocale } from '../../LanguageProvider/actions';
@@ -17,28 +17,27 @@ describe('<LocaleToggle />', () => {
     store = configureStore({}, browserHistory);
   });
 
-  it('should render the default language messages', () => {
-    const renderedComponent = shallow(
+  it('should match the snapshot', () => {
+    const { container } = render(
       <Provider store={store}>
         <LanguageProvider messages={translationMessages}>
           <LocaleToggle />
         </LanguageProvider>
       </Provider>,
     );
-    expect(renderedComponent.contains(<LocaleToggle />)).toBe(true);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should present the default `en` english language option', () => {
-    const renderedComponent = mount(
+  it('should not present the default `fi` Finnish language option', () => {
+    const { queryByText } = render(
       <Provider store={store}>
         <LanguageProvider messages={translationMessages}>
           <LocaleToggle />
         </LanguageProvider>
       </Provider>,
     );
-    expect(renderedComponent.contains(<option value="en">en</option>)).toBe(
-      true,
-    );
+
+    expect(queryByText('Suomeksi')).toBeNull();
   });
 
   describe('mapDispatchToProps', () => {
@@ -52,9 +51,8 @@ describe('<LocaleToggle />', () => {
       it('should dispatch changeLocale when called', () => {
         const dispatch = jest.fn();
         const result = mapDispatchToProps(dispatch);
-        const locale = 'de';
-        const evt = { target: { value: locale } };
-        result.onLocaleToggle(evt);
+        const locale = 'sv';
+        result.onLocaleToggle(locale);
         expect(dispatch).toHaveBeenCalledWith(changeLocale(locale));
       });
     });

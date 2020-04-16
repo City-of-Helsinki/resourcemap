@@ -1,14 +1,20 @@
 # Styling (CSS)
 
-## Table of Contents
-
 - [Next Generation CSS](#next-generation-css)
-- [CSS Support](#css-we-support)
+  - [Linting](#linting)
+  - [sanitize.css](#sanitizecss)
+- [CSS Support](#css-support)
 - [styled-components](#styled-components)
 - [Stylesheet](#stylesheet)
 - [CSS Modules](#css-modules)
+  - [Setup](#setup)
+  - [Usage](#usage)
 - [Sass](#sass)
+  - [Setup](#setup-1)
+  - [Usage](#usage-1)
 - [LESS](#less)
+  - [Setup](#setup-2)
+  - [Usage](#usage-2)
 
 ## Next Generation CSS
 
@@ -51,8 +57,8 @@ Below creates two styled react components (`<Title>`, `<Wrapper>`) and renders t
 as children of the `<Header>` component:
 
 ```jsx
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 // Create a <Title> react component that renders an <h1> which is
 // centered, palevioletred and sized at 1.5em
@@ -70,17 +76,15 @@ const Wrapper = styled.section`
 `;
 
 // Use them like any other React component – except they're styled!
-class Button extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <Title>
-          Hello {this.props.name}, this is your first styled component!
-        </Title>
-        ...
-      </Wrapper>
-    );
-  }
+function Button() {
+  return (
+    <Wrapper>
+      <Title>
+        Hello {this.props.name}, this is your first styled component!
+      </Title>
+      ...
+    </Wrapper>
+  );
 }
 ```
 
@@ -105,14 +109,12 @@ into a JavaScript:
 **`Button.js`**
 
 ```js
-import React from "react";
-import "./Button.css"; // Tell Webpack that Button.js uses these styles
+import React from 'react';
+import './Button.css'; // Tell Webpack that Button.js uses these styles
 
-class Button extends React.Component {
-  render() {
-    // You can use them as regular CSS styles
-    return <button className="danger">Click me</button>;
-  }
+function Button() {
+  // You can use them as regular CSS styles
+  return <button className="danger">Click me</button>;
 }
 ```
 
@@ -159,14 +161,12 @@ The key difference in CSS Modules is that you import styles to a variable.
 **`Button.js`**
 
 ```js
-import React from "react";
-import styles from "./Button.css"; // different import compared to stylesheets
+import React from 'react';
+import styles from './Button.css'; // different import compared to stylesheets
 
-class Button extends React.Component {
-  render() {
-    // different usage to stylesheets
-    return <button className={styles.danger}>Click me</button>;
-  }
+function Button() {
+  // different usage to stylesheets
+  return <button className={styles.danger}>Click me</button>;
 }
 ```
 
@@ -213,13 +213,11 @@ $error-color: red;
 **`Button.js`**
 
 ```js
-import React from "react";
-import "./Button.scss";
+import React from 'react';
+import './Button.scss';
 
-class Button extends React.Component {
-  render() {
-    return <button className="danger">Click me</button>;
-  }
+function Button() {
+  return <button className="danger">Click me</button>;
 }
 ```
 
@@ -272,16 +270,14 @@ to look like:
 **`Button.js`**
 
 ```js
-import React from "react";
-import "./Button.less";
+import React from 'react';
+import './Button.less';
 
-class Button extends React.Component {
-  render() {
-    return <button className="danger">Click me</button>;
-  }
+function Button() {
+  return <button className="danger">Click me</button>;
 }
 ```
 
 > For more information about LESS and the `less-loader` see https://github.com/webpack-contrib/less-loader.
 
-[webpackconfig]: ../../internals/webpack/webpack.base.babel.js "Webpack config"
+[webpackconfig]: ../../internals/webpack/webpack.base.babel.js 'Webpack config'
