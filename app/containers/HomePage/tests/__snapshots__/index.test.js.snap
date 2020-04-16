@@ -2,16 +2,16 @@
 
 exports[`<HomePage /> should render and match the snapshot 1`] = `
 <article
-  class="HomePage__Article-i81cdn-0 gPNneQ"
+  class="HomePage__Article-zbcoha-0 gIkKUp"
 >
   <section
-    class="wrappers__Wrapper-cufm9l-0 kJSNJb"
+    class="wrappers__Wrapper-sc-12jnkun-0 hZciOe"
   >
     <div
-      class="wrappers__QRCodeWrapper-cufm9l-6 cadmJP"
+      class="wrappers__QRCodeWrapper-sc-12jnkun-6 jQuvSA"
     >
       <div
-        class="QRCode__Wrapper-sc-1gk0zly-0 bzFWht"
+        class="QRCode__Wrapper-sc-4gdjit-0 jfXRSe"
       >
         <canvas
           height="70"
@@ -19,16 +19,16 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           width="70"
         />
         <div
-          class="QRCode__DescriptionWrapper-sc-1gk0zly-1 kwnJEC"
+          class="QRCode__DescriptionWrapper-sc-4gdjit-1 kPrrtZ"
         >
           <span
-            class="wrappers__QRCodeDescription-cufm9l-7 fogPFy"
+            class="wrappers__QRCodeDescription-sc-12jnkun-7 bZpGjx"
           >
             Tee varaus Varaamossa
           </span>
           <br />
           <span
-            class="wrappers__QRCodeLink-cufm9l-8 hqDDDG"
+            class="wrappers__QRCodeLink-sc-12jnkun-8 gtBCPZ"
           >
             varaamo.hel.fi
           </span>
@@ -36,18 +36,18 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       </div>
     </div>
     <h1
-      class="H1-tncdg6-0 fGgOjf"
+      class="H1-sc-19ms9d-0 jHTtju"
     >
       Oodi
        
       <span
-        class="wrappers__FloorLabel-cufm9l-5 gLexzr"
+        class="wrappers__FloorLabel-sc-12jnkun-5 grbpCc"
       >
         Helsingin keskuskirjasto | 2.kerros
       </span>
     </h1>
     <div
-      class="wrappers__MapWrapper-cufm9l-1 dUBLQq"
+      class="wrappers__MapWrapper-sc-12jnkun-1 hqygag"
     >
       <svg
         height="100%"
@@ -683,19 +683,19 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       </svg>
     </div>
     <div
-      class="wrappers__ControlsWrapper-cufm9l-3 kTyiqP"
+      class="wrappers__ControlsWrapper-sc-12jnkun-3 fFkacK"
     >
       <div
-        class="components__Wrapper-sc-8efs89-0 iFEOpV"
+        class="components__Wrapper-xttex9-0 czkhCu"
       >
         <ul
-          class="components__LanguageList-sc-8efs89-1 kOkdRt"
+          class="components__LanguageList-xttex9-1 fDTvcE"
         >
           <li
-            class="components__LanguageItem-sc-8efs89-2 dTowoN"
+            class="components__LanguageItem-xttex9-2 bleCqR"
           >
             <button
-              class="components__LanguageButton-sc-8efs89-3 jjJqum"
+              class="components__LanguageButton-xttex9-3 dOxwfY"
               type="button"
             >
               <span>
@@ -704,10 +704,10 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             </button>
           </li>
           <li
-            class="components__LanguageItem-sc-8efs89-2 dTowoN"
+            class="components__LanguageItem-xttex9-2 bleCqR"
           >
             <button
-              class="components__LanguageButton-sc-8efs89-3 jjJqum"
+              class="components__LanguageButton-xttex9-3 dOxwfY"
               type="button"
             >
               <span>
@@ -718,19 +718,19 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
         </ul>
       </div>
       <div
-        class="wrappers__Wrapper-sc-1ngpmho-0 qjbFg"
+        class="wrappers__Wrapper-sc-1mh98nj-0 kClpPZ"
       >
         <div
-          class="wrappers__Container-sc-1ngpmho-1 gjZxZy"
+          class="wrappers__Container-sc-1mh98nj-1 hkwcgu"
         >
           <div
-            class="VacancyLabel__Wrapper-xxoezx-0 YnRTJ"
+            class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
           >
             <span
-              class="available VacancyIcon-p2hriq-0 CBjRg"
+              class="available VacancyIcon-sc-5dhn2h-0 dyrJws"
             />
             <p
-              class="small dark P-sc-76wrpw-0 hAeTez"
+              class="small dark P-a1qszj-0 emFJsd"
             >
               <span>
                 Vapaa
@@ -739,16 +739,16 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           </div>
         </div>
         <div
-          class="wrappers__Container-sc-1ngpmho-1 gjZxZy"
+          class="wrappers__Container-sc-1mh98nj-1 hkwcgu"
         >
           <div
-            class="VacancyLabel__Wrapper-xxoezx-0 YnRTJ"
+            class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
           >
             <span
-              class="taken VacancyIcon-p2hriq-0 CBjRg"
+              class="taken VacancyIcon-sc-5dhn2h-0 dyrJws"
             />
             <p
-              class="small dark P-sc-76wrpw-0 hAeTez"
+              class="small dark P-a1qszj-0 emFJsd"
             >
               <span>
                 Varattu
@@ -757,16 +757,16 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           </div>
         </div>
         <div
-          class="wrappers__Container-sc-1ngpmho-1 gjZxZy"
+          class="wrappers__Container-sc-1mh98nj-1 hkwcgu"
         >
           <div
-            class="VacancyLabel__Wrapper-xxoezx-0 YnRTJ"
+            class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
           >
             <span
-              class="closed VacancyIcon-p2hriq-0 CBjRg"
+              class="closed VacancyIcon-sc-5dhn2h-0 dyrJws"
             />
             <p
-              class="small dark P-sc-76wrpw-0 hAeTez"
+              class="small dark P-a1qszj-0 emFJsd"
             >
               <span>
                 Suljettu
@@ -777,143 +777,143 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       </div>
     </div>
     <div
-      class="wrappers__HorizontalLine-cufm9l-2 ePTZy"
+      class="wrappers__HorizontalLine-sc-12jnkun-2 fNdQGq"
     />
     <div
-      class="wrappers__ButtonsWrapper-cufm9l-4 vOSYn"
+      class="wrappers__ButtonsWrapper-sc-12jnkun-4 dqSzmL"
     >
       <div
-        class="c-buttonlist Wrapper-dshfmn-0 dPCvOF"
+        class="c-buttonlist Wrapper-xre5d6-0 bFhVmc"
       >
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Oppimistilat
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Ryhmätilat
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Työtilat
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Studiot
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Pelitilat
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Tietokoneet
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Kaupunkiverstas
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Konehuone
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
         <div
-          class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
+          class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
           >
             <span>
               Muut tilat
             </span>
           </button>
           <div
-            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-1qg2dgi-3 jxEisU"
+            class="button-animations wrappers__SubButtonWrapperWithTransition-sc-18xlj5k-3 gChHRG"
           />
         </div>
       </div>
       <div
-        class="TouchScreenIndicator__Wrapper-sc-1td5fqa-0 hyXDsY"
+        class="TouchScreenIndicator__Wrapper-sc-1378wop-0 iNDFVz"
       >
         <svg
           height="58px"
@@ -948,7 +948,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           </g>
         </svg>
         <span
-          class="TouchScreenIndicator__Label-sc-1td5fqa-1 bmTTMA"
+          class="TouchScreenIndicator__Label-sc-1378wop-1 koLUFk"
         >
           <span>
             Kosketusnäyttö
