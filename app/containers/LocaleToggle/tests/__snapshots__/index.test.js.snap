@@ -2,16 +2,16 @@
 
 exports[`<LocaleToggle /> should match the snapshot 1`] = `
 <div
-  class="components__Wrapper-sc-8efs89-0 iFEOpV"
+  class="components__Wrapper-xttex9-0 czkhCu"
 >
   <ul
-    class="components__LanguageList-sc-8efs89-1 kOkdRt"
+    class="components__LanguageList-xttex9-1 fDTvcE"
   >
     <li
-      class="components__LanguageItem-sc-8efs89-2 dTowoN"
+      class="components__LanguageItem-xttex9-2 bleCqR"
     >
       <button
-        class="components__LanguageButton-sc-8efs89-3 jjJqum"
+        class="components__LanguageButton-xttex9-3 dOxwfY"
         type="button"
       >
         <span>
@@ -20,10 +20,10 @@ exports[`<LocaleToggle /> should match the snapshot 1`] = `
       </button>
     </li>
     <li
-      class="components__LanguageItem-sc-8efs89-2 dTowoN"
+      class="components__LanguageItem-xttex9-2 bleCqR"
     >
       <button
-        class="components__LanguageButton-sc-8efs89-3 jjJqum"
+        class="components__LanguageButton-xttex9-3 dOxwfY"
         type="button"
       >
         <span>
