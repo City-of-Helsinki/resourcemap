@@ -4,6 +4,17 @@ exports[`<App /> should render and match the snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
+      "colors": Object {
+        "available": "#00b62b",
+        "blue": "#9fc9eb",
+        "closed": "#c2a251",
+        "green": "#00b62b",
+        "grey": "#5c5c5c",
+        "noData": "#5c5c5c",
+        "red": "#ed2127",
+        "taken": "#ed2127",
+        "yellow": "#c2a251",
+      },
       "fontSize": Array [
         0.625,
         0.75,

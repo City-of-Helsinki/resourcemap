@@ -727,7 +727,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
           >
             <span
-              class="available VacancyIcon-sc-5dhn2h-0 dyrJws"
+              class="available VacancyIcon-sc-5dhn2h-0 fkUZOB"
             />
             <p
               class="small dark P-a1qszj-0 emFJsd"
@@ -745,7 +745,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
           >
             <span
-              class="taken VacancyIcon-sc-5dhn2h-0 dyrJws"
+              class="taken VacancyIcon-sc-5dhn2h-0 fkUZOB"
             />
             <p
               class="small dark P-a1qszj-0 emFJsd"
@@ -763,7 +763,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
           >
             <span
-              class="closed VacancyIcon-sc-5dhn2h-0 dyrJws"
+              class="closed VacancyIcon-sc-5dhn2h-0 fkUZOB"
             />
             <p
               class="small dark P-a1qszj-0 emFJsd"
