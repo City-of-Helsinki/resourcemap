@@ -26,11 +26,11 @@
 }
 
 .roomPath.clicked.closed {
-  fill: #f5a623;
+  fill: #c2a251;
 }
 
 .roomPath.clicked.taken {
-  fill: #d0021b;
+  fill: #ed2127;
 }
 
 .roomPath.clicked.noData,
