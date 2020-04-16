@@ -151,8 +151,10 @@ function findSpaceData(spaces, spaceContentType) {
         );
       }
 
-      // SpacesByType should be exactly 1 in length to we an safely only
-      // take the first item into consideration.
+      // SpacesByType should be an array with exactly one item in it.
+      // Because of this, we can:
+      // (1) safely access the first item and
+      // (2) safely ignore other items.
       const [spaceType, spacesWithType] = spacesByType[0];
       const maxPeopleCount = spaces.length;
       const someSpaceCanBeReserved = spaces.some(space => space.canBeReserved);
