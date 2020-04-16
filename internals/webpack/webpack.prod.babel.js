@@ -38,6 +38,7 @@ module.exports = require('./webpack.base.babel')({
             ascii_only: true,
           },
         },
+        extractComments: false,
         parallel: true,
         cache: true,
         sourceMap: true,
