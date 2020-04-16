@@ -6,7 +6,7 @@ const BasicButton = styled.button`
   padding: 0 1em;
 
   font-weight: bold;
-  font-size: 12px;
+  font-size: ${props => props.theme.fontSize.get(1)};
   text-decoration: none;
   color: #fff;
   line-height: 1;

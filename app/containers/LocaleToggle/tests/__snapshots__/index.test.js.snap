@@ -8,7 +8,7 @@ exports[`<LocaleToggle /> should match the snapshot 1`] = `
     class="components__LanguageList-sc-8efs89-1 kOkdRt"
   >
     <li
-      class="components__LanguageItem-sc-8efs89-2 iZcJuQ"
+      class="components__LanguageItem-sc-8efs89-2 dTowoN"
     >
       <button
         class="components__LanguageButton-sc-8efs89-3 jjJqum"
@@ -20,7 +20,7 @@ exports[`<LocaleToggle /> should match the snapshot 1`] = `
       </button>
     </li>
     <li
-      class="components__LanguageItem-sc-8efs89-2 iZcJuQ"
+      class="components__LanguageItem-sc-8efs89-2 dTowoN"
     >
       <button
         class="components__LanguageButton-sc-8efs89-3 jjJqum"

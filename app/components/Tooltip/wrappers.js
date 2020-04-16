@@ -49,7 +49,7 @@ export const TooltipWrapper = styled.div`
 export const Title = styled.h3`
   margin: 0;
 
-  font-size: 12px;
+  font-size: ${props => props.theme.fontSize.get(1)};
   font-weight: bold;
   color: #191919;
   text-align: center;
@@ -72,7 +72,7 @@ export const RowLabel = styled.p`
   margin: 0;
   max-width: 200px;
 
-  font-size: 10px;
+  font-size: ${props => props.theme.fontSize.get(0)};
   color: #191919;
 
   &:not(:first-child) {

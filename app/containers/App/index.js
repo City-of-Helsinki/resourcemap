@@ -8,9 +8,10 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
+import theme from 'theme';
 import HomePage from 'containers/HomePage';
 import GlobalStyle from '../../global-styles';
 
@@ -22,14 +23,20 @@ const AppWrapper = styled.div`
 
 export default function App() {
   return (
-    <AppWrapper>
-      <Helmet titleTemplate="%s - Oodi kirjasto" defaultTitle="Oodi kirjasto">
-        <meta name="description" content="Oodi kirjasto" />
-      </Helmet>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-      </Switch>
-      <GlobalStyle />
-    </AppWrapper>
+    // I am applying the theme here as to retain the root index file
+    // as close to react-boilerplate's original as possible. It'll be
+    // easier to keep up to date--and it has a lot of react-boilerplate
+    // configuration within it.
+    <ThemeProvider theme={theme}>
+      <AppWrapper>
+        <Helmet titleTemplate="%s - Oodi kirjasto" defaultTitle="Oodi kirjasto">
+          <meta name="description" content="Oodi kirjasto" />
+        </Helmet>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+        </Switch>
+        <GlobalStyle />
+      </AppWrapper>
+    </ThemeProvider>
   );
 }

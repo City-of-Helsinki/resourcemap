@@ -50,7 +50,7 @@ const Item = styled.div`
 const ItemNumber = styled.div`
   position: absolute;
 
-  font-size: 12px;
+  font-size: ${props => props.theme.fontSize.get(1)};
   font-weight: 500;
 
   ${props => {

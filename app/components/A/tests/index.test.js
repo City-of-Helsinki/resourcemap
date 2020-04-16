@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from 'tests/utils';
 
 import A from '../index';
 

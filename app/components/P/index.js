@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const P = styled.p`
-  font-size: 18px;
+  font-size: ${props => props.theme.fontSize.get(4)};
   margin-bottom: 20px;
 
   &.light {
@@ -9,7 +9,7 @@ const P = styled.p`
   }
 
   &.small {
-    font-size: 10px;
+    font-size: ${props => props.theme.fontSize.get(0)};
   }
 `;
 

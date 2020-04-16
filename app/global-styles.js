@@ -1,10 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { ROOT_FONT_SIZE } from 'theme';
+
 const GlobalStyle = createGlobalStyle`
   html,
   body {
     height: 100%;
     width: 100%;
+    
+    font-size: ${ROOT_FONT_SIZE}px;
   }
   body, p {
     font-family: 'HelsinkiGrotesk', 'Helvetica Neue', Helvetica, Arial;

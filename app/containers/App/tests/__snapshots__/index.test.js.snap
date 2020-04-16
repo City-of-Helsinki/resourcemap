@@ -1,37 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should render and match the snapshot 1`] = `
-<ForwardRef>
-  <HelmetWrapper
-    defaultTitle="Oodi kirjasto"
-    defer={true}
-    encodeSpecialCharacters={true}
-    titleTemplate="%s - Oodi kirjasto"
-  >
-    <meta
-      content="Oodi kirjasto"
-      name="description"
-    />
-  </HelmetWrapper>
-  <Switch>
-    <Route
-      component={
-        Object {
-          "$$typeof": Symbol(react.memo),
-          "WrappedComponent": Object {
+<ThemeProvider
+  theme={
+    Object {
+      "fontSize": Array [
+        0.625,
+        0.75,
+        0.938,
+        1,
+        1.125,
+        2.25,
+        2.813,
+      ],
+    }
+  }
+>
+  <ForwardRef>
+    <HelmetWrapper
+      defaultTitle="Oodi kirjasto"
+      defer={true}
+      encodeSpecialCharacters={true}
+      titleTemplate="%s - Oodi kirjasto"
+    >
+      <meta
+        content="Oodi kirjasto"
+        name="description"
+      />
+    </HelmetWrapper>
+    <Switch>
+      <Route
+        component={
+          Object {
             "$$typeof": Symbol(react.memo),
+            "WrappedComponent": Object {
+              "$$typeof": Symbol(react.memo),
+              "compare": null,
+              "type": [Function],
+            },
             "compare": null,
+            "displayName": "Connect(Component)",
             "type": [Function],
-          },
-          "compare": null,
-          "displayName": "Connect(Component)",
-          "type": [Function],
+          }
         }
-      }
-      exact={true}
-      path="/"
-    />
-  </Switch>
-  <GlobalStyleComponent />
-</ForwardRef>
+        exact={true}
+        path="/"
+      />
+    </Switch>
+    <GlobalStyleComponent />
+  </ForwardRef>
+</ThemeProvider>
 `;

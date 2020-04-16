@@ -13,7 +13,7 @@ const buttonStyles = css`
   outline: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSize.get(3)};
   border: 2px solid #41addd;
   color: #41addd;
 

@@ -22,13 +22,13 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="QRCode__DescriptionWrapper-sc-1gk0zly-1 kwnJEC"
         >
           <span
-            class="wrappers__QRCodeDescription-cufm9l-7 bYHOxb"
+            class="wrappers__QRCodeDescription-cufm9l-7 fogPFy"
           >
             Tee varaus Varaamossa
           </span>
           <br />
           <span
-            class="wrappers__QRCodeLink-cufm9l-8 fcJaYH"
+            class="wrappers__QRCodeLink-cufm9l-8 hqDDDG"
           >
             varaamo.hel.fi
           </span>
@@ -36,7 +36,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       </div>
     </div>
     <h1
-      class="H1-tncdg6-0 jYzbFZ"
+      class="H1-tncdg6-0 fGgOjf"
     >
       Oodi
        
@@ -692,7 +692,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="components__LanguageList-sc-8efs89-1 kOkdRt"
         >
           <li
-            class="components__LanguageItem-sc-8efs89-2 iZcJuQ"
+            class="components__LanguageItem-sc-8efs89-2 dTowoN"
           >
             <button
               class="components__LanguageButton-sc-8efs89-3 jjJqum"
@@ -704,7 +704,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             </button>
           </li>
           <li
-            class="components__LanguageItem-sc-8efs89-2 iZcJuQ"
+            class="components__LanguageItem-sc-8efs89-2 dTowoN"
           >
             <button
               class="components__LanguageButton-sc-8efs89-3 jjJqum"
@@ -730,7 +730,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="available VacancyIcon-p2hriq-0 CBjRg"
             />
             <p
-              class="small dark P-sc-76wrpw-0 bRSwxR"
+              class="small dark P-sc-76wrpw-0 hAeTez"
             >
               <span>
                 Vapaa
@@ -748,7 +748,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="taken VacancyIcon-p2hriq-0 CBjRg"
             />
             <p
-              class="small dark P-sc-76wrpw-0 bRSwxR"
+              class="small dark P-sc-76wrpw-0 hAeTez"
             >
               <span>
                 Varattu
@@ -766,7 +766,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="closed VacancyIcon-p2hriq-0 CBjRg"
             />
             <p
-              class="small dark P-sc-76wrpw-0 bRSwxR"
+              class="small dark P-sc-76wrpw-0 hAeTez"
             >
               <span>
                 Suljettu
@@ -789,7 +789,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Oppimistilat
@@ -803,7 +803,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Ryhmätilat
@@ -817,7 +817,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Työtilat
@@ -831,7 +831,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Studiot
@@ -845,7 +845,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Pelitilat
@@ -859,7 +859,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Tietokoneet
@@ -873,7 +873,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Kaupunkiverstas
@@ -887,7 +887,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Konehuone
@@ -901,7 +901,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-1qg2dgi-0 bcFWzs"
         >
           <button
-            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 iSsdOM"
+            class="BasicButton-d5nzlo-0 btn wrappers__MainButton-sc-1qg2dgi-1 cbrRXn"
           >
             <span>
               Muut tilat
@@ -948,7 +948,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           </g>
         </svg>
         <span
-          class="TouchScreenIndicator__Label-sc-1td5fqa-1 cNZHCr"
+          class="TouchScreenIndicator__Label-sc-1td5fqa-1 bmTTMA"
         >
           <span>
             Kosketusnäyttö
