@@ -13,7 +13,7 @@
 }
 
 .roomPath.is-highlighted.taken {
-  fill: #dd5969;
+  fill: url(#takenPatternHighlighted);
 }
 
 .roomPath.is-highlighted.noData,
@@ -30,7 +30,7 @@
 }
 
 .roomPath.clicked.taken {
-  fill: #ed2127;
+  fill: url(#takenPatternClicked);
 }
 
 .roomPath.clicked.noData,
