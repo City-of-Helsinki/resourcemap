@@ -17,7 +17,7 @@ export const LanguageList = styled.ul`
 const LanguageItem = styled.li`
   padding: 0;
 
-  font-size: ${props => props.theme.fontSize.get(1)};
+  font-size: ${props => props.theme.fontSize.get(2)};
   font-weight: bold;
 
   &:not(:last-child) {

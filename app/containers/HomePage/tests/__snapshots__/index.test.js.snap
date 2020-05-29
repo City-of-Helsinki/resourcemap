@@ -776,7 +776,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="components__LanguageList-xttex9-1 fDTvcE"
         >
           <li
-            class="components__LanguageItem-xttex9-2 bleCqR"
+            class="components__LanguageItem-xttex9-2 cwgdCB"
           >
             <button
               class="components__LanguageButton-xttex9-3 dOxwfY"
@@ -788,7 +788,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             </button>
           </li>
           <li
-            class="components__LanguageItem-xttex9-2 bleCqR"
+            class="components__LanguageItem-xttex9-2 cwgdCB"
           >
             <button
               class="components__LanguageButton-xttex9-3 dOxwfY"
