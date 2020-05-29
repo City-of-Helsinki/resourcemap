@@ -16,7 +16,7 @@ exports[`<App /> should render and match the snapshot 1`] = `
         "yellow": "#c2a251",
       },
       "fontSize": Array [
-        0.625,
+        0.75,
         0.75,
         0.938,
         1,
