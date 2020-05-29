@@ -160,20 +160,6 @@ class Container extends React.Component {
     return (
       <React.Fragment>
         <Wrapper>
-          <QRCodeWrapper>
-            <QRCode
-              link={QRCodeHref}
-              description={
-                <>
-                  <FormattedMessage {...messages.makeReservationInVaraamo}>
-                    {text => <QRCodeDescription>{text}</QRCodeDescription>}
-                  </FormattedMessage>
-                  <br />
-                  <QRCodeLink>{QRCodeLinkValue}</QRCodeLink>
-                </>
-              }
-            />
-          </QRCodeWrapper>
           <H1>
             Oodi{' '}
             <FormattedMessage {...messages.mapTitle}>
@@ -181,6 +167,20 @@ class Container extends React.Component {
             </FormattedMessage>
           </H1>
           <MapWrapper>
+            <QRCodeWrapper>
+              <QRCode
+                link={QRCodeHref}
+                description={
+                  <>
+                    <FormattedMessage {...messages.makeReservationInVaraamo}>
+                      {text => <QRCodeDescription>{text}</QRCodeDescription>}
+                    </FormattedMessage>
+                    <br />
+                    <QRCodeLink>{QRCodeLinkValue}</QRCodeLink>
+                  </>
+                }
+              />
+            </QRCodeWrapper>
             <MapContainer
               spaces={spaces}
               highlighted={highlighted}

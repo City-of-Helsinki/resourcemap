@@ -7,34 +7,6 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
   <section
     class="wrappers__Wrapper-sc-12jnkun-0 hZciOe"
   >
-    <div
-      class="wrappers__QRCodeWrapper-sc-12jnkun-6 jQuvSA"
-    >
-      <div
-        class="QRCode__Wrapper-sc-4gdjit-0 jfXRSe"
-      >
-        <canvas
-          height="70"
-          style="height: 70px; width: 70px;"
-          width="70"
-        />
-        <div
-          class="QRCode__DescriptionWrapper-sc-4gdjit-1 kPrrtZ"
-        >
-          <span
-            class="wrappers__QRCodeDescription-sc-12jnkun-7 bZpGjx"
-          >
-            Tee varaus Varaamossa
-          </span>
-          <br />
-          <span
-            class="wrappers__QRCodeLink-sc-12jnkun-8 czVQIj"
-          >
-            varaamo.hel.fi
-          </span>
-        </div>
-      </div>
-    </div>
     <h1
       class="H1-sc-19ms9d-0 jHTtju"
     >
@@ -47,8 +19,36 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       </span>
     </h1>
     <div
-      class="wrappers__MapWrapper-sc-12jnkun-1 hqygag"
+      class="wrappers__MapWrapper-sc-12jnkun-1 bvNErE"
     >
+      <div
+        class="wrappers__QRCodeWrapper-sc-12jnkun-6 LKEPX"
+      >
+        <div
+          class="QRCode__Wrapper-sc-4gdjit-0 jfXRSe"
+        >
+          <canvas
+            height="70"
+            style="height: 70px; width: 70px;"
+            width="70"
+          />
+          <div
+            class="QRCode__DescriptionWrapper-sc-4gdjit-1 kPrrtZ"
+          >
+            <span
+              class="wrappers__QRCodeDescription-sc-12jnkun-7 bZpGjx"
+            >
+              Tee varaus Varaamossa
+            </span>
+            <br />
+            <span
+              class="wrappers__QRCodeLink-sc-12jnkun-8 czVQIj"
+            >
+              varaamo.hel.fi
+            </span>
+          </div>
+        </div>
+      </div>
       <svg
         height="100%"
         version="1.1"
