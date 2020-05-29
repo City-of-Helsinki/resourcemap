@@ -28,7 +28,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           </span>
           <br />
           <span
-            class="wrappers__QRCodeLink-sc-12jnkun-8 gtBCPZ"
+            class="wrappers__QRCodeLink-sc-12jnkun-8 czVQIj"
           >
             varaamo.hel.fi
           </span>
@@ -730,7 +730,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="available VacancyIcon-sc-5dhn2h-0 dyrJws"
             />
             <p
-              class="small dark P-a1qszj-0 emFJsd"
+              class="small dark P-a1qszj-0 ebfFrP"
             >
               <span>
                 Vapaa
@@ -748,7 +748,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="taken VacancyIcon-sc-5dhn2h-0 dyrJws"
             />
             <p
-              class="small dark P-a1qszj-0 emFJsd"
+              class="small dark P-a1qszj-0 ebfFrP"
             >
               <span>
                 Varattu
@@ -766,7 +766,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="closed VacancyIcon-sc-5dhn2h-0 dyrJws"
             />
             <p
-              class="small dark P-a1qszj-0 emFJsd"
+              class="small dark P-a1qszj-0 ebfFrP"
             >
               <span>
                 Suljettu
