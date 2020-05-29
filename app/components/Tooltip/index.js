@@ -7,7 +7,6 @@ import dateFormat from 'dateformat';
 
 import SpaceAvailability from 'constants/SpaceAvailability';
 import Rooms from 'constants/Rooms';
-import isResourceAvailable from 'utils/isResourceAvailable';
 import getSpaceAvailability from 'utils/getSpaceAvailability';
 import getLocalizedString from 'utils/getLocalizedString';
 import {
@@ -56,13 +55,10 @@ const ALLOWED_AVAILABILITIES = [
 const ROOMS_WITH_GRID = [Rooms.WORKSTATION_1, Rooms.WORKSTATION_2];
 
 function getAvailableCount(spaces) {
-  const now = new Date();
   const available = spaces.filter(space => {
-    if (!space || !space.data) {
-      return false;
-    }
+    const availability = getSpaceAvailability(space);
 
-    return isResourceAvailable(now, space.data);
+    return availability === SpaceAvailability.AVAILABLE;
   });
 
   return available.length;
@@ -123,16 +119,32 @@ function findSpaceData(spaces, spaceContentType) {
     }
     case SpaceContentTypes.GROUP: {
       const { category } = spaces.find(space => space.category);
+
+      const getIsSpaceGroupClosed = spacesInGroup => {
+        const totalCount = spacesInGroup.length;
+        const closedSpaces = spacesInGroup.filter(space => {
+          const availability = getSpaceAvailability(space);
+
+          return availability === SpaceAvailability.CLOSED;
+        });
+
+        // If all the spaces within the group are closed, label the
+        // group as closed.
+        return totalCount === closedSpaces.length;
+      };
+
       const spacesByType = Object.entries(groupBy(spaces, 'type'));
       const groups = spacesByType.map(([spaceType, spacesWithType]) => {
         const totalCount = spacesWithType.length;
         const availableCount = getAvailableCount(spacesWithType);
+        const isClosed = getIsSpaceGroupClosed(spacesWithType);
 
         return {
           id: spaceType,
           availableCount,
           totalCount,
           spaceType,
+          isClosed,
         };
       });
 
@@ -281,6 +293,7 @@ function makeTooltipViewModel(spaces, currentLocal) {
         id: group.id,
         availableCount: group.availableCount,
         totalCount: group.totalCount,
+        isClosed: group.isClosed,
         label: (
           <>
             <FormattedMessage {...spaceTypeMessages[group.spaceType]} />{' '}
@@ -388,8 +401,8 @@ function makeBody(content, currentLocal) {
           {contentItem.type === TooltipContentTypes.GROUP && (
             <TooltipGroup
               availableCount={contentItem.availableCount}
+              isClosed={contentItem.isClosed}
               label={contentItem.label}
-              totalCount={contentItem.totalCount}
             />
           )}
           {contentItem.type === TooltipContentTypes.GRID && (

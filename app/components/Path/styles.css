@@ -13,7 +13,7 @@
 }
 
 .roomPath.is-highlighted.taken {
-  fill: #dd5969;
+  fill: url(#takenPatternHighlighted);
 }
 
 .roomPath.is-highlighted.noData,
@@ -26,11 +26,11 @@
 }
 
 .roomPath.clicked.closed {
-  fill: #f5a623;
+  fill: #c2a251;
 }
 
 .roomPath.clicked.taken {
-  fill: #d0021b;
+  fill: url(#takenPatternClicked);
 }
 
 .roomPath.clicked.noData,
