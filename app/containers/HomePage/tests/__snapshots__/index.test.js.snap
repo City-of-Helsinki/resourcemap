@@ -7,19 +7,23 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
   <section
     class="wrappers__Wrapper-sc-12jnkun-0 hZciOe"
   >
-    <h1
-      class="H1-sc-19ms9d-0 jHTtju"
-    >
-      Oodi
-       
-      <span
-        class="wrappers__FloorLabel-sc-12jnkun-5 grbpCc"
-      >
-        Helsingin keskuskirjasto | 2.kerros
-      </span>
-    </h1>
     <div
-      class="wrappers__MapWrapper-sc-12jnkun-1 bvNErE"
+      class="wrappers__TitleWrapper-sc-12jnkun-9 iwLgQq"
+    >
+      <h1
+        class="H1-sc-19ms9d-0 jHTtju"
+      >
+        Oodi
+         
+        <span
+          class="wrappers__FloorLabel-sc-12jnkun-5 grbpCc"
+        >
+          Helsingin keskuskirjasto | 2.kerros
+        </span>
+      </h1>
+    </div>
+    <div
+      class="wrappers__MapWrapper-sc-12jnkun-1 hCECbp"
     >
       <div
         class="wrappers__QRCodeWrapper-sc-12jnkun-6 LKEPX"
@@ -864,7 +868,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       class="wrappers__HorizontalLine-sc-12jnkun-2 fNdQGq"
     />
     <div
-      class="wrappers__ButtonsWrapper-sc-12jnkun-4 dqSzmL"
+      class="wrappers__ButtonsWrapper-sc-12jnkun-4 fYzyMR"
     >
       <div
         class="c-buttonlist Wrapper-xre5d6-0 bFhVmc"
