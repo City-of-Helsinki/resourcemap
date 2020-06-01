@@ -12,6 +12,7 @@ export const Wrapper = styled.section`
 
 export const MapWrapper = styled.div`
   flex: 1 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 38px;
@@ -43,8 +44,8 @@ export const FloorLabel = styled.span`
 
 export const QRCodeWrapper = styled.div`
   position: absolute;
-  top: 69px;
-  right: 100px;
+  top: 0;
+  right: 0;
 `;
 
 export const QRCodeDescription = styled.span`
