@@ -172,7 +172,7 @@ function findSpaceData(spaces, spaceContentType) {
       const someSpaceCanBeReserved = spaces.some(space => space.canBeReserved);
       const gridItems = spacesWithType.map((space, index) => ({
         id: space.id,
-        label: index,
+        label: index + 1,
         availability: getSpaceAvailability(space),
       }));
 
