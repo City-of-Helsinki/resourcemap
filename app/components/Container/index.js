@@ -31,6 +31,7 @@ import {
   QRCodeWrapper,
   QRCodeDescription,
   QRCodeLink,
+  TitleWrapper,
 } from './wrappers';
 import messages from './messages';
 
@@ -160,12 +161,14 @@ class Container extends React.Component {
     return (
       <React.Fragment>
         <Wrapper>
-          <H1>
-            Oodi{' '}
-            <FormattedMessage {...messages.mapTitle}>
-              {text => <FloorLabel>{text}</FloorLabel>}
-            </FormattedMessage>
-          </H1>
+          <TitleWrapper>
+            <H1>
+              Oodi{' '}
+              <FormattedMessage {...messages.mapTitle}>
+                {text => <FloorLabel>{text}</FloorLabel>}
+              </FormattedMessage>
+            </H1>
+          </TitleWrapper>
           <MapWrapper>
             <QRCodeWrapper>
               <QRCode
