@@ -10,6 +10,7 @@
   "categories.workstations": "Datorer",
   "components.Container.makeReservationInVaraamo": "Bok på Varaamo",
   "components.Container.mapTitle": "Helsingfors centrumbibliotek | 2:a våningen",
+  "components.MapOfOodi.youAreHere": "Du är här",
   "components.Tooltip.availableUntilTimeLabel": "Ledig till kl. {time}",
   "components.Tooltip.nextAvailableTimeLabel": "Ledig kl. {time}",
   "components.Tooltip.notReservableStatusLabel": "Kan inte reserveras",

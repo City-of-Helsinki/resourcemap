@@ -10,6 +10,7 @@
   "categories.workstations": "Workstations",
   "components.Container.makeReservationInVaraamo": "Book on Varaamo",
   "components.Container.mapTitle": "Helsinki Central Library | 2nd floor",
+  "components.MapOfOodi.youAreHere": "You are here",
   "components.Tooltip.availableUntilTimeLabel": "Available until {time}",
   "components.Tooltip.nextAvailableTimeLabel": "Available at {time}",
   "components.Tooltip.notReservableStatusLabel": "Not reservable",

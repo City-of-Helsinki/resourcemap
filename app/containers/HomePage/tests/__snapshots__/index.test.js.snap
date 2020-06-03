@@ -755,7 +755,6 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           />
           <text
             fill="#FFFFFF"
-            font-family="HelsinkiGrotesk-Bold, Helsinki Grotesk"
             font-size="10"
             font-weight="bold"
             line-spacing="10.279998"
@@ -806,13 +805,31 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
         </ul>
       </div>
       <div
-        class="wrappers__Wrapper-sc-1mh98nj-0 kClpPZ"
+        class="wrappers__Wrapper-sc-1bio026-0 dhAbSB"
       >
         <div
-          class="wrappers__Container-sc-1mh98nj-1 hkwcgu"
+          class="wrappers__Container-sc-1bio026-1 jCWkre"
         >
           <div
-            class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
+            class="Legend__Wrapper-nltou4-0 dyzxWh"
+          >
+            <div
+              class="MapLegend__RedTriangle-sc-1wtdcvr-0 ccsMUS"
+            />
+            <p
+              class="small P-a1qszj-0 ebfFrP"
+            >
+              <span>
+                Olet tässä
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="wrappers__Container-sc-1bio026-1 jCWkre"
+        >
+          <div
+            class="Legend__Wrapper-nltou4-0 dyzxWh"
           >
             <span
               class="available VacancyIcon-sc-5dhn2h-0 fkUZOB"
@@ -827,10 +844,10 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           </div>
         </div>
         <div
-          class="wrappers__Container-sc-1mh98nj-1 hkwcgu"
+          class="wrappers__Container-sc-1bio026-1 jCWkre"
         >
           <div
-            class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
+            class="Legend__Wrapper-nltou4-0 dyzxWh"
           >
             <span
               class="taken VacancyIcon-sc-5dhn2h-0 fkUZOB"
@@ -845,10 +862,10 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           </div>
         </div>
         <div
-          class="wrappers__Container-sc-1mh98nj-1 hkwcgu"
+          class="wrappers__Container-sc-1bio026-1 jCWkre"
         >
           <div
-            class="VacancyLabel__Wrapper-sc-13n5k4-0 fFZWUJ"
+            class="Legend__Wrapper-nltou4-0 dyzxWh"
           >
             <span
               class="closed VacancyIcon-sc-5dhn2h-0 fkUZOB"
