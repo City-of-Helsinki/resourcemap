@@ -17,7 +17,7 @@ import LocaleToggle from 'containers/LocaleToggle';
 import MapContainer from 'components/MapContainer';
 import Tooltip from 'components/Tooltip';
 import ButtonList from 'components/ButtonList';
-import VacancyList from 'components/VacancyList';
+import MapLegend from 'components/MapLegend';
 import H1 from 'components/H1';
 import QRCode from 'components/QRCode';
 import TouchScreenIndicator from 'components/TouchScreenIndicator';
@@ -195,7 +195,7 @@ class Container extends React.Component {
           </MapWrapper>
           <ControlsWrapper>
             <LocaleToggle />
-            <VacancyList />
+            <MapLegend />
           </ControlsWrapper>
           <HorizontalLine />
           <ButtonsWrapper>
