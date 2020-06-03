@@ -6,9 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 ### Added
 - Add closed state for tooltip groups
+- Add "you are here" label into map legend
 
 ### Changed
 - Use pattern instead of solid colour for taken rooms
+
+### Fixed
+- Fix untranslated "you are here" label
+- Fix wrong font family for "you are here" label
 
 ## [0.1.0] - 2020-04-16
 ### Added
