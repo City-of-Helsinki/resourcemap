@@ -755,7 +755,6 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           />
           <text
             fill="#FFFFFF"
-            font-family="HelsinkiGrotesk-Bold, Helsinki Grotesk"
             font-size="10"
             font-weight="bold"
             line-spacing="10.279998"
