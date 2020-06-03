@@ -20,6 +20,7 @@
   "components.VacancyLabel.available": "Tillgängligt",
   "components.VacancyLabel.closed": "Inte tillgänglig",
   "components.VacancyLabel.noData": "Inga data",
+  "components.VacancyLabel.notReservable": "Inte bokningsbar",
   "components.VacancyLabel.taken": "Tagen",
   "components.VacancyLabel.unknown": "Okänd",
   "containers.LocaleToggle.en": "In English",

@@ -20,6 +20,7 @@
   "components.VacancyLabel.available": "Free",
   "components.VacancyLabel.closed": "Closed",
   "components.VacancyLabel.noData": "Availability data was not found",
+  "components.VacancyLabel.notReservable": "Not bookable",
   "components.VacancyLabel.taken": "Occupied",
   "components.VacancyLabel.unknown": "Could not define availability",
   "containers.LocaleToggle.en": "In English",

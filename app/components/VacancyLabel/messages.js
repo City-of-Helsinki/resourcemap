@@ -23,4 +23,8 @@ export default defineMessages({
     id: `${scope}.unknown`,
     defaultMessage: 'Saatavuutta ei osattu määrittää',
   },
+  notReservable: {
+    id: `${scope}.notReservable`,
+    defaultMessage: 'Ei varattavissa',
+  },
 });

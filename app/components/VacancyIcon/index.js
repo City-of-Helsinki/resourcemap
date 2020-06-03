@@ -22,7 +22,8 @@ export const vacancyIconColoringCss = css`
   }
 
   &.noData,
-  &.unknown {
+  &.unknown,
+  &.notReservable {
     background-color: ${props => props.theme.colors.noData};
   }
 `;

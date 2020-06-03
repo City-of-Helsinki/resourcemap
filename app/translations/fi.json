@@ -20,6 +20,7 @@
   "components.VacancyLabel.available": "Vapaa",
   "components.VacancyLabel.closed": "Suljettu",
   "components.VacancyLabel.noData": "Tietoja saatavuudesta ei löydetty",
+  "components.VacancyLabel.notReservable": "Ei varattavissa",
   "components.VacancyLabel.taken": "Varattu",
   "components.VacancyLabel.unknown": "Saatavuutta ei osattu määrittää",
   "containers.LocaleToggle.en": "In English",
