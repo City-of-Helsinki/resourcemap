@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 - Use pattern instead of solid colour for taken rooms
+- Use a font sizes larger or as large as 15px
 
 ### Fixed
 - Fix untranslated "you are here" label
