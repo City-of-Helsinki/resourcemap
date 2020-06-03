@@ -10,6 +10,9 @@ import messages from './messages';
 
 const VARIANTS = ['dark', 'light'];
 const VACANCIES = Object.values(SpaceAvailability);
+// This is a special state that categorizes SpaceAvailability.NO_DATA
+// and SpaceAvailability.UNKNOWN into a more human friendly concept.
+const VACANCY_NOT_RESERVABLE = 'notReservable';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -30,7 +33,7 @@ const VacancyLabel = ({ vacancy, variant = VARIANTS[0] }) => (
 );
 
 VacancyLabel.propTypes = {
-  vacancy: PropTypes.oneOf(VACANCIES),
+  vacancy: PropTypes.oneOf([...VACANCIES, VACANCY_NOT_RESERVABLE]),
   variant: PropTypes.oneOf(VARIANTS),
 };
 

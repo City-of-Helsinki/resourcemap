@@ -27,6 +27,9 @@ const MapLegend = () => {
     {
       vacancy: 'closed',
     },
+    {
+      vacancy: 'notReservable',
+    },
   ];
 
   return (

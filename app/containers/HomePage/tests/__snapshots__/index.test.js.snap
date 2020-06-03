@@ -817,7 +817,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="MapLegend__RedTriangle-sc-1wtdcvr-0 ccsMUS"
             />
             <p
-              class="small P-a1qszj-0 ebfFrP"
+              class="small P-a1qszj-0 iQdBfI"
             >
               <span>
                 Olet tässä
@@ -832,7 +832,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="Legend__Wrapper-nltou4-0 dyzxWh"
           >
             <span
-              class="available VacancyIcon-sc-5dhn2h-0 fkUZOB"
+              class="available VacancyIcon-sc-5dhn2h-0 iZJJEI"
             />
             <p
               class="small dark P-a1qszj-0 iQdBfI"
@@ -850,7 +850,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="Legend__Wrapper-nltou4-0 dyzxWh"
           >
             <span
-              class="taken VacancyIcon-sc-5dhn2h-0 fkUZOB"
+              class="taken VacancyIcon-sc-5dhn2h-0 iZJJEI"
             />
             <p
               class="small dark P-a1qszj-0 iQdBfI"
@@ -868,13 +868,31 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="Legend__Wrapper-nltou4-0 dyzxWh"
           >
             <span
-              class="closed VacancyIcon-sc-5dhn2h-0 fkUZOB"
+              class="closed VacancyIcon-sc-5dhn2h-0 iZJJEI"
             />
             <p
               class="small dark P-a1qszj-0 iQdBfI"
             >
               <span>
                 Suljettu
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="wrappers__Container-sc-1bio026-1 jCWkre"
+        >
+          <div
+            class="Legend__Wrapper-nltou4-0 dyzxWh"
+          >
+            <span
+              class="notReservable VacancyIcon-sc-5dhn2h-0 iZJJEI"
+            />
+            <p
+              class="small dark P-a1qszj-0 iQdBfI"
+            >
+              <span>
+                Ei varattavissa
               </span>
             </p>
           </div>
