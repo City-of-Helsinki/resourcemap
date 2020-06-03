@@ -1,4 +1,7 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import messages from '../messages';
 
 export default () => (
   <>
@@ -11,7 +14,9 @@ export default () => (
       line-spacing="10.279998"
     >
       <tspan x="282" y="101">
-        Olet tässä
+        <FormattedMessage {...messages.youAreHere}>
+          {text => text}
+        </FormattedMessage>
       </tspan>
     </text>
   </>
