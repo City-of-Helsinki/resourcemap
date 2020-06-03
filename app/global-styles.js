@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { darken } from 'polished';
 
 import { ROOT_FONT_SIZE } from 'theme';
 
@@ -125,6 +126,59 @@ const GlobalStyle = createGlobalStyle`
     opacity: 0.01;
     max-height: 0;
     transform: translateY(-10px);  
+  }
+
+  /* Room paths */
+  .roomPath {
+    fill: ${props => props.theme.colors.roomDefaultFill};
+    stroke: ${props => props.theme.colors.roomDefaultStroke};
+    stroke-width: 2px;
+  }
+
+  .roomPath.available.is-highlighted {
+    fill: ${props => darken(0.2, props.theme.colors.roomAvailableFill)};
+  }
+  .roomPath.available.clicked {
+    fill: ${props => props.theme.colors.roomAvailableFill};
+  }
+
+  .roomPath.closed.is-highlighted {
+    fill: ${props => darken(0.2, props.theme.colors.roomClosedFill)};
+  }
+  .roomPath.closed.clicked {
+    fill: ${props => props.theme.colors.roomClosedFill};
+  }
+
+  .roomPath.noData.is-highlighted,
+  .roomPath.unknown.is-highlighted {
+    fill: ${props => darken(0.2, props.theme.colors.roomNotReservableFill)};
+  }
+  .roomPath.noData.clicked,
+  .roomPath.unknown.clicked {
+    fill: ${props => props.theme.colors.roomNotReservableFill};
+  }
+
+  .roomPath.is-highlighted.taken {
+    fill: url(#takenPatternHighlighted);
+  }
+  .roomPath.clicked.taken {
+    fill: url(#takenPatternClicked);
+  }
+
+  .roomPath.dashedBorder {
+    fill: ${props => props.theme.colors.roomDefaultStroke};
+
+    transition: none;
+  }
+
+  .roomPath.dashedBorder.is-highlighted,
+  .roomPath.dashedRoom.is-highlighted {
+    fill: ${props => props.theme.colors.roomDefaultStroke};
+  }
+
+  .roomPath.dashedBorder.clicked,
+  .roomPath.dashedRoom.clicked {
+    fill: ${props => props.theme.colors.roomDashedBorderSelectedFill};
   }
 `;
 
