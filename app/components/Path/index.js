@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import theme from 'theme';
-import './styles.css';
+
+// Styles for this component are defined in the root global CSS folder.
 
 // eslint-disable-next-line react/prop-types
 const TakenPattern = ({ id, color }) => (

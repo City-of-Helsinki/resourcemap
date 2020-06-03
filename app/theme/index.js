@@ -12,12 +12,22 @@ const colors = {
   yellow: '#c2a251',
   green: '#00b62b',
   grey: '#5c5c5c',
+  darkGrey: '#606060',
   blue: '#9fc9eb',
+  black: '#191919',
+  white: '#f6f6f8',
 };
-colors.noData = colors.grey;
+colors.noData = colors.blue;
 colors.taken = colors.red;
 colors.closed = colors.yellow;
 colors.available = colors.green;
+colors.roomDefaultFill = colors.black;
+colors.roomDefaultStroke = colors.white;
+colors.roomAvailableFill = colors.green;
+colors.roomClosedFill = colors.yellow;
+colors.roomNotReservableFill = colors.blue;
+colors.roomDashedBorderSelectedFill = colors.white;
+colors.activeSpace = colors.white;
 
 export default {
   fontSize: fontSizeRem,

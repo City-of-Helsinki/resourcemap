@@ -5,14 +5,24 @@ exports[`<App /> should render and match the snapshot 1`] = `
   theme={
     Object {
       "colors": Object {
+        "activeSpace": "#f6f6f8",
         "available": "#00b62b",
+        "black": "#191919",
         "blue": "#9fc9eb",
         "closed": "#c2a251",
+        "darkGrey": "#606060",
         "green": "#00b62b",
         "grey": "#5c5c5c",
-        "noData": "#5c5c5c",
+        "noData": "#9fc9eb",
         "red": "#ed2127",
+        "roomAvailableFill": "#00b62b",
+        "roomClosedFill": "#c2a251",
+        "roomDashedBorderSelectedFill": "#f6f6f8",
+        "roomDefaultFill": "#191919",
+        "roomDefaultStroke": "#f6f6f8",
+        "roomNotReservableFill": "#9fc9eb",
         "taken": "#ed2127",
+        "white": "#f6f6f8",
         "yellow": "#c2a251",
       },
       "fontSize": Array [
