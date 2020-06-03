@@ -40,13 +40,13 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
             class="QRCode__DescriptionWrapper-sc-4gdjit-1 kPrrtZ"
           >
             <span
-              class="wrappers__QRCodeDescription-sc-12jnkun-7 bZpGjx"
+              class="wrappers__QRCodeDescription-sc-12jnkun-7 wtbNq"
             >
               Tee varaus Varaamossa
             </span>
             <br />
             <span
-              class="wrappers__QRCodeLink-sc-12jnkun-8 czVQIj"
+              class="wrappers__QRCodeLink-sc-12jnkun-8 dbdTnq"
             >
               varaamo.hel.fi
             </span>
@@ -818,7 +818,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="available VacancyIcon-sc-5dhn2h-0 fkUZOB"
             />
             <p
-              class="small dark P-a1qszj-0 ebfFrP"
+              class="small dark P-a1qszj-0 iQdBfI"
             >
               <span>
                 Vapaa
@@ -836,7 +836,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="taken VacancyIcon-sc-5dhn2h-0 fkUZOB"
             />
             <p
-              class="small dark P-a1qszj-0 ebfFrP"
+              class="small dark P-a1qszj-0 iQdBfI"
             >
               <span>
                 Varattu
@@ -854,7 +854,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               class="closed VacancyIcon-sc-5dhn2h-0 fkUZOB"
             />
             <p
-              class="small dark P-a1qszj-0 ebfFrP"
+              class="small dark P-a1qszj-0 iQdBfI"
             >
               <span>
                 Suljettu
@@ -877,7 +877,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Oppimistilat
@@ -891,7 +891,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Ryhmätilat
@@ -905,7 +905,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Työtilat
@@ -919,7 +919,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Studiot
@@ -933,7 +933,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Pelitilat
@@ -947,7 +947,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Tietokoneet
@@ -961,7 +961,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Kaupunkiverstas
@@ -975,7 +975,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Konehuone
@@ -989,7 +989,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
           class="wrappers__Wrapper-sc-18xlj5k-0 dfSCzq"
         >
           <button
-            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 jKLniW"
+            class="BasicButton-sc-1eeo960-0 btn wrappers__MainButton-sc-18xlj5k-1 UWxWC"
           >
             <span>
               Muut tilat
