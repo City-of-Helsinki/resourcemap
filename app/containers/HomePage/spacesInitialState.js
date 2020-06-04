@@ -319,9 +319,9 @@ export default [
     id: '24',
     respaId: 'av72e2c64vfq',
     name: {
-      fi: 'Studio 9',
-      sv: 'Studio 9',
-      en: 'Studio 9',
+      fi: 'Studio 1',
+      sv: 'Studio 1',
+      en: 'Studio 1',
     },
     canBeReserved: false,
   },
