@@ -675,7 +675,7 @@ export default [
       en:
         'A space for new media art that enables immersive experiences. It can also function as an event or meeting room',
     },
-    peopleCapacity: 250,
+    peopleCapacity: 50,
     canBeReserved: true,
   },
   {
