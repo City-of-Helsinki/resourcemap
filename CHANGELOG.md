@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - Fix untranslated "you are here" label
 - Fix wrong font family for "you are here" label
+- Fix room data for retro Gaming corner, Gaming hall and Kuutio
 
 ## [0.1.0] - 2020-04-16
 ### Added
