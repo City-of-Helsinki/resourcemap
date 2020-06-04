@@ -13,11 +13,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Use pattern instead of solid colour for taken rooms
 - Use a font sizes larger or as large as 15px
 - Change not reservable colour into blue and selected colour into white
+- Don't show availability status for machine room
 
 ### Fixed
 - Fix untranslated "you are here" label
 - Fix wrong font family for "you are here" label
 - Fix room data for retro Gaming corner, Gaming hall and Kuutio
+- Fix translations coverstitch machine, printing room and language menu
+- Fix naming of Studio 1
+- FIx game room order
 
 ## [0.1.0] - 2020-04-16
 ### Added
