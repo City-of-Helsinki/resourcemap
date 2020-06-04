@@ -107,6 +107,24 @@ function findSpaceData(spaces, spaceContentType) {
       const closestFreeSlot = getClosestAvailableSlot(data);
       const nextReservedSlot = getNextReservedSlot(data);
 
+      // Rooms.GROUP_ROOM_1 behaves in a special way where it's closed
+      // until four (Helsinki time) each day, and then becomes available
+      // for reservations. I attempted to find a more meaningful
+      // abstraction for this, but could not think of anything safe.
+      // I decided to go with a hacky approach for now, and expand on it
+      // later if we get other similar rooms and can build a better
+      // understanding about the correct abstraction.
+      const isGroupRoom1 = space.room === Rooms.GROUP_ROOM_1;
+      const hoursInHelsinki = Number(
+        new Date().toLocaleString('fi-FI', {
+          hour: '2-digit',
+          hour12: false,
+          timeZone: 'Europe/Helsinki',
+        }),
+      );
+      const isBeforeFourOClock = hoursInHelsinki < 16;
+      const showGroupRoom1SpecialLabel = isGroupRoom1 && isBeforeFourOClock;
+
       return {
         type: SpaceContentTypes.SINGLE,
         name,
@@ -115,6 +133,7 @@ function findSpaceData(spaces, spaceContentType) {
         description,
         closestFreeSlot,
         nextReservedSlot,
+        showGroupRoom1SpecialLabel,
       };
     }
     case SpaceContentTypes.GROUP: {
@@ -213,6 +232,7 @@ function makeTooltipViewModel(spaces, currentLocal) {
         nextReservedSlot,
         maxPeopleCount,
         vacancyStatus,
+        showGroupRoom1SpecialLabel,
       } = spaceData;
       const content = [];
 
@@ -243,7 +263,17 @@ function makeTooltipViewModel(spaces, currentLocal) {
         content.push({
           type: TooltipContentTypes.ROW,
           id: 'vacancyLabel',
-          content: <VacancyLabel variant="light" vacancy={vacancyStatus} />,
+          content: (
+            <>
+              <VacancyLabel variant="light" vacancy={vacancyStatus} />
+              {showGroupRoom1SpecialLabel && (
+                <FormattedMessage
+                  {...messages.groupRoomOneSpecialLabel}
+                  values={{ time: '16:00' }}
+                />
+              )}
+            </>
+          ),
         });
       }
 
