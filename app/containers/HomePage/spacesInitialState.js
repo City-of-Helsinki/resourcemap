@@ -652,7 +652,7 @@ export default [
     room: Rooms.OTHER_1,
     id: '48',
     name: {
-      fi: 'Kopiointi',
+      fi: 'Tulostus, kopiointi ja skannaus',
       sv: 'Printer, kopiering och skanning',
       en: 'printing, copying and skanning',
     },
