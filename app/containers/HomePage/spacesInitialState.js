@@ -373,11 +373,6 @@ export default [
       sv: 'Retrospelhörna',
       en: 'Retro gaming corner',
     },
-    description: {
-      fi: 'Tilassa on 14 pelaamiseen tarkoitettua tietokonetta',
-      sv: 'I utrymmet finns 14 datorer avsedda för datorspel',
-      en: 'The space has 14 computers for gaming',
-    },
     canBeReserved: false,
   },
   {
@@ -388,6 +383,11 @@ export default [
       fi: 'Pelisali',
       sv: 'spelsal',
       en: 'gaming hall',
+    },
+    description: {
+      fi: 'Tilassa on 14 pelaamiseen tarkoitettua tietokonetta',
+      sv: 'I utrymmet finns 14 datorer avsedda för datorspel',
+      en: 'The space has 14 computers for gaming',
     },
     peopleCapacity: 14,
     canBeReserved: false,
