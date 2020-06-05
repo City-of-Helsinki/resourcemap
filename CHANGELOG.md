@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Add closed state for tooltip groups
 - Add "you are here" label into map legend
 - Add not bookable state into map legend
+- Add special label for GROUP_ROOM_1
 
 ### Changed
 - Use pattern instead of solid colour for taken rooms

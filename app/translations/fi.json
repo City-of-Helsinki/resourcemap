@@ -12,6 +12,7 @@
   "components.Container.mapTitle": "Helsingin keskustakirjasto | 2.kerros",
   "components.MapOfOodi.youAreHere": "Olet tässä",
   "components.Tooltip.availableUntilTimeLabel": "Tila on vapaana {time} asti",
+  "components.Tooltip.groupRoomOneSpecialLabel": ", vapautuu klo {time}",
   "components.Tooltip.nextAvailableTimeLabel": "Tila on varattu {time} asti",
   "components.Tooltip.notReservableStatusLabel": "Ei varattavissa",
   "components.Tooltip.reservableStatusLabel": "varattavissa",
