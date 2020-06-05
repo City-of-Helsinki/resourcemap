@@ -12,7 +12,7 @@ export default () => (
       fontWeight="bold"
       line-spacing="10.279998"
     >
-      <tspan x="282" y="101">
+      <tspan x="274" y="103">
         <FormattedMessage {...messages.youAreHere}>
           {text => text}
         </FormattedMessage>
