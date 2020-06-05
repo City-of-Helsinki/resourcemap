@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import className from 'classnames';
 
 import SpaceAvailability from 'constants/SpaceAvailability';
+import Rooms from 'constants/Rooms';
 import Path from 'components/Path';
+
+const ROOMS_WITH_NO_FILL_BASED_ON_AVAILABILITY = [Rooms.MACHINE_ROOM_1];
 
 const Room = ({
   availability,
@@ -12,23 +16,20 @@ const Room = ({
   onClick,
   ...props
 }) => {
-  // Generate classname.
-  let className = '';
+  const pathClassName = className(
+    {
+      'is-highlighted': isHighlighted,
+      clicked: isOpened,
+      'no-fill-based-on-availability': ROOMS_WITH_NO_FILL_BASED_ON_AVAILABILITY.includes(
+        id,
+      ),
+    },
+    availability,
+  );
 
-  // First check if this item is highlighted, but not necessarily opened.
-  const classNameHighlighted = isHighlighted ? 'is-highlighted' : '';
-
-  // Check also if this space is actually clicked and opened.
-  if (isOpened) {
-    className = `${classNameHighlighted} clicked`;
-  } else {
-    className = classNameHighlighted;
-  }
-
-  // Concat to final classname.
-  className = `${className} ${availability}`;
-
-  return <Path {...props} id={id} className={className} onClick={onClick} />;
+  return (
+    <Path {...props} id={id} className={pathClassName} onClick={onClick} />
+  );
 };
 
 Room.propTypes = {

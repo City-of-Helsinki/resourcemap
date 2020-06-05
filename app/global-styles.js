@@ -180,6 +180,13 @@ const GlobalStyle = createGlobalStyle`
   .roomPath.dashedRoom.clicked {
     fill: ${props => props.theme.colors.roomDashedBorderSelectedFill};
   }
+
+  .roomPath.no-fill-based-on-availability.is-highlighted {
+    fill: ${props => darken(0.2, props.theme.colors.white)};
+  }
+  .roomPath.no-fill-based-on-availability.clicked {
+    fill: ${props => props.theme.colors.white};
+  }
 `;
 
 export default GlobalStyle;

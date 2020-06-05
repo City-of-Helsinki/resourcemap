@@ -25,7 +25,7 @@
   "components.VacancyLabel.unknown": "Could not define availability",
   "containers.LocaleToggle.en": "In English",
   "containers.LocaleToggle.fi": "Suomeksi",
-  "containers.LocaleToggle.sv": "Pä svenska",
+  "containers.LocaleToggle.sv": "På svenska",
   "subSpaces.3dPrinters": "3D printers",
   "subSpaces.buttonPinMachine": "Button pin machine",
   "subSpaces.computers": "Computers",
