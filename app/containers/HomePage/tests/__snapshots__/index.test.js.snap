@@ -903,7 +903,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
       class="wrappers__HorizontalLine-sc-12jnkun-2 fNdQGq"
     />
     <div
-      class="wrappers__ButtonsWrapper-sc-12jnkun-4 fYzyMR"
+      class="wrappers__ButtonsWrapper-sc-12jnkun-4 dysTrd"
     >
       <div
         class="c-buttonlist Wrapper-xre5d6-0 bFhVmc"

@@ -35,7 +35,7 @@ export const ControlsWrapper = styled.div`
 `;
 
 export const ButtonsWrapper = styled.div`
-  flex: 0 0 364px;
+  flex: 0 0 396px;
   padding-bottom: 54px;
 `;
 
