@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Use a font sizes larger or as large as 15px
 - Change not reservable colour into blue and selected colour into white
 - Don't show availability status for machine room
+- Recording studio button opens tooltip on top of the rightmost room in the recording studio setup
 
 ### Fixed
 - Fix untranslated "you are here" label

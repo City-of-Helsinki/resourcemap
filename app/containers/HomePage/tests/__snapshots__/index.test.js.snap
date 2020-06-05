@@ -446,7 +446,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               <path
                 class="roomPath noData"
                 cursor="pointer"
-                d="M219.117,211.633L219.117,189.169L236.382,189.169L249.062,199.804L249.062,211.633L219.117,211.633Z"
+                d="M273.566,211.633L277.229,195.474L267.301,185.568L267.301,150.257L311.02,152.693L311.02,211.633L273.566,211.633Z"
                 id="s1"
                 pointer-events="visible"
               />
@@ -464,7 +464,7 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
               <path
                 class="roomPath noData"
                 cursor="pointer"
-                d="M273.566,211.633L277.229,195.474L267.301,185.568L267.301,150.257L311.02,152.693L311.02,211.633L273.566,211.633Z"
+                d="M219.117,211.633L219.117,189.169L236.382,189.169L249.062,199.804L249.062,211.633L219.117,211.633Z"
                 id="s1"
                 pointer-events="visible"
               />
