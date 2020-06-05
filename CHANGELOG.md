@@ -22,7 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Fix room data for retro Gaming corner, Gaming hall and Kuutio
 - Fix translations coverstitch machine, printing room and language menu
 - Fix naming of Studio 1
-- FIx game room order
+- Fix game room order
+- Fix you are here label overlapping position indicator in English translation
 
 ## [0.1.0] - 2020-04-16
 ### Added
