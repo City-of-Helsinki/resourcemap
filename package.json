@@ -1,6 +1,6 @@
 {
   "name": "resourcemap",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This app displays Oodi 2nd floor map and interactively loads map status from Respa",
   "repository": {
     "type": "git",
