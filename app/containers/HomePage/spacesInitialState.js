@@ -319,9 +319,9 @@ export default [
     id: '24',
     respaId: 'av72e2c64vfq',
     name: {
-      fi: 'Studio 9',
-      sv: 'Studio 9',
-      en: 'Studio 9',
+      fi: 'Studio 1',
+      sv: 'Studio 1',
+      en: 'Studio 1',
     },
     canBeReserved: false,
   },
@@ -373,11 +373,6 @@ export default [
       sv: 'Retrospelhörna',
       en: 'Retro gaming corner',
     },
-    description: {
-      fi: 'Tilassa on 14 pelaamiseen tarkoitettua tietokonetta',
-      sv: 'I utrymmet finns 14 datorer avsedda för datorspel',
-      en: 'The space has 14 computers for gaming',
-    },
     canBeReserved: false,
   },
   {
@@ -388,6 +383,11 @@ export default [
       fi: 'Pelisali',
       sv: 'spelsal',
       en: 'gaming hall',
+    },
+    description: {
+      fi: 'Tilassa on 14 pelaamiseen tarkoitettua tietokonetta',
+      sv: 'I utrymmet finns 14 datorer avsedda för datorspel',
+      en: 'The space has 14 computers for gaming',
     },
     peopleCapacity: 14,
     canBeReserved: false,
@@ -652,7 +652,7 @@ export default [
     room: Rooms.OTHER_1,
     id: '48',
     name: {
-      fi: 'Kopiointi',
+      fi: 'Tulostus, kopiointi ja skannaus',
       sv: 'Printer, kopiering och skanning',
       en: 'printing, copying and skanning',
     },
@@ -675,7 +675,7 @@ export default [
       en:
         'A space for new media art that enables immersive experiences. It can also function as an event or meeting room',
     },
-    peopleCapacity: 250,
+    peopleCapacity: 50,
     canBeReserved: true,
   },
   {

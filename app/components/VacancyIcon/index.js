@@ -1,29 +1,30 @@
 import styled, { css } from 'styled-components';
 
 export const vacancyIconColoringCss = css`
-  background-color: #00b62a;
+  background-color: ${props => props.theme.colors.available};
 
   &.available {
-    background-color: #00b62b;
+    background-color: ${props => props.theme.colors.available};
   }
 
   &.taken {
     background: repeating-linear-gradient(
       45deg,
-      #ed2127,
-      #ed2127 2px,
+      ${props => props.theme.colors.taken},
+      ${props => props.theme.colors.taken} 2px,
       #fff 3px
     );
   }
 
   &.closed,
   &.partlyAvailable {
-    background-color: #c2a251;
+    background-color: ${props => props.theme.colors.closed};
   }
 
   &.noData,
-  &.unknown {
-    background-color: grey;
+  &.unknown,
+  &.notReservable {
+    background-color: ${props => props.theme.colors.noData};
   }
 `;
 

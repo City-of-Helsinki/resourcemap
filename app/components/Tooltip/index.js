@@ -7,7 +7,6 @@ import dateFormat from 'dateformat';
 
 import SpaceAvailability from 'constants/SpaceAvailability';
 import Rooms from 'constants/Rooms';
-import isResourceAvailable from 'utils/isResourceAvailable';
 import getSpaceAvailability from 'utils/getSpaceAvailability';
 import getLocalizedString from 'utils/getLocalizedString';
 import {
@@ -56,13 +55,10 @@ const ALLOWED_AVAILABILITIES = [
 const ROOMS_WITH_GRID = [Rooms.WORKSTATION_1, Rooms.WORKSTATION_2];
 
 function getAvailableCount(spaces) {
-  const now = new Date();
   const available = spaces.filter(space => {
-    if (!space || !space.data) {
-      return false;
-    }
+    const availability = getSpaceAvailability(space);
 
-    return isResourceAvailable(now, space.data);
+    return availability === SpaceAvailability.AVAILABLE;
   });
 
   return available.length;
@@ -111,6 +107,24 @@ function findSpaceData(spaces, spaceContentType) {
       const closestFreeSlot = getClosestAvailableSlot(data);
       const nextReservedSlot = getNextReservedSlot(data);
 
+      // Rooms.GROUP_ROOM_1 behaves in a special way where it's closed
+      // until four (Helsinki time) each day, and then becomes available
+      // for reservations. I attempted to find a more meaningful
+      // abstraction for this, but could not think of anything safe.
+      // I decided to go with a hacky approach for now, and expand on it
+      // later if we get other similar rooms and can build a better
+      // understanding about the correct abstraction.
+      const isGroupRoom1 = space.room === Rooms.GROUP_ROOM_1;
+      const hoursInHelsinki = Number(
+        new Date().toLocaleString('fi-FI', {
+          hour: '2-digit',
+          hour12: false,
+          timeZone: 'Europe/Helsinki',
+        }),
+      );
+      const isBeforeFourOClock = hoursInHelsinki < 16;
+      const showGroupRoom1SpecialLabel = isGroupRoom1 && isBeforeFourOClock;
+
       return {
         type: SpaceContentTypes.SINGLE,
         name,
@@ -119,20 +133,37 @@ function findSpaceData(spaces, spaceContentType) {
         description,
         closestFreeSlot,
         nextReservedSlot,
+        showGroupRoom1SpecialLabel,
       };
     }
     case SpaceContentTypes.GROUP: {
       const { category } = spaces.find(space => space.category);
+
+      const getIsSpaceGroupClosed = spacesInGroup => {
+        const totalCount = spacesInGroup.length;
+        const closedSpaces = spacesInGroup.filter(space => {
+          const availability = getSpaceAvailability(space);
+
+          return availability === SpaceAvailability.CLOSED;
+        });
+
+        // If all the spaces within the group are closed, label the
+        // group as closed.
+        return totalCount === closedSpaces.length;
+      };
+
       const spacesByType = Object.entries(groupBy(spaces, 'type'));
       const groups = spacesByType.map(([spaceType, spacesWithType]) => {
         const totalCount = spacesWithType.length;
         const availableCount = getAvailableCount(spacesWithType);
+        const isClosed = getIsSpaceGroupClosed(spacesWithType);
 
         return {
           id: spaceType,
           availableCount,
           totalCount,
           spaceType,
+          isClosed,
         };
       });
 
@@ -160,7 +191,7 @@ function findSpaceData(spaces, spaceContentType) {
       const someSpaceCanBeReserved = spaces.some(space => space.canBeReserved);
       const gridItems = spacesWithType.map((space, index) => ({
         id: space.id,
-        label: index,
+        label: index + 1,
         availability: getSpaceAvailability(space),
       }));
 
@@ -201,6 +232,7 @@ function makeTooltipViewModel(spaces, currentLocal) {
         nextReservedSlot,
         maxPeopleCount,
         vacancyStatus,
+        showGroupRoom1SpecialLabel,
       } = spaceData;
       const content = [];
 
@@ -231,7 +263,17 @@ function makeTooltipViewModel(spaces, currentLocal) {
         content.push({
           type: TooltipContentTypes.ROW,
           id: 'vacancyLabel',
-          content: <VacancyLabel variant="light" vacancy={vacancyStatus} />,
+          content: (
+            <>
+              <VacancyLabel variant="light" vacancy={vacancyStatus} />
+              {showGroupRoom1SpecialLabel && (
+                <FormattedMessage
+                  {...messages.groupRoomOneSpecialLabel}
+                  values={{ time: '16:00' }}
+                />
+              )}
+            </>
+          ),
         });
       }
 
@@ -281,6 +323,7 @@ function makeTooltipViewModel(spaces, currentLocal) {
         id: group.id,
         availableCount: group.availableCount,
         totalCount: group.totalCount,
+        isClosed: group.isClosed,
         label: (
           <>
             <FormattedMessage {...spaceTypeMessages[group.spaceType]} />{' '}
@@ -388,8 +431,8 @@ function makeBody(content, currentLocal) {
           {contentItem.type === TooltipContentTypes.GROUP && (
             <TooltipGroup
               availableCount={contentItem.availableCount}
+              isClosed={contentItem.isClosed}
               label={contentItem.label}
-              totalCount={contentItem.totalCount}
             />
           )}
           {contentItem.type === TooltipContentTypes.GRID && (

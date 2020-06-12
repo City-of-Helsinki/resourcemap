@@ -4,19 +4,26 @@ import classNames from 'classnames';
 
 import VacancyIcon from 'components/VacancyIcon';
 
-function SubSpaceVacancyIcon({ availableCount }) {
+export const SubSpaceVacancyIconVariant = Object.freeze({
+  AVAILABLE: 'available',
+  TAKEN: 'taken',
+  CLOSED: 'closed',
+});
+
+function SubSpaceVacancyIcon({ variant }) {
   return (
     <VacancyIcon
       className={classNames({
-        available: availableCount > 0,
-        taken: availableCount === 0,
+        available: SubSpaceVacancyIconVariant.AVAILABLE === variant,
+        taken: SubSpaceVacancyIconVariant.TAKEN === variant,
+        closed: SubSpaceVacancyIconVariant.CLOSED === variant,
       })}
     />
   );
 }
 
 SubSpaceVacancyIcon.propTypes = {
-  availableCount: PropTypes.number,
+  variant: PropTypes.oneOf(Object.values(SubSpaceVacancyIconVariant)),
 };
 
 export default SubSpaceVacancyIcon;

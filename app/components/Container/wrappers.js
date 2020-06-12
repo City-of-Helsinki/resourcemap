@@ -11,7 +11,8 @@ export const Wrapper = styled.section`
 `;
 
 export const MapWrapper = styled.div`
-  flex: 1 1;
+  flex: 2 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 38px;
@@ -34,7 +35,8 @@ export const ControlsWrapper = styled.div`
 `;
 
 export const ButtonsWrapper = styled.div`
-  flex: 1 0;
+  flex: 0 0 396px;
+  padding-bottom: 54px;
 `;
 
 export const FloorLabel = styled.span`
@@ -43,8 +45,8 @@ export const FloorLabel = styled.span`
 
 export const QRCodeWrapper = styled.div`
   position: absolute;
-  top: 69px;
-  right: 100px;
+  top: 0;
+  right: 0;
 `;
 
 export const QRCodeDescription = styled.span`
@@ -54,4 +56,10 @@ export const QRCodeDescription = styled.span`
 
 export const QRCodeLink = styled.span`
   font-size: ${props => props.theme.fontSize.get(0)};
+`;
+
+export const TitleWrapper = styled.div`
+  flex: 1 1;
+  display: flex;
+  align-items: flex-end;
 `;

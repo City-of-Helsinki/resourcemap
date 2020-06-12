@@ -23,4 +23,8 @@ export default defineMessages({
     id: `${scope}.nextAvailableTimeLabel`,
     defaultMessage: 'Tila on varattu {time} asti',
   },
+  groupRoomOneSpecialLabel: {
+    id: `${scope}.groupRoomOneSpecialLabel`,
+    defaultMessage: ', vapautuu klo {time}',
+  },
 });

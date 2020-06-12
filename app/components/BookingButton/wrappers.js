@@ -15,20 +15,20 @@ export const MainButton = styled(BasicButton)`
 
 export const SubButton = styled(MainButton)`
   margin: 0;
-  width: 160px;
+  width: 208px;
 
   font-size: ${props => props.theme.fontSize.get(0)};
   font-weight: normal;
 
   border: none;
-  background-color: #606060;
+  background-color: ${props => props.theme.colors.darkGrey};
 
   transition: all 200ms linear;
 
   &.sub-btn {
     &--active {
-      background-color: #9fc9eb;
-      color: #191919;
+      background-color: ${props => props.theme.colors.activeSpace};
+      color: ${props => props.theme.colors.black};
     }
   }
 `;

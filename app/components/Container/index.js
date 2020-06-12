@@ -17,7 +17,7 @@ import LocaleToggle from 'containers/LocaleToggle';
 import MapContainer from 'components/MapContainer';
 import Tooltip from 'components/Tooltip';
 import ButtonList from 'components/ButtonList';
-import VacancyList from 'components/VacancyList';
+import MapLegend from 'components/MapLegend';
 import H1 from 'components/H1';
 import QRCode from 'components/QRCode';
 import TouchScreenIndicator from 'components/TouchScreenIndicator';
@@ -31,6 +31,7 @@ import {
   QRCodeWrapper,
   QRCodeDescription,
   QRCodeLink,
+  TitleWrapper,
 } from './wrappers';
 import messages from './messages';
 
@@ -160,27 +161,29 @@ class Container extends React.Component {
     return (
       <React.Fragment>
         <Wrapper>
-          <QRCodeWrapper>
-            <QRCode
-              link={QRCodeHref}
-              description={
-                <>
-                  <FormattedMessage {...messages.makeReservationInVaraamo}>
-                    {text => <QRCodeDescription>{text}</QRCodeDescription>}
-                  </FormattedMessage>
-                  <br />
-                  <QRCodeLink>{QRCodeLinkValue}</QRCodeLink>
-                </>
-              }
-            />
-          </QRCodeWrapper>
-          <H1>
-            Oodi{' '}
-            <FormattedMessage {...messages.mapTitle}>
-              {text => <FloorLabel>{text}</FloorLabel>}
-            </FormattedMessage>
-          </H1>
+          <TitleWrapper>
+            <H1>
+              Oodi{' '}
+              <FormattedMessage {...messages.mapTitle}>
+                {text => <FloorLabel>{text}</FloorLabel>}
+              </FormattedMessage>
+            </H1>
+          </TitleWrapper>
           <MapWrapper>
+            <QRCodeWrapper>
+              <QRCode
+                link={QRCodeHref}
+                description={
+                  <>
+                    <FormattedMessage {...messages.makeReservationInVaraamo}>
+                      {text => <QRCodeDescription>{text}</QRCodeDescription>}
+                    </FormattedMessage>
+                    <br />
+                    <QRCodeLink>{QRCodeLinkValue}</QRCodeLink>
+                  </>
+                }
+              />
+            </QRCodeWrapper>
             <MapContainer
               spaces={spaces}
               highlighted={highlighted}
@@ -192,7 +195,7 @@ class Container extends React.Component {
           </MapWrapper>
           <ControlsWrapper>
             <LocaleToggle />
-            <VacancyList />
+            <MapLegend />
           </ControlsWrapper>
           <HorizontalLine />
           <ButtonsWrapper>
